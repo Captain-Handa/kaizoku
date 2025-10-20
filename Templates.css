@@ -915,7 +915,7 @@
 .npc-origem {
   background-image: linear-gradient(to right, #2f4b9f, #5cb6d100);
   text-align: left;
-  padding-left: 5px;
+  padding: 3px;
   color: #fff;
   margin-top: 2px;
 }
@@ -1111,6 +1111,7 @@
 .tema-escuro .info-box .note {
     color: #eca2a2;
 }
+
 
 
 
