@@ -775,12 +775,10 @@
 
 .npc-tag-2 {
   align-items: center;
-  background-color: #c2c2c2;
   border-top: 3px solid #fff;
   box-shadow: 0px 2px 6px -2px #b3b3fb;
   padding: 4px;
   margin: 2px;
-  border-left: 5px solid rgb(116 116 116);
 }
 
 .tema-escuro .npc-tag-1 {
@@ -1113,6 +1111,7 @@
 .tema-escuro .info-box .note {
     color: #eca2a2;
 }
+
 
 
 
