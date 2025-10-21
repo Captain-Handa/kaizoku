@@ -410,6 +410,7 @@
   border-radius: 10px;
   background-image: linear-gradient(to right, #304c9f, #7789d4f7, #8b98e8);
   border-bottom: 3px solid #25569a;
+  padding: 2px;
 }
 
 .tema-escuro .tab-container {
@@ -844,6 +845,7 @@
   color: #000;
   border-left: 3px solid #304c9f;
   border-top: 3px solid #fff;
+  border-radius: 15px;
 }
 
 .tema-escuro .npc-ficha {
@@ -902,7 +904,9 @@
   text-transform: uppercase;
   font-weight: 700;
   color: #fff;
-  padding: 2px 4px 2px 2px;
+  padding: 5px;
+  border-radius: 15px;
+  margin-bottom: 3px;
 }
 
 .npc-nome b {
@@ -926,6 +930,7 @@
   border: 3px solid #ccc;
   margin-left: 5px;
   margin-top: 5px;
+  border-radius: 15px;
 }
 
 .npc-icone-2 {
@@ -1111,6 +1116,7 @@
 .tema-escuro .info-box .note {
     color: #eca2a2;
 }
+
 
 
 
