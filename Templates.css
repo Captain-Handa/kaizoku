@@ -25,6 +25,7 @@
   color: #000000;
   text-align: justify;
   font-family: 'calibri';
+  min-height: 270px;
 }
 
 .tema-escuro .intro-2 { 
