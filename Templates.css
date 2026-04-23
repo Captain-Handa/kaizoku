@@ -957,6 +957,7 @@
   border: 3px solid #ccc;
   margin-left: 5px;
   margin-top: 5px;
+  border-radius: 15px;
 }
 
 .fa_like_div {
