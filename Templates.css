@@ -1133,7 +1133,215 @@
     color: #eca2a2;
 }
 
+.anuncios {
+    width: 269px;
+    height: 350px;
+    position: absolute;
+    margin-left: 11px;
+    margin-top: 30px;
+    border-radius: 15px;
+    background: url(https://2img.net/i.imgur.com/0xQ4FQh.png);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    filter: grayscale(0);
+    box-shadow: var(--lightshadow);
+    border: 3px solid white;
+}
 
+.anuncios-overlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.72), rgba(255,255,255,0.88));
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #1c1c1c;
+    font-family: Arial, sans-serif;
+}
+
+.anuncios-titulo {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #111;
+    text-shadow: none;
+}
+
+.campeoes-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.campeao {
+    display: grid;
+    grid-template-columns: 26px 52px 1fr;
+    align-items: center;
+    gap: 8px;
+    min-height: 68px;
+    padding: 6px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.45);
+    border: 1px solid rgba(0,0,0,0.08);
+    backdrop-filter: blur(2px);
+}
+
+.campeao-posicao {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.campeao-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.85);
+    box-shadow: 0 0 6px rgba(0,0,0,0.20);
+}
+
+.campeao-info {
+    min-width: 0;
+}
+
+.campeao-nome {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    color: #111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.campeao-dado {
+    font-size: 10px;
+    line-height: 1.25;
+    color: #2a2a2a;
+    opacity: 1;
+}
+
+.campeao-dado span {
+    font-weight: bold;
+    color: #0f2f6b;
+}
+
+.ouro {
+    border-left: 4px solid #d4af37;
+    box-shadow: inset 0 0 0 1px rgba(212,175,55,0.20);
+}
+
+.prata {
+    border-left: 4px solid #b8b8b8;
+    box-shadow: inset 0 0 0 1px rgba(160,160,160,0.15);
+}
+
+.bronze {
+    border-left: 4px solid #cd7f32;
+    box-shadow: inset 0 0 0 1px rgba(205,127,50,0.15);
+}
+
+.ouro .campeao-posicao {
+    color: #b8860b;
+}
+
+.prata .campeao-posicao {
+    color: #6f6f6f;
+}
+
+.bronze .campeao-posicao {
+    color: #a85c20;
+}
+
+.recompensas-box {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0,0,0,0.12);
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.recompensa-item {
+    flex: 1;
+    background: rgba(255,255,255,0.45);
+    border-radius: 10px;
+    padding: 6px 4px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.recompensa-label {
+    display: block;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: #444;
+    opacity: 1;
+    margin-bottom: 3px;
+}
+
+.recompensa-valor {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #9a6a00;
+    text-shadow: none;
+}
+
+/* TEMA ESCURO */
+.tema-escuro .anuncios-overlay {
+    background: linear-gradient(to bottom, rgba(7,12,25,0.60), rgba(7,12,25,0.82));
+    color: #fff;
+}
+
+.tema-escuro .anuncios-titulo {
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.tema-escuro .campeao {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.10);
+}
+
+.tema-escuro .campeao-nome {
+    color: #fff;
+}
+
+.tema-escuro .campeao-dado {
+    color: rgba(255,255,255,0.92);
+}
+
+.tema-escuro .campeao-dado span {
+    color: #d9e6ff;
+}
+
+.tema-escuro .recompensas-box {
+    border-top: 1px solid rgba(255,255,255,0.18);
+}
+
+.tema-escuro .recompensa-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.tema-escuro .recompensa-label {
+    color: rgba(255,255,255,0.8);
+}
+
+.tema-escuro .recompensa-valor {
+    color: #ffe27a;
+    text-shadow: 0 0 6px rgba(255,210,90,0.25);
+}
 
 
 
