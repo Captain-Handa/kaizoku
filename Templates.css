@@ -1140,7 +1140,7 @@
     margin-left: 11px;
     margin-top: 30px;
     border-radius: 15px;
-    background: url(https://2img.net/i.imgur.com/0xQ4FQh.png);
+    background: #dadada;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -1152,7 +1152,7 @@
 .anuncios-overlay {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.72), rgba(255,255,255,0.88));
+    background: linear-gradient(to bottom, rgb(255 255 255 / 15%), rgb(87 133 183 / 39%));
     padding: 12px;
     box-sizing: border-box;
     display: flex;
@@ -1169,7 +1169,7 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 8px;
-    color: #111;
+    color: #5785b7;
     text-shadow: none;
 }
 
@@ -1298,8 +1298,13 @@
 }
 
 /* TEMA ESCURO */
+
+.tema-escuro .anuncios {
+  border: 3px solid #313131
+  background-color: #131313;
+}
 .tema-escuro .anuncios-overlay {
-    background: linear-gradient(to bottom, rgba(7,12,25,0.60), rgba(7,12,25,0.82));
+    background: linear-gradient(to bottom, rgb(7 12 25 / 28%), rgba(7, 12, 25, 0.82));
     color: #fff;
 }
 
