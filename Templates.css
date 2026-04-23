@@ -50,6 +50,7 @@
   font-weight: 700;
   color: #fff;
   padding: 2px 4px 2px 2px;
+  border-radius: 15px;
 }
 
 .intro-tag b {
@@ -938,6 +939,7 @@
   padding: 3px;
   color: #fff;
   margin-top: 2px;
+  border-radius:15px;
 }
 
 .npc-icone {
