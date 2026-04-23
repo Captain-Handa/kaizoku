@@ -1300,7 +1300,7 @@
 /* TEMA ESCURO */
 
 .tema-escuro .anuncios {
-  border: 3px solid #313131
+  border: 3px solid #313131;
   background-color: #131313;
 }
 .tema-escuro .anuncios-overlay {
