@@ -37,14 +37,16 @@
   text-transform: uppercase;
   font: 900 35px / 50px var(--title2);
   letter-spacing: -2px;
-  background: -webkit-linear-gradient(1deg, #244b8e, #4face8);
+  background-color: var(--usercolor);
+  /*background: -webkit-linear-gradient(1deg, #244b8e, #4face8);*/
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-top: -15px;
 }
 
 .intro-tag {
-  background-image: linear-gradient(to right, #244688, #2892e0);
+  background-color: var(--usercolor);
+  /*background-image: linear-gradient(to right, #244688, #2892e0);*/
   text-align: right;
   text-transform: uppercase;
   font-weight: 700;
@@ -139,11 +141,13 @@
   width: 49%;
   border: 2px solid #29314a;
   display: flex;
+  border-radius: 15px;
 }
 
 .acao-info {
   flex: 1;
   padding: 2px;
+  border-radius: 15px;
 }
 
 .acao-titulo {
@@ -153,6 +157,7 @@
   padding: 2px 4px 2px 6px;
   display: flex;
   justify-content: space-between;
+  border-radius: 15px 0px 0px 15px;
 }
 
 .acao-custo {
@@ -163,6 +168,7 @@
   font-size: 24px;
   color: #fff;
   background-image: linear-gradient(to right, #333d45, #37383b);
+  border-radius: 0px 10px 10px 0px;
 }
 
 .grad-ofensiva { background-image: linear-gradient(to right, #882424, #c46e6e); }
