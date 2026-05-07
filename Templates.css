@@ -421,7 +421,8 @@
   color: #fff;
   margin-bottom: 5px;
   border-radius: 10px;
-  background-image: linear-gradient(to right, #304c9f, #7789d4f7, #8b98e8);
+  /*background-image: linear-gradient(to right, #304c9f, #7789d4f7, #8b98e8);*/
+  background-color: var(--usercolor);
   border-bottom: 3px solid #25569a;
   padding: 2px;
 }
