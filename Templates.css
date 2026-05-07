@@ -423,7 +423,7 @@
   border-radius: 10px;
   /*background-image: linear-gradient(to right, #304c9f, #7789d4f7, #8b98e8);*/
   background-color: var(--usercolor);
-  border-bottom: 3px solid #25569a;
+  border-bottom: 3px solid var(--usercolor);
   padding: 2px;
 }
 
@@ -440,7 +440,9 @@
 }
 
 .tab.active {
-  background-image: linear-gradient(to right, #afcbff, #2891df);
+    background-image: linear-gradient(to right, #d7e5ff1c, #46464659);
+    background-color: var(--usercolor);
+    filter: drop-shadow(0px 0px 3px #000000);
   border-radius: 10px;
   font-weight: bold;
   margin: 2px 2px 0px 2px;
@@ -907,16 +909,17 @@
 }
 
 .p-avatar {
-  box-shadow: -3px 4px 0px 0px #2f4b9f;
+  box-shadow: -3px 4px 0px 0px var(--usercolor);
   height: 100px;
   margin-left: 5px;
   margin-top: 5px;
+ margin-bottom: 5px;
   border-radius: 15px;
   height: auto;
 }
 
 .p-icone {
-  box-shadow: -3px 3px 0px 0px #2f4b9f;
+  box-shadow: -3px 3px 0px 0px var(--usercolor);
   height: 110px;
   margin-left: 5px;
   margin-top: 5px;
