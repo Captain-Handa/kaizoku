@@ -279,12 +279,12 @@
   font-weight: 700;
   margin-bottom: 7px;
   border-radius: 10px;
-  background-image: linear-gradient(to right, #94b0ff, #a9baff7d, #8294ff1a);
+  background-image: linear-gradient(to right, #eff3ff, #cccccc7d, #8294ff1a);
   box-shadow: 0px 0px 3px 0px #4f6987;
   width: fit-content;
   padding: 3px;
   margin-top: 3px;
-  box-shadow: -3px 3px 0px 0px #2f4b9f;
+  box-shadow: -3px 3px 0px 0px var(--usercolor);
 }
 
 .tema-escuro .atributo-tab {
@@ -884,7 +884,7 @@
 .p-ficha-box {
     width: 97%;
     margin: auto;
-    background-image: linear-gradient(to right, #7b9cff6e, #ffffff);
+    background-image: linear-gradient(to right, #a2b0d96e, #ffffff);
     box-shadow: 0px 0px 9px 4px #c9ccdf;
     border-radius: 15px;
 }
@@ -895,7 +895,7 @@
 }
 
 .p-ficha {
-    background-image: linear-gradient(to right, #7b9cff6e, #ffffff);
+    background-image: linear-gradient(to right, #ffffff6e, #ffffff);
     text-align: left;
     padding: 5px;
     color: #000;
