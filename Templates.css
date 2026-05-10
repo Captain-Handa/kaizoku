@@ -1363,7 +1363,127 @@
     text-shadow: 0 0 6px rgba(255,210,90,0.25);
 }
 
+.item-card.pocket {
+  width: 320px;
+  line-height: 1.35;
+  background: #f4f6f9;
+  box-shadow: 0px 2px 4px #283b54;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 8px 0;
+}
 
+.tema-escuro .item-card.pocket {
+  background: #181818;
+}
+
+.item-card.pocket .item-header {
+  padding: 4px 8px;
+  font-size: 11px;
+  letter-spacing: .5px;
+  border-radius: 0;
+}
+
+.item-body-pocket {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  align-items: flex-start;
+}
+
+.item-image-pocket {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  background: #ddd;
+  flex-shrink: 0;
+}
+
+.tema-escuro .item-image-pocket {
+  background: #2d2b2b;
+  border: 1px solid #666;
+}
+
+.item-info-pocket {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item-stats-pocket {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.item-stat.pocket {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #244b8e;
+  font-size: 10px;
+}
+
+.item-stat.pocket.ship {
+  border: 1px solid #00b1ca;
+}
+
+.item-stat.pocket .labeln {
+  background: #0074a1;
+  color: #fff;
+  padding: 2px;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.item-stat.pocket .value {
+  background: #eefaff;
+  color: #000;
+  padding: 2px;
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.tema-escuro .item-stat.pocket .value {
+  background: #2f2f2f;
+  color: #fff;
+}
+
+.item-price-pocket {
+  font-size: 11px;
+  padding: 4px 6px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #c3f3ff, transparent);
+  border: 1px solid #91a7bb;
+}
+
+.tema-escuro .item-price-pocket {
+  background: linear-gradient(45deg, #0e1f4966, transparent);
+  border: 1px solid #666;
+  color: #fff;
+}
+
+.item-description-pocket {
+  font-size: 11px;
+  padding: 5px 6px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #91a7bb;
+  color: #222;
+}
+
+.tema-escuro .item-description-pocket {
+  background: #2d2b2b;
+  border: 1px solid #666;
+  color: #f2f2f2;
+}
 
 
 
