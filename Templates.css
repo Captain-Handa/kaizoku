@@ -1363,9 +1363,12 @@
     text-shadow: 0 0 6px rgba(255,210,90,0.25);
 }
 
+
+/* Barco */
+
 .item-card.pocket {
   width: 320px;
-  line-height: 1.35;
+  line-height: 1.2;
   background: #f4f6f9;
   box-shadow: 0px 2px 4px #283b54;
   border-radius: 12px;
@@ -1455,35 +1458,3 @@
   background: #2f2f2f;
   color: #fff;
 }
-
-.item-price-pocket {
-  font-size: 11px;
-  padding: 4px 6px;
-  border-radius: 10px;
-  background: linear-gradient(45deg, #c3f3ff, transparent);
-  border: 1px solid #91a7bb;
-}
-
-.tema-escuro .item-price-pocket {
-  background: linear-gradient(45deg, #0e1f4966, transparent);
-  border: 1px solid #666;
-  color: #fff;
-}
-
-.item-description-pocket {
-  font-size: 11px;
-  padding: 5px 6px;
-  border-radius: 10px;
-  background: #fff;
-  border: 1px solid #91a7bb;
-  color: #222;
-}
-
-.tema-escuro .item-description-pocket {
-  background: #2d2b2b;
-  border: 1px solid #666;
-  color: #f2f2f2;
-}
-
-
-
