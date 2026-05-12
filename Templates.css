@@ -779,6 +779,7 @@
   padding: 5px;
   font-size: 13px;
   min-height: 50px;
+  border-radius: 15px;
 }
 
 .tema-escuro .ship-description {
