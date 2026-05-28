@@ -1539,7 +1539,7 @@
     width: 100%;
     box-sizing: border-box;
     margin: 6px 0;
-    padding: 8px 12px;
+    padding: 3px 6px;
     border-radius: 12px;
     font: 700 12px/1.35 Roboto, Arial, sans-serif;
     letter-spacing: .2px;
@@ -1949,7 +1949,10 @@
   text-overflow: ellipsis;
 }
 
-.mob-card-action dano {color: #cc3333; font-weight: 600;}
+.mob-card-stats dano {
+  color: #cc3333;
+  font-weight: 700;
+}
 
 /* COMUM */
 .mob-card.comum {
