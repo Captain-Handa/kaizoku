@@ -455,10 +455,11 @@
 }
 
 .akuma-box {
-  width: auto;
-  text-align: left;
-  -webkit-box-shadow: -3px 3px 0px 0px #1a1212;
-  background-image: linear-gradient(to right, #aa9cbb, #ffffff);
+    width: auto;
+    text-align: left;
+    -webkit-box-shadow: -3px 3px 0px 0px #1a1212;
+    background-image: linear-gradient(to right, #aa9cbb, #ffffff);
+    border-radius: 15px;
 }
 
 .tema-escuro .akuma-box { 
@@ -472,6 +473,7 @@
   box-shadow: -3px 3px 0px 1px #522472;
   border-left: 5px solid #a45fe1;
   margin: auto;
+    border-radius: 15PX;
 }
 
 .tema-escuro .akuma-talent {
@@ -485,6 +487,7 @@
   padding: 4px;
   margin: 2px;
   border-left: 5px solid #510303;
+    border-radius: 15PX;
 }
 
 .tema-escuro .akuma-tag {
@@ -497,32 +500,26 @@
   --b: 3px;
   float: right;
   margin-top: -20px;
+    margin-right: -20px;
   display: inline-block;
-  background: #000;
   padding: var(--b);
   filter: drop-shadow(1px 4px 6px #31313aa1);
-  -webkit-clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
-          clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+border-radius: 50%;
 }
 
 /* TAMANHO DO LOSANGO */
 .losango4 {
-  position: relative;
-  width: 200px;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  -webkit-clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
-          clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
-  filter: drop-shadow(4px 4px 0 #341515);
+    position: relative;
+    width: 160px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
 }
 
 .losango4 .slot-box {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  overflow: hidden;
-  -webkit-clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
-          clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+    position: absolute;
+    width: 33%;
+    overflow: hidden;
+    border-radius: 50%;
 }
 
 /* Posições dos 4 slots (em porcentagem do losango maior) */
@@ -537,9 +534,11 @@
   object-fit: cover;
   display: block;
 }
+
+
 .haki {
   position: relative;
-  background: linear-gradient(135deg, #f7fbff, #e8f2ff 70%, #ffffff00);
+  background: linear-gradient(135deg, #f7fbff, #e8f2ff 70%, rgba(255,255,255,0));
   min-height: 72px;
   padding: 10px 78px 10px 12px;
   margin: 6px 0;
@@ -559,7 +558,8 @@
   color: #16325c;
 }
 
-.haki img {
+/* IMPORTANTE: estiliza só a imagem decorativa do card */
+.haki .haki-icone {
   position: absolute;
   top: 6px;
   right: 6px;
@@ -573,8 +573,22 @@
   background: #dfe8f6;
 }
 
+/* garante que emojis/imagens inline do texto não sejam afetados */
+.haki img:not(.haki-icone) {
+  position: static;
+  width: auto;
+  height: auto;
+  max-height: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  margin: 0;
+  vertical-align: middle;
+}
+
 .tema-escuro .haki {
-  background: linear-gradient(135deg, #202733, #1a2130 70%, #ffffff00);
+  background: linear-gradient(135deg, #202733, #1a2130 70%, rgba(255,255,255,0));
   border: 1px solid #42526c;
   box-shadow: 0 4px 10px rgba(0,0,0,0.24);
   color: #edf3ff;
@@ -584,7 +598,7 @@
   color: #9fc3ff;
 }
 
-.tema-escuro .haki img {
+.tema-escuro .haki .haki-icone {
   border: 2px solid #394457;
   background: #2b3442;
 }
