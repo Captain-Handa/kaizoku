@@ -284,30 +284,37 @@
 .talento {
   /* outline: 2px solid #cccccc; */
   margin-top: -2px;
-  box-shadow: -3px 3px 0px 0px #3e4c5d;
+  box-shadow: -3px 0px 0px 0px #3e4c5d;
   margin-right: 7px;
+    border-radius: 9px;
+    margin-bottom: 1px;
 }
 
 .talento-g {
   /* outline: 2px solid #906666; */
   margin-top: -2px;
-  box-shadow: -3px 3px 0px 0px #654747;
+  box-shadow: -3px 0px 0px 0px #654747;
   margin-right: 7px;
+    border-radius: 9px;
+    margin-bottom: 1px;
 }
 
 .talento-l {
   /* outline: 2px solid #446350; */
   margin-top: -2px;
-  box-shadow: -3px 3px 0px 0px #3c5942;
+  box-shadow: -3px 0px 0px 0px #3c5942;
   margin-right: 7px;
-  border-radius: 15px;
+    border-radius: 9px;
+    margin-bottom: 1px;
 }
 
 .talento-a {
   /* outline: 2px solid #204c65; */
   margin-top: -2px;
-  box-shadow: -3px 3px 0px 0px #383f60;
+  box-shadow: -3px 0px 0px 0px #383f60;
   margin-right: 7px;
+    border-radius: 9px;
+    margin-bottom: 1px;
 }
 
 .talento-tag {
@@ -530,68 +537,152 @@
   object-fit: cover;
   display: block;
 }
-
 .haki {
-  background: linear-gradient(90deg, #e2f4ff, #ffe2e200);
-  width: auto;
-  height: 66px;
-  padding-left: 3px;
-  margin: auto;
-  border: 3px solid #3771a5;
-  box-shadow: -3px 3px 0px #000000;
-}
-
-.tema-escuro .haki { 
-  background: linear-gradient(90deg, #1d2425, #ffe2e200);
-}
-
-/* Contêiner */
-.haki-progress {
-  background: #222;
-  border: 3px solid #a3a3a3;
-  overflow: hidden;
-  height: 22px;
   position: relative;
-  box-shadow: -3px 3px 0px #000000;
+  background: linear-gradient(135deg, #f7fbff, #e8f2ff 70%, #ffffff00);
+  min-height: 72px;
+  padding: 10px 78px 10px 12px;
+  margin: 6px 0;
+  border: 1px solid #9ebfe0;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(36, 79, 146, 0.12);
+  box-sizing: border-box;
+  line-height: 1.35;
+  color: #223048;
+  overflow: hidden;
+}
+
+.haki b {
+  display: block;
+  margin-bottom: 2px;
+  font: 700 13px Roboto, Arial, sans-serif;
+  color: #16325c;
+}
+
+.haki img {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  margin: 0 !important;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.95);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.16);
+  background: #dfe8f6;
+}
+
+.tema-escuro .haki {
+  background: linear-gradient(135deg, #202733, #1a2130 70%, #ffffff00);
+  border: 1px solid #42526c;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.24);
+  color: #edf3ff;
+}
+
+.tema-escuro .haki b {
+  color: #9fc3ff;
+}
+
+.tema-escuro .haki img {
+  border: 2px solid #394457;
+  background: #2b3442;
+}
+
+/* CONTÊINER DA BARRA */
+.haki-progress {
+  position: relative;
+  height: 26px;
+  margin: 6px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #1f2430, #2b3342);
+  border: 1px solid rgba(0,0,0,0.25);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.08), 0 3px 8px rgba(0,0,0,0.14);
 }
 
 .haki-progress .fill {
   height: 100%;
-  background: linear-gradient(90deg, #3ec5ff, #2b8fff);
+  border-radius: 14px;
+  position: relative;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+.haki-progress .fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.20), rgba(255,255,255,0.02));
+  pointer-events: none;
 }
 
 .haki-progress .label {
   position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 0;
-  left: 0;
-  font-size: 12px;
-  line-height: 16px;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 700 11px Roboto, Arial, sans-serif;
   color: #fff;
-  filter: drop-shadow(2px 4px 6px black);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.55);
+  pointer-events: none;
 }
 
 .haki-progress .hakitipo {
   position: absolute;
-  width: 100%;
-  text-align: left;
-  top: 0;
-  left: 3px;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font: 700 10px Roboto, Arial, sans-serif;
+  letter-spacing: .8px;
   text-transform: uppercase;
-  color: #ffffff;
-  filter: drop-shadow(2px 4px 6px black);
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.45);
+  pointer-events: none;
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.haki-progress.conquistador .fill { background: linear-gradient(90deg, #854e10, #ffac2b); }
-.haki-progress.armamento .fill    { background: linear-gradient(90deg, #7e1818, #b31d1d); }
-.haki-progress.observacao .fill   { background: linear-gradient(90deg, #6b1174, #db72ea); }
-.haki-progress.elemental .fill    { background: linear-gradient(90deg, #2a7b2c, #57ad51); }
+/* CORES DOS HAKIS */
+.haki-progress.conquistador .fill {
+  background: linear-gradient(90deg, #8e5a14, #ffb73a);
+}
 
+.haki-progress.armamento .fill {
+  background: linear-gradient(90deg, #7c1818, #cf2d2d);
+}
+
+.haki-progress.observacao .fill {
+  background: linear-gradient(90deg, #671877, #d56bf2);
+}
+
+.haki-progress.elemental .fill {
+  background: linear-gradient(90deg, #2c7a38, #59bb64);
+}
+
+/* opcional: pequenas variantes por tipo no contorno */
+.haki-progress.conquistador {
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.08), 0 0 0 1px rgba(255,184,58,0.12), 0 3px 8px rgba(0,0,0,0.14);
+}
+
+.haki-progress.armamento {
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.08), 0 0 0 1px rgba(207,45,45,0.12), 0 3px 8px rgba(0,0,0,0.14);
+}
+
+.haki-progress.observacao {
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.08), 0 0 0 1px rgba(213,107,242,0.12), 0 3px 8px rgba(0,0,0,0.14);
+}
+
+.haki-progress.elemental {
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.08), 0 0 0 1px rgba(89,187,100,0.12), 0 3px 8px rgba(0,0,0,0.14);
+}
+
+.tema-escuro .haki-progress {
+  background: linear-gradient(180deg, #151922, #242c39);
+  border: 1px solid #3a4558;
+}
 .item-card {  
   line-height: 18px;
   background: #f4f6f9;
