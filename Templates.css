@@ -2,10 +2,10 @@
   width: 80%;
   min-height: 250px;
   background-color: #fff;
-  box-shadow: 0px 0px 5px #434e93;
   margin: auto;
-  border: 3px solid white;
-  border-radius: 20px;}
+  border: 6px solid white;
+  border-radius: 20px;
+}
 
 .tema-escuro .intro-1 {background-color: #171616;box-shadow: 0px 0px 5px #434e93;border: 3px solid #333333;}
 
@@ -23,26 +23,26 @@
 .tema-escuro .intro-2 {color: #ffffff;}
 
 .intro-title {
-  text-align: left;
-  text-transform: uppercase;
-  font: 900 35px / 50px var(--title2);
-  letter-spacing: -2px;
-  background-color: var(--usercolor);
-  /*background: -webkit-linear-gradient(1deg, #244b8e, #4face8);*/
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: -15px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: var(--usercolor);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: -15px;
+    font-family: "Mochiy Pop One", sans-serif;
 }
 
 .intro-tag {
   background-color: var(--usercolor);
-  /*background-image: linear-gradient(to right, #244688, #2892e0);*/
   text-align: right;
   text-transform: uppercase;
   font-weight: 700;
   color: #fff;
   padding: 2px 4px 2px 2px;
-  border-radius: 15px;
+  border-radius: 15px;  
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 10px;
 }
 
 .intro-tag b {
@@ -53,13 +53,13 @@
 }
 
 .intro-tag-2 {
-  background-color: #19324e;
-  border-radius: 15px;
-  /* clip-path: polygon(0% 0, 100% 0%, 95% 100%, 0% 100%); */
-  padding: 3px 15px 3px 9px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #fff;
+    background-color: #19324e;
+    border-radius: 15px;
+    padding: 3px 15px 3px 9px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: "Mochiy Pop One", sans-serif;
+    font-size: 10px;
 }
 
 .intro-tag-r {
