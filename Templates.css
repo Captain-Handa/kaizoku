@@ -26,7 +26,7 @@
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 2px;
-    background-color: var(--usercolor);
+    background-color: var(--corgeral);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: -15px;
@@ -34,7 +34,7 @@
 }
 
 .intro-tag {
-  background-color: var(--usercolor);
+  background-color: var(--corgeral);
   text-align: right;
   text-transform: uppercase;
   font-weight: 700;
@@ -78,17 +78,17 @@
 }
 
 .intro-img-1 {
-  box-shadow: 4px 4px 0px 0px #888fb8;
-  margin-left: 5px;
-  object-fit: cover;
-  border: 2px solid #abcdf3;
+    box-shadow: 4px 4px 0px 0px var(--corgeral);
+    margin-left: 5px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 .intro-img-2 {
-  box-shadow: 4px 4px 0px 0px #000;
-  border: 3px solid #ccc;
-  margin-left: 5px;
-  margin-top: 5px;
+    box-shadow: 4px 4px 0px 0px #000;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 20px;
 }
 
 .intro-img-3 {
@@ -1070,16 +1070,17 @@ border-radius: 50%;
 
 .rep-button,.rep-button:focus, .rep-button:active {
   border-radius: 10px;
-  background-image: linear-gradient(to right, #304c9f, #7789d4f7, #8b98e8);
+  background-image: linear-gradient(to right, #304c9f, #304c9f, #304c9f);
   border: 2px solid white;
+ border-radius: 20px;
 }
 
 .rep-button.fa_disliked {
-  background-image: linear-gradient(to right, #a52727, #a02badf7, #a48be8);
+  background-image: linear-gradient(to right, #a52727, #a52727, #a52727);
 }
 
 .rep-button.fa_liked {
-  background-image: linear-gradient(to right, #70af4c, #698842f7, #1a8365);
+  background-image: linear-gradient(to right, #70af4c, #70af4c, #70af4c);
 }
 
 .tema-escuro .rep-button, .rep-button:focus, .rep-button:active {
