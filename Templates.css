@@ -530,343 +530,340 @@ border-radius: 50%;
   display: block;
 }
 /*** HAKI — POWER TEMPLATE ***/
+/*** HAKI — TEMPLATE COMPACTO ***/
 
-.haki {
-  --haki-a: #244688;
-  --haki-b: #2892e0;
-  --haki-c: #9fc3ff;
-  --haki-glow: rgba(40,146,224,0.24);
-  --haki-bg: #f7fbff;
-  --haki-text: #223048;
-  --haki-border: rgba(36,70,136,0.34);
+.haki-wrap {
+  --haki-main: #244688;
+  --haki-sec: #2892e0;
+  --haki-soft: #eaf4ff;
+  --haki-dark: #17202f;
+  margin: 10px 0;
+}
+
+.haki-core {
   position: relative;
-  min-height: 78px;
-  padding: 8px 74px 10px 10px;
-  margin: 7px 0;
-  border: 1px solid var(--haki-border);
-  border-left: 6px solid var(--haki-a);
-  border-radius: 16px;
-  background: radial-gradient(circle at 92% 20%, var(--haki-glow) 0%, transparent 32%), linear-gradient(135deg, #ffffff 0%, var(--haki-bg) 58%, rgba(255,255,255,0.12) 100%);
-  box-shadow: 0 5px 12px rgba(36,79,146,0.14), inset 0 0 0 1px rgba(255,255,255,0.72);
-  box-sizing: border-box;
-  line-height: 1.35;
-  color: var(--haki-text);
   overflow: hidden;
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  margin: 10px 0 14px 0;
+  padding: 10px;
+  border-radius: 18px;
+  border: 3px solid #fff;
+  background: radial-gradient(circle at 92% 12%, var(--haki-sec) 0%, transparent 22%), linear-gradient(135deg, #ffffff 0%, var(--haki-soft) 70%, #ffffff00 100%);
+  box-shadow: 5px 5px 0 #1b171433;
+  color: #223048;
 }
 
-.haki:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 16px rgba(36,79,146,0.20), 0 0 0 1px var(--haki-glow), inset 0 0 0 1px rgba(255,255,255,0.78);
-}
-
-.haki:before {
+.haki-core:before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.45) 35%, transparent 62%);
-  transform: translateX(-70%);
-  opacity: .45;
+  background: linear-gradient(120deg, transparent 0%, #ffffff80 40%, transparent 70%);
+  opacity: .35;
   pointer-events: none;
 }
 
-.haki:hover:before {
-  animation: hakiShine 1.6s ease;
-}
-
-.haki:after {
-  content: "";
+.haki-core:after {
+  content: "HAKI";
   position: absolute;
-  right: 22px;
-  bottom: -20px;
-  width: 90px;
-  height: 90px;
-  border-radius: 100%;
-  background: radial-gradient(circle, var(--haki-glow) 0%, transparent 68%);
-  filter: blur(2px);
+  right: -8px;
+  bottom: -18px;
+  font: 900 52px Roboto, Arial, sans-serif;
+  color: rgba(0,0,0,0.06);
+  letter-spacing: -3px;
   pointer-events: none;
 }
 
-@keyframes hakiShine {
-  from { transform: translateX(-80%); }
-  to { transform: translateX(90%); }
+.haki-core.armamento {
+  --haki-main: #151922;
+  --haki-sec: #657180;
+  --haki-soft: #eef2f8;
 }
 
-.haki b {
-  display: block;
-  width: fit-content;
-  max-width: calc(100% - 4px);
-  margin: 0 0 4px 0;
-  padding: 3px 9px 3px 8px;
-  border-radius: 14px;
-  background: linear-gradient(to right, var(--haki-a), var(--haki-b));
-  box-shadow: 2px 2px 0 rgba(0,0,0,0.12);
-  font: 800 11px Roboto, Arial, sans-serif;
-  letter-spacing: .2px;
-  text-transform: uppercase;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.38);
+.haki-core.observacao {
+  --haki-main: #50176b;
+  --haki-sec: #c45ee4;
+  --haki-soft: #fbecff;
 }
 
-.haki .haki-icone {
-  position: absolute;
-  top: 7px;
-  right: 7px;
-  width: 60px;
-  height: 60px;
+.haki-core.transformacao,
+.haki-core.elemental {
+  --haki-main: #23613b;
+  --haki-sec: #61bd6d;
+  --haki-soft: #effff2;
+}
+
+.haki-core.conquistador {
+  --haki-main: #7a4310;
+  --haki-sec: #ffb73a;
+  --haki-soft: #fff4da;
+}
+
+.haki-head {
+  position: relative;
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.haki-head img {
+  width: 70px;
+  height: 70px;
   object-fit: cover;
-  margin: 0 !important;
-  border-radius: 15px;
-  border: 2px solid rgba(255,255,255,0.96);
-  box-shadow: 0 4px 9px rgba(0,0,0,0.20), 0 0 0 2px var(--haki-glow);
-  background: #dfe8f6;
-  z-index: 2;
+  border-radius: 18px;
+  border: 3px solid #fff;
+  box-shadow: 4px 4px 0 #0000002e;
+  background: var(--haki-main);
 }
 
-.haki img:not(.haki-icone) {
-  position: static;
-  width: auto;
-  height: auto;
-  max-height: none;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: transparent;
-  margin: 0;
-  vertical-align: middle;
+.haki-title {
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+  background: linear-gradient(to right, var(--haki-main), var(--haki-sec));
+  padding: 6px 10px;
+  border-radius: 16px;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 0 #0000002e;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #00000055;
 }
 
-/*** CORES POR TIPO DE HAKI — OPCIONAIS NOS CARDS ***/
-
-.haki.armamento {
-  --haki-a: #151922;
-  --haki-b: #5b6573;
-  --haki-c: #cfd7e6;
-  --haki-glow: rgba(83,96,116,0.30);
-  --haki-bg: #edf1f7;
-  --haki-border: rgba(40,48,64,0.38);
+.haki-desc {
+  margin-top: 5px;
+  font: 12px/15px Roboto, Arial, sans-serif;
+  text-align: justify;
 }
 
-.haki.observacao {
-  --haki-a: #53166b;
-  --haki-b: #d56bf2;
-  --haki-c: #f0c8ff;
-  --haki-glow: rgba(213,107,242,0.28);
-  --haki-bg: #fbf0ff;
-  --haki-border: rgba(126,43,160,0.36);
+.haki-base {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 7px 0;
 }
 
-.haki.conquistador {
-  --haki-a: #7a4310;
-  --haki-b: #ffb73a;
-  --haki-c: #ffe8b0;
-  --haki-glow: rgba(255,183,58,0.32);
-  --haki-bg: #fff7e6;
-  --haki-border: rgba(168,100,20,0.40);
+.haki-chip {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 14px;
+  background: linear-gradient(to right, var(--haki-main), var(--haki-sec));
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 0 #00000024;
+  color: #fff;
+  font: 800 10px Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #0000004d;
 }
 
-.haki.elemental,
-.haki.transformacao {
-  --haki-a: #22613a;
-  --haki-b: #59bb64;
-  --haki-c: #c9ffd0;
-  --haki-glow: rgba(89,187,100,0.28);
-  --haki-bg: #effff2;
-  --haki-border: rgba(47,125,67,0.36);
+.haki-texto-base {
+  position: relative;
+  margin: 6px 0 8px 0;
+  padding: 7px 9px;
+  border-radius: 14px;
+  border-left: 6px solid var(--haki-main);
+  background: #ffffffb8;
+  box-shadow: inset 0 0 0 1px #ffffff;
+  font: 12px/15px Roboto, Arial, sans-serif;
 }
 
-/*** CORES POR GRAU — OPCIONAL ***/
+/*** GRAUS ***/
 
-.haki.grau-1 { border-left-color: #5e8ed6; }
-.haki.grau-2 { border-left-color: #5ab878; }
-.haki.grau-3 { border-left-color: #d6a13b; }
-.haki.grau-4 { border-left-color: #c75a5a; }
-.haki.grau-5 {
-  border-left-color: #9b6cff;
-  box-shadow: 0 6px 16px var(--haki-glow), 0 0 0 1px rgba(255,255,255,0.65), inset 0 0 18px rgba(255,255,255,0.20);
+.haki-graus {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 8px;
 }
 
-/*** BARRAS DE PROGRESSO — POWER ***/
+.haki-grau {
+  position: relative;
+  min-height: 52px;
+  padding: 6px 48px 6px 8px;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--haki-main) 42%, #ffffff);
+  border-left: 6px solid var(--haki-main);
+  background: linear-gradient(135deg, #ffffffd9, var(--haki-soft));
+  box-shadow: 3px 3px 0 #00000020;
+  overflow: hidden;
+}
+
+.haki-grau:hover {
+  transform: translateY(-1px);
+  box-shadow: 4px 5px 0 #00000026;
+}
+
+.haki-grau.full {
+  grid-column: 1 / -1;
+}
+
+.haki-grau img {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 11px;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 0 #0000002b;
+  background: var(--haki-main);
+}
+
+.haki-grau .grau-tag {
+  display: inline-block;
+  margin-bottom: 3px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: linear-gradient(to right, var(--haki-main), var(--haki-sec));
+  color: #fff;
+  font: 900 9px Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #0000004d;
+}
+
+.haki-grau b {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--haki-main);
+  font: 900 11px Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.haki-grau span {
+  display: block;
+  font: 12px/14px Roboto, Arial, sans-serif;
+}
+
+/*** BARRA DE TREINO COMPACTA ***/
 
 .haki-progress {
-  --bar-a: #244688;
-  --bar-b: #2892e0;
-  --bar-glow: rgba(40,146,224,0.28);
+  --bar-a: var(--haki-main);
+  --bar-b: var(--haki-sec);
   position: relative;
-  height: 30px;
-  margin: 7px 0;
-  border-radius: 18px;
+  height: 24px;
+  margin: 5px 0;
+  border-radius: 14px;
   overflow: hidden;
   background: linear-gradient(180deg, #151922, #242c39);
   border: 1px solid rgba(0,0,0,0.35);
-  box-shadow: inset 0 1px 2px rgba(255,255,255,0.10), 0 4px 10px rgba(0,0,0,0.18), 0 0 0 1px var(--bar-glow);
-}
-
-.haki-progress:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 6px, transparent 6px, transparent 12px);
-  opacity: .45;
-  pointer-events: none;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.10), 0 3px 8px rgba(0,0,0,0.16);
 }
 
 .haki-progress .fill {
   height: 100%;
-  border-radius: 18px;
+  border-radius: 14px;
   position: relative;
   background: linear-gradient(90deg, var(--bar-a), var(--bar-b));
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.28), 0 0 14px var(--bar-glow);
-  overflow: hidden;
-}
-
-.haki-progress .fill:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(135deg, rgba(255,255,255,0.22) 0px, rgba(255,255,255,0.22) 7px, transparent 7px, transparent 14px);
-  opacity: .28;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.26), 0 0 12px color-mix(in srgb, var(--bar-b) 50%, transparent);
 }
 
 .haki-progress .fill:after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.36), rgba(255,255,255,0.03) 50%, rgba(0,0,0,0.12));
-  pointer-events: none;
-}
-
-.haki-progress .label {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  min-width: 42px;
-  text-align: right;
-  font: 900 11px Roboto, Arial, sans-serif;
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.65);
-  pointer-events: none;
-  z-index: 3;
+  background: linear-gradient(180deg, rgba(255,255,255,0.30), rgba(255,255,255,0.03));
 }
 
 .haki-progress .hakitipo {
   position: absolute;
-  left: 11px;
+  left: 9px;
   top: 50%;
   transform: translateY(-50%);
-  font: 900 10px Roboto, Arial, sans-serif;
-  letter-spacing: .8px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.96);
-  text-shadow: 0 1px 3px rgba(0,0,0,0.60);
-  pointer-events: none;
-  max-width: calc(100% - 72px);
-  white-space: nowrap;
+  max-width: calc(100% - 64px);
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
-  z-index: 3;
+  color: #fff;
+  font: 900 9px Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  text-shadow: 1px 1px 2px #000;
+  z-index: 2;
 }
 
-/*** CORES DAS BARRAS ***/
-
-.haki-progress.conquistador {
-  --bar-a: #7a4310;
-  --bar-b: #ffb73a;
-  --bar-glow: rgba(255,183,58,0.30);
+.haki-progress .label {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font: 900 10px Roboto, Arial, sans-serif;
+  text-shadow: 1px 1px 2px #000;
+  z-index: 2;
 }
+
+/*** CORES DAS BARRAS ANTIGAS ***/
 
 .haki-progress.armamento {
   --bar-a: #151922;
-  --bar-b: #77808d;
-  --bar-glow: rgba(125,132,145,0.26);
+  --bar-b: #657180;
 }
 
 .haki-progress.observacao {
-  --bar-a: #53166b;
-  --bar-b: #d56bf2;
-  --bar-glow: rgba(213,107,242,0.30);
+  --bar-a: #50176b;
+  --bar-b: #c45ee4;
 }
 
 .haki-progress.elemental,
 .haki-progress.transformacao {
-  --bar-a: #22613a;
-  --bar-b: #59bb64;
-  --bar-glow: rgba(89,187,100,0.30);
+  --bar-a: #23613b;
+  --bar-b: #61bd6d;
 }
 
-/*** BLOCO DE GRUPO OPCIONAL PARA HAKIS ***/
-
-.haki-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin: 7px 0;
-}
-
-.haki-grid .haki {
-  margin: 0;
-}
-
-.haki-grid.dois .haki {
-  width: calc(50% - 4px);
-}
-
-.haki-grid.tres .haki {
-  width: calc(33.333% - 5px);
+.haki-progress.conquistador {
+  --bar-a: #7a4310;
+  --bar-b: #ffb73a;
 }
 
 /*** TEMA ESCURO ***/
 
-.tema-escuro .haki {
-  --haki-bg: #1b2330;
-  --haki-text: #edf3ff;
-  background: radial-gradient(circle at 92% 20%, var(--haki-glow) 0%, transparent 32%), linear-gradient(135deg, #202733 0%, var(--haki-bg) 64%, rgba(255,255,255,0.02) 100%);
-  border-color: rgba(255,255,255,0.10);
-  box-shadow: 0 5px 12px rgba(0,0,0,0.26), inset 0 0 0 1px rgba(255,255,255,0.04);
-  color: var(--haki-text);
+.tema-escuro .haki-core {
+  background: radial-gradient(circle at 92% 12%, var(--haki-sec) 0%, transparent 22%), linear-gradient(135deg, #171d27 0%, #10141d 72%, #ffffff00 100%);
+  border-color: #2d3442;
+  color: #edf3ff;
 }
 
-.tema-escuro .haki:hover {
-  box-shadow: 0 8px 18px rgba(0,0,0,0.34), 0 0 0 1px var(--haki-glow), inset 0 0 0 1px rgba(255,255,255,0.06);
+.tema-escuro .haki-core:after {
+  color: rgba(255,255,255,0.04);
 }
 
-.tema-escuro .haki .haki-icone {
-  border: 2px solid #394457;
-  background: #2b3442;
+.tema-escuro .haki-texto-base {
+  background: #111820cc;
+  box-shadow: inset 0 0 0 1px #2c3544;
 }
 
-.tema-escuro .haki-progress {
-  background: linear-gradient(180deg, #10141d, #242c39);
-  border: 1px solid #3a4558;
+.tema-escuro .haki-grau {
+  background: linear-gradient(135deg, #17202dcc, #111820);
+  border-color: #354255;
+}
+
+.tema-escuro .haki-grau b {
+  color: #ffffff;
 }
 
 /*** RESPONSIVO ***/
 
 @media only screen and (max-width: 700px) {
-  .haki {
-    padding: 8px 10px 10px 10px;
-    min-height: auto;
+  .haki-head {
+    grid-template-columns: 58px 1fr;
   }
 
-  .haki .haki-icone {
-    position: relative;
-    float: right;
-    top: auto;
-    right: auto;
+  .haki-head img {
     width: 54px;
     height: 54px;
-    margin: 0 0 5px 8px !important;
+    border-radius: 14px;
   }
 
-  .haki-grid.dois .haki,
-  .haki-grid.tres .haki {
-    width: 100%;
+  .haki-title {
+    font-size: 13px;
+    line-height: 15px;
   }
 
-  .haki-progress .hakitipo {
-    max-width: calc(100% - 64px);
-    font-size: 9px;
+  .haki-graus {
+    grid-template-columns: 1fr;
   }
 }
 
