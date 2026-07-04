@@ -2129,3 +2129,485 @@ border-radius: 50%;
   width: 100%;
   margin: 10px auto;
 }
+
+
+/****************************** Brincadeira ***********************/
+
+/*** CARREIRA PIRATA — DESIGN FINAL ***/
+
+.carreira-pirata {
+  --pirata-mar: #123b59;
+  --pirata-mar-2: #2f8cc2;
+  --pirata-ouro: #d99a2b;
+  --pirata-ouro-2: #ffe29a;
+  --pirata-vermelho: #9f2e24;
+  --pirata-vermelho-2: #e06d48;
+  --pirata-verde: #2f6f4e;
+  --pirata-verde-2: #91d4a7;
+  --pirata-roxo: #4a2f68;
+  --pirata-roxo-2: #a98ad6;
+  --pirata-preto: #17151a;
+  --pirata-papel: #fff8e7;
+  --pirata-papel-2: #f3dfb2;
+  --pirata-borda: #2b1c11;
+  --pirata-texto: #25170f;
+  --pirata-sombra: 5px 5px 0px 0px #1b1714;
+
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 10%, #fff3c5 0%, transparent 20%),
+    radial-gradient(circle at 90% 25%, #bfe8ff 0%, transparent 22%),
+    linear-gradient(180deg, var(--pirata-papel), #ffffff 48%, #e9f7ff 100%);
+  border: 3px solid #ffffff;
+  box-shadow: 0px 0px 8px #20384e99;
+  color: var(--pirata-texto);
+}
+
+.tema-escuro .carreira-pirata {
+  background:
+    radial-gradient(circle at 15% 10%, #593f1d 0%, transparent 22%),
+    radial-gradient(circle at 90% 25%, #123b59 0%, transparent 24%),
+    linear-gradient(180deg, #181613, #141820 55%, #10131a 100%);
+  color: #f8ead1;
+  border-color: #2d2d2d;
+}
+
+/*** HERO ***/
+
+.carreira-pirata .pirata-hero {
+  position: relative;
+  padding: 22px;
+  margin: -25px -25px 20px -25px;
+  min-height: 170px;
+  background:
+    linear-gradient(135deg, #0e2435 0%, #123b59 40%, #2f8cc2 100%);
+  border-bottom: 5px solid var(--pirata-ouro);
+  overflow: hidden;
+}
+
+.carreira-pirata .pirata-hero:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0%, #ffffff1c 45%, transparent 70%),
+    radial-gradient(circle at 20% 80%, #ffe29a55 0%, transparent 22%);
+  pointer-events: none;
+}
+
+.carreira-pirata .pirata-hero:after {
+  content: "☠";
+  position: absolute;
+  right: 24px;
+  bottom: -38px;
+  font-size: 150px;
+  line-height: 150px;
+  color: #ffffff18;
+  font-family: serif;
+  pointer-events: none;
+}
+
+.carreira-pirata .pirata-label {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to right, var(--pirata-ouro), var(--pirata-ouro-2));
+  color: #2b1c11;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 2px solid #fff4c8;
+  box-shadow: 3px 3px 0px #11111155;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.carreira-pirata .pirata-titulo {
+  position: relative;
+  margin-top: 10px;
+  color: #fff;
+  font-family: var(--title2);
+  font-size: 42px;
+  line-height: 42px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  text-shadow: 3px 3px 0px #00000066;
+}
+
+.carreira-pirata .pirata-subtitulo {
+  position: relative;
+  max-width: 620px;
+  margin-top: 8px;
+  color: #fff8dd;
+  font-family: calibri;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: justify;
+}
+
+/*** TAGS REFINADAS DENTRO DA CARREIRA ***/
+
+.carreira-pirata .intro-tag {
+  background: linear-gradient(to right, var(--pirata-mar), var(--pirata-mar-2));
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 18px;
+  border: 2px solid #ffffff;
+  box-shadow: 3px 3px 0px #00000033;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 10px;
+  margin: 12px 0px 8px 0px;
+}
+
+.carreira-pirata .intro-tag-2 {
+  display: inline-block;
+  background: linear-gradient(to right, #2b1c11, #70481f);
+  border-radius: 18px;
+  border: 2px solid #ffffff;
+  box-shadow: 2px 2px 0px #00000030;
+  padding: 4px 14px 4px 10px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 10px;
+  margin: 3px 2px;
+}
+
+.carreira-pirata .intro-tag-2 xp,
+.carreira-pirata xp {
+  float: right;
+  margin-left: 8px;
+  color: #ffe29a;
+  filter: drop-shadow(1px 1px 0px #000);
+}
+
+/*** BLOCO DE REGRAS ***/
+
+.pirata-regra {
+  background: #ffffffb8;
+  border: 2px solid #e1c27d;
+  border-left: 8px solid var(--pirata-ouro);
+  border-radius: 15px;
+  padding: 10px 12px;
+  margin: 10px 0px;
+  box-shadow: 3px 3px 0px #0000001f;
+  font-family: calibri;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.tema-escuro .pirata-regra {
+  background: #111820cc;
+  border-color: #5e4720;
+  color: #f8ead1;
+}
+
+/*** RUMOS INICIAIS ***/
+
+.rumos-pirata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0px 18px 0px;
+}
+
+.rumo-card {
+  --rumo-cor: var(--pirata-mar);
+  --rumo-cor-2: var(--pirata-mar-2);
+
+  flex: 1;
+  min-width: 210px;
+  background: #ffffffcc;
+  border: 3px solid #ffffff;
+  border-radius: 20px;
+  box-shadow: var(--pirata-sombra);
+  overflow: hidden;
+  position: relative;
+}
+
+.tema-escuro .rumo-card {
+  background: #151515cc;
+  border-color: #2e2e2e;
+}
+
+.rumo-card:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(160deg, var(--rumo-cor) 0%, transparent 42%),
+    radial-gradient(circle at 85% 15%, var(--rumo-cor-2) 0%, transparent 25%);
+  opacity: .16;
+  pointer-events: none;
+}
+
+.rumo-topo {
+  position: relative;
+  background: linear-gradient(to right, var(--rumo-cor), var(--rumo-cor-2));
+  color: #fff;
+  padding: 8px 10px;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px #00000050;
+  border-bottom: 3px solid #ffffff;
+}
+
+.tema-escuro .rumo-topo {
+  border-bottom-color: #2e2e2e;
+}
+
+.rumo-corpo {
+  position: relative;
+  padding: 10px;
+  font-size: 13px;
+  line-height: 17px;
+  font-family: calibri;
+}
+
+.rumo-icone {
+  float: right;
+  width: 58px;
+  height: 58px;
+  margin-left: 8px;
+  margin-bottom: 4px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--rumo-cor), var(--rumo-cor-2));
+  border: 3px solid #ffffff;
+  box-shadow: 3px 3px 0px #0000003d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  text-shadow: 2px 2px 0px #00000066;
+}
+
+.rumo-beneficio {
+  clear: both;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 14px;
+  background: #f7ead0;
+  border-left: 6px solid var(--rumo-cor);
+  box-shadow: inset 0px 0px 0px 1px #ffffff;
+}
+
+.tema-escuro .rumo-beneficio {
+  background: #211d19;
+  box-shadow: inset 0px 0px 0px 1px #3a3028;
+}
+
+.rumo-lobo {
+  --rumo-cor: #751b1b;
+  --rumo-cor-2: #e06d48;
+}
+
+.rumo-mandriao {
+  --rumo-cor: #123b59;
+  --rumo-cor-2: #2f8cc2;
+}
+
+.rumo-explorador {
+  --rumo-cor: #7a4b12;
+  --rumo-cor-2: #d99a2b;
+}
+
+/*** TRILHA PIRATA ***/
+
+.trilha-pirata {
+  position: relative;
+  margin-top: 15px;
+  padding-left: 14px;
+}
+
+.trilha-pirata:before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  bottom: 10px;
+  width: 5px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, var(--pirata-ouro), var(--pirata-mar-2), var(--pirata-vermelho));
+  box-shadow: 2px 0px 0px #ffffff;
+}
+
+.talento-pirata {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  margin: 10px 0px 10px 18px;
+  background: #ffffffd9;
+  border: 3px solid #ffffff;
+  border-radius: 18px;
+  box-shadow: 4px 4px 0px #1b171433;
+  overflow: hidden;
+}
+
+.tema-escuro .talento-pirata {
+  background: #141820d9;
+  border-color: #303030;
+}
+
+.talento-pirata:before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 24px;
+  width: 18px;
+  height: 18px;
+  background: var(--pirata-ouro);
+  border: 3px solid #ffffff;
+  border-radius: 100%;
+  box-shadow: 2px 2px 0px #00000040;
+  z-index: 2;
+}
+
+.talento-tier {
+  width: 78px;
+  min-width: 78px;
+  background: linear-gradient(180deg, var(--pirata-mar), var(--pirata-preto));
+  color: #fff;
+  font-family: "Mochiy Pop One", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 3px solid #ffffff;
+}
+
+.tema-escuro .talento-tier {
+  border-right-color: #303030;
+}
+
+.talento-tier b {
+  display: block;
+  font-size: 18px;
+  line-height: 20px;
+  color: var(--pirata-ouro-2);
+}
+
+.talento-tier span {
+  display: block;
+  font-size: 9px;
+  line-height: 12px;
+}
+
+.talento-conteudo {
+  flex: 1;
+  padding: 9px 10px;
+}
+
+.talento-nome {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 5px;
+  color: #2b1c11;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.tema-escuro .talento-nome {
+  color: #ffe7ad;
+}
+
+.talento-custo {
+  white-space: nowrap;
+  background: linear-gradient(to right, var(--pirata-ouro), var(--pirata-ouro-2));
+  color: #2b1c11;
+  padding: 3px 8px;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  font-size: 9px;
+  box-shadow: 2px 2px 0px #00000030;
+}
+
+.talento-efeito {
+  font-family: calibri;
+  font-size: 13px;
+  line-height: 17px;
+  text-align: justify;
+}
+
+.talento-nota {
+  margin-top: 6px;
+  padding: 5px 8px;
+  border-radius: 12px;
+  background: #f3dfb2;
+  border-left: 5px solid var(--pirata-ouro);
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.tema-escuro .talento-nota {
+  background: #201b14;
+}
+
+/*** VARIAÇÕES DE TALENTOS ***/
+
+.talento-pirata.saque .talento-tier {
+  background: linear-gradient(180deg, #7a4b12, #2b1c11);
+}
+
+.talento-pirata.abordagem .talento-tier {
+  background: linear-gradient(180deg, #751b1b, #251111);
+}
+
+.talento-pirata.nome .talento-tier {
+  background: linear-gradient(180deg, #123b59, #111820);
+}
+
+.talento-pirata.lenda .talento-tier {
+  background: linear-gradient(180deg, #4a2f68, #17151a);
+}
+
+/*** RESPONSIVO ***/
+
+@media only screen and (max-width: 700px) {
+  .carreira-pirata .pirata-titulo {
+    font-size: 32px;
+    line-height: 34px;
+  }
+
+  .rumos-pirata {
+    display: block;
+  }
+
+  .rumo-card {
+    margin-bottom: 12px;
+  }
+
+  .talento-pirata {
+    display: block;
+    margin-left: 18px;
+  }
+
+  .talento-tier {
+    width: auto;
+    min-width: auto;
+    border-right: 0px;
+    border-bottom: 3px solid #ffffff;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .talento-nome {
+    display: block;
+  }
+
+  .talento-custo {
+    display: inline-block;
+    margin-top: 5px;
+  }
+}
