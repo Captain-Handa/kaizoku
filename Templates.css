@@ -867,6 +867,326 @@ border-radius: 50%;
   }
 }
 
+/*** HAKI — TEMPLATE COMPACTO FINAL ***/
+
+.haki-section {
+  --haki-main: #244688;
+  --haki-sec: #2892e0;
+  --haki-soft: #eef6ff;
+  --haki-shadow: #171414;
+  position: relative;
+  margin: 16px 0 18px 0;
+  padding: 8px;
+  border-radius: 20px;
+  border: 3px solid #ffffff;
+  background: radial-gradient(circle at 92% 18%, color-mix(in srgb, var(--haki-sec) 36%, transparent) 0%, transparent 30%), linear-gradient(135deg, #ffffff 0%, var(--haki-soft) 70%, #ffffff 100%);
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.18);
+  overflow: hidden;
+}
+
+.haki-section:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.42) 42%, transparent 72%);
+  opacity: .45;
+  pointer-events: none;
+}
+
+.haki-armamento {
+  --haki-main: #151922;
+  --haki-sec: #66717f;
+  --haki-soft: #edf1f7;
+}
+
+.haki-observacao {
+  --haki-main: #50176b;
+  --haki-sec: #c45ee4;
+  --haki-soft: #fbecff;
+}
+
+.haki-transformacao {
+  --haki-main: #23613b;
+  --haki-sec: #61bd6d;
+  --haki-soft: #effff2;
+}
+
+.haki-conquistador {
+  --haki-main: #7a4310;
+  --haki-sec: #ffb73a;
+  --haki-soft: #fff4da;
+}
+
+.haki-banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 8px;
+}
+
+.haki-banner-img {
+  width: 78px;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 3px solid #ffffff;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.24);
+  background: var(--haki-main);
+}
+
+.haki-banner-info {
+  min-height: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.haki-banner-title {
+  width: fit-content;
+  max-width: calc(100% - 8px);
+  padding: 5px 12px;
+  border-radius: 16px;
+  border: 2px solid #ffffff;
+  background: linear-gradient(to right, var(--haki-main), var(--haki-sec));
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.20);
+  color: #ffffff;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.45);
+}
+
+.haki-banner-desc {
+  margin-top: 5px;
+  padding: 7px 9px;
+  border-radius: 14px;
+  border-left: 6px solid var(--haki-main);
+  background: rgba(255,255,255,0.74);
+  box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.70);
+  color: #223048;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: justify;
+}
+
+.haki-grade-title {
+  position: relative;
+  display: inline-block;
+  margin: 8px 0 6px 0;
+  padding: 4px 12px;
+  border-radius: 15px;
+  border: 2px solid #ffffff;
+  background: linear-gradient(to right, var(--haki-main), var(--haki-sec));
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.20);
+  color: #ffffff;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 10px;
+  line-height: 13px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.45);
+}
+
+.haki-grade-list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin: 4px 0 6px 0;
+}
+
+.haki-grade {
+  position: relative;
+  min-height: 50px;
+  padding: 6px 48px 6px 8px;
+  border-radius: 15px;
+  border: 1px solid color-mix(in srgb, var(--haki-main) 35%, #ffffff);
+  border-left: 6px solid var(--haki-main);
+  background: linear-gradient(135deg, rgba(255,255,255,0.92), var(--haki-soft));
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.14);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.haki-grade.full {
+  grid-column: 1 / -1;
+}
+
+.haki-grade .haki-icone {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  margin: 0 !important;
+  border-radius: 11px;
+  border: 2px solid #ffffff;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.20);
+  background: var(--haki-main);
+}
+
+.haki-grade-rank {
+  display: inline-block;
+  margin-bottom: 2px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: linear-gradient(to right, var(--haki-main), var(--haki-sec));
+  color: #ffffff;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 11px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.45);
+}
+
+.haki-grade-name {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--haki-main);
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 13px;
+  text-transform: uppercase;
+}
+
+.haki-grade-text {
+  display: block;
+  color: #223048;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.haki-progress {
+  position: relative;
+  height: 24px;
+  margin: 5px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #151922, #242c39);
+  border: 1px solid rgba(0,0,0,0.35);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.10), 0 3px 8px rgba(0,0,0,0.16);
+}
+
+.haki-progress .fill {
+  height: 100%;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.26);
+}
+
+.haki-progress .fill:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.30), rgba(255,255,255,0.03));
+}
+
+.haki-progress .hakitipo {
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: calc(100% - 64px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #ffffff;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px #000000;
+  z-index: 2;
+}
+
+.haki-progress .label {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  text-shadow: 1px 1px 2px #000000;
+  z-index: 2;
+}
+
+.haki-progress.armamento .fill {
+  background: linear-gradient(90deg, #151922, #66717f);
+}
+
+.haki-progress.observacao .fill {
+  background: linear-gradient(90deg, #50176b, #c45ee4);
+}
+
+.haki-progress.elemental .fill,
+.haki-progress.transformacao .fill {
+  background: linear-gradient(90deg, #23613b, #61bd6d);
+}
+
+.haki-progress.conquistador .fill {
+  background: linear-gradient(90deg, #7a4310, #ffb73a);
+}
+
+.haki-section img:not(.haki-banner-img):not(.haki-icone) {
+  position: static;
+  width: auto;
+  height: auto;
+  max-height: none;
+}
+
+.tema-escuro .haki-section {
+  background: radial-gradient(circle at 92% 18%, color-mix(in srgb, var(--haki-sec) 28%, transparent) 0%, transparent 30%), linear-gradient(135deg, #171d27 0%, #10141d 72%, #151922 100%);
+  border-color: #2d3442;
+  color: #edf3ff;
+}
+
+.tema-escuro .haki-banner-desc {
+  background: rgba(17,24,32,0.82);
+  box-shadow: inset 0px 0px 0px 1px #2c3544;
+  color: #edf3ff;
+}
+
+.tema-escuro .haki-grade {
+  background: linear-gradient(135deg, #17202dcc, #111820);
+  border-color: #354255;
+}
+
+.tema-escuro .haki-grade-name,
+.tema-escuro .haki-grade-text {
+  color: #edf3ff;
+}
+
+@media only screen and (max-width: 700px) {
+  .haki-banner {
+    grid-template-columns: 62px 1fr;
+  }
+
+  .haki-banner-img {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+  }
+
+  .haki-banner-title {
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  .haki-grade-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .item-card {  
     line-height: 18px;
     background: #f4f6f9;
