@@ -3140,3 +3140,170 @@ border-radius: 50%;
     margin-top: 5px;
   }
 }
+
+body.tema-sanji .narra,
+body.tema-zoro .narra {
+  background-color: #2e2e2ecf !important;
+}
+
+body.tema-sanji .intro-2,
+body.tema-zoro .intro-2 {
+  color: #fff !important;
+  text-align: justify;
+}
+
+body.tema-sanji .narra negativo,
+body.tema-zoro .narra negativo {
+  background: linear-gradient(135deg, #383838c7, #5914147a) !important;
+  color: #dd7272 !important;
+}
+
+body.tema-sanji .narra positivo,
+body.tema-zoro .narra positivo {
+  background: linear-gradient(135deg, #383838c7, #11215c) !important;
+  color: #8496ff !important;
+}
+
+body.tema-sanji .narra neutro,
+body.tema-zoro .narra neutro {
+  background: linear-gradient(135deg, #ffffff00, #f2f4f703) !important;
+  color: #edf3ff !important;
+}
+
+body.tema-sanji .dialog-card,
+body.tema-zoro .dialog-card {
+  background: #222325 !important;
+}
+
+body.tema-sanji .dialog-card-2,
+body.tema-zoro .dialog-card-2 {
+  background: #212223 !important;
+}
+
+body.tema-sanji .dialog-text,
+body.tema-zoro .dialog-text {
+  background: #1b1b1b !important;
+}
+
+body.tema-sanji .mob-card-stats span,
+body.tema-zoro .mob-card-stats span {
+  background: #17171763 !important;
+  color: #ffffff !important;
+  border: 1px solid #393939 !important;
+}
+
+body.tema-sanji .mob-card-img,
+body.tema-zoro .mob-card-img {
+  border-radius: 8px;
+  border: 2px solid #363636 !important;
+}
+
+body.tema-sanji .mob-card.comum,
+body.tema-zoro .mob-card.comum {
+  background: linear-gradient(135deg, #00000073, #2a3a53) !important;
+}
+
+body.tema-sanji .mob-card.raro,
+body.tema-zoro .mob-card.raro {
+  background: linear-gradient(135deg, #f3effb00, #201235) !important;
+}
+
+body.tema-sanji .mob-card.lendario,
+body.tema-zoro .mob-card.lendario {
+  background: linear-gradient(135deg, #83774600, #443c09) !important;
+}
+
+body.tema-sanji h5.page-title,
+body.tema-zoro h5.page-title {
+  border: 1px solid var(--corgeral) !important;
+  background: #000000 !important;
+}
+
+body.tema-sanji blockquote,
+body.tema-zoro blockquote {
+  background: linear-gradient(180deg, #1b1b1b61, #000000ad) !important;
+  border: 1px solid #001334 !important;
+  border-left: 4px solid #001025 !important;
+  color: #ffffff !important;
+}
+
+body.tema-sanji .codebox.hidecode dd,
+body.tema-zoro .codebox.hidecode dd,
+body.tema-sanji .codebox.spoiler dd,
+body.tema-zoro .codebox.spoiler dd,
+body.tema-sanji .codebox.hidecode .content,
+body.tema-zoro .codebox.hidecode .content,
+body.tema-sanji .codebox.spoiler .content,
+body.tema-zoro .codebox.spoiler .content {
+  background: #1f2021 !important;
+  color: #ffffff !important;
+}
+
+body.tema-sanji .hidden,
+body.tema-zoro .hidden {
+  background: linear-gradient(to bottom, #f7f9fc00, #e9eef700) !important;
+  border: 1px solid #010203 !important;
+  border-left: 5px solid #000204 !important;
+  color: #fefefe !important;
+}
+
+body.tema-sanji .codebox.hidecode,
+body.tema-zoro .codebox.hidecode,
+body.tema-sanji .codebox.spoiler,
+body.tema-zoro .codebox.spoiler {
+  background: #122e53 !important;
+  border: 1px solid #122e53 !important;
+}
+
+body.tema-sanji .codebox.hidecode dt,
+body.tema-zoro .codebox.hidecode dt,
+body.tema-sanji .codebox.spoiler dt,
+body.tema-zoro .codebox.spoiler dt,
+body.tema-sanji .codebox.hidecode summary,
+body.tema-zoro .codebox.hidecode summary,
+body.tema-sanji .codebox.spoiler summary,
+body.tema-zoro .codebox.spoiler summary {
+  background: linear-gradient(to right, #244688, #041725) !important;
+}
+
+body.tema-sanji dl.codebox dd,
+body.tema-zoro dl.codebox dd {
+  background: #222222 !important;
+}
+
+body.tema-sanji dl.codebox code,
+body.tema-zoro dl.codebox code,
+body.tema-sanji dl.codebox pre,
+body.tema-zoro dl.codebox pre {
+  color: #ffffff !important;
+}
+
+body.tema-sanji dl.codebox dt,
+body.tema-zoro dl.codebox dt {
+  background: linear-gradient(to right, #244688, #041827) !important;
+}
+
+body.tema-sanji div.sceditor-toolbar,
+body.tema-zoro div.sceditor-toolbar {
+  border-bottom: 1px solid #000000 !important;
+  background: #2a2a2a !important;
+}
+
+body.tema-sanji .sceditor-container,
+body.tema-zoro .sceditor-container {
+  background: #000000 !important;
+  border: 1px solid #d9d9d9 !important;
+  color: #ffffff !important;
+}
+
+body.tema-sanji #textarea_content,
+body.tema-zoro #textarea_content {
+  border: 2px solid #464646 !important;
+}
+
+body.tema-sanji .sceditor-container iframe,
+body.tema-zoro .sceditor-container iframe,
+body.tema-sanji .sceditor-container textarea,
+body.tema-zoro .sceditor-container textarea {
+  color: #ffffff !important;
+}
