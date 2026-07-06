@@ -3308,17 +3308,17 @@ body.tema-zoro .sceditor-container textarea {
   color: #ffffff !important;
 }
 
-tema-sanji .jornal-img, tema-zoro .jornal-img {
+.tema-sanji .jornal-img, .tema-zoro .jornal-img {
     box-shadow: 0px 0px 0px 0px #1c1b1b;
 }
-tema-sanji .jornal-text, tema-zoro .jornal-text {
+.tema-sanji .jornal-text, .tema-zoro .jornal-text {
     color: #ffffff;
 }
-tema-sanji .jornal-box, tema-zoro .jornal-box {
+.tema-sanji .jornal-box, .tema-zoro .jornal-box {
     background: #1c1b1b;
     border: 1px solid #3d3d3d;
 }
-tema-sanji .jornal-text, tema-zoro .intro-1 {
+.tema-sanji .intro-1, .tema-zoro .intro-1 {
     background-color: #1c1b1b;
     border: 6px solid #1c1b1b;
 }
