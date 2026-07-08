@@ -7365,15 +7365,29 @@ body.tema-zoro .sceditor-container textarea {
 /* ------------------------------
    Corpo inferior
 ------------------------------ */
+/* ------------------------------
+   Corpo inferior — Vantagem + Ação Única em linhas
+------------------------------ */
 
 .classe-page .classe-body {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 235px;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   margin-top: 13px;
   position: relative;
   z-index: 2;
 }
+
+/* Garante que vantagem ocupe a largura inteira */
+.classe-page .classe-body > .vantagem-card {
+  width: 100%;
+}
+
+/* Garante que ação única fique abaixo e também ocupe a largura inteira */
+.classe-page .classe-action-box {
+  width: 100%;
+}
+
 /* ------------------------------
    Ação única
 ------------------------------ */
@@ -7543,10 +7557,6 @@ body.tema-zoro .sceditor-container textarea {
     margin: 12px 0 0;
   }
 
-  .classe-page .classe-body {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media (max-width: 600px) {
   .classe-page .classe-head {
