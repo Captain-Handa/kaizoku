@@ -262,9 +262,7 @@
 /* Imagem da ilha */
 .island > .island-img {
   float: right;
-  width: 285px;
   max-width: 38%;
-  height: 240px;
   object-fit: cover;
   object-position: center;
   margin: 18px 18px 14px 22px;
