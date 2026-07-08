@@ -6859,6 +6859,323 @@ body.tema-zoro .sceditor-container textarea {
   }
 }
 
+
+
+/* ============================================================
+   PÁGINA — ESCOLHA DO ARQUÉTIPO
+   Criando seu Personagem Parte 2
+============================================================ */
+
+.archetype-page .archetype-lead {
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.12), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,249,255,.96));
+  color: #273143;
+  font: 700 13px/1.6 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-shadow: 0 8px 20px rgba(15,61,122,.08);
+  box-sizing: border-box;
+}
+
+.archetype-page .archetype-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+/* ------------------------------
+   Card principal
+------------------------------ */
+
+.archetype-page .archetype-card {
+  --arch-a: var(--corgeral);
+  --arch-b: #5cb6d1;
+  --arch-soft: rgba(92,182,209,.12);
+
+  position: relative;
+  padding: 13px;
+  border-radius: 24px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, var(--arch-soft), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,.95), rgba(246,249,255,.98));
+  box-shadow: 0 10px 26px rgba(15,61,122,.11);
+  color: #273143;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.archetype-page .archetype-card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 19px;
+  border: 1px solid rgba(15,61,122,.10);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.archetype-page .archetype-card::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  bottom: -38px;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: var(--arch-soft);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ------------------------------
+   Cabeçalho do arquétipo
+------------------------------ */
+
+.archetype-page .archetype-head {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 13px;
+  align-items: center;
+  min-height: 100px;
+  padding-right: 222px;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.archetype-page .archetype-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  border: 5px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 9px 20px rgba(15,61,122,.20),
+    4px 4px 0 var(--arch-a);
+  box-sizing: border-box;
+}
+
+.archetype-page .archetype-titlebox {
+  min-width: 0;
+}
+
+.archetype-page .archetype-name {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--arch-a), var(--arch-b));
+  color: #fff;
+  font: 900 12px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 6px 14px rgba(15,61,122,.18);
+  box-sizing: border-box;
+}
+
+.archetype-page .archetype-desc {
+  margin: 0;
+  color: #273143;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+/* ------------------------------
+   Características flutuantes
+------------------------------ */
+
+.archetype-page .archetype-stats-box {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  z-index: 4;
+
+  width: 205px;
+  padding: 9px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.14);
+  border-top: 5px solid var(--arch-a);
+  background:
+    radial-gradient(circle at top right, var(--arch-soft), transparent 40%),
+    rgba(255,255,255,.90);
+  box-shadow:
+    0 10px 24px rgba(15,61,122,.16),
+    inset 0 0 0 1px rgba(255,255,255,.45);
+  box-sizing: border-box;
+}
+
+.archetype-page .archetype-stats-title {
+  width: 100%;
+  margin: 0 0 7px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--arch-a), var(--arch-b));
+  color: #fff;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+  box-sizing: border-box;
+}
+
+.archetype-page .archetype-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.archetype-page .archetype-stat {
+  min-height: 29px;
+  padding: 6px 5px;
+  border-radius: 11px;
+  border: 1px solid rgba(15,61,122,.12);
+  background: rgba(255,255,255,.86);
+  color: #1d2c43;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(15,61,122,.05);
+  box-sizing: border-box;
+}
+
+.archetype-page .archetype-stat b {
+  margin-right: 3px;
+}
+
+/* ------------------------------
+   Corpo inferior — Vantagem
+------------------------------ */
+
+.archetype-page .archetype-body {
+  display: block;
+  margin-top: 13px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ------------------------------
+   Cores por arquétipo
+------------------------------ */
+
+.archetype-page .arch-attack {
+  --arch-a: #510303;
+  --arch-b: #fc9e9e;
+  --arch-soft: rgba(252,158,158,.16);
+}
+
+.archetype-page .arch-defense {
+  --arch-a: #21364a;
+  --arch-b: #5a7ce3;
+  --arch-soft: rgba(90,124,227,.15);
+}
+
+.archetype-page .arch-luck {
+  --arch-a: #336552;
+  --arch-b: #4fffb8;
+  --arch-soft: rgba(79,255,184,.14);
+}
+
+/* ============================================================
+   TEMA ESCURO / SANJI / ZORO
+============================================================ */
+
+.tema-escuro .archetype-page .archetype-lead,
+.tema-sanji .archetype-page .archetype-lead,
+.tema-zoro .archetype-page .archetype-lead,
+.tema-escuro .archetype-page .archetype-card,
+.tema-sanji .archetype-page .archetype-card,
+.tema-zoro .archetype-page .archetype-card {
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.08), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .archetype-page .archetype-card::before,
+.tema-sanji .archetype-page .archetype-card::before,
+.tema-zoro .archetype-page .archetype-card::before {
+  border-color: rgba(255,255,255,.06);
+}
+
+.tema-escuro .archetype-page .archetype-desc,
+.tema-sanji .archetype-page .archetype-desc,
+.tema-zoro .archetype-page .archetype-desc {
+  color: #f2f6ff;
+}
+
+.tema-escuro .archetype-page .archetype-stats-box,
+.tema-sanji .archetype-page .archetype-stats-box,
+.tema-zoro .archetype-page .archetype-stats-box,
+.tema-escuro .archetype-page .archetype-stat,
+.tema-sanji .archetype-page .archetype-stat,
+.tema-zoro .archetype-page .archetype-stat {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+}
+
+.tema-escuro .archetype-page .archetype-stats-box,
+.tema-sanji .archetype-page .archetype-stats-box,
+.tema-zoro .archetype-page .archetype-stats-box {
+  border-top-color: var(--arch-a);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.35),
+    inset 0 0 0 1px rgba(255,255,255,.03);
+}
+
+
+.tema-escuro .archetype-page .archetype-icon,
+.tema-sanji .archetype-page .archetype-icon,
+.tema-zoro .archetype-page .archetype-icon {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 850px) {
+  .archetype-page .archetype-head {
+    padding-right: 0;
+  }
+
+  .archetype-page .archetype-stats-box {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin: 12px 0 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .archetype-page .archetype-head {
+    grid-template-columns: 1fr;
+  }
+
+  .archetype-page .archetype-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+
+  .archetype-page .archetype-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
 .teste-final-css-wallace {
   display: block !important;
   width: 100% !important;
