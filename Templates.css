@@ -381,31 +381,129 @@
   margin-top: -2px;
 }
 
+/* =========================
+   COIN V2 — Visual da Ficha
+   Substitui o modelo antigo de .coin e .coin-box
+========================= */
+
 .coin {
-  background-color: #fafbff;
-  width: 32%;
-  border-radius: 30px;
-  box-shadow: -3px 3px 0px 1px #888fb8;
-  margin: auto;
+  width: 100%;
+  max-width: 760px;
+  margin: 12px auto;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  border: 1px solid rgba(15,61,122,.16);
+  background:
+    radial-gradient(circle at top left, rgba(255,226,122,.22), transparent 30%),
+    linear-gradient(180deg, #ffffff, #f4f8ff);
+  box-shadow: 0 12px 28px rgba(15,61,122,.14);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  color: #273143;
 }
 
-.tema-escuro .coin {
-    background-color: #131313;
-  }
-
 .coin-box {
-  width: 70px;
-  padding: 3px;
-  margin: auto;
+  float: none !important;
+  width: 88px;
+  min-height: 104px;
+  margin: 0 !important;
+  padding: 8px;
+  box-sizing: border-box;
   text-align: center;
-  float: left;
-  border-style: outset;
-  border-color: #8393b0;
-  background-image: linear-gradient(0deg, #005cff9e, #97cff92b);
-  border-radius: 4px;
-  margin-right: 1%;
-  font-size: 10px;
-  border-radius: 15px;
+  border: 1px solid rgba(15,61,122,.16);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top, rgba(255,226,122,.35), transparent 42%),
+    linear-gradient(180deg, #ffffff, #f4f8ff);
+  box-shadow: 0 8px 18px rgba(15,61,122,.12);
+  color: #273143;
+  font: 800 10px/1.35 Inter, Arial, sans-serif;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.coin-box:hover {
+  transform: translateY(-3px);
+  border-color: rgba(15,61,122,.28);
+  box-shadow: 0 12px 24px rgba(15,61,122,.18);
+}
+
+/* Imagem principal da moeda */
+.coin-box > img[align="center"]:first-child {
+  width: 46px !important;
+  height: 46px !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0 auto 5px !important;
+  border-radius: 50% !important;
+  border: 3px solid #fff !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,.14) !important;
+  background: #fff !important;
+}
+
+/* Proteção dos emojis dentro da moeda */
+.coin-box img:not([align="center"]:first-child) {
+  width: auto !important;
+  height: auto !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  margin: 0 2px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  vertical-align: middle !important;
+}
+
+/* Texto interno */
+.coin-box b {
+  display: inline-block;
+  margin-top: 2px;
+  color: #12396f;
+  font-weight: 900;
+}
+
+/* Sanji / Zoro */
+body.tema-sanji .coin,
+body.tema-zoro .coin {
+  background:
+    radial-gradient(circle at top left, rgba(255,226,122,.10), transparent 30%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(0,0,0,.30);
+}
+
+body.tema-sanji .coin-box,
+body.tema-zoro .coin-box {
+  background:
+    radial-gradient(circle at top, rgba(255,226,122,.12), transparent 42%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(0,0,0,.25);
+}
+
+body.tema-sanji .coin-box:hover,
+body.tema-zoro .coin-box:hover {
+  border-color: rgba(255,255,255,.16);
+  box-shadow: 0 12px 24px rgba(0,0,0,.35);
+}
+
+body.tema-sanji .coin-box b,
+body.tema-zoro .coin-box b {
+  color: #9fc9ff;
+}
+
+body.tema-sanji .coin-box > img[align="center"]:first-child,
+body.tema-zoro .coin-box > img[align="center"]:first-child {
+  border-color: #252628 !important;
+  background: #252628 !important;
 }
 
 .tab-container {
@@ -4408,30 +4506,8 @@ body.tema-zoro .sceditor-container textarea {
 
 /* Moedas */
 .p-ficha-box.ficha-v2 .flex {
-  gap: 10px;
+  gap: 1px;
   justify-content: center;
-}
-
-.p-ficha-box.ficha-v2 .coin-box {
-  float: none;
-  width: 88px;
-  min-height: 104px;
-  margin: 0;
-  padding: 8px;
-  border: 1px solid rgba(15,61,122,.16);
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at top, rgba(255,226,122,.35), transparent 42%),
-    linear-gradient(180deg, #ffffff, #f4f8ff);
-  box-shadow: 0 8px 18px rgba(15,61,122,.12);
-  color: #273143;
-  font: 800 10px/1.35 Inter, Arial, sans-serif;
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
-.p-ficha-box.ficha-v2 .coin-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(15,61,122,.18);
 }
 
 /* Item / Navio */
@@ -4599,15 +4675,6 @@ body.tema-zoro .sceditor-container textarea {
   color: #f2f6ff;
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 .coin-box,
-.tema-sanji .p-ficha-box.ficha-v2 .coin-box,
-.tema-zoro .p-ficha-box.ficha-v2 .coin-box {
-  background:
-    radial-gradient(circle at top, rgba(255,226,122,.12), transparent 42%),
-    linear-gradient(180deg, #1f2022, #121315);
-  border-color: rgba(255,255,255,.08);
-  color: #fff;
-}
 
 .tema-escuro .p-ficha-box.ficha-v2 .item-card,
 .tema-sanji .p-ficha-box.ficha-v2 .item-card,
@@ -4745,39 +4812,6 @@ body.tema-zoro .sceditor-container textarea {
 
 .p-ficha-box.ficha-v2 > .intro-2 > .tab-container .tab.active {
   margin: 0 !important;
-}
-
-/* =========================
-   Ficha V2 - Correção das Moedas
-   Só a imagem principal da moeda fica grande.
-   Emojis continuam pequenos.
-========================= */
-
-.p-ficha-box.ficha-v2 .coin-box > img:first-child {
-  width: 46px !important;
-  height: 46px !important;
-  object-fit: cover !important;
-  display: block !important;
-  margin: 0 auto 5px !important;
-  border-radius: 50% !important;
-  border: 3px solid #fff !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,.14) !important;
-}
-
-.p-ficha-box.ficha-v2 .coin-box img:not(:first-child) {
-  width: auto !important;
-  height: auto !important;
-  max-width: 18px !important;
-  max-height: 18px !important;
-  object-fit: contain !important;
-  display: inline-block !important;
-  margin: 0 2px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  vertical-align: middle !important;
 }
 
 /* =========================
