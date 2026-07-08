@@ -3984,7 +3984,7 @@ body.tema-zoro .sceditor-container textarea {
 
 /* Card da notícia */
 .noticia-alerta {
-    --alerta-cor: #2f80ed;
+    --alerta-cor: #2477c9;
     display: grid;
     grid-template-columns: 30px 1fr;
     align-items: center;
@@ -4035,18 +4035,25 @@ body.tema-zoro .sceditor-container textarea {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-
-/* Categorias */
-.noticia-alerta.aviso {
-    --alerta-cor: #b73333;
-}
-
+/* Categorias *//* Categorias do Mini Jornal */
 .noticia-alerta.noticia {
     --alerta-cor: #2477c9;
 }
 
-.noticia-alerta.novidade {
-    --alerta-cor: #9b741c;
+.noticia-alerta.alerta {
+    --alerta-cor: #111111;
+}
+
+.noticia-alerta.horizonte {
+    --alerta-cor: #70BF5A;
+}
+
+.noticia-alerta.ferro {
+    --alerta-cor: #633521;
+}
+
+.noticia-alerta.coroa {
+    --alerta-cor: #931F1F;
 }
 
 /* Tema escuro / Sanji / Zoro */
