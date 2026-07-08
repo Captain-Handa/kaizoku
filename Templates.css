@@ -6610,7 +6610,7 @@ body.tema-zoro .sceditor-container textarea {
   display: block;
   margin-bottom: 5px;
   color: var(--species-a);
-  font: 900 10px/1 Inter, Arial, sans-serif;
+  font: 600 8px/1 Inter, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: .55px;
 }
@@ -6654,8 +6654,6 @@ body.tema-zoro .sceditor-container textarea {
 }
 
 .species-page .species-img {
-  width: 150px;
-  height: 190px;
   object-fit: cover;
   object-position: center;
   border-radius: 22px;
