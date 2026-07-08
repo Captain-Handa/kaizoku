@@ -839,6 +839,52 @@ details[open]:has(> summary.tab-container) {
   padding-bottom: 12px;
 }
 
+
+
+.p-ficha-box details > summary.tab-container::-webkit-details-marker {
+  display: none;
+}
+
+.p-ficha-box details > summary.tab-container::before {
+  content: "▸";
+  margin-right: 8px;
+  font-size: 12px;
+  transition: transform .18s ease;
+}
+
+.p-ficha-box details[open] > summary.tab-container::before {
+  transform: rotate(90deg);
+}
+
+.p-ficha-box details {
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+}
+
+.p-ficha-box details[open] {
+  padding-bottom: 12px;
+}
+
+.p-ficha-box details[open] > summary.tab-container {
+  margin-bottom: 12px !important;
+}
+
+
+.p-ficha-box details > summary.tab-container {
+  display: flex;
+  align-items: center;
+  margin: 0 !important;
+  padding: 10px 13px !important;
+  border-radius: 0;
+  border: 0;
+  background: linear-gradient(90deg, var(--corgeral), #5cb6d1);
+  color: #fff;
+  font: 900 11px Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  cursor: pointer;
+  list-style: none;
+}
+
 /* ============================================================
    TEMA ESCURO / SANJI / ZORO
 ============================================================ */
@@ -2711,48 +2757,6 @@ body.tema-zoro .item-card details,
   background: rgba(255,255,255,.82);
 }
 
-.p-ficha-box.ficha-v2 details > summary.tab-container {
-  display: flex;
-  align-items: center;
-  margin: 0 !important;
-  padding: 10px 13px !important;
-  border-radius: 0;
-  border: 0;
-  background: linear-gradient(90deg, var(--corgeral), #5cb6d1);
-  color: #fff;
-  font: 900 11px Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  cursor: pointer;
-  list-style: none;
-}
-
-.p-ficha-box.ficha-v2 details > summary.tab-container::-webkit-details-marker {
-  display: none;
-}
-
-.p-ficha-box.ficha-v2 details > summary.tab-container::before {
-  content: "▸";
-  margin-right: 8px;
-  font-size: 12px;
-  transition: transform .18s ease;
-}
-
-.p-ficha-box.ficha-v2 details[open] > summary.tab-container::before {
-  transform: rotate(90deg);
-}
-
-.p-ficha-box.ficha-v2 details {
-  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
-}
-
-.p-ficha-box.ficha-v2 details[open] {
-  padding-bottom: 12px;
-}
-
-.p-ficha-box.ficha-v2 details[open] > summary.tab-container {
-  margin-bottom: 12px !important;
-}
 
 /* Abas simples além da primeira */
 
