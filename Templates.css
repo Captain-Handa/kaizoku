@@ -7176,6 +7176,406 @@ body.tema-zoro .sceditor-container textarea {
 }
 
 
+/* ============================================================
+   PÁGINA — ESCOLHA DA CLASSE
+   Criando seu Personagem Parte 3
+============================================================ */
+
+.classe-page .classe-lead {
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.12), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,249,255,.96));
+  color: #273143;
+  font: 700 13px/1.6 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-shadow: 0 8px 20px rgba(15,61,122,.08);
+  box-sizing: border-box;
+}
+
+.classe-page .classe-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+/* ------------------------------
+   Card principal
+------------------------------ */
+
+.classe-page .classe-card {
+  --classe-a: var(--corgeral);
+  --classe-b: #5cb6d1;
+  --classe-soft: rgba(92,182,209,.12);
+
+  position: relative;
+  padding: 13px;
+  border-radius: 24px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, var(--classe-soft), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,.95), rgba(246,249,255,.98));
+  box-shadow: 0 10px 26px rgba(15,61,122,.11);
+  color: #273143;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.classe-page .classe-card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 19px;
+  border: 1px solid rgba(15,61,122,.10);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.classe-page .classe-card::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  bottom: -38px;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: var(--classe-soft);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ------------------------------
+   Cabeçalho
+------------------------------ */
+
+.classe-page .classe-head {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 13px;
+  align-items: center;
+  min-height: 100px;
+  padding-right: 222px;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.classe-page .classe-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  border: 5px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 9px 20px rgba(15,61,122,.20),
+    4px 4px 0 var(--classe-a);
+  box-sizing: border-box;
+}
+
+.classe-page .classe-titlebox {
+  min-width: 0;
+}
+
+.classe-page .classe-name {
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--classe-a), var(--classe-b));
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 6px 14px rgba(15,61,122,.18);
+  box-sizing: border-box;
+}
+
+.classe-page .classe-desc {
+  margin: 0;
+  color: #273143;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+/* ------------------------------
+   Características flutuantes
+------------------------------ */
+
+.classe-page .classe-stats-box {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  z-index: 4;
+
+  width: 205px;
+  padding: 9px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.14);
+  border-top: 5px solid var(--classe-a);
+  background:
+    radial-gradient(circle at top right, var(--classe-soft), transparent 40%),
+    rgba(255,255,255,.90);
+  box-shadow:
+    0 10px 24px rgba(15,61,122,.16),
+    inset 0 0 0 1px rgba(255,255,255,.45);
+  box-sizing: border-box;
+}
+
+.classe-page .classe-stats-title {
+  width: 100%;
+  margin: 0 0 7px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--classe-a), var(--classe-b));
+  color: #fff;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+  box-sizing: border-box;
+}
+
+.classe-page .classe-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.classe-page .classe-stat {
+  min-height: 29px;
+  padding: 6px 5px;
+  border-radius: 11px;
+  border: 1px solid rgba(15,61,122,.12);
+  background: rgba(255,255,255,.86);
+  color: #1d2c43;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(15,61,122,.05);
+  box-sizing: border-box;
+}
+
+.classe-page .classe-stat b {
+  margin-right: 3px;
+}
+
+/* ------------------------------
+   Corpo inferior
+------------------------------ */
+/* ------------------------------
+   Corpo inferior — Vantagem + Ação Única em linhas
+------------------------------ */
+
+.classe-page .classe-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 13px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Garante que vantagem ocupe a largura inteira */
+.classe-page .classe-body > .vantagem-card {
+  width: 100%;
+}
+
+/* Garante que ação única fique abaixo e também ocupe a largura inteira */
+.classe-page .classe-action-box {
+  width: 100%;
+}
+
+/* ------------------------------
+   Ação única
+------------------------------ */
+
+.classe-page .classe-action-box {
+  display: flex;
+  flex-direction: column;
+  min-height: 98px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.14);
+  border-left: 5px solid var(--classe-a);
+  background:
+    radial-gradient(circle at top left, var(--classe-soft), transparent 36%),
+    rgba(255,255,255,.82);
+  box-shadow: 0 6px 16px rgba(15,61,122,.08);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.classe-page .classe-action-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 9px;
+  background: linear-gradient(90deg, var(--classe-a), var(--classe-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+}
+
+.classe-page .classe-action-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.classe-page .classe-action-cost {
+  min-width: 34px;
+  height: 28px;
+  border-radius: 11px;
+  background: rgba(0,0,0,.22);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: 900 16px/1 Inter, Arial, sans-serif;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.16);
+}
+
+.classe-page .classe-action-desc {
+  flex: 1;
+  padding: 9px 10px;
+  color: #273143;
+  font: 900 12px/1.4 Inter, Calibri, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------
+   Cores por classe
+------------------------------ */
+
+.classe-page .class-heavy {
+  --classe-a: #510303;
+  --classe-b: #fc9e9e;
+  --classe-soft: rgba(252,158,158,.16);
+}
+
+.classe-page .class-fast {
+  --classe-a: #21364a;
+  --classe-b: #5a7ce3;
+  --classe-soft: rgba(90,124,227,.15);
+}
+
+.classe-page .class-lethal {
+  --classe-a: #2f2d33;
+  --classe-b: #7d8b85;
+  --classe-soft: rgba(125,139,133,.16);
+}
+
+/* ============================================================
+   TEMA ESCURO / SANJI / ZORO
+============================================================ */
+
+.tema-escuro .classe-page .classe-lead,
+.tema-sanji .classe-page .classe-lead,
+.tema-zoro .classe-page .classe-lead,
+.tema-escuro .classe-page .classe-card,
+.tema-sanji .classe-page .classe-card,
+.tema-zoro .classe-page .classe-card {
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.08), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .classe-page .classe-card::before,
+.tema-sanji .classe-page .classe-card::before,
+.tema-zoro .classe-page .classe-card::before {
+  border-color: rgba(255,255,255,.06);
+}
+
+.tema-escuro .classe-page .classe-desc,
+.tema-sanji .classe-page .classe-desc,
+.tema-zoro .classe-page .classe-desc,
+.tema-escuro .classe-page .classe-action-desc,
+.tema-sanji .classe-page .classe-action-desc,
+.tema-zoro .classe-page .classe-action-desc {
+  color: #f2f6ff;
+}
+
+.tema-escuro .classe-page .classe-stats-box,
+.tema-sanji .classe-page .classe-stats-box,
+.tema-zoro .classe-page .classe-stats-box,
+.tema-escuro .classe-page .classe-action-box,
+.tema-sanji .classe-page .classe-action-box,
+.tema-zoro .classe-page .classe-action-box,
+.tema-escuro .classe-page .classe-stat,
+.tema-sanji .classe-page .classe-stat,
+.tema-zoro .classe-page .classe-stat {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+}
+
+.tema-escuro .classe-page .classe-stats-box,
+.tema-sanji .classe-page .classe-stats-box,
+.tema-zoro .classe-page .classe-stats-box {
+  border-top-color: var(--classe-a);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.35),
+    inset 0 0 0 1px rgba(255,255,255,.03);
+}
+
+.tema-escuro .classe-page .classe-action-box,
+.tema-sanji .classe-page .classe-action-box,
+.tema-zoro .classe-page .classe-action-box {
+  border-left-color: var(--classe-a);
+}
+
+.tema-escuro .classe-page .classe-icon,
+.tema-sanji .classe-page .classe-icon,
+.tema-zoro .classe-page .classe-icon {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 850px) {
+  .classe-page .classe-head {
+    padding-right: 0;
+  }
+
+  .classe-page .classe-stats-box {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin: 12px 0 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .classe-page .classe-head {
+    grid-template-columns: 1fr;
+  }
+
+  .classe-page .classe-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .classe-page .classe-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
 .teste-final-css-wallace {
   display: block !important;
   width: 100% !important;
