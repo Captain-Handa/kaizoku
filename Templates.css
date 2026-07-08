@@ -3080,6 +3080,219 @@ body.tema-zoro .item-card details,
     transform: translateY(0);
   }
 }
+
+/* ============================================================
+   FICHA — Perícias
+============================================================ */
+
+.p-ficha-box .pericias-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.p-ficha-box .pericia-grupo {
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.13), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,249,255,.96));
+  box-shadow: 0 6px 16px rgba(15,61,122,.08);
+}
+
+.p-ficha-box .pericia-titulo {
+  width: fit-content;
+  margin: 0 0 9px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--corgeral), #5cb6d1);
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  box-shadow: 0 5px 12px rgba(15,61,122,.16);
+}
+
+.p-ficha-box .pericia-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.p-ficha-box .pericia-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(15,61,122,.13);
+  background: rgba(255,255,255,.82);
+  color: #273143;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  box-shadow: 0 3px 8px rgba(15,61,122,.06);
+}
+
+.p-ficha-box .pericia-chip::before {
+  content: "•";
+  margin-right: 6px;
+  color: var(--corgeral);
+  font-weight: 900;
+}
+
+/* Separador */
+
+.p-ficha-box .pericias-box hr {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  margin: 2px 0;
+  background: linear-gradient(90deg, transparent, rgba(15,61,122,.24), transparent);
+}
+
+/* Atributos de perícia */
+
+.p-ficha-box .pericia-atributos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 8px;
+}
+
+.p-ficha-box .pericia-atributo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 5px;
+  align-items: center;
+  min-height: 58px;
+  padding: 9px 10px;
+  border-radius: 17px;
+  border: 1px solid rgba(15,61,122,.12);
+  background: linear-gradient(135deg, #ffffff, #f4f8ff);
+  box-shadow: 0 6px 16px rgba(15,61,122,.08);
+  color: #273143;
+  box-sizing: border-box;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.p-ficha-box .pericia-atributo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15,61,122,.14);
+}
+
+.p-ficha-box .pericia-atributo-nome {
+  font: 900 12px/1.15 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .35px;
+}
+
+.p-ficha-box .pericia-atributo-lv {
+  margin-top: 3px;
+  font: 800 10px/1 Inter, Arial, sans-serif;
+  opacity: .72;
+}
+
+.p-ficha-box .pericia-atributo-bonus {
+  min-width: 38px;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  color: #fff;
+  font: 900 15px/1 Inter, Arial, sans-serif;
+  box-shadow: 0 5px 12px rgba(0,0,0,.14);
+}
+
+/* Cores por atributo */
+
+.p-ficha-box .pericia-atributo.fo {
+  border-left: 5px solid #cc0000;
+}
+
+.p-ficha-box .pericia-atributo.fo .pericia-atributo-bonus {
+  background: linear-gradient(135deg, #cc0000, #ff6969);
+}
+
+.p-ficha-box .pericia-atributo.ag {
+  border-left: 5px solid #336699;
+}
+
+.p-ficha-box .pericia-atributo.ag .pericia-atributo-bonus {
+  background: linear-gradient(135deg, #336699, #5fa8df);
+}
+
+.p-ficha-box .pericia-atributo.in {
+  border-left: 5px solid #339933;
+}
+
+.p-ficha-box .pericia-atributo.in .pericia-atributo-bonus {
+  background: linear-gradient(135deg, #339933, #68c768);
+}
+
+.p-ficha-box .pericia-atributo.as {
+  border-left: 5px solid #cc33ff;
+}
+
+.p-ficha-box .pericia-atributo.as .pericia-atributo-bonus {
+  background: linear-gradient(135deg, #8d35b8, #cc33ff);
+}
+
+.p-ficha-box .pericia-atributo.vo {
+  border-left: 5px solid #ff6633;
+}
+
+.p-ficha-box .pericia-atributo.vo .pericia-atributo-bonus {
+  background: linear-gradient(135deg, #d14a1f, #ff8a5c);
+}
+
+.p-ficha-box .pericia-atributo.ca {
+  border-left: 5px solid #cc9933;
+}
+
+.p-ficha-box .pericia-atributo.ca .pericia-atributo-bonus {
+  background: linear-gradient(135deg, #a8751f, #e7b958);
+}
+
+/* Tema escuro */
+
+.tema-escuro .p-ficha-box .pericia-grupo,
+.tema-sanji .p-ficha-box .pericia-grupo,
+.tema-zoro .p-ficha-box .pericia-grupo {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,.24);
+}
+
+.tema-escuro .p-ficha-box .pericia-chip,
+.tema-sanji .p-ficha-box .pericia-chip,
+.tema-zoro .p-ficha-box .pericia-chip {
+  background: rgba(255,255,255,.065);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+}
+
+.tema-escuro .p-ficha-box .pericia-atributo,
+.tema-sanji .p-ficha-box .pericia-atributo,
+.tema-zoro .p-ficha-box .pericia-atributo {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+}
+
+/* Responsivo */
+
+@media (max-width: 600px) {
+  .p-ficha-box .pericia-atributos {
+    grid-template-columns: 1fr;
+  }
+
+  .p-ficha-box .pericia-chip {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}
+
+
 /* ============================================================
    08. NPCS, BESTIÁRIO E MOBS
    Usado em:
