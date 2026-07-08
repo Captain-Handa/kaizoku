@@ -3182,7 +3182,7 @@ body.tema-zoro .item-card details,
    Modelo compacto em linhas
 ============================================================ */
 
-.pericia-atributos {
+ .p-ficha-box .pericia-atributos {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: 7px !important;
@@ -3198,6 +3198,12 @@ body.tema-zoro .item-card details,
   box-shadow: 0 8px 20px rgba(15,61,122,.08);
   clear: both;
 }
+
+ .p-ficha-box .pericia-atributos-comprados {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 5px;
+ }
 
 .p-ficha-box .pericia-atributo {
   --attr-cor: var(--corgeral);
