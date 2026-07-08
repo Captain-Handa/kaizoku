@@ -8785,19 +8785,133 @@ body.tema-zoro .sceditor-container textarea {
 }
 
 
-.teste-final-css-wallace {
-  display: block !important;
-  width: 100% !important;
-  margin: 20px auto !important;
-  padding: 20px !important;
-  box-sizing: border-box !important;
-  border: 6px solid red !important;
-  border-radius: 20px !important;
-  background: yellow !important;
-  color: black !important;
-  font: 900 22px/1.3 Arial, sans-serif !important;
-  text-align: center !important;
-  text-transform: uppercase !important;
-  box-shadow: 0 0 30px red !important;
+/* ============================================================
+   PATCH — FORUMEIROS BR EM GRIDS/FLEX DA PÁGINA ORIGEM
+============================================================ */
+
+/* Remove os <br> que o Forumeiros insere dentro da lista de eventos */
+.origem-page .evento-list > br {
+  display: none !important;
 }
 
+/* Reforça a grid dos eventos */
+.origem-page .evento-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  width: 100% !important;
+  margin-bottom: 18px !important;
+  box-sizing: border-box !important;
+}
+
+/* Garante que cada evento ocupe uma célula normal */
+.origem-page .evento-list > .evento-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove <br> também das listas principais da origem */
+.origem-page .origem-list > br,
+.origem-page .origem-card > br,
+.origem-page .origem-body > br {
+  display: none !important;
+}
+
+/* Reforça a lista dos antecedentes */
+.origem-page .origem-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+  width: 100% !important;
+  margin-top: 14px !important;
+  box-sizing: border-box !important;
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+  .origem-page .evento-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================================
+   PATCH — Título da Classe flutuando sobre o card
+============================================================ */
+
+/* Dá espaço para o título sair para fora sem ser cortado */
+.classe-page .classe-list {
+  gap: 26px !important;
+  padding-top: 8px;
+}
+
+/* Permite o título flutuar fora do card */
+.classe-page .classe-card {
+  overflow: visible !important;
+  margin-top: 14px;
+  padding-top: 28px;
+}
+
+/* Mantém o conteúdo interno controlado */
+.classe-page .classe-card::before,
+.classe-page .classe-card::after {
+  pointer-events: none;
+}
+
+/* O cabeçalho não pode virar referência do absolute */
+.classe-page .classe-head {
+  position: static !important;
+}
+
+/* A área textual continua normal */
+.classe-page .classe-titlebox {
+  min-width: 0;
+  position: static !important;
+}
+
+/* Título centralizado, fora do fluxo, sobrepondo o topo do card */
+.classe-page .classe-name {
+  position: absolute !important;
+  top: -18px;
+  left: 50%;
+  z-index: 10;
+
+  transform: translateX(-50%);
+  width: fit-content;
+  max-width: calc(100% - 36px);
+  margin: 0 !important;
+
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 4px solid #fff;
+
+  background: linear-gradient(90deg, var(--classe-a), var(--classe-b));
+  color: #fff;
+
+  font: 900 12px/1 Inter, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .9px;
+  white-space: nowrap;
+
+  box-shadow:
+    0 10px 22px rgba(15,61,122,.22),
+    0 0 0 1px rgba(15,61,122,.08);
+  box-sizing: border-box;
+}
+
+/* Dá um respiro para a descrição, já que o título saiu do fluxo */
+.classe-page .classe-desc {
+  padding-top: 4px;
+}
+
+/* Tema escuro */
+.tema-escuro .classe-page .classe-name,
+.tema-sanji .classe-page .classe-name,
+.tema-zoro .classe-page .classe-name {
+  border-color: #252628;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.38),
+    0 0 0 1px rgba(255,255,255,.08);
+}
