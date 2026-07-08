@@ -6224,6 +6224,291 @@ body.tema-zoro .portrait-preview,
 }
 
 /* ============================================================
+   PATCH — CARREIRA PIRATA MAIS COMPACTA
+============================================================ */
+
+.carreira-pirata.pirata-page .pirata-hero {
+  min-height: 120px !important;
+  padding: 16px 18px !important;
+  margin: -4px 0 12px !important;
+  border-radius: 22px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-hero::after {
+  right: 18px !important;
+  bottom: -34px !important;
+  font-size: 115px !important;
+  line-height: 115px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-label {
+  padding: 5px 11px !important;
+  font-size: 9px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-titulo {
+  margin: 9px 0 6px !important;
+  font-size: 28px !important;
+  line-height: 1 !important;
+}
+
+.carreira-pirata.pirata-page .pirata-subtitulo {
+  max-width: 720px !important;
+  font-size: 12.5px !important;
+  line-height: 1.42 !important;
+}
+
+/* Títulos de seção mais baixos */
+.carreira-pirata.pirata-page .pirata-section-title {
+  margin: 13px 0 8px !important;
+  padding: 7px 12px !important;
+  font-size: 10.5px !important;
+}
+
+/* Blocos de regra mais compactos */
+.carreira-pirata.pirata-page .pirata-regra {
+  margin: 7px 0 !important;
+  padding: 9px 11px !important;
+  border-radius: 15px !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+
+/* Informações em cards menores */
+.carreira-pirata.pirata-page .pirata-info-grid {
+  gap: 7px !important;
+  margin: 9px 0 13px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-info {
+  padding: 8px 10px !important;
+  border-radius: 14px !important;
+  font-size: 11.8px !important;
+  line-height: 1.38 !important;
+}
+
+.carreira-pirata.pirata-page .pirata-info b {
+  padding: 4px 8px !important;
+  font-size: 9px !important;
+}
+
+/* Rumos mais densos */
+.carreira-pirata.pirata-page .rumos-pirata {
+  gap: 8px !important;
+  margin: 10px 0 14px !important;
+}
+
+.carreira-pirata.pirata-page .rumo-card {
+  padding: 9px !important;
+  border-radius: 18px !important;
+  border-top-width: 5px !important;
+}
+
+.carreira-pirata.pirata-page .rumo-topo {
+  margin-bottom: 7px !important;
+  padding: 6px 10px !important;
+  font-size: 10px !important;
+}
+
+.carreira-pirata.pirata-page .rumo-corpo {
+  font-size: 11.8px !important;
+  line-height: 1.38 !important;
+}
+
+.carreira-pirata.pirata-page .rumo-icone {
+  width: 44px !important;
+  height: 44px !important;
+  margin: 0 0 6px 8px !important;
+  border-radius: 14px !important;
+  font-size: 21px !important;
+}
+
+.carreira-pirata.pirata-page .rumo-skills {
+  gap: 4px !important;
+  margin: 7px 0 !important;
+  padding: 6px !important;
+  border-radius: 13px !important;
+}
+
+.carreira-pirata.pirata-page .rumo-skills b {
+  font-size: 9px !important;
+}
+
+.carreira-pirata.pirata-page .rumo-skills span {
+  min-height: 20px !important;
+  padding: 3px 7px !important;
+  font-size: 9px !important;
+}
+
+.carreira-pirata.pirata-page .rumo-beneficio {
+  margin-top: 7px !important;
+  padding: 7px 8px !important;
+  border-radius: 13px !important;
+  font-size: 11.5px !important;
+  line-height: 1.35 !important;
+}
+
+/* Tabs e conteúdos mais compactos */
+.carreira-pirata.pirata-page .tab-container {
+  margin-bottom: 8px !important;
+}
+
+.carreira-pirata.pirata-page .tab {
+  padding: 5px 9px !important;
+  font-size: 9px !important;
+}
+
+.carreira-pirata.pirata-page .tab-content:not(#conteudo0),
+.carreira-pirata.pirata-page .tab-content#conteudo0 {
+  min-height: 0 !important;
+  padding: 10px !important;
+  border-radius: 18px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-tab-lead {
+  font-size: 12px !important;
+  line-height: 1.42 !important;
+}
+
+/* Talentos em grid compacto */
+.carreira-pirata.pirata-page .pirata-talent-list {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-talent-card {
+  grid-template-columns: 54px minmax(0, 1fr) !important;
+  gap: 8px !important;
+  border-radius: 16px !important;
+  min-height: 96px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-tier {
+  padding: 7px 4px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-tier span {
+  font-size: 8px !important;
+  line-height: 1.05 !important;
+}
+
+.carreira-pirata.pirata-page .pirata-tier b {
+  font-size: 19px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-talent-content {
+  padding: 8px 8px 8px 0 !important;
+}
+
+.carreira-pirata.pirata-page .pirata-talent-title {
+  align-items: flex-start !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  margin-bottom: 5px !important;
+  font-size: 10.3px !important;
+  line-height: 1.15 !important;
+}
+
+.carreira-pirata.pirata-page .pirata-cost {
+  padding: 4px 7px !important;
+  font-size: 8px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-talent-row {
+  margin: 3px 0 !important;
+  font-size: 11.3px !important;
+  line-height: 1.35 !important;
+}
+
+.carreira-pirata.pirata-page .pirata-talent-note {
+  margin-top: 5px !important;
+  padding: 6px 7px !important;
+  border-radius: 11px !important;
+  font-size: 10.8px !important;
+  line-height: 1.32 !important;
+}
+
+/* Modelo de ficha mais compacto */
+.carreira-pirata.pirata-page .pirata-modelo-box {
+  margin-top: 13px !important;
+  padding: 10px !important;
+  border-radius: 18px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-modelo-title {
+  margin-bottom: 8px !important;
+  padding: 6px 11px !important;
+  font-size: 10px !important;
+}
+
+.carreira-pirata.pirata-page .trilha-pirata-sheet {
+  gap: 7px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-sheet-card {
+  grid-template-columns: 62px minmax(0, 1fr) !important;
+  gap: 7px !important;
+  border-radius: 15px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-sheet-tier {
+  padding: 7px 4px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-sheet-tier span {
+  font-size: 8px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-sheet-tier b {
+  font-size: 18px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-sheet-content {
+  padding: 7px 8px 7px 0 !important;
+}
+
+.carreira-pirata.pirata-page .pirata-sheet-name {
+  font-size: 10px !important;
+  margin-bottom: 4px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-sheet-text {
+  font-size: 11.3px !important;
+  line-height: 1.35 !important;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .carreira-pirata.pirata-page .pirata-talent-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .carreira-pirata.pirata-page .pirata-talent-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .carreira-pirata.pirata-page .pirata-talent-card,
+  .carreira-pirata.pirata-page .pirata-sheet-card {
+    grid-template-columns: 54px minmax(0, 1fr) !important;
+  }
+
+  .carreira-pirata.pirata-page .pirata-tier,
+  .carreira-pirata.pirata-page .pirata-sheet-tier {
+    min-height: auto !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+
+  .carreira-pirata.pirata-page .pirata-talent-content,
+  .carreira-pirata.pirata-page .pirata-sheet-content {
+    padding: 8px 8px 8px 0 !important;
+  }
+}
+
+/* ============================================================
    13. INTERAÇÕES, REPUTAÇÃO E AJUSTES DIVERSOS
    ============================================================ */
 
