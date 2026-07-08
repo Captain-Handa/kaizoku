@@ -28,6 +28,7 @@
    14. Temas personalizados — overrides gerais
    15. Animações
    16. Responsivo e media queries
+   17. Atualizações
    ============================================================ */
 
 /* ============================================================
@@ -6494,5 +6495,285 @@ body.tema-zoro .sceditor-container textarea {
     float: none;
     display: inline-block;
     margin-left: 8px;
+  }
+}
+
+
+/* ============================================================
+   17. Atualizações
+   ============================================================ */
+
+/* ============================================================
+   PÁGINA — ESCOLHA DE ESPÉCIE
+============================================================ */
+
+.species-page .species-lead {
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.12), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.90), rgba(246,249,255,.96));
+  color: #273143;
+  font: 700 13px/1.6 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-shadow: 0 8px 20px rgba(15,61,122,.08);
+}
+
+.species-page .species-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.species-page .species-card {
+  --species-a: var(--corgeral);
+  --species-b: #5cb6d1;
+
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 14px;
+  align-items: stretch;
+  padding: 13px;
+  border-radius: 24px;
+  border: 1px solid rgba(15,61,122,.13);
+  border-left: 7px solid var(--species-a);
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--species-a) 18%, transparent), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.94), rgba(246,249,255,.98));
+  box-shadow: 0 10px 26px rgba(15,61,122,.11);
+  color: #273143;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.species-page .species-card::after {
+  content: "";
+  position: absolute;
+  right: -35px;
+  bottom: -35px;
+  width: 110px;
+  height: 110px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--species-a) 14%, transparent);
+  pointer-events: none;
+}
+
+.species-page .species-content {
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.species-page .species-name {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 9px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--species-a), var(--species-b));
+  color: #fff;
+  font: 900 12px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 6px 14px rgba(15,61,122,.18);
+}
+
+.species-page .species-desc {
+  margin: 0 0 11px;
+  color: #273143;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.species-page .species-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin: 10px 0;
+}
+
+.species-page .species-pill {
+  min-height: 58px;
+  padding: 8px 9px;
+  border-radius: 15px;
+  border: 1px solid rgba(15,61,122,.12);
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 4px 10px rgba(15,61,122,.06);
+  box-sizing: border-box;
+}
+
+.species-page .species-pill b {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--species-a);
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+}
+
+.species-page .species-pill span {
+  color: #273143;
+  font: 900 12px/1.25 Inter, Arial, sans-serif;
+}
+
+.species-page .species-attrs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 9px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgba(15,61,122,.055);
+  border: 1px solid rgba(15,61,122,.10);
+}
+
+.species-page .species-attrs strong {
+  width: 100%;
+  margin-bottom: 2px;
+  color: var(--species-a);
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+}
+
+.species-page .species-attrs span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.86);
+  border: 1px solid rgba(15,61,122,.10);
+  color: #273143;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  box-shadow: 0 3px 8px rgba(15,61,122,.05);
+}
+
+.species-page .species-img {
+  width: 150px;
+  height: 190px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 22px;
+  border: 5px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 10px 24px rgba(15,61,122,.20),
+    4px 4px 0 color-mix(in srgb, var(--species-a) 55%, transparent);
+  position: relative;
+  z-index: 2;
+  align-self: center;
+}
+
+/* Protege emojis/imagens pequenas */
+.species-page .species-card img:not(.species-img) {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Cores por espécie */
+
+.species-page .species-human {
+  --species-a: #463c3c;
+  --species-b: #b4aaaa;
+}
+
+.species-page .species-giant {
+  --species-a: #510303;
+  --species-b: #fc9e9e;
+}
+
+.species-page .species-mink {
+  --species-a: #437946;
+  --species-b: #aac28b;
+}
+
+.species-page .species-fishman {
+  --species-a: #223354;
+  --species-b: #6c7ec7;
+}
+
+.species-page .species-merfolk {
+  --species-a: #28646f;
+  --species-b: #56f5fe;
+}
+
+/* Tema escuro */
+
+.tema-escuro .species-page .species-lead,
+.tema-sanji .species-page .species-lead,
+.tema-zoro .species-page .species-lead,
+.tema-escuro .species-page .species-card,
+.tema-sanji .species-page .species-card,
+.tema-zoro .species-page .species-card {
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.08), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .species-page .species-desc,
+.tema-sanji .species-page .species-desc,
+.tema-zoro .species-page .species-desc {
+  color: #f2f6ff;
+}
+
+.tema-escuro .species-page .species-pill,
+.tema-sanji .species-page .species-pill,
+.tema-zoro .species-page .species-pill,
+.tema-escuro .species-page .species-attrs,
+.tema-sanji .species-page .species-attrs,
+.tema-zoro .species-page .species-attrs,
+.tema-escuro .species-page .species-attrs span,
+.tema-sanji .species-page .species-attrs span,
+.tema-zoro .species-page .species-attrs span {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+}
+
+.tema-escuro .species-page .species-pill span,
+.tema-sanji .species-page .species-pill span,
+.tema-zoro .species-page .species-pill span {
+  color: #f2f6ff;
+}
+
+.tema-escuro .species-page .species-img,
+.tema-sanji .species-page .species-img,
+.tema-zoro .species-page .species-img {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* Responsivo */
+
+@media (max-width: 760px) {
+  .species-page .species-card {
+    grid-template-columns: 1fr;
+  }
+
+  .species-page .species-img {
+    width: 100%;
+    height: 210px;
+    order: -1;
+  }
+
+  .species-page .species-meta {
+    grid-template-columns: 1fr;
   }
 }
