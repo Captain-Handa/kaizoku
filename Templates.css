@@ -3685,3 +3685,17 @@ body.tema-zoro .sceditor-container textarea {
     margin-left: 8px;
   }
 }
+
+.jornal-novo .intro-title {
+  background: rgba(255,255,255,.92) !important;
+  color: #12396f !important;
+  -webkit-text-fill-color: #12396f !important;
+  text-shadow: none !important;
+  mix-blend-mode: normal !important;
+  overflow: visible !important;
+}
+
+.jornal-novo .intro-title * {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
