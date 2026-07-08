@@ -5673,13 +5673,6 @@ body.tema-zoro .portrait-preview,
    Rumos iniciais
 ------------------------------ */
 
-.carreira-pirata.pirata-page .rumos-pirata {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin: 14px 0 20px;
-}
-
 .carreira-pirata.pirata-page .rumos-pirata > br {
   display: none !important;
 }
