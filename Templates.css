@@ -6979,7 +6979,7 @@ body.tema-zoro .sceditor-container textarea {
 .archetype-page .archetype-vantage {
   display: grid;
   grid-template-columns: 58px minmax(0, 1fr);
-  gap: 10px;
+  gap: 15px;
   align-items: start;
   width: 100%;
   min-height: 78px;
@@ -6995,8 +6995,6 @@ body.tema-zoro .sceditor-container textarea {
 }
 
 .archetype-page .vantage-img {
-  width: 58px;
-  height: 58px;
   object-fit: cover;
   object-position: center;
   border-radius: 14px;
@@ -7029,7 +7027,7 @@ body.tema-zoro .sceditor-container textarea {
 .archetype-page .vantage-row {
   margin: 4px 0;
   color: #273143;
-  font: 700 12.5px/1.4 Inter, Calibri, Arial, sans-serif;
+  font: 500 9.5px/1.4 Inter, Calibri, Arial, sans-serif;
 }
 
 .archetype-page .vantage-row b,
