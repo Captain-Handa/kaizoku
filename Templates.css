@@ -9715,3 +9715,300 @@ body.tema-zoro .sceditor-container textarea {
     border-radius: 14px;
   }
 }
+
+/* ============================================================
+   PÁGINA — ESTILO DE LUTA
+   Criando seu Personagem Parte 5
+============================================================ */
+
+.estilo-page .estilo-lead {
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.12), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,249,255,.96));
+  color: #273143;
+  font: 700 13px/1.6 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-shadow: 0 8px 20px rgba(15,61,122,.08);
+  box-sizing: border-box;
+}
+
+.estilo-page .estilo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 16px;
+}
+
+.estilo-page .estilo-card {
+  --style-a: var(--corgeral);
+  --style-b: #5cb6d1;
+  --style-soft: rgba(92,182,209,.12);
+
+  --tal-a: var(--style-a);
+  --tal-b: var(--style-b);
+  --tal-soft: var(--style-soft);
+
+  --hab-a: var(--style-a);
+  --hab-b: var(--style-b);
+  --hab-soft: var(--style-soft);
+
+  position: relative;
+  padding: 18px 13px 13px;
+  border-radius: 24px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, var(--style-soft), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,.95), rgba(246,249,255,.98));
+  box-shadow: 0 10px 26px rgba(15,61,122,.11);
+  color: #273143;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.estilo-page .estilo-card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 19px;
+  border: 1px solid rgba(15,61,122,.10);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.estilo-page .estilo-card::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  bottom: -38px;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: var(--style-soft);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.estilo-page .estilo-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 14px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.estilo-page .estilo-img {
+  width: 300px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 22px;
+  border: 5px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 10px 24px rgba(15,61,122,.20),
+    4px 4px 0 var(--style-a);
+  box-sizing: border-box;
+}
+
+.estilo-page .estilo-titlebox {
+  min-width: 0;
+}
+
+.estilo-page .estilo-name {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--style-a), var(--style-b));
+  color: #fff;
+  font: 900 12px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 6px 14px rgba(15,61,122,.18);
+  box-sizing: border-box;
+}
+
+.estilo-page .estilo-desc {
+  margin: 0;
+  color: #273143;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.estilo-page .estilo-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.estilo-page .estilo-info-row {
+  padding: 8px 10px;
+  border-radius: 15px;
+  border: 1px solid rgba(15,61,122,.12);
+  background: rgba(255,255,255,.82);
+  color: #273143;
+  font: 700 12.5px/1.45 Inter, Calibri, Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(15,61,122,.05);
+}
+
+.estilo-page .estilo-info-row b {
+  display: inline-flex;
+  margin-right: 6px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--style-a), var(--style-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+}
+
+.estilo-page .estilo-details {
+  margin-top: 12px;
+  position: relative;
+  z-index: 2;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.13);
+  background: rgba(255,255,255,.45);
+  overflow: hidden;
+}
+
+.estilo-page .estilo-details summary {
+  padding: 10px 13px;
+  background: linear-gradient(90deg, var(--style-a), var(--style-b));
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .75px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.estilo-page .estilo-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.estilo-page .estilo-details summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform .18s ease;
+}
+
+.estilo-page .estilo-details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.estilo-page .talento-list,
+.estilo-page .habilidade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.estilo-page .talento-list > br,
+.estilo-page .habilidade-list > br {
+  display: none !important;
+}
+
+.estilo-page .tier-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 4px 0 2px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--style-a), var(--style-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .75px;
+  box-shadow: 0 5px 12px rgba(15,61,122,.16);
+}
+
+/* Cores dos estilos */
+
+.estilo-page .style-warrior {
+  --style-a: #510303;
+  --style-b: #fc9e9e;
+  --style-soft: rgba(252,158,158,.16);
+}
+
+.estilo-page .style-fighter {
+  --style-a: #26562b;
+  --style-b: #39decb;
+  --style-soft: rgba(57,222,203,.15);
+}
+
+.estilo-page .style-shooter {
+  --style-a: #031e51;
+  --style-b: #9efce6;
+  --style-soft: rgba(158,252,230,.15);
+}
+
+/* Tema escuro */
+
+.tema-escuro .estilo-page .estilo-lead,
+.tema-sanji .estilo-page .estilo-lead,
+.tema-zoro .estilo-page .estilo-lead,
+.tema-escuro .estilo-page .estilo-card,
+.tema-sanji .estilo-page .estilo-card,
+.tema-zoro .estilo-page .estilo-card {
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.08), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .estilo-page .estilo-desc,
+.tema-sanji .estilo-page .estilo-desc,
+.tema-zoro .estilo-page .estilo-desc,
+.tema-escuro .estilo-page .estilo-info-row,
+.tema-sanji .estilo-page .estilo-info-row,
+.tema-zoro .estilo-page .estilo-info-row {
+  color: #f2f6ff;
+}
+
+.tema-escuro .estilo-page .estilo-info-row,
+.tema-sanji .estilo-page .estilo-info-row,
+.tema-zoro .estilo-page .estilo-info-row,
+.tema-escuro .estilo-page .estilo-details,
+.tema-sanji .estilo-page .estilo-details,
+.tema-zoro .estilo-page .estilo-details {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+}
+
+.tema-escuro .estilo-page .estilo-img,
+.tema-sanji .estilo-page .estilo-img,
+.tema-zoro .estilo-page .estilo-img {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* Responsivo */
+
+@media (max-width: 850px) {
+  .estilo-page .estilo-head {
+    grid-template-columns: 1fr;
+  }
+
+  .estilo-page .estilo-img {
+    width: 100%;
+    max-width: 300px;
+    height: 120px;
+    order: -1;
+  }
+}
