@@ -3182,7 +3182,7 @@ body.tema-zoro .item-card details,
    Modelo compacto em linhas
 ============================================================ */
 
-.p-ficha-box .pericia-atributos {
+.pericia-atributos {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: 7px !important;
