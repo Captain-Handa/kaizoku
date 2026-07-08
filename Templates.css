@@ -9324,3 +9324,83 @@ body.tema-zoro .sceditor-container textarea {
     0 10px 22px rgba(0,0,0,.38),
     0 0 0 1px rgba(255,255,255,.08);
 }
+
+/* ============================================================
+   PATCH — Título da Origem flutuando sobre o card
+============================================================ */
+
+/* Dá espaço entre os cards, já que o título sai para fora */
+.origem-page .origem-list {
+  gap: 28px !important;
+  padding-top: 8px;
+}
+
+/* Permite o título sair para fora sem ser cortado */
+.origem-page .origem-card {
+  overflow: visible !important;
+  margin-top: 14px;
+  padding-top: 30px;
+}
+
+/* Mantém os efeitos decorativos sem atrapalhar clique/visual */
+.origem-page .origem-card::before,
+.origem-page .origem-card::after {
+  pointer-events: none;
+}
+
+/* O cabeçalho não pode ser a referência do absolute */
+.origem-page .origem-head {
+  position: static !important;
+}
+
+/* A área do texto também não pode prender o título */
+.origem-page .origem-titlebox {
+  min-width: 0;
+  position: static !important;
+}
+
+/* Título centralizado, fora do fluxo, sobrepondo o topo do card */
+.origem-page .origem-name {
+  position: absolute !important;
+  top: -18px;
+  left: 50%;
+  z-index: 10;
+
+  transform: translateX(-50%);
+  width: fit-content;
+  max-width: calc(100% - 36px);
+  margin: 0 !important;
+
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 4px solid #fff;
+
+  background: linear-gradient(90deg, var(--origin-a), var(--origin-b));
+  color: #fff;
+
+  font: 900 12px/1 Inter, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .9px;
+  white-space: nowrap;
+
+  box-shadow:
+    0 10px 22px rgba(15,61,122,.22),
+    0 0 0 1px rgba(15,61,122,.08);
+  box-sizing: border-box;
+}
+
+/* Dá respiro para a descrição, já que o título saiu do fluxo */
+.origem-page .origem-desc {
+  padding-top: 4px;
+}
+
+/* Tema escuro */
+.tema-escuro .origem-page .origem-name,
+.tema-sanji .origem-page .origem-name,
+.tema-zoro .origem-page .origem-name {
+  border-color: #252628;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.38),
+    0 0 0 1px rgba(255,255,255,.08);
+}
