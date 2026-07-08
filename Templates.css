@@ -3183,28 +3183,34 @@ body.tema-zoro .item-card details,
 ============================================================ */
 
 .p-ficha-box .pericia-atributos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 7px;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 7px !important;
+  width: 100%;
+  margin: 4px 0 0;
   padding: 10px;
+  box-sizing: border-box;
   border-radius: 20px;
   border: 1px solid rgba(15,61,122,.13);
   background:
     radial-gradient(circle at top left, rgba(92,182,209,.12), transparent 34%),
     linear-gradient(180deg, rgba(255,255,255,.78), rgba(246,249,255,.94));
   box-shadow: 0 8px 20px rgba(15,61,122,.08);
-  box-sizing: border-box;
+  clear: both;
 }
 
 .p-ficha-box .pericia-atributo {
   --attr-cor: var(--corgeral);
 
-  display: grid;
-  grid-template-columns: 36px 1fr auto;
-  align-items: center;
-  gap: 8px;
+  display: grid !important;
+  grid-template-columns: 38px minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 8px !important;
 
-  min-height: 46px;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  margin: 0 !important;
   padding: 7px 9px;
   box-sizing: border-box;
 
@@ -3215,6 +3221,7 @@ body.tema-zoro .item-card details,
   color: #263247;
 
   box-shadow: 0 4px 10px rgba(15,61,122,.06);
+  overflow: hidden;
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
@@ -3225,29 +3232,48 @@ body.tema-zoro .item-card details,
 }
 
 .p-ficha-box .pericia-atributo-icone {
-  width: 36px;
-  height: 36px;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
   border-radius: 13px;
-  background: linear-gradient(135deg, var(--attr-cor), rgba(255,255,255,.18));
+  background: linear-gradient(135deg, var(--attr-cor), rgba(0,0,0,.18));
   color: #fff;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
-  font: 900 13px/1 Inter, Arial, sans-serif;
+  font: 900 12px/1 Inter, Arial, sans-serif;
   box-shadow: 0 5px 12px rgba(0,0,0,.14);
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+.p-ficha-box .pericia-atributo-icone img {
+  max-width: 22px !important;
+  max-height: 22px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
 .p-ficha-box .pericia-atributo-info {
   min-width: 0;
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
   gap: 3px;
+  overflow: hidden;
 }
 
 .p-ficha-box .pericia-atributo-nome {
+  display: block;
+  max-width: 100%;
   color: #1d2c43;
   font: 900 12px/1 Inter, Arial, sans-serif;
   text-transform: uppercase;
@@ -3258,7 +3284,10 @@ body.tema-zoro .item-card details,
 }
 
 .p-ficha-box .pericia-atributo-lv {
+  display: inline-flex;
+  align-items: center;
   width: fit-content;
+  max-width: 100%;
   padding: 3px 7px;
   border-radius: 999px;
   background: rgba(15,61,122,.08);
@@ -3266,6 +3295,7 @@ body.tema-zoro .item-card details,
   font: 900 9px/1 Inter, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: .4px;
+  white-space: nowrap;
 }
 
 .p-ficha-box .pericia-atributo-bonus {
@@ -3274,41 +3304,26 @@ body.tema-zoro .item-card details,
   padding: 0 9px;
   border-radius: 12px;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
-  background: linear-gradient(135deg, var(--attr-cor), rgba(0,0,0,.20));
+  background: linear-gradient(135deg, var(--attr-cor), rgba(0,0,0,.22));
   color: #fff;
   font: 900 15px/1 Inter, Arial, sans-serif;
   box-shadow: 0 5px 12px rgba(0,0,0,.14);
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 /* Cores por atributo */
 
-.p-ficha-box .pericia-atributo.fo {
-  --attr-cor: #cc0000;
-}
-
-.p-ficha-box .pericia-atributo.ag {
-  --attr-cor: #336699;
-}
-
-.p-ficha-box .pericia-atributo.in {
-  --attr-cor: #339933;
-}
-
-.p-ficha-box .pericia-atributo.as {
-  --attr-cor: #a83bd6;
-}
-
-.p-ficha-box .pericia-atributo.vo {
-  --attr-cor: #ff6633;
-}
-
-.p-ficha-box .pericia-atributo.ca {
-  --attr-cor: #cc9933;
-}
+.p-ficha-box .pericia-atributo.fo { --attr-cor: #cc0000; }
+.p-ficha-box .pericia-atributo.ag { --attr-cor: #336699; }
+.p-ficha-box .pericia-atributo.in { --attr-cor: #339933; }
+.p-ficha-box .pericia-atributo.as { --attr-cor: #a83bd6; }
+.p-ficha-box .pericia-atributo.vo { --attr-cor: #ff6633; }
+.p-ficha-box .pericia-atributo.ca { --attr-cor: #cc9933; }
 
 /* Tema escuro */
 
@@ -3325,8 +3340,17 @@ body.tema-zoro .item-card details,
 .tema-zoro .p-ficha-box .pericia-atributo {
   background: rgba(255,255,255,.055);
   border-color: rgba(255,255,255,.08);
+  border-left-color: var(--attr-cor);
   color: #f2f6ff;
   box-shadow: 0 4px 10px rgba(0,0,0,.20);
+}
+
+.tema-escuro .p-ficha-box .pericia-atributo:hover,
+.tema-sanji .p-ficha-box .pericia-atributo:hover,
+.tema-zoro .p-ficha-box .pericia-atributo:hover {
+  border-color: rgba(255,255,255,.14);
+  border-left-color: var(--attr-cor);
+  box-shadow: 0 8px 18px rgba(0,0,0,.30);
 }
 
 .tema-escuro .p-ficha-box .pericia-atributo-nome,
@@ -3346,16 +3370,26 @@ body.tema-zoro .item-card details,
 
 @media (max-width: 650px) {
   .p-ficha-box .pericia-atributos {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    padding: 8px;
   }
 
   .p-ficha-box .pericia-atributo {
-    grid-template-columns: 34px 1fr auto;
+    grid-template-columns: 36px minmax(0, 1fr) auto !important;
+    min-height: 46px;
   }
 
   .p-ficha-box .pericia-atributo-icone {
-    width: 34px;
-    height: 34px;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+  }
+
+  .p-ficha-box .pericia-atributo-bonus {
+    min-width: 38px;
+    height: 30px;
+    font-size: 14px;
   }
 }
 
