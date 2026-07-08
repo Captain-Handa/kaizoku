@@ -513,32 +513,6 @@ body.tema-zoro .island strong,
 }
 
 /* ------------------------------
-   Tema escuro legado
-   ------------------------------ */
-
-.tema-escuro .intro-1 {background-color: #171616;box-shadow: 0px 0px 5px #434e93;border: 3px solid #333333;}
-
-.tema-escuro .intro-2 {color: #ffffff;}
-
-.tema-escuro .island {
-    background-color: #1e1e1e;
-}
-
-.tema-escuro .group-box {
-  background: #222222;
-  color: #fff;
-}
-
-.tema-escuro .info-box {
-    background: #262626;
-    color: #fff;
-}
-
-.tema-escuro .info-box .note {
-    color: #eca2a2;
-}
-
-/* ------------------------------
    Temas personalizados: Sanji/Zoro
    ------------------------------ */
 
@@ -729,35 +703,6 @@ body.tema-zoro .island strong,
   display: block;
 }
 
-/* ------------------------------
-   Tema escuro legado
-   ------------------------------ */
-
-.tema-escuro .info-linha {
-    background: #141414;
-}
-
-.tema-escuro .info-linha b {
-    color: #7ebbff;
-}
-
-.tema-escuro .info-linha span {
-    color: #f3f3f3;
-}
-
-.tema-escuro .atributo span {
-    color: #ffffff;
-}
-
-.tema-escuro .atributo-tab {
-    color: #ffffff;
-    background-image: linear-gradient(to right, #1f3164, #3a57cef7, #272b44);
-}
-
-.tema-escuro .tab-container {
-    background-image: linear-gradient(to right, #304c9f, #283051f7, #172472);
-}
-
 /* ============================================================
    03. TALENTOS, AKUMA E SLOTS
    ============================================================ */
@@ -940,26 +885,6 @@ border-radius: 50%;
   display: block;
 }
 
-/* ------------------------------
-   Tema escuro legado
-   ------------------------------ */
-
-.tema-escuro .talento-box {
-  background: #17161666;
-}
-
-.tema-escuro .akuma-box { 
-    background-image: linear-gradient(to right, #472c68, #ffffff00);
-}
-
-.tema-escuro .akuma-talent {
- background-image: linear-gradient(to right, #52396e, #ffffff00);
-}
-
-.tema-escuro .akuma-tag {
-    background: #21162c;
-    border-left: 5px solid #c13daf;
-}
 
 /* ============================================================
    04. MOEDAS
@@ -1661,59 +1586,6 @@ border-radius: 50%;
    Tema escuro legado
    ------------------------------ */
 
-/*** TEMA ESCURO ***/
-
-.tema-escuro .haki-core {
-  background: radial-gradient(circle at 92% 12%, var(--haki-sec) 0%, transparent 22%), linear-gradient(135deg, #171d27 0%, #10141d 72%, #ffffff00 100%);
-  border-color: #2d3442;
-  color: #edf3ff;
-}
-
-.tema-escuro .haki-core:after {
-  color: rgba(255,255,255,0.04);
-}
-
-.tema-escuro .haki-texto-base {
-  background: #111820cc;
-  box-shadow: inset 0 0 0 1px #2c3544;
-}
-
-.tema-escuro .haki-grau {
-  background: linear-gradient(135deg, #17202dcc, #111820);
-  border-color: #354255;
-}
-
-.tema-escuro .haki-grau b {
-  color: #ffffff;
-}
-
-/*** TEMA ESCURO ***/
-
-.tema-escuro .haki-section {
-  background: linear-gradient(135deg, #171d27 0%, #10141d 72%, #151922 100%);
-  border-color: #2d3442;
-  color: #edf3ff;
-}
-
-.tema-escuro .haki-descbox {
-  background: rgba(17,24,32,0.82);
-  box-shadow: inset 0px 0px 0px 1px #2c3544, 3px 3px 0px rgba(0,0,0,0.24);
-}
-
-.tema-escuro .haki-desc-text {
-  color: #edf3ff;
-}
-
-.tema-escuro .haki-grade {
-  background: linear-gradient(135deg, #17202dcc, #111820);
-  border-color: #354255;
-}
-
-.tema-escuro .haki-grade-name,
-.tema-escuro .haki-grade-text {
-  color: #edf3ff;
-}
-
 /* ============================================================
    06. ITENS, ARMAS E NAVIOS
    ============================================================ */
@@ -1951,61 +1823,6 @@ border-radius: 50%;
   padding: 2px;
   font-size: 10px;
   line-height: 1.1;
-}
-
-/* ------------------------------
-   Tema escuro legado
-   ------------------------------ */
-
-.tema-escuro .item-card { 
-    background: #181818;
-}
-
-.tema-escuro .item-header.navio {
-    background: linear-gradient(to right, #0a5882, #19538e, #00406b);
-}
-
-.tema-escuro .item-image {
-    background: #2d2b2b;
-    border: 1px solid #666666;
-}
-
-.tema-escuro .item-preview {
-    background: #2d2b2b;
-    border: 1px solid #666666;
-}
-
-.tema-escuro .item-description {
-    border: 1px solid #666666;
-    background: #2d2b2b;
-}
-
-.tema-escuro .item-stat .label {
-    background: #235fa2;
-}
-
-.tema-escuro .item-stat .value {
-    background: #2f2f2f;
-    color: #ffffff;
-    padding: 2px;
-}
-
-.tema-escuro .ship-description {
-    background-image: linear-gradient(45deg, #0e1f4966, transparent);
-}
-
-.tema-escuro .item-card.pocket {
-  background: #181818;
-}
-
-.tema-escuro .item-image-pocket {
-  background: #2d2b2b;
-  border: 1px solid #666;
-}
-
-.tema-escuro .item-stat.pocket .value {
-  background: #2f2f2f;
-  color: #fff;
 }
 
 /* ============================================================
@@ -2543,19 +2360,6 @@ border-radius: 50%;
   display: none !important;
 }
 
-/* ------------------------------
-   Tema escuro legado
-   ------------------------------ */
-
-.tema-escuro .p-ficha-box {
-    background-image: linear-gradient(to right, #00144e6e, #ffffff00);
-    box-shadow: 0px 0px 3px 3px #1a1b27;
-}
-
-.tema-escuro .p-ficha {
-    background-image: linear-gradient(to right, #0515466e, #ffffff00);
-    color: #fff;
-}
 
 /* ------------------------------
    Temas personalizados: Sanji/Zoro
@@ -2680,206 +2484,306 @@ border-radius: 50%;
 }
 
 /* ============================================================
-   08. NPCS, INIMIGOS E MOBS
-   ============================================================ */
+   08. NPCS, BESTIÁRIO E MOBS
+   Usado em:
+   - Páginas de NPCs
+   - Bestiários
+   - Templates de narração
+============================================================ */
 
 /* ------------------------------
-   Tema normal / regras base
-   ------------------------------ */
+   NPC / Bestiário — Imagens
+------------------------------ */
 
-.npc-tag-1 {
-  align-items: center;
-  width: 49%;
-  border-top: 3px solid #fff;
-  box-shadow: 0px 2px 6px -2px #b3b3fb;
-  padding: 4px;
-  margin: auto;
-}
-
-.npc-tag-2 {
-  align-items: center;
-  border-top: 3px solid #fff;
-  box-shadow: 0px 2px 6px -2px #b3b3fb;
-  padding: 4px;
-  margin: 2px;
-}
-
-.inimigo {
-  display: flex;
-  align-items: flex-start;
-  width: 300px;
-  box-shadow: var(--shadow);
-  border-radius: 5px;
-  background-image: linear-gradient(to right, #7b9cff6e, #ffffff);
-  border: 2px solid white;
-  box-shadow: 0px 0px 10px #888fb861;
-}
-
-.inimigo-img {
-  height: 104.13px;
-  border-radius: 5px 0px 0px 5px;
+.npc-icone,
+.npc-icone-2 {
+  float: right;
   object-fit: cover;
+  margin: 4px 0 8px 8px;
+  border-radius: 16px;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 7px 16px rgba(15,61,122,.18),
+    4px 4px 0 #2f4b9f;
 }
 
-.inimigo-info {
-  border: 3px solid #4074b2;
-  border-style: outset;
-  display: grid;
-  align-items: flex-start;
-  width: 50%;
-  box-shadow: var(--shadow);
+.npc-icone {
+  width: 96px;
+  height: 96px;
 }
 
-.npc-ficha {
-  background-image: linear-gradient(to right, #7b9cff6e, #ffffff);
-  text-align: left;
-  padding: 5px;
-  color: #000;
-  border-left: 3px solid #304c9f;
-  border-top: 3px solid #fff;
-  border-radius: 15px;
+.npc-icone-2 {
+  width: 106px;
+  height: 106px;
 }
+
+/* Protege emojis/imagens pequenas dentro de textos */
+.npc-ficha img:not(.npc-icone):not(.npc-icone-2),
+.npc-tag-1 img,
+.npc-tag-2 img,
+.npc-origem img {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* ------------------------------
+   NPC / Bestiário — Nome
+------------------------------ */
 
 .npc-nome {
-  background-image: linear-gradient(to right, #2f4b9f, #5cb6d1);
-  text-align: left;
-  padding-left: 5px;
-  text-transform: uppercase;
-  font-weight: 700;
+  min-height: 22px;
+  margin: 10px 0 4px;
+  padding: 7px 11px;
+  border-radius: 16px;
+  background-image: linear-gradient(90deg, #2f4b9f, #5cb6d1);
   color: #fff;
-  padding: 5px;
-  border-radius: 15px;
-  margin-bottom: 3px;
+  font: 900 12px/1.15 Inter, Roboto, Arial, sans-serif;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  box-shadow: 0 6px 14px rgba(15,61,122,.16);
+  position: relative;
+  overflow: hidden;
+}
+
+.npc-nome::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70px;
+  width: 80px;
+  height: 100%;
+  background: rgba(255,255,255,.18);
+  transform: skewX(-25deg);
+  pointer-events: none;
+  transition: left .45s ease;
+}
+
+.npc-nome:hover::before {
+  left: calc(100% + 70px);
 }
 
 .npc-nome b {
   float: right;
   text-transform: capitalize;
-  font-size: small;
-  font-weight: 200;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: .85;
 }
+
+/* ------------------------------
+   NPC / Bestiário — Corpo
+------------------------------ */
+
+.npc-ficha {
+  display: flow-root;
+  min-height: 72px;
+  margin: 0 0 13px;
+  padding: 9px 11px;
+  border-radius: 16px;
+  border: 1px solid rgba(47,75,159,.18);
+  border-left: 5px solid #304c9f;
+  background:
+    radial-gradient(circle at top right, rgba(92,182,209,.12), transparent 36%),
+    linear-gradient(90deg, rgba(123,156,255,.14), rgba(255,255,255,.92));
+  color: #1d2638;
+  text-align: justify;
+  font: 700 12.5px/1.45 Inter, Calibri, Arial, sans-serif;
+  box-shadow: 0 5px 14px rgba(15,61,122,.08);
+  box-sizing: border-box;
+}
+
+.npc-ficha b,
+.npc-ficha strong {
+  color: #12396f;
+  font-weight: 900;
+}
+
+/* ------------------------------
+   NPC / Bestiário — Origem, Grupo e Classificação
+------------------------------ */
 
 .npc-origem {
-  background-image: linear-gradient(to right, #2f4b9f, #5cb6d100);
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 5px 4px 0 0;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2f4b9f, rgba(92,182,209,.55));
+  color: #fff;
+  font: 900 10px/1.15 Inter, Roboto, Arial, sans-serif;
   text-align: left;
-  padding: 3px;
+  box-shadow: 0 4px 9px rgba(15,61,122,.13);
+  box-sizing: border-box;
+}
+
+.npc-origem b,
+.npc-origem strong {
   color: #fff;
-  margin-top: 2px;
-  border-radius:15px;
 }
 
-.npc-icone {
-  box-shadow: 4px 4px 0px 0px #2f4b9f;
-  height: 100px;
-  margin-left: 5px;
-  margin-top: 5px;
+/* ------------------------------
+   NPC / Bestiário — Details
+------------------------------ */
+
+details:has(.npc-tag-1),
+details:has(.npc-tag-2),
+details.npc-ficha {
+  clear: both;
+  margin: 6px 0 16px;
   border-radius: 15px;
-}
-
-.npc-icone-2 {
-  box-shadow: 4px 4px 0px 0px #2f4b9f;
-  height: 110px;
-  margin-left: 5px;
-  margin-top: 5px;
-  border-radius: 15px;
-}
-
-/* ===== INIMIGO ===== */
-
-.enemy-card {
-  width: 100px;
-  background: #f4f6f9;
-  box-shadow: 0 2px 4px #283b54;
-  border-radius: 8px;
+  border: 1px solid rgba(47,75,159,.16);
+  background: rgba(255,255,255,.56);
   overflow: hidden;
-  text-align: center;
-  margin: 8px 0;
-  font-size: 12px;
-  display: inline-block;
-  transition: transform .2s ease;
+  box-shadow: 0 4px 12px rgba(15,61,122,.07);
 }
 
-/* Imagem no topo — ocupa todo o card */
-
-.enemy-image {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  background: #ddd;
-  transition: transform .25s ease, opacity .25s ease;
-}
-
-.enemy-image.morto {
-    filter: grayscale(1);
-}
-
-/* Inverter o hover — reduzir imagem */
-
-.enemy-card:hover .enemy-image {
-  /* transform: scale(0.93); */
-  opacity: 0.9;
-}
-
-/* Nome compacto */
-
-.enemy-name {
-  font-weight: 700;
-  background: linear-gradient(to right, #510303, #fc9e9e);
+details:has(.npc-tag-1) summary,
+details:has(.npc-tag-2) summary,
+details.npc-ficha summary {
+  padding: 7px 10px !important;
+  margin: 0 !important;
+  border-radius: 0;
+  background: linear-gradient(90deg, #19324e, #2f4b9f);
   color: #fff;
-  padding: 3px;
-  font-size: 12px;
-  letter-spacing: .3px;
+  font: 900 10px/1 Inter, Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  cursor: pointer;
+  list-style: none;
 }
 
-/* Linhas de status */
-
-.enemy-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-  gap: 3px;
-  margin: 2px 0;
+details:has(.npc-tag-1) summary::-webkit-details-marker,
+details:has(.npc-tag-2) summary::-webkit-details-marker,
+details.npc-ficha summary::-webkit-details-marker {
+  display: none;
 }
 
-.enemy-stats div {
-  background: #fff;
-  padding: 2px 0;
-  text-align: center;
-  min-width: 0;
+details:has(.npc-tag-1) summary::before,
+details:has(.npc-tag-2) summary::before,
+details.npc-ficha summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 6px;
+  transition: transform .18s ease;
 }
+
+details[open]:has(.npc-tag-1) summary::before,
+details[open]:has(.npc-tag-2) summary::before,
+details.npc-ficha[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* ------------------------------
+   NPC / Bestiário — Tags de Atributo e Detalhe
+------------------------------ */
+
+.npc-tag-1,
+.npc-tag-2 {
+  box-sizing: border-box;
+  border-radius: 12px;
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(47,75,159,.14);
+  border-left: 4px solid #304c9f;
+  color: #1d2638;
+  font: 800 11.5px/1.35 Inter, Calibri, Arial, sans-serif;
+  box-shadow: 0 3px 9px rgba(15,61,122,.07);
+}
+
+.npc-tag-1 {
+  flex: 1 1 240px;
+  width: auto;
+  margin: 3px;
+  padding: 7px 9px;
+}
+
+.npc-tag-2 {
+  display: block;
+  margin: 4px 6px;
+  padding: 7px 9px;
+}
+
+.npc-tag-1 b,
+.npc-tag-1 strong,
+.npc-tag-2 b,
+.npc-tag-2 strong {
+  color: #12396f;
+  font-weight: 900;
+}
+
+/* ------------------------------
+   Narração — Faixa de Inimigos
+------------------------------ */
 
 .enemy-tag {
-    background-image: linear-gradient(to right, #882424, #e0283a);
-    text-align: right;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #fff;
-    padding: 2px 4px 2px 2px;
-    border-radius: 15px;
-    border: 3px solid white;
-    box-shadow: 0px 0px 5px #434e93;
+  width: fit-content;
+  margin: 12px 0 7px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  background-image: linear-gradient(90deg, #882424, #e0283a);
+  box-shadow: 0 6px 14px rgba(136,36,36,.20);
+  color: #fff;
+  font: 900 10px/1 Inter, Roboto, Arial, sans-serif;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: .9px;
 }
 
-/*********************** Inicio ***********************/
+/* ------------------------------
+   Narração — Mob Cards
+------------------------------ */
+
+.mob-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 10px auto;
+}
 
 .mob-card {
   width: 270px;
+  min-height: 86px;
   display: flex;
   gap: 8px;
   align-items: stretch;
-  border: 1px solid #7e9cc7;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(36, 79, 146, 0.16);
   padding: 6px;
   box-sizing: border-box;
+  border-radius: 13px;
+  border: 1px solid #7e9cc7;
+  background: linear-gradient(135deg, #f4f7fb, #dfe9f8);
+  box-shadow: 0 5px 14px rgba(36,79,146,.14);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.mob-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(36,79,146,.18);
 }
 
 .mob-card-img {
   width: 72px;
   height: 72px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #fff;
   flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 11px;
+  border: 2px solid #fff;
+  background: #dcecff;
+  box-shadow: 0 4px 9px rgba(0,0,0,.12);
 }
 
 .mob-card-info {
@@ -2891,10 +2795,10 @@ border-radius: 50%;
 }
 
 .mob-card-name {
+  padding: 5px 8px;
+  border-radius: 9px;
   color: #fff;
-  font: 700 12px Roboto, Arial, sans-serif;
-  padding: 4px 8px;
-  border-radius: 8px;
+  font: 900 11px/1.1 Inter, Roboto, Arial, sans-serif;
   line-height: 1.1;
   white-space: nowrap;
   overflow: hidden;
@@ -2911,22 +2815,21 @@ border-radius: 50%;
   display: block;
   width: 100%;
   box-sizing: border-box;
-  background: #ffffff;
-  border: 1px solid #9cb3d4;
-  border-radius: 6px;
-  padding: 3px 6px;
-  font: 700 10px Roboto, Arial, sans-serif;
+  padding: 3px 4px;
+  border-radius: 7px;
+  border: 1px solid rgba(156,179,212,.85);
+  background: #fff;
   color: #1f2d3d;
-  line-height: 1.2;
+  font: 900 10px/1.15 Inter, Roboto, Arial, sans-serif;
   text-align: center;
 }
 
 .mob-card-action {
   margin-top: auto;
+  padding: 5px 8px;
+  border-radius: 9px;
   color: #fff;
-  font: 700 10px Roboto, Arial, sans-serif;
-  padding: 4px 8px;
-  border-radius: 8px;
+  font: 900 10px/1.1 Inter, Roboto, Arial, sans-serif;
   text-transform: uppercase;
   line-height: 1.1;
   white-space: nowrap;
@@ -2934,12 +2837,7 @@ border-radius: 50%;
   text-overflow: ellipsis;
 }
 
-.mob-card-stats dano {
-  color: #cc3333;
-  font-weight: 700;
-}
-
-/* COMUM */
+/* Raridades dos mobs */
 
 .mob-card.comum {
   background: linear-gradient(135deg, #f4f7fb, #dfe9f8);
@@ -2947,14 +2845,12 @@ border-radius: 50%;
 }
 
 .mob-card.comum .mob-card-name {
-  background: linear-gradient(to right, #244688, #2892e0);
+  background: linear-gradient(90deg, #244688, #2892e0);
 }
 
 .mob-card.comum .mob-card-action {
-  background: linear-gradient(to right, #1f2c44, #375b97);
+  background: linear-gradient(90deg, #1f2c44, #375b97);
 }
-
-/* RARO */
 
 .mob-card.raro {
   background: linear-gradient(135deg, #f3effb, #e7dcf8);
@@ -2962,14 +2858,12 @@ border-radius: 50%;
 }
 
 .mob-card.raro .mob-card-name {
-  background: linear-gradient(to right, #472488, #6972af);
+  background: linear-gradient(90deg, #472488, #6972af);
 }
 
 .mob-card.raro .mob-card-action {
-  background: linear-gradient(to right, #3d245f, #6a51a1);
+  background: linear-gradient(90deg, #3d245f, #6a51a1);
 }
-
-/* LENDÁRIO */
 
 .mob-card.lendario {
   background: linear-gradient(135deg, #fff8dc, #f6edb4);
@@ -2977,79 +2871,177 @@ border-radius: 50%;
 }
 
 .mob-card.lendario .mob-card-name {
-  background: linear-gradient(to right, #5a4524, #e0dc28);
+  background: linear-gradient(90deg, #5a4524, #e0dc28);
   color: #fff;
 }
 
 .mob-card.lendario .mob-card-action {
-  background: linear-gradient(to right, #7a5a12, #c9a227);
+  background: linear-gradient(90deg, #7a5a12, #c9a227);
   color: #fff;
 }
 
-.mob-flex {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2px;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 10px auto;
+/* ============================================================
+   TEMA ESCURO / SANJI / ZORO
+============================================================ */
+
+body.tema-sanji .npc-icone,
+body.tema-zoro .npc-icone,
+.tema-escuro .npc-icone,
+body.tema-sanji .npc-icone-2,
+body.tema-zoro .npc-icone-2,
+.tema-escuro .npc-icone-2 {
+  border-color: #252628;
+  background: #252628;
+  box-shadow:
+    0 7px 16px rgba(0,0,0,.34),
+    4px 4px 0 rgba(92,182,209,.20);
 }
 
-/* ------------------------------
-   Tema escuro legado
-   ------------------------------ */
-
-.tema-escuro .npc-tag-1 {
-    background-color: #322e2e45;
-}
-
-.tema-escuro .npc-tag-2 {
-    background-color: #322e2e45;
-}
-
-.tema-escuro .inimigo {
-    background-image: linear-gradient(to right, #7b9cff6e, #0f1317);
-}
-
+body.tema-sanji .npc-ficha,
+body.tema-zoro .npc-ficha,
 .tema-escuro .npc-ficha {
-    background-image: linear-gradient(to right, #23419d6e, #ffffff00);
-    color: #ffffff;
+  background:
+    radial-gradient(circle at top right, rgba(92,182,209,.08), transparent 36%),
+    linear-gradient(90deg, rgba(15,31,73,.32), rgba(18,19,21,.96));
+  border-color: rgba(255,255,255,.08);
+  border-left-color: #2f4b9f;
+  color: #f2f6ff;
+  box-shadow: 0 5px 14px rgba(0,0,0,.22);
 }
 
-.tema-escuro .enemy-card { background: #181818; }
-
-.tema-escuro .enemy-image { background: #2d2b2b; border-bottom: 1px solid #666; }
-
-.tema-escuro .enemy-name { background: linear-gradient(to right, #7a1414, #c95a5a); }
-
-.tema-escuro .enemy-stats div {
-  background: #2d2b2b;
-  border: 1px solid #666;
-  color: #eee;
+body.tema-sanji .npc-ficha b,
+body.tema-sanji .npc-ficha strong,
+body.tema-zoro .npc-ficha b,
+body.tema-zoro .npc-ficha strong,
+.tema-escuro .npc-ficha b,
+.tema-escuro .npc-ficha strong {
+  color: #9fc9ff;
 }
 
+body.tema-sanji .npc-origem,
+body.tema-zoro .npc-origem,
+.tema-escuro .npc-origem {
+  background: linear-gradient(90deg, #19324e, #2f4b9f);
+  color: #fff;
+}
+
+body.tema-sanji details:has(.npc-tag-1),
+body.tema-sanji details:has(.npc-tag-2),
+body.tema-zoro details:has(.npc-tag-1),
+body.tema-zoro details:has(.npc-tag-2),
+.tema-escuro details:has(.npc-tag-1),
+.tema-escuro details:has(.npc-tag-2),
+body.tema-sanji details.npc-ficha,
+body.tema-zoro details.npc-ficha,
+.tema-escuro details.npc-ficha {
+  background: rgba(255,255,255,.045);
+  border-color: rgba(255,255,255,.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,.22);
+}
+
+body.tema-sanji .npc-tag-1,
+body.tema-sanji .npc-tag-2,
+body.tema-zoro .npc-tag-1,
+body.tema-zoro .npc-tag-2,
+.tema-escuro .npc-tag-1,
+.tema-escuro .npc-tag-2 {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  border-left-color: #5cb6d1;
+  color: #f2f6ff;
+  box-shadow: 0 3px 9px rgba(0,0,0,.20);
+}
+
+body.tema-sanji .npc-tag-1 b,
+body.tema-sanji .npc-tag-1 strong,
+body.tema-sanji .npc-tag-2 b,
+body.tema-sanji .npc-tag-2 strong,
+body.tema-zoro .npc-tag-1 b,
+body.tema-zoro .npc-tag-1 strong,
+body.tema-zoro .npc-tag-2 b,
+body.tema-zoro .npc-tag-2 strong,
+.tema-escuro .npc-tag-1 b,
+.tema-escuro .npc-tag-1 strong,
+.tema-escuro .npc-tag-2 b,
+.tema-escuro .npc-tag-2 strong {
+  color: #9fc9ff;
+}
+
+body.tema-sanji .mob-card.comum,
+body.tema-zoro .mob-card.comum,
 .tema-escuro .mob-card.comum {
   background: linear-gradient(135deg, #1b1f26, #252c38);
   border-color: #3f5375;
 }
 
+body.tema-sanji .mob-card.raro,
+body.tema-zoro .mob-card.raro,
 .tema-escuro .mob-card.raro {
   background: linear-gradient(135deg, #241f2d, #312844);
   border-color: #5d4e7f;
 }
 
+body.tema-sanji .mob-card.lendario,
+body.tema-zoro .mob-card.lendario,
 .tema-escuro .mob-card.lendario {
   background: linear-gradient(135deg, #2d2817, #3e3516);
   border-color: #8d7422;
 }
 
+body.tema-sanji .mob-card-stats span,
+body.tema-zoro .mob-card-stats span,
 .tema-escuro .mob-card-stats span {
-  background: #2a2f39;
-  border-color: #49576d;
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.10);
   color: #f2f2f2;
 }
 
+body.tema-sanji .mob-card-img,
+body.tema-zoro .mob-card-img,
+.tema-escuro .mob-card-img {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 700px) {
+  .npc-icone,
+  .npc-icone-2 {
+    width: 76px;
+    height: 76px;
+    border-radius: 13px;
+    margin-left: 7px;
+  }
+
+  .npc-nome {
+    font-size: 11px;
+    padding: 6px 9px;
+  }
+
+  .npc-ficha {
+    font-size: 12px;
+    line-height: 1.42;
+    padding: 8px;
+  }
+
+  .npc-origem {
+    display: flex;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .npc-tag-1 {
+    flex-basis: 100%;
+  }
+
+  .mob-card {
+    width: 100%;
+    max-width: 310px;
+  }
+}
 /* ============================================================
    09. POSTS, NARRAÇÃO E DIÁLOGO
    ============================================================ */
