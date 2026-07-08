@@ -6775,3 +6775,288 @@ body.tema-zoro .sceditor-container textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   PÁGINA — ESCOLHA DO ARQUÉTIPO
+============================================================ */
+
+.archetype-page .archetype-lead {
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.12), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.90), rgba(246,249,255,.96));
+  color: #273143;
+  font: 700 13px/1.6 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-shadow: 0 8px 20px rgba(15,61,122,.08);
+}
+
+.archetype-page .archetype-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.archetype-page .archetype-card {
+  --arch-a: var(--corgeral);
+  --arch-b: #5cb6d1;
+
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 14px;
+  align-items: stretch;
+  padding: 14px;
+  border-radius: 26px;
+  border: 1px solid rgba(15,61,122,.13);
+  border-left: 7px solid var(--arch-a);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.12), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.94), rgba(246,249,255,.98));
+  box-shadow: 0 12px 28px rgba(15,61,122,.12);
+  color: #273143;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.archetype-page .archetype-content {
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.archetype-page .archetype-name {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 9px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--arch-a), var(--arch-b));
+  color: #fff;
+  font: 900 12px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 6px 14px rgba(15,61,122,.18);
+}
+
+.archetype-page .archetype-desc {
+  margin: 0 0 12px;
+  color: #273143;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.archetype-page .archetype-img {
+  width: 180px;
+  height: 225px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+  border: 5px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 10px 24px rgba(15,61,122,.20),
+    4px 4px 0 var(--arch-a);
+  position: relative;
+  z-index: 2;
+  align-self: center;
+}
+
+/* ============================================================
+   VANTAGEM CARD — Reutilizável na página e na ficha
+============================================================ */
+
+.vantagem-card {
+  --vant-a: var(--corgeral);
+  --vant-b: #5cb6d1;
+
+  display: flow-root;
+  margin: 10px 0 12px;
+  padding: 10px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(15,61,122,.13);
+  border-left: 6px solid var(--vant-a);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.12), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,249,255,.96));
+  box-shadow: 0 8px 20px rgba(15,61,122,.09);
+  color: #273143;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.vantagem-card::after {
+  content: "VANTAGEM";
+  position: absolute;
+  right: -20px;
+  bottom: 8px;
+  transform: rotate(-12deg);
+  color: rgba(15,61,122,.055);
+  font: 900 34px/1 Inter, Arial, sans-serif;
+  letter-spacing: -1px;
+  pointer-events: none;
+}
+
+.vantagem-card .vantagem-img {
+  float: left;
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 11px 7px 0;
+  border-radius: 17px;
+  border: 4px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 7px 16px rgba(15,61,122,.18),
+    3px 3px 0 var(--vant-a);
+  position: relative;
+  z-index: 2;
+}
+
+.vantagem-card .vantagem-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--vant-a), var(--vant-b));
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  box-shadow: 0 5px 12px rgba(15,61,122,.16);
+  position: relative;
+  z-index: 2;
+}
+
+.vantagem-card .vantagem-info {
+  position: relative;
+  z-index: 2;
+  color: #273143;
+  font: 700 12.5px/1.5 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.vantagem-card .vantagem-info b,
+.vantagem-card .vantagem-info strong {
+  color: var(--vant-a);
+  font-weight: 900;
+}
+
+.archetype-page .base-title {
+  width: fit-content;
+  margin: 12px 0 7px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #19324e, var(--arch-a));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+
+/* Cores */
+
+.archetype-page .arch-ataque,
+.vantagem-card.vantagem-ataque {
+  --arch-a: #510303;
+  --arch-b: #fc9e9e;
+  --vant-a: #510303;
+  --vant-b: #fc9e9e;
+}
+
+.archetype-page .arch-defesa,
+.vantagem-card.vantagem-defesa {
+  --arch-a: #21364a;
+  --arch-b: #5a7ce3;
+  --vant-a: #21364a;
+  --vant-b: #5a7ce3;
+}
+
+.archetype-page .arch-sorte,
+.vantagem-card.vantagem-sorte {
+  --arch-a: #336552;
+  --arch-b: #4fffb8;
+  --vant-a: #336552;
+  --vant-b: #4fffb8;
+}
+
+/* Protege emojis/imagens pequenas */
+.archetype-page img:not(.intro-img):not(.archetype-img):not(.vantagem-img),
+.vantagem-card img:not(.vantagem-img) {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Tema escuro */
+
+.tema-escuro .archetype-page .archetype-lead,
+.tema-sanji .archetype-page .archetype-lead,
+.tema-zoro .archetype-page .archetype-lead,
+.tema-escuro .archetype-page .archetype-card,
+.tema-sanji .archetype-page .archetype-card,
+.tema-zoro .archetype-page .archetype-card,
+.tema-escuro .vantagem-card,
+.tema-sanji .vantagem-card,
+.tema-zoro .vantagem-card {
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.08), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .archetype-page .archetype-desc,
+.tema-sanji .archetype-page .archetype-desc,
+.tema-zoro .archetype-page .archetype-desc,
+.tema-escuro .vantagem-card .vantagem-info,
+.tema-sanji .vantagem-card .vantagem-info,
+.tema-zoro .vantagem-card .vantagem-info {
+  color: #f2f6ff;
+}
+
+.tema-escuro .archetype-page .archetype-img,
+.tema-sanji .archetype-page .archetype-img,
+.tema-zoro .archetype-page .archetype-img,
+.tema-escuro .vantagem-card .vantagem-img,
+.tema-sanji .vantagem-card .vantagem-img,
+.tema-zoro .vantagem-card .vantagem-img {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* Responsivo */
+
+@media (max-width: 760px) {
+  .archetype-page .archetype-card {
+    grid-template-columns: 1fr;
+  }
+
+  .archetype-page .archetype-img {
+    width: 100%;
+    height: 210px;
+    order: -1;
+  }
+
+  .vantagem-card .vantagem-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+  }
+}
