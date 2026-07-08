@@ -3693,6 +3693,7 @@ body.tema-zoro .sceditor-container textarea {
   text-shadow: none !important;
   mix-blend-mode: normal !important;
   overflow: visible !important;
+    font: 900 28px / 1 var(--title, Inter), Inter, Arial, sans-serif;
 }
 
 .jornal-novo .intro-title * {
