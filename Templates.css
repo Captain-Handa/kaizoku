@@ -8066,3 +8066,11 @@ body.tema-zoro .sceditor-container textarea {
     height: 100px;
   }
 }
+
+.origem-page .origem-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+  margin-top: 14px !important;
+  border: 5px solid red !important;
+}
