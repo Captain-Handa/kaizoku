@@ -3150,108 +3150,6 @@ body.tema-zoro .item-card details,
   background: linear-gradient(90deg, transparent, rgba(15,61,122,.24), transparent);
 }
 
-/* Atributos de perícia */
-
-.p-ficha-box .pericia-atributos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-  gap: 8px;
-}
-
-.p-ficha-box .pericia-atributo {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 5px;
-  align-items: center;
-  min-height: 58px;
-  padding: 9px 10px;
-  border-radius: 17px;
-  border: 1px solid rgba(15,61,122,.12);
-  background: linear-gradient(135deg, #ffffff, #f4f8ff);
-  box-shadow: 0 6px 16px rgba(15,61,122,.08);
-  color: #273143;
-  box-sizing: border-box;
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
-.p-ficha-box .pericia-atributo:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(15,61,122,.14);
-}
-
-.p-ficha-box .pericia-atributo-nome {
-  font: 900 12px/1.15 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .35px;
-}
-
-.p-ficha-box .pericia-atributo-lv {
-  margin-top: 3px;
-  font: 800 10px/1 Inter, Arial, sans-serif;
-  opacity: .72;
-}
-
-.p-ficha-box .pericia-atributo-bonus {
-  min-width: 38px;
-  min-height: 38px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 13px;
-  color: #fff;
-  font: 900 15px/1 Inter, Arial, sans-serif;
-  box-shadow: 0 5px 12px rgba(0,0,0,.14);
-}
-
-/* Cores por atributo */
-
-.p-ficha-box .pericia-atributo.fo {
-  border-left: 5px solid #cc0000;
-}
-
-.p-ficha-box .pericia-atributo.fo .pericia-atributo-bonus {
-  background: linear-gradient(135deg, #cc0000, #ff6969);
-}
-
-.p-ficha-box .pericia-atributo.ag {
-  border-left: 5px solid #336699;
-}
-
-.p-ficha-box .pericia-atributo.ag .pericia-atributo-bonus {
-  background: linear-gradient(135deg, #336699, #5fa8df);
-}
-
-.p-ficha-box .pericia-atributo.in {
-  border-left: 5px solid #339933;
-}
-
-.p-ficha-box .pericia-atributo.in .pericia-atributo-bonus {
-  background: linear-gradient(135deg, #339933, #68c768);
-}
-
-.p-ficha-box .pericia-atributo.as {
-  border-left: 5px solid #cc33ff;
-}
-
-.p-ficha-box .pericia-atributo.as .pericia-atributo-bonus {
-  background: linear-gradient(135deg, #8d35b8, #cc33ff);
-}
-
-.p-ficha-box .pericia-atributo.vo {
-  border-left: 5px solid #ff6633;
-}
-
-.p-ficha-box .pericia-atributo.vo .pericia-atributo-bonus {
-  background: linear-gradient(135deg, #d14a1f, #ff8a5c);
-}
-
-.p-ficha-box .pericia-atributo.ca {
-  border-left: 5px solid #cc9933;
-}
-
-.p-ficha-box .pericia-atributo.ca .pericia-atributo-bonus {
-  background: linear-gradient(135deg, #a8751f, #e7b958);
-}
 
 /* Tema escuro */
 
@@ -3271,24 +3169,193 @@ body.tema-zoro .item-card details,
   color: #f2f6ff;
 }
 
+/* Responsivo */
+
+  .p-ficha-box .pericia-chip {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}
+
+/* ============================================================
+   FICHA — Atributos de Perícia
+   Modelo compacto em linhas
+============================================================ */
+
+.p-ficha-box .pericia-atributos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.12), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.78), rgba(246,249,255,.94));
+  box-shadow: 0 8px 20px rgba(15,61,122,.08);
+  box-sizing: border-box;
+}
+
+.p-ficha-box .pericia-atributo {
+  --attr-cor: var(--corgeral);
+
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 46px;
+  padding: 7px 9px;
+  box-sizing: border-box;
+
+  border-radius: 15px;
+  border: 1px solid rgba(15,61,122,.11);
+  border-left: 5px solid var(--attr-cor);
+  background: rgba(255,255,255,.86);
+  color: #263247;
+
+  box-shadow: 0 4px 10px rgba(15,61,122,.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.p-ficha-box .pericia-atributo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(15,61,122,.12);
+  border-color: rgba(15,61,122,.20);
+}
+
+.p-ficha-box .pericia-atributo-icone {
+  width: 36px;
+  height: 36px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--attr-cor), rgba(255,255,255,.18));
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font: 900 13px/1 Inter, Arial, sans-serif;
+  box-shadow: 0 5px 12px rgba(0,0,0,.14);
+  overflow: hidden;
+}
+
+.p-ficha-box .pericia-atributo-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.p-ficha-box .pericia-atributo-nome {
+  color: #1d2c43;
+  font: 900 12px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .45px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.p-ficha-box .pericia-atributo-lv {
+  width: fit-content;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(15,61,122,.08);
+  color: #52627a;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+
+.p-ficha-box .pericia-atributo-bonus {
+  min-width: 42px;
+  height: 32px;
+  padding: 0 9px;
+  border-radius: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, var(--attr-cor), rgba(0,0,0,.20));
+  color: #fff;
+  font: 900 15px/1 Inter, Arial, sans-serif;
+  box-shadow: 0 5px 12px rgba(0,0,0,.14);
+}
+
+/* Cores por atributo */
+
+.p-ficha-box .pericia-atributo.fo {
+  --attr-cor: #cc0000;
+}
+
+.p-ficha-box .pericia-atributo.ag {
+  --attr-cor: #336699;
+}
+
+.p-ficha-box .pericia-atributo.in {
+  --attr-cor: #339933;
+}
+
+.p-ficha-box .pericia-atributo.as {
+  --attr-cor: #a83bd6;
+}
+
+.p-ficha-box .pericia-atributo.vo {
+  --attr-cor: #ff6633;
+}
+
+.p-ficha-box .pericia-atributo.ca {
+  --attr-cor: #cc9933;
+}
+
+/* Tema escuro */
+
+.tema-escuro .p-ficha-box .pericia-atributos,
+.tema-sanji .p-ficha-box .pericia-atributos,
+.tema-zoro .p-ficha-box .pericia-atributos {
+  background: rgba(255,255,255,.045);
+  border-color: rgba(255,255,255,.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,.24);
+}
+
 .tema-escuro .p-ficha-box .pericia-atributo,
 .tema-sanji .p-ficha-box .pericia-atributo,
 .tema-zoro .p-ficha-box .pericia-atributo {
   background: rgba(255,255,255,.055);
   border-color: rgba(255,255,255,.08);
   color: #f2f6ff;
+  box-shadow: 0 4px 10px rgba(0,0,0,.20);
+}
+
+.tema-escuro .p-ficha-box .pericia-atributo-nome,
+.tema-sanji .p-ficha-box .pericia-atributo-nome,
+.tema-zoro .p-ficha-box .pericia-atributo-nome {
+  color: #f2f6ff;
+}
+
+.tema-escuro .p-ficha-box .pericia-atributo-lv,
+.tema-sanji .p-ficha-box .pericia-atributo-lv,
+.tema-zoro .p-ficha-box .pericia-atributo-lv {
+  background: rgba(255,255,255,.08);
+  color: #dce8ff;
 }
 
 /* Responsivo */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .p-ficha-box .pericia-atributos {
     grid-template-columns: 1fr;
   }
 
-  .p-ficha-box .pericia-chip {
-    font-size: 10px;
-    padding: 5px 8px;
+  .p-ficha-box .pericia-atributo {
+    grid-template-columns: 34px 1fr auto;
+  }
+
+  .p-ficha-box .pericia-atributo-icone {
+    width: 34px;
+    height: 34px;
   }
 }
 
