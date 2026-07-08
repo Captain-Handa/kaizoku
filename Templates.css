@@ -4434,16 +4434,6 @@ body.tema-zoro .sceditor-container textarea {
   box-shadow: 0 12px 24px rgba(15,61,122,.18);
 }
 
-.p-ficha-box.ficha-v2 .coin-box img {
-  width: 46px;
-  height: 46px;
-  object-fit: cover;
-  margin-bottom: 5px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,.14);
-}
-
 /* Item / Navio */
 .p-ficha-box.ficha-v2 .item-card {
   margin: 0;
@@ -4727,4 +4717,101 @@ body.tema-zoro .sceditor-container textarea {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* =========================
+   Ficha V2 - Correção das Tabs
+========================= */
+
+.p-ficha-box.ficha-v2 > .intro-2 > .tab-container {
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  gap: 4px !important;
+  padding: 5px !important;
+  margin-bottom: 12px !important;
+  scrollbar-width: thin;
+}
+
+.p-ficha-box.ficha-v2 > .intro-2 > .tab-container .tab {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  padding: 5px 8px !important;
+  font-size: 9px !important;
+  line-height: 1 !important;
+  letter-spacing: .2px !important;
+  border-radius: 10px !important;
+}
+
+.p-ficha-box.ficha-v2 > .intro-2 > .tab-container .tab.active {
+  margin: 0 !important;
+}
+
+/* =========================
+   Ficha V2 - Correção das Moedas
+   Só a imagem principal da moeda fica grande.
+   Emojis continuam pequenos.
+========================= */
+
+.p-ficha-box.ficha-v2 .coin-box > img:first-child {
+  width: 46px !important;
+  height: 46px !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0 auto 5px !important;
+  border-radius: 50% !important;
+  border: 3px solid #fff !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,.14) !important;
+}
+
+.p-ficha-box.ficha-v2 .coin-box img:not(:first-child) {
+  width: auto !important;
+  height: auto !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  margin: 0 2px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  vertical-align: middle !important;
+}
+
+/* =========================
+   Ficha V2 - Avatar e Ícone dentro da ficha
+========================= */
+
+.p-ficha-box.ficha-v2 .p-ficha .p-avatar {
+  float: right !important;
+  width: 205px;
+  max-width: 40%;
+  height: auto !important;
+  margin: 0 0 14px 18px !important;
+  border-radius: 22px;
+  border: 5px solid #fff;
+  box-shadow: 0 12px 28px rgba(15,61,122,.24);
+  object-fit: cover;
+  transform: rotate(1deg);
+}
+
+.p-ficha-box.ficha-v2 .p-ficha .p-icone {
+  float: right !important;
+  width: 96px !important;
+  height: 96px !important;
+  object-fit: cover;
+  margin: 0 0 12px 14px !important;
+  border-radius: 22px;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 24px rgba(15,61,122,.20);
+  background: var(--corgeral);
+  transform: rotate(-2deg);
+}
+
+/* Proteção para não afetar esses dois fora do lugar antigo */
+.p-ficha-box.ficha-v2 > .intro-2 > .p-avatar,
+.p-ficha-box.ficha-v2 > .intro-2 > .p-icone {
+  display: none !important;
 }
