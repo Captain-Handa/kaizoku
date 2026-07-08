@@ -7662,7 +7662,7 @@ body.tema-zoro .sceditor-container textarea {
    ANTECEDENTES / ESTILO DE VIDA
 ============================================================ */
 
-.origem-page .origem-list {
+.origem-list {
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -7690,7 +7690,7 @@ body.tema-zoro .sceditor-container textarea {
   overflow: hidden;
 }
 
-.origem-page .origem-card::before {
+.origem-card::before {
   content: "";
   position: absolute;
   inset: 8px;
@@ -7700,7 +7700,7 @@ body.tema-zoro .sceditor-container textarea {
   z-index: 1;
 }
 
-.origem-page .origem-card::after {
+.origem-card::after {
   content: "";
   position: absolute;
   right: -38px;
@@ -7715,7 +7715,7 @@ body.tema-zoro .sceditor-container textarea {
 
 /* Cabeçalho */
 
-.origem-page .origem-head {
+.origem-head {
   display: grid;
   grid-template-columns: 100px minmax(0, 1fr);
   gap: 13px;
@@ -7727,7 +7727,7 @@ body.tema-zoro .sceditor-container textarea {
   box-sizing: border-box;
 }
 
-.origem-page .origem-icon {
+.origem-icon {
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -7741,11 +7741,11 @@ body.tema-zoro .sceditor-container textarea {
   box-sizing: border-box;
 }
 
-.origem-page .origem-titlebox {
+.origem-titlebox {
   min-width: 0;
 }
 
-.origem-page .origem-name {
+.origem-name {
   width: fit-content;
   max-width: 100%;
   margin: 0 0 8px;
@@ -8067,7 +8067,7 @@ body.tema-zoro .sceditor-container textarea {
   }
 }
 
-.origem-page .origem-list {
+.origem-list {
   display: flex !important;
   flex-direction: column !important;
   gap: 18px !important;
