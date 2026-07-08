@@ -388,8 +388,7 @@
 
 .coin {
   width: 100%;
-  max-width: 760px;
-  margin: 12px auto;
+  margin: 6px auto;
   padding: 12px;
   box-sizing: border-box;
   border-radius: 24px;
@@ -398,16 +397,13 @@
     radial-gradient(circle at top left, rgba(255,226,122,.22), transparent 30%),
     linear-gradient(180deg, #ffffff, #f4f8ff);
   box-shadow: 0 12px 28px rgba(15,61,122,.14);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
   color: #273143;
 }
 
 .coin-box {
   float: none !important;
-  width: 88px;
+  width: 82px;
   min-height: 104px;
   margin: 0 !important;
   padding: 8px;
@@ -4327,8 +4323,6 @@ body.tema-zoro .sceditor-container textarea {
     linear-gradient(180deg, rgba(255,255,255,.90), rgba(246,249,255,.96));
   box-shadow: 0 10px 26px rgba(15,61,122,.10);
   color: #273143;
-  overflow: hidden;
-  position: relative;
 }
 
 .p-ficha-box.ficha-v2 .p-ficha::before {
@@ -4383,11 +4377,13 @@ body.tema-zoro .sceditor-container textarea {
 
 /* Bloco de status */
 .p-ficha-box.ficha-v2 .atributo {
-  clear: both;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
-  gap: 8px;
-  margin: 16px 0 12px;
+    gap: 5px;
+    margin: 2px 0 2px;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-content: start;
+    align-items: center;
+    justify-items: center;
 }
 
 .p-ficha-box.ficha-v2 .atributo span {
