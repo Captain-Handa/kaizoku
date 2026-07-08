@@ -3199,11 +3199,40 @@ body.tema-zoro .item-card details,
   clear: both;
 }
 
- .p-ficha-box .pericia-atributos-comprados {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 5px;
- }
+.p-ficha-box .pericia-atributos-comprados {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 5px !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mata os <br> que o Forumeiros joga dentro da grid */
+.p-ficha-box .pericia-atributos-comprados > br {
+  display: none !important;
+}
+
+/* Garante que cada atributo ocupe sua célula corretamente */
+.p-ficha-box .pericia-atributos-comprados > .pericia-atributo {
+  width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Se sobrar um atributo sozinho na última linha, ele ocupa as duas colunas */
+.p-ficha-box .pericia-atributos-comprados > .pericia-atributo:last-of-type:nth-of-type(odd) {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 650px) {
+  .p-ficha-box .pericia-atributos-comprados {
+    grid-template-columns: 1fr !important;
+  }
+
+  .p-ficha-box .pericia-atributos-comprados > .pericia-atributo:last-of-type:nth-of-type(odd) {
+    grid-column: auto;
+  }
+}
 
 .p-ficha-box .pericia-atributo {
   --attr-cor: var(--corgeral);
