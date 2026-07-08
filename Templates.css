@@ -3230,162 +3230,362 @@ body.tema-zoro .mob-card-img,
     width: -webkit-fill-available;
     border-radius: 8px;
 }
+/* ============================================================
+   DIALOGO — Cards de Personagem, Retrato e Fala
+   Usado em narrações, aliados e falas rápidas
+============================================================ */
 
-/* ===== DIALOGO ===== */
+/* ------------------------------
+   Card pequeno de retrato
+------------------------------ */
 
-.dialog-card{
-  background:#f4f6f9;
-  box-shadow:0 2px 4px #283b54;
-  border-radius:10px;
-  padding:8px;
-  margin:8px 0;
-    width: fit-content;
+.dialog-card {
+  width: fit-content;
+  max-width: 100%;
+  margin: 8px 0;
+  padding: 7px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.16);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.18), transparent 42%),
+    linear-gradient(180deg, #ffffff, #f4f8ff);
+  box-shadow:
+    0 7px 16px rgba(15,61,122,.14),
+    inset 0 0 0 1px rgba(255,255,255,.55);
+  position: relative;
+  overflow: visible;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
-.dialog-card-2{
-  background:#f4f6f9;
-  box-shadow:0 2px 4px #283b54;
-  border-radius:10px;
-  padding:8px;
-  margin:8px 0;
-  width: -webkit-fill-available;
-}
-
-.dialog-body{
-  display:flex;
-  gap:10px;
-  position:relative; /* necessário para posicionar o preview */
-  align-items:flex-start;
-  overflow:visible;
-}
-
-.dialog img {max-width: 100%; height: auto; border-radius: 15px 15px 0px 0px;}
-
-/* Retrato 80x80 */
-
-.portrait{
-  width:80px; height:80px;
-  object-fit:cover;
-  border:1px solid #aaa;
-  background:#ddd;
-  border-radius: 8px;
-  cursor:pointer;
-}
-
-/* Conteúdo (nome + fala) */
-
-.dialog-content{ flex:1; min-width:0; }
-
-.dialog-name{
-  font-weight:700;
-  background:linear-gradient(to right,#244688,#2892e0);
-  color:#fff;
-  padding:4px 8px;
-  border-radius:6px;
-  margin-bottom:6px;
-  letter-spacing:.3px;
-}
-
-.dialog-text{
-  border:1px solid #91a7bb;
-  background:#fff;
-  padding:8px 10px;
-  border-radius:8px;
-  line-height:1.45;
-}
-
-/* Preview maior ao lado (hover) */
-
-.portrait-preview{
-  position:absolute;
-  top:0;
-  left:calc(80px + 14px); /* 80 do retrato + gap */
-  z-index: 999;
-  border:1px solid #aaa;
-  background:#ddd;
-  box-shadow:0 2px 4px #283b54;
-  padding:4px;
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .25s ease;
-}
-
-/* Tamanho da imagem no preview */
-
-.portrait-preview img{
-  max-width:300px;
-  max-height:300px;
-  display:block;
-}
-
-/* Mostrar ao passar o mouse no retrato (ou manter se o mouse passar por cima do preview) */
-
-.portrait:hover + .portrait-preview,
-.portrait-preview:hover{
-  opacity:1; visibility:visible;
-}
-
-/* Variante para aparecer à ESQUERDA quando precisar */
-
-.portrait-preview.preview-left{
-  left:auto;
-  right:calc(520px + 14px);
+.dialog-card:hover {
+  z-index: 50;
+  transform: translateY(-2px);
+  border-color: rgba(15,61,122,.28);
+  box-shadow:
+    0 11px 22px rgba(15,61,122,.20),
+    inset 0 0 0 1px rgba(255,255,255,.65);
 }
 
 /* ------------------------------
-   Tema escuro legado
-   ------------------------------ */
+   Card completo de diálogo
+------------------------------ */
 
-.tema-escuro .narra positivo {
-    background: linear-gradient(135deg, #27325e, #1f274b);
-    color: #dbe2ff;
-    border: 1px solid #5f73d9;
-    border-left: 5px solid #7c88ff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
+.dialog-card-2 {
+  width: 100%;
+  margin: 10px 0;
+  padding: 9px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px solid rgba(15,61,122,.16);
+  border-left: 6px solid var(--corgeral);
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.16), transparent 36%),
+    linear-gradient(180deg, #ffffff, #f4f8ff);
+  box-shadow:
+    0 8px 20px rgba(15,61,122,.13),
+    inset 0 0 0 1px rgba(255,255,255,.55);
+  position: relative;
+  overflow: visible;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
-.tema-escuro .narra negativo {
-    background: linear-gradient(135deg, #5b2424, #431b1b);
-    color: #ffdede;
-    border: 1px solid #a74f4f;
-    border-left: 5px solid #ff6c6c;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
+.dialog-card-2:hover {
+  z-index: 60;
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 26px rgba(15,61,122,.20),
+    inset 0 0 0 1px rgba(255,255,255,.65);
 }
 
-.tema-escuro .narra neutro {
-    background: linear-gradient(135deg, #2a2f39, #20242c);
-    color: #eef2f7;
-    border: 1px solid #4d5768;
-    border-left: 5px solid #8c98ab;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
+/* ------------------------------
+   Estrutura interna
+------------------------------ */
+
+.dialog-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  overflow: visible;
 }
 
-.tema-escuro .narra {
-    background-color: #141414;
-    box-shadow: 0px 6px 8px 0px #2d2c3a;
+.dialog-content {
+  flex: 1;
+  min-width: 0;
 }
 
-.tema-escuro .player {
-    background-color: #141414;
-    box-shadow: 0px 6px 8px 0px #2d2c3a;
+/* ------------------------------
+   Retrato
+------------------------------ */
+
+.portrait {
+  width: 80px;
+  height: 80px;
+  flex: 0 0 80px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  border: 3px solid #ffffff;
+  background: #dcecff;
+  box-shadow:
+    0 6px 13px rgba(15,61,122,.18),
+    3px 3px 0 rgba(15,61,122,.16);
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
 }
 
-.tema-escuro .player-2 {
-    color: #fff;
+.portrait:hover {
+  transform: scale(1.045) rotate(1deg);
+  filter: brightness(1.06);
+  box-shadow:
+    0 9px 18px rgba(15,61,122,.24),
+    3px 3px 0 var(--corgeral);
 }
 
-.tema-escuro .xp-gain {background: #1f2023;}
+/* Protege emojis/imagens pequenas dentro dos cards */
+.dialog-card img:not(.portrait),
+.dialog-card-2 img:not(.portrait),
+.dialog-name img,
+.dialog-text img {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
 
-.tema-escuro .dialog-card{ background:#181818; }
+/* ------------------------------
+   Nome do personagem
+------------------------------ */
 
-.tema-escuro .portrait{ background:#2d2b2b; border:1px solid #666; }
+.dialog-name {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 6px;
+  padding: 6px 11px;
+  box-sizing: border-box;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #244688, #2892e0);
+  color: #fff;
+  font: 900 11px/1 Inter, Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  box-shadow: 0 5px 12px rgba(15,61,122,.18);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-.tema-escuro .dialog-name{ background:linear-gradient(to right,#0a5882,#19538e); }
+/* ------------------------------
+   Texto da fala
+------------------------------ */
 
-.tema-escuro .dialog-text{ background:#2d2b2b; border:1px solid #666; color:#eee; }
+.dialog-text {
+  position: relative;
+  min-height: 38px;
+  padding: 9px 11px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 1px solid rgba(15,61,122,.13);
+  background: rgba(255,255,255,.82);
+  color: #253047;
+  font: 700 12.5px/1.45 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.55);
+}
 
-.tema-escuro .portrait-preview{ background:#2d2b2b; border:1px solid #666; }
+/* Bico de balão */
+.dialog-text::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 14px;
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,.82);
+  border-left: 1px solid rgba(15,61,122,.13);
+  border-bottom: 1px solid rgba(15,61,122,.13);
+  transform: rotate(45deg);
+}
 
+.dialog-text b,
+.dialog-text strong {
+  color: #12396f;
+  font-weight: 900;
+}
+
+/* ------------------------------
+   Preview ampliado do retrato
+------------------------------ */
+
+.portrait-preview {
+  position: absolute;
+  top: -4px;
+  left: calc(80px + 16px);
+  z-index: 9999;
+  padding: 5px;
+  border-radius: 18px;
+  border: 4px solid #fff;
+  background: #ffffff;
+  box-shadow:
+    0 14px 30px rgba(0,0,0,.28),
+    4px 4px 0 var(--corgeral);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-8px) scale(.92);
+  transform-origin: left center;
+  transition:
+    opacity .18s ease,
+    transform .18s ease,
+    visibility .18s ease;
+  pointer-events: none;
+}
+
+.portrait-preview img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+/* Mostrar preview */
+.portrait:hover + .portrait-preview,
+.portrait-preview:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Variante para aparecer à esquerda */
+.portrait-preview.preview-left {
+  left: auto;
+  right: calc(80px + 16px);
+  transform-origin: right center;
+}
+
+/* Quando estiver em lista de aliados */
+.flex .dialog-card {
+  margin: 0;
+}
+
+/* ============================================================
+   TEMA ESCURO / SANJI / ZORO
+============================================================ */
+
+body.tema-sanji .dialog-card,
+body.tema-zoro .dialog-card,
+.tema-escuro .dialog-card,
+body.tema-sanji .dialog-card-2,
+body.tema-zoro .dialog-card-2,
+.tema-escuro .dialog-card-2 {
+  background:
+    radial-gradient(circle at top left, rgba(92,182,209,.08), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.32),
+    inset 0 0 0 1px rgba(255,255,255,.03);
+}
+
+body.tema-sanji .portrait,
+body.tema-zoro .portrait,
+.tema-escuro .portrait {
+  border-color: #252628;
+  background: #252628;
+  box-shadow:
+    0 6px 13px rgba(0,0,0,.34),
+    3px 3px 0 rgba(92,182,209,.20);
+}
+
+body.tema-sanji .dialog-text,
+body.tema-zoro .dialog-text,
+.tema-escuro .dialog-text {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+}
+
+body.tema-sanji .dialog-text::before,
+body.tema-zoro .dialog-text::before,
+.tema-escuro .dialog-text::before {
+  background: #1f2022;
+  border-color: rgba(255,255,255,.08);
+}
+
+body.tema-sanji .dialog-text b,
+body.tema-sanji .dialog-text strong,
+body.tema-zoro .dialog-text b,
+body.tema-zoro .dialog-text strong,
+.tema-escuro .dialog-text b,
+.tema-escuro .dialog-text strong {
+  color: #9fc9ff;
+}
+
+body.tema-sanji .portrait-preview,
+body.tema-zoro .portrait-preview,
+.tema-escuro .portrait-preview {
+  background: #252628;
+  border-color: #252628;
+  box-shadow:
+    0 14px 30px rgba(0,0,0,.52),
+    4px 4px 0 var(--corgeral);
+}
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 600px) {
+  .dialog-card-2 {
+    padding: 8px;
+  }
+
+  .dialog-body {
+    gap: 8px;
+  }
+
+  .portrait {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+    border-radius: 13px;
+  }
+
+  .dialog-name {
+    font-size: 10px;
+    padding: 5px 9px;
+  }
+
+  .dialog-text {
+    font-size: 12px;
+    line-height: 1.4;
+    padding: 8px 9px;
+  }
+
+  .portrait-preview {
+    left: calc(64px + 12px);
+  }
+
+  .portrait-preview.preview-left {
+    right: calc(64px + 12px);
+  }
+
+  .portrait-preview img {
+    max-width: 220px;
+    max-height: 220px;
+  }
+}
 /* ============================================================
    10. JORNAL ECONÔMICO
    ============================================================ */
