@@ -774,7 +774,7 @@ body.tema-zoro .island strong,
     linear-gradient(180deg, rgba(255,255,255,.90), rgba(246,249,255,.96));
   box-shadow: 0 10px 26px rgba(15,61,122,.10);
   color: #273143;
-  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  font: 500 13px/1.55 Inter, Calibri, Arial, sans-serif;
 }
 
 /* Aba inicial geralmente vazia */
@@ -2692,9 +2692,8 @@ body.tema-zoro .item-card details,
   clear: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
   margin: 4px 0 8px;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
 }
 
