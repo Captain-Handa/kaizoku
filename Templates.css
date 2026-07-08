@@ -2444,58 +2444,17 @@ body.tema-zoro .item-card details,
 }
 /* ============================================================
    07. FICHA DE PERSONAGEM
-   ============================================================ */
+   Novo padrão único — sem .ficha-v2
+============================================================ */
 
 /* ------------------------------
-   Tema normal / regras base
-   ------------------------------ */
+   Caixa principal da ficha
+------------------------------ */
 
 .p-ficha-box {
-    width: 97%;
-    margin: auto;
-    background-image: linear-gradient(to right, #a2b0d96e, #ffffff);
-    box-shadow: 0px 3px 0px 3px var(--corgeral);
-    border-radius: 15px;
-}
-
-.p-ficha {
-    background-image: linear-gradient(to right, #ffffff6e, #ffffff);
-    text-align: left;
-    padding: 5px;
-    color: #000;
-    min-height: 380px;
-    border-radius: 15px;
-}
-
-.p-avatar {
-  box-shadow: -3px 4px 0px 0px var(--corgeral);
-  height: 100px;
-  margin-left: 5px;
-  margin-top: 5px;
- margin-bottom: 5px;
-  border-radius: 15px;
-  height: auto;
-}
-
-.p-icone {
-  box-shadow: -3px 3px 0px 0px var(--corgeral);
-  height: 110px;
-  margin-left: 5px;
-  margin-top: 5px;
-  border-radius: 15px;
-}
-
-/*** Fim dos Anuncios ***/
-
-/* =========================
-   FICHA V2 — Novo Design
-   Ativar com: <div class="p-ficha-box ficha-v2">
-========================= */
-
-.p-ficha-box.ficha-v2 {
   width: 92%;
   max-width: 980px;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 0;
   border: 0;
   border-radius: 30px;
@@ -2505,11 +2464,12 @@ body.tema-zoro .item-card details,
     radial-gradient(circle at top left, rgba(92,182,209,.22), transparent 32%),
     radial-gradient(circle at bottom right, rgba(15,61,122,.18), transparent 38%),
     linear-gradient(180deg, #ffffff, #f3f7ff);
-  box-shadow: 0 18px 45px rgba(15, 61, 122, .22);
+  box-shadow: 0 18px 45px rgba(15,61,122,.22);
   color: #273143;
+  box-sizing: border-box;
 }
 
-.p-ficha-box.ficha-v2::before {
+.p-ficha-box::before {
   content: "";
   position: absolute;
   inset: 10px;
@@ -2519,7 +2479,7 @@ body.tema-zoro .item-card details,
   z-index: 1;
 }
 
-.p-ficha-box.ficha-v2::after {
+.p-ficha-box::after {
   content: "CHARACTER SHEET";
   position: absolute;
   right: -48px;
@@ -2532,7 +2492,11 @@ body.tema-zoro .item-card details,
   z-index: 1;
 }
 
-.p-ficha-box.ficha-v2 > .intro-2 {
+/* ------------------------------
+   Conteúdo interno
+------------------------------ */
+
+.p-ficha-box > .intro-2 {
   position: relative;
   z-index: 2;
   padding: 26px;
@@ -2540,11 +2504,14 @@ body.tema-zoro .item-card details,
   font-family: Inter, Calibri, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.55;
+  box-sizing: border-box;
 }
 
-/* Título */
+/* ------------------------------
+   Título da ficha
+------------------------------ */
 
-.p-ficha-box.ficha-v2 > .intro-2 > .intro-title {
+.p-ficha-box > .intro-2 > .intro-title {
   width: fit-content;
   max-width: 92%;
   margin: 0 auto 18px;
@@ -2562,21 +2529,25 @@ body.tema-zoro .item-card details,
   overflow: hidden;
 }
 
-.p-ficha-box.ficha-v2 > .intro-2 > .intro-title::before {
+.p-ficha-box > .intro-2 > .intro-title::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -80px;
+  left: -90px;
   width: 90px;
   height: 100%;
   background: rgba(255,255,255,.22);
   transform: skewX(-25deg);
-  animation: ficha-v2-shine 4s ease-in-out infinite;
+  animation: p-ficha-shine 4s ease-in-out infinite;
 }
 
-/* Card interno principal */
+/* ------------------------------
+   Card principal da ficha
+------------------------------ */
 
-.p-ficha-box.ficha-v2 .p-ficha {
+.p-ficha-box .p-ficha {
+  display: flow-root;
+  position: relative;
   min-height: 380px;
   padding: 18px;
   border-radius: 24px;
@@ -2585,9 +2556,11 @@ body.tema-zoro .item-card details,
     linear-gradient(180deg, rgba(255,255,255,.90), rgba(246,249,255,.96));
   box-shadow: 0 10px 26px rgba(15,61,122,.10);
   color: #273143;
+  text-align: left;
+  box-sizing: border-box;
 }
 
-.p-ficha-box.ficha-v2 .p-ficha::before {
+.p-ficha-box .p-ficha::before {
   content: "DOSSIÊ";
   position: absolute;
   right: -8px;
@@ -2598,234 +2571,11 @@ body.tema-zoro .item-card details,
   pointer-events: none;
 }
 
-/* Avatar e ícone */
+/* ------------------------------
+   Avatar e ícone
+------------------------------ */
 
-.p-ficha-box.ficha-v2 .p-avatar {
-  width: 205px;
-  max-width: 40%;
-  height: auto !important;
-  margin: 0 0 14px 18px;
-  border-radius: 22px;
-  border: 5px solid #fff;
-  box-shadow: 0 12px 28px rgba(15,61,122,.24);
-  object-fit: cover;
-  transform: rotate(1deg);
-}
-
-.p-ficha-box.ficha-v2 .p-icone {
-  width: 96px;
-  height: 96px;
-  object-fit: cover;
-  margin: 0 0 12px 14px;
-  border-radius: 22px;
-  border: 4px solid #fff;
-  box-shadow: 0 10px 24px rgba(15,61,122,.20);
-  background: var(--corgeral);
-  transform: rotate(-2deg);
-}
-
-/* Atributos menores do topo */
-
-.p-ficha-box.ficha-v2 .atributo-tab {
-  float: right;
-  width: fit-content !important;
-  margin: 0 0 10px 14px;
-  padding: 6px 10px !important;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(15,61,122,.10), rgba(92,182,209,.14));
-  border: 1px solid rgba(15,61,122,.16);
-  box-shadow: none;
-  color: #12396f;
-  font: 900 11px Inter, Arial, sans-serif;
-}
-
-/* Bloco de status */
-
-.p-ficha-box.ficha-v2 .atributo {
-    gap: 5px;
-    margin: 2px 0 2px;
-    grid-auto-flow: column;
-    justify-content: start;
-    align-content: start;
-    align-items: center;
-    justify-items: center;
-}
-
-.p-ficha-box.ficha-v2 .atributo span {
-  width: auto;
-  min-height: 38px;
-  margin: 0;
-  padding: 7px 8px;
-  box-sizing: border-box;
-  justify-content: center;
-  border-radius: 14px;
-  border: 1px solid rgba(15,61,122,.12);
-  box-shadow: 0 5px 12px rgba(15,61,122,.10);
-  color: #1d2c43;
-  font: 900 12px Inter, Arial, sans-serif;
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
-.p-ficha-box.ficha-v2 .atributo span:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 9px 18px rgba(15,61,122,.16);
-}
-
-.p-ficha-box.ficha-v2 .atributo span b {
-  margin-right: 5px;
-}
-
-/* Cores dos atributos */
-
-.p-ficha-box.ficha-v2 .atributo span.hp  { background: linear-gradient(135deg, #ffe8e8, #ffffff); border-left: 5px solid #9f2f2f; }
-
-.p-ficha-box.ficha-v2 .atributo span.ep  { background: linear-gradient(135deg, #e8f5ff, #ffffff); border-left: 5px solid #2477c9; }
-
-.p-ficha-box.ficha-v2 .atributo span.po  { background: linear-gradient(135deg, #f2f2f2, #ffffff); border-left: 5px solid #555; }
-
-.p-ficha-box.ficha-v2 .atributo span.ki  { background: linear-gradient(135deg, #ffe8fb, #ffffff); border-left: 5px solid #8d3c86; }
-
-.p-ficha-box.ficha-v2 .atributo span.ap  { background: linear-gradient(135deg, #eeeeff, #ffffff); border-left: 5px solid #5b64c9; }
-
-.p-ficha-box.ficha-v2 .atributo span.re  { background: linear-gradient(135deg, #e9fff2, #ffffff); border-left: 5px solid #2f7b54; }
-
-.p-ficha-box.ficha-v2 .atributo span.df  { background: linear-gradient(135deg, #f6e9ff, #ffffff); border-left: 5px solid #7046a8; }
-
-.p-ficha-box.ficha-v2 .atributo span.vl  { background: linear-gradient(135deg, #fff1df, #ffffff); border-left: 5px solid #b06d25; }
-
-.p-ficha-box.ficha-v2 .atributo span.cap { background: linear-gradient(135deg, #f4eadf, #ffffff); border-left: 5px solid #7a4b2a; }
-
-/* Details / blocos expansíveis */
-
-.p-ficha-box.ficha-v2 details {
-  margin: 10px 0;
-  padding: 0;
-  border-radius: 18px;
-  border: 1px solid rgba(15,61,122,.13);
-  background: rgba(255,255,255,.62);
-  box-shadow: 0 6px 16px rgba(15,61,122,.08);
-  overflow: hidden;
-}
-
-.p-ficha-box.ficha-v2 details[open] {
-  background: rgba(255,255,255,.82);
-  padding: 5px;
-}
-
-
-/* Abas simples além da primeira */
-
-.p-ficha-box.ficha-v2 .tab-content:not(#conteudo0) {
-  min-height: 220px;
-  padding: 18px;
-  border-radius: 24px;
-  border: 1px solid rgba(15,61,122,.13);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.90), rgba(246,249,255,.96));
-  box-shadow: 0 10px 26px rgba(15,61,122,.10);
-  color: #273143;
-  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
-}
-
-/* HR */
-
-.p-ficha-box.ficha-v2 hr {
-  border: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(15,61,122,.24), transparent);
-  margin: 14px 0;
-}
-
-/* Moedas */
-
-.p-ficha-box.ficha-v2 .flex {
-  gap: 1px;
-  justify-content: center;
-}
-
-/* Item / Navio */
-
-.p-ficha-box.ficha-v2 .item-card {
-  margin: 0;
-  border-radius: 24px;
-  border: 1px solid rgba(0,134,205,.24);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.95), rgba(235,249,255,.96));
-  box-shadow: 0 12px 28px rgba(0,134,205,.16) !important;
-  overflow: hidden;
-}
-
-.p-ficha-box.ficha-v2 .item-header {
-  padding: 10px 14px;
-  border-radius: 0;
-  font: 900 11px Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.p-ficha-box.ficha-v2 .item-body {
-  padding: 12px;
-  gap: 10px;
-}
-
-.p-ficha-box.ficha-v2 .item-image {
-  flex: 0 0 120px;
-  width: 120px;
-  max-height: 120px;
-  border-radius: 18px;
-  border: 4px solid #fff;
-  box-shadow: 0 8px 18px rgba(0,134,205,.18);
-}
-
-.p-ficha-box.ficha-v2 .item-stats {
-  display: grid;
-  grid-auto-flow: unset;
-  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
-  gap: 7px;
-}
-
-.p-ficha-box.ficha-v2 .item-stat {
-  border-radius: 15px;
-  border: 1px solid rgba(0,134,205,.32);
-  background: #fff;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,134,205,.08);
-}
-
-.p-ficha-box.ficha-v2 .item-stat .labeln,
-.p-ficha-box.ficha-v2 .item-stat .label {
-  padding: 5px;
-  border-radius: 0;
-  background: linear-gradient(90deg, #0074a1, #00b2e6);
-  color: #fff;
-  font: 900 10px Inter, Arial, sans-serif;
-  text-transform: uppercase;
-}
-
-.p-ficha-box.ficha-v2 .item-stat .value {
-  padding: 6px 5px;
-  border-radius: 0;
-  background: #eefaff;
-  color: #123246;
-  font: 900 11px Inter, Arial, sans-serif;
-}
-
-.p-ficha-box.ficha-v2 .ship-description {
-  margin: 0;
-  padding: 14px;
-  border-radius: 0 0 24px 24px;
-  border: 0;
-  border-top: 1px solid rgba(0,134,205,.20);
-  background: linear-gradient(45deg, rgba(195,243,255,.70), rgba(255,255,255,.55));
-  color: #173447;
-  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
-}
-
-/* =========================
-   Ficha V2 - Avatar e Ícone dentro da ficha
-========================= */
-
-.p-ficha-box.ficha-v2 .p-ficha .p-avatar {
+.p-ficha-box .p-ficha .p-avatar {
   float: right !important;
   width: 205px;
   max-width: 40%;
@@ -2838,7 +2588,7 @@ body.tema-zoro .item-card details,
   transform: rotate(1deg);
 }
 
-.p-ficha-box.ficha-v2 .p-ficha .p-icone {
+.p-ficha-box .p-ficha .p-icone {
   float: right !important;
   width: 96px !important;
   height: 96px !important;
@@ -2851,23 +2601,261 @@ body.tema-zoro .item-card details,
   transform: rotate(-2deg);
 }
 
-/* Proteção para não afetar esses dois fora do lugar antigo */
-
-.p-ficha-box.ficha-v2 > .intro-2 > .p-avatar,
-.p-ficha-box.ficha-v2 > .intro-2 > .p-icone {
+/* Esconde avatar/ícone se alguém colocar fora da .p-ficha por acidente */
+.p-ficha-box > .intro-2 > .p-avatar,
+.p-ficha-box > .intro-2 > .p-icone {
   display: none !important;
 }
 
+/* ------------------------------
+   Abas da ficha
+   Usa o padrão global de .tab-container
+------------------------------ */
+
+.p-ficha-box > .intro-2 > .tab-container {
+  margin-bottom: 12px;
+}
+
+.p-ficha-box .tab-content:not(#conteudo0) {
+  min-height: 220px;
+}
 
 /* ------------------------------
-   Temas personalizados: Sanji/Zoro
-   ------------------------------ */
+   Atributos pequenos / tags soltas
+------------------------------ */
 
-/* Tema escuro / Sanji / Zoro */
+.p-ficha-box .atributo-tab {
+  float: right;
+  width: fit-content !important;
+  margin: 0 0 10px 14px;
+  padding: 6px 10px !important;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(15,61,122,.10), rgba(92,182,209,.14));
+  border: 1px solid rgba(15,61,122,.16);
+  box-shadow: none;
+  color: #12396f;
+  font: 900 11px Inter, Arial, sans-serif;
+  box-sizing: border-box;
+}
 
-.tema-escuro .p-ficha-box.ficha-v2,
-.tema-sanji .p-ficha-box.ficha-v2,
-.tema-zoro .p-ficha-box.ficha-v2 {
+/* ------------------------------
+   Bloco de status
+------------------------------ */
+
+.p-ficha-box .atributo {
+  clear: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 4px 0 8px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.p-ficha-box .atributo span {
+  width: auto;
+  min-width: 48px;
+  min-height: 32px;
+  margin: 0;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  border: 1px solid rgba(15,61,122,.12);
+  box-shadow: 0 5px 12px rgba(15,61,122,.10);
+  color: #1d2c43;
+  font: 900 12px/1 Inter, Arial, sans-serif;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.p-ficha-box .atributo span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 18px rgba(15,61,122,.16);
+}
+
+.p-ficha-box .atributo span b {
+  margin-right: 5px;
+}
+
+/* Cores dos atributos */
+
+.p-ficha-box .atributo span.hp  {
+  background: linear-gradient(135deg, #ffe8e8, #ffffff);
+  border-left: 5px solid #9f2f2f;
+}
+
+.p-ficha-box .atributo span.ep  {
+  background: linear-gradient(135deg, #e8f5ff, #ffffff);
+  border-left: 5px solid #2477c9;
+}
+
+.p-ficha-box .atributo span.po  {
+  background: linear-gradient(135deg, #f2f2f2, #ffffff);
+  border-left: 5px solid #555;
+}
+
+.p-ficha-box .atributo span.ki  {
+  background: linear-gradient(135deg, #ffe8fb, #ffffff);
+  border-left: 5px solid #8d3c86;
+}
+
+.p-ficha-box .atributo span.ap  {
+  background: linear-gradient(135deg, #eeeeff, #ffffff);
+  border-left: 5px solid #5b64c9;
+}
+
+.p-ficha-box .atributo span.re  {
+  background: linear-gradient(135deg, #e9fff2, #ffffff);
+  border-left: 5px solid #2f7b54;
+}
+
+.p-ficha-box .atributo span.df  {
+  background: linear-gradient(135deg, #f6e9ff, #ffffff);
+  border-left: 5px solid #7046a8;
+}
+
+.p-ficha-box .atributo span.vl  {
+  background: linear-gradient(135deg, #fff1df, #ffffff);
+  border-left: 5px solid #b06d25;
+}
+
+.p-ficha-box .atributo span.cap {
+  background: linear-gradient(135deg, #f4eadf, #ffffff);
+  border-left: 5px solid #7a4b2a;
+}
+
+/* ------------------------------
+   Details internos
+   Summary com .tab-container usa o CSS global
+------------------------------ */
+
+.p-ficha-box details {
+  margin: 10px 0;
+  padding: 0;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.13);
+  background: rgba(255,255,255,.62);
+  box-shadow: 0 6px 16px rgba(15,61,122,.08);
+  overflow: hidden;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.p-ficha-box details[open] {
+  background: rgba(255,255,255,.82);
+  padding: 5px;
+}
+
+/* ------------------------------
+   HR
+------------------------------ */
+
+.p-ficha-box hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(15,61,122,.24), transparent);
+  margin: 14px 0;
+}
+
+/* ------------------------------
+   Flex interno / moedas
+------------------------------ */
+
+.p-ficha-box .flex {
+  gap: 1px;
+  justify-content: center;
+}
+
+/* ------------------------------
+   Item / Navio dentro da ficha
+------------------------------ */
+
+.p-ficha-box .item-card {
+  margin: 0;
+  border-radius: 24px;
+  border: 1px solid rgba(0,134,205,.24);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.95), rgba(235,249,255,.96));
+  box-shadow: 0 12px 28px rgba(0,134,205,.16) !important;
+  overflow: hidden;
+}
+
+.p-ficha-box .item-header {
+  padding: 10px 14px;
+  border-radius: 0;
+  font: 900 11px Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.p-ficha-box .item-body {
+  padding: 12px;
+  gap: 10px;
+}
+
+.p-ficha-box .item-image {
+  flex: 0 0 120px;
+  width: 120px;
+  height: 120px;
+  max-height: 120px;
+  border-radius: 18px;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 18px rgba(0,134,205,.18);
+}
+
+.p-ficha-box .item-stats {
+  display: grid;
+  grid-auto-flow: unset;
+  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+  gap: 7px;
+}
+
+.p-ficha-box .item-stat {
+  border-radius: 15px;
+  border: 1px solid rgba(0,134,205,.32);
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,134,205,.08);
+}
+
+.p-ficha-box .item-stat .labeln,
+.p-ficha-box .item-stat .label {
+  padding: 5px;
+  border-radius: 0;
+  background: linear-gradient(90deg, #0074a1, #00b2e6);
+  color: #fff;
+  font: 900 10px Inter, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.p-ficha-box .item-stat .value {
+  padding: 6px 5px;
+  border-radius: 0;
+  background: #eefaff;
+  color: #123246;
+  font: 900 11px Inter, Arial, sans-serif;
+}
+
+.p-ficha-box .ship-description {
+  margin: 0;
+  padding: 14px;
+  border-radius: 0 0 24px 24px;
+  border: 0;
+  border-top: 1px solid rgba(0,134,205,.20);
+  background: linear-gradient(45deg, rgba(195,243,255,.70), rgba(255,255,255,.55));
+  color: #173447;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+}
+
+/* ============================================================
+   TEMA ESCURO / SANJI / ZORO
+============================================================ */
+
+.tema-escuro .p-ficha-box,
+.tema-sanji .p-ficha-box,
+.tema-zoro .p-ficha-box {
   background:
     radial-gradient(circle at top left, rgba(92,182,209,.14), transparent 32%),
     radial-gradient(circle at bottom right, rgba(15,61,122,.22), transparent 38%),
@@ -2876,30 +2864,27 @@ body.tema-zoro .item-card details,
   color: #fff;
 }
 
-.tema-escuro .p-ficha-box.ficha-v2::before,
-.tema-sanji .p-ficha-box.ficha-v2::before,
-.tema-zoro .p-ficha-box.ficha-v2::before {
+.tema-escuro .p-ficha-box::before,
+.tema-sanji .p-ficha-box::before,
+.tema-zoro .p-ficha-box::before {
   border-color: rgba(255,255,255,.08);
 }
 
-.tema-escuro .p-ficha-box.ficha-v2::after,
-.tema-sanji .p-ficha-box.ficha-v2::after,
-.tema-zoro .p-ficha-box.ficha-v2::after {
+.tema-escuro .p-ficha-box::after,
+.tema-sanji .p-ficha-box::after,
+.tema-zoro .p-ficha-box::after {
   color: rgba(255,255,255,.06);
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 > .intro-2,
-.tema-sanji .p-ficha-box.ficha-v2 > .intro-2,
-.tema-zoro .p-ficha-box.ficha-v2 > .intro-2 {
+.tema-escuro .p-ficha-box > .intro-2,
+.tema-sanji .p-ficha-box > .intro-2,
+.tema-zoro .p-ficha-box > .intro-2 {
   color: #fff;
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 .p-ficha,
-.tema-sanji .p-ficha-box.ficha-v2 .p-ficha,
-.tema-zoro .p-ficha-box.ficha-v2 .p-ficha,
-.tema-escuro .p-ficha-box.ficha-v2 .tab-content:not(#conteudo0),
-.tema-sanji .p-ficha-box.ficha-v2 .tab-content:not(#conteudo0),
-.tema-zoro .p-ficha-box.ficha-v2 .tab-content:not(#conteudo0) {
+.tema-escuro .p-ficha-box .p-ficha,
+.tema-sanji .p-ficha-box .p-ficha,
+.tema-zoro .p-ficha-box .p-ficha {
   background:
     linear-gradient(180deg, rgba(31,32,34,.96), rgba(18,19,21,.98));
   border-color: rgba(255,255,255,.08);
@@ -2907,113 +2892,149 @@ body.tema-zoro .item-card details,
   color: #f2f6ff;
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 .p-ficha::before,
-.tema-sanji .p-ficha-box.ficha-v2 .p-ficha::before,
-.tema-zoro .p-ficha-box.ficha-v2 .p-ficha::before {
+.tema-escuro .p-ficha-box .p-ficha::before,
+.tema-sanji .p-ficha-box .p-ficha::before,
+.tema-zoro .p-ficha-box .p-ficha::before {
   color: rgba(255,255,255,.035);
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 .atributo-tab,
-.tema-sanji .p-ficha-box.ficha-v2 .atributo-tab,
-.tema-zoro .p-ficha-box.ficha-v2 .atributo-tab {
+.tema-escuro .p-ficha-box .p-avatar,
+.tema-sanji .p-ficha-box .p-avatar,
+.tema-zoro .p-ficha-box .p-avatar,
+.tema-escuro .p-ficha-box .p-icone,
+.tema-sanji .p-ficha-box .p-icone,
+.tema-zoro .p-ficha-box .p-icone {
+  border-color: #252628;
+}
+
+.tema-escuro .p-ficha-box .atributo-tab,
+.tema-sanji .p-ficha-box .atributo-tab,
+.tema-zoro .p-ficha-box .atributo-tab {
   background: rgba(255,255,255,.055);
   border-color: rgba(255,255,255,.08);
   color: #eaf2ff;
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 .atributo span,
-.tema-sanji .p-ficha-box.ficha-v2 .atributo span,
-.tema-zoro .p-ficha-box.ficha-v2 .atributo span {
+.tema-escuro .p-ficha-box .atributo span,
+.tema-sanji .p-ficha-box .atributo span,
+.tema-zoro .p-ficha-box .atributo span {
   background: rgba(255,255,255,.055) !important;
   border-color: rgba(255,255,255,.08);
   color: #fff;
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 details,
-.tema-sanji .p-ficha-box.ficha-v2 details,
-.tema-zoro .p-ficha-box.ficha-v2 details {
+.tema-escuro .p-ficha-box details,
+.tema-sanji .p-ficha-box details,
+.tema-zoro .p-ficha-box details {
   background: rgba(255,255,255,.055);
   border-color: rgba(255,255,255,.08);
   color: #f2f6ff;
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 .item-card,
-.tema-sanji .p-ficha-box.ficha-v2 .item-card,
-.tema-zoro .p-ficha-box.ficha-v2 .item-card {
+.tema-escuro .p-ficha-box .item-card,
+.tema-sanji .p-ficha-box .item-card,
+.tema-zoro .p-ficha-box .item-card {
   background: linear-gradient(180deg, #1f2022, #121315);
   border-color: rgba(255,255,255,.08);
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 .item-stat,
-.tema-sanji .p-ficha-box.ficha-v2 .item-stat,
-.tema-zoro .p-ficha-box.ficha-v2 .item-stat {
+.tema-escuro .p-ficha-box .item-stat,
+.tema-sanji .p-ficha-box .item-stat,
+.tema-zoro .p-ficha-box .item-stat {
   background: rgba(255,255,255,.055);
   border-color: rgba(255,255,255,.08);
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 .item-stat .value,
-.tema-sanji .p-ficha-box.ficha-v2 .item-stat .value,
-.tema-zoro .p-ficha-box.ficha-v2 .item-stat .value {
+.tema-escuro .p-ficha-box .item-stat .value,
+.tema-sanji .p-ficha-box .item-stat .value,
+.tema-zoro .p-ficha-box .item-stat .value {
   background: #161719;
   color: #fff;
 }
 
-.tema-escuro .p-ficha-box.ficha-v2 .ship-description,
-.tema-sanji .p-ficha-box.ficha-v2 .ship-description,
-.tema-zoro .p-ficha-box.ficha-v2 .ship-description {
+.tema-escuro .p-ficha-box .ship-description,
+.tema-sanji .p-ficha-box .ship-description,
+.tema-zoro .p-ficha-box .ship-description {
   background: linear-gradient(45deg, rgba(14,31,73,.45), transparent);
   color: #f2f6ff;
   border-top-color: rgba(255,255,255,.08);
 }
 
+/* ============================================================
+   RESPONSIVO
+============================================================ */
 
+@media (max-width: 760px) {
+  .p-ficha-box {
+    width: 96%;
+    border-radius: 24px;
+  }
 
+  .p-ficha-box::after {
+    display: none;
+  }
 
-.p-ficha-box.ficha-v2 details > summary.tab-container::-webkit-details-marker {
-  display: none;
+  .p-ficha-box > .intro-2 {
+    padding: 18px;
+  }
+
+  .p-ficha-box > .intro-2 > .intro-title {
+    max-width: 100%;
+    font-size: 26px !important;
+    padding: 11px 18px 10px;
+  }
+
+  .p-ficha-box .p-ficha {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .p-ficha-box .p-ficha .p-avatar {
+    width: 150px;
+    max-width: 46%;
+    margin-left: 12px !important;
+  }
+
+  .p-ficha-box .p-ficha .p-icone {
+    width: 76px !important;
+    height: 76px !important;
+    margin-left: 10px !important;
+  }
+
+  .p-ficha-box .atributo span {
+    min-height: 28px;
+    padding: 5px 7px;
+    font-size: 11px;
+  }
+
+  .p-ficha-box .item-image {
+    width: 90px;
+    height: 90px;
+    flex-basis: 90px;
+  }
 }
 
-.p-ficha-box.ficha-v2 details > summary.tab-container::before {
-  content: "▸";
-  margin-right: 8px;
-  font-size: 12px;
-  transition: transform .18s ease;
+@keyframes p-ficha-shine {
+  0%, 60% {
+    left: -90px;
+  }
+
+  100% {
+    left: calc(100% + 90px);
+  }
 }
 
-.p-ficha-box.ficha-v2 details[open] > summary.tab-container::before {
-  transform: rotate(90deg);
+@keyframes p-ficha-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-.p-ficha-box.ficha-v2 details {
-  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
-}
-
-.p-ficha-box.ficha-v2 details[open] {
-  padding-bottom: 12px;
-}
-
-.p-ficha-box.ficha-v2 details[open] > summary.tab-container {
-  margin-bottom: 12px !important;
-}
-
-
-.p-ficha-box.ficha-v2 details > summary.tab-container {
-  display: flex;
-  align-items: center;
-  margin: 0 !important;
-  padding: 10px 13px !important;
-  border-radius: 0;
-  border: 0;
-  background: linear-gradient(90deg, var(--corgeral), #5cb6d1);
-  color: #fff;
-  font: 900 11px Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  cursor: pointer;
-  list-style: none;
-}
-
-
 /* ============================================================
    08. NPCS, BESTIÁRIO E MOBS
    Usado em:
@@ -5935,22 +5956,6 @@ body.tema-zoro .sceditor-container textarea {
     }
 }
 
-@keyframes ficha-v2-shine {
-  0%, 60% {
-    left: -90px;
-  }
-
-  100% {
-    left: calc(100% + 90px);
-  }
-}
-
-@keyframes ficha-v2-fade {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -6095,55 +6100,5 @@ body.tema-zoro .sceditor-container textarea {
     float: none;
     display: inline-block;
     margin-left: 8px;
-  }
-}
-
-/* Responsivo */
-
-@media (max-width: 760px) {
-  .p-ficha-box.ficha-v2 {
-    width: 96%;
-    border-radius: 22px;
-  }
-
-  .p-ficha-box.ficha-v2 > .intro-2 {
-    padding: 16px;
-  }
-
-  .p-ficha-box.ficha-v2 > .intro-2 > .intro-title {
-    font-size: 24px !important;
-    padding: 11px 18px;
-  }
-
-  .p-ficha-box.ficha-v2 .p-avatar,
-  .p-ficha-box.ficha-v2 .p-icone {
-    float: none !important;
-    display: block;
-    max-width: 100%;
-    margin: 0 auto 12px;
-    transform: none;
-  }
-
-  .p-ficha-box.ficha-v2 .p-avatar {
-    width: 220px;
-  }
-
-  .p-ficha-box.ficha-v2 .p-icone {
-    width: 95px;
-    height: 95px;
-  }
-
-  .p-ficha-box.ficha-v2 .atributo-tab {
-    float: none;
-    margin: 0 0 12px;
-  }
-
-  .p-ficha-box.ficha-v2 .item-body {
-    display: block;
-  }
-
-  .p-ficha-box.ficha-v2 .item-image {
-    display: block;
-    margin: 0 auto 12px;
   }
 }
