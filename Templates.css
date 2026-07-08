@@ -4029,7 +4029,7 @@ body.tema-zoro .sceditor-container textarea {
 .noticia-conteudo p {
     margin: 0;
     color: inherit;
-    font: 800 11px/1.22 Inter, Arial, sans-serif;
+    font: 600 10px/1.0 Inter, Arial, sans-serif;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
