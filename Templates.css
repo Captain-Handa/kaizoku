@@ -10321,3 +10321,392 @@ align-self: center;
     border-radius: 14px;
   }
 }
+
+/* ============================================================
+   PÁGINA — SONHOS E CONQUISTAS
+============================================================ */
+
+.sonhos-page {
+  --sonho-a: #1e0351;
+  --sonho-b: #ff5656;
+  --sonho-gold: #ffdd75;
+  --sonho-soft: rgba(255,86,86,.13);
+}
+
+.sonhos-page .sonhos-lead {
+  margin: 0 0 14px;
+  padding: 13px 15px;
+  border-radius: 18px;
+  border: 1px solid rgba(30,3,81,.13);
+  border-left: 6px solid var(--sonho-a);
+  background:
+    radial-gradient(circle at top left, rgba(255,86,86,.13), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(248,246,255,.96));
+  color: #273143;
+  font: 700 13px/1.6 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-shadow: 0 8px 20px rgba(30,3,81,.08);
+  box-sizing: border-box;
+}
+
+.sonhos-page .sonhos-lead b {
+  color: var(--sonho-a);
+  font-weight: 900;
+}
+
+.sonhos-page .sonhos-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+
+.sonhos-page .sonhos-info {
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(30,3,81,.12);
+  background: rgba(255,255,255,.84);
+  color: #273143;
+  font: 700 12.5px/1.48 Inter, Calibri, Arial, sans-serif;
+  box-shadow: 0 5px 14px rgba(30,3,81,.06);
+  text-align: justify;
+}
+
+.sonhos-page .sonhos-info b {
+  display: inline-flex;
+  margin-right: 6px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--sonho-a), var(--sonho-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+}
+
+.sonhos-page .recompensa-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0 17px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(30,3,81,.12);
+  background:
+    radial-gradient(circle at top right, rgba(255,221,117,.18), transparent 36%),
+    rgba(255,255,255,.78);
+  box-shadow: 0 7px 18px rgba(30,3,81,.08);
+}
+
+.sonhos-page .recompensa-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(30,3,81,.10);
+  background: rgba(255,255,255,.86);
+  color: #273143;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  box-shadow: 0 3px 8px rgba(30,3,81,.05);
+}
+
+.sonhos-page .recompensa-chip b {
+  margin: 0 4px;
+  font-weight: 900;
+}
+
+.sonhos-page .chip-bronze b { color: #b35a45; }
+.sonhos-page .chip-prata b { color: #777; }
+.sonhos-page .chip-ouro b { color: #ae7e36; }
+.sonhos-page .chip-especial b { color: #9900cc; }
+.sonhos-page .chip-combate b { color: #993333; }
+
+.sonhos-page .sonhos-section-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 18px 0 10px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--sec-a, var(--sonho-a)), var(--sec-b, var(--sonho-b)));
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 7px 16px rgba(30,3,81,.18);
+  box-sizing: border-box;
+}
+
+.sonhos-page .sec-sonhos { --sec-a:#1e0351; --sec-b:#ff5656; }
+.sonhos-page .sec-bronze { --sec-a:#6d441d; --sec-b:#c24d4d; }
+.sonhos-page .sec-prata { --sec-a:#636363; --sec-b:#dbdbdb; }
+.sonhos-page .sec-ouro { --sec-a:#886a02; --sec-b:#ffdd00; }
+.sonhos-page .sec-especial { --sec-a:#510337; --sec-b:#fc9e9e; }
+.sonhos-page .sec-pvp { --sec-a:#510303; --sec-b:#fc9e9e; }
+
+.sonhos-page .sonho-list,
+.sonhos-page .conquista-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin: 0 0 18px;
+  box-sizing: border-box;
+}
+
+.sonhos-page .sonho-list > br,
+.sonhos-page .conquista-list > br {
+  display: none !important;
+}
+
+.sonhos-page .sonho-card,
+.sonhos-page .conquista-card {
+  --card-a: var(--sonho-a);
+  --card-b: var(--sonho-b);
+  --card-soft: var(--sonho-soft);
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  min-height: 92px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(30,3,81,.12);
+  border-left: 5px solid var(--card-a);
+  background:
+    radial-gradient(circle at top left, var(--card-soft), transparent 36%),
+    rgba(255,255,255,.86);
+  box-shadow: 0 6px 16px rgba(30,3,81,.07);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sonhos-page .sonho-card::after {
+  content: "DREAM";
+  position: absolute;
+  right: -8px;
+  bottom: -10px;
+  color: rgba(30,3,81,.045);
+  font: 900 38px/1 Inter, Arial, sans-serif;
+  letter-spacing: -2px;
+  pointer-events: none;
+}
+
+.sonhos-page .sonho-icon,
+.sonhos-page .conquista-icon {
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 5px 12px rgba(30,3,81,.15),
+    3px 3px 0 var(--card-a);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.sonhos-page .sonho-content,
+.sonhos-page .conquista-content {
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.sonhos-page .sonho-title,
+.sonhos-page .conquista-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--card-a), var(--card-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+  box-sizing: border-box;
+}
+
+.sonhos-page .conquista-title {
+  width: 100%;
+}
+
+.sonhos-page .conquista-xp {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.22);
+  color: #fff;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+}
+
+.sonhos-page .sonho-row,
+.sonhos-page .conquista-row {
+  margin: 4px 0;
+  color: #273143;
+  font: 700 12px/1.42 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.sonhos-page .sonho-row b,
+.sonhos-page .conquista-row b {
+  color: var(--card-a);
+  font-weight: 900;
+}
+
+.sonhos-page .sonho-progress {
+  margin-top: 7px;
+  height: 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(30,3,81,.10);
+  background: rgba(30,3,81,.08);
+  overflow: hidden;
+}
+
+.sonhos-page .sonho-progress span {
+  display: block;
+  width: var(--prog, 0%);
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--card-a), var(--card-b));
+}
+
+.sonhos-page .sonho-card {
+  --card-a: #1e0351;
+  --card-b: #ff5656;
+  --card-soft: rgba(255,86,86,.14);
+}
+
+.sonhos-page .rank-bronze {
+  --card-a: #6d441d;
+  --card-b: #c24d4d;
+  --card-soft: rgba(194,77,77,.13);
+}
+
+.sonhos-page .rank-prata {
+  --card-a: #636363;
+  --card-b: #dbdbdb;
+  --card-soft: rgba(160,160,160,.15);
+}
+
+.sonhos-page .rank-ouro {
+  --card-a: #886a02;
+  --card-b: #ffdd00;
+  --card-soft: rgba(255,221,0,.14);
+}
+
+.sonhos-page .rank-especial {
+  --card-a: #510337;
+  --card-b: #fc9e9e;
+  --card-soft: rgba(252,158,158,.14);
+}
+
+.sonhos-page .rank-pvp {
+  --card-a: #510303;
+  --card-b: #fc9e9e;
+  --card-soft: rgba(252,158,158,.14);
+}
+
+.sonhos-page img:not(.intro-img):not(.sonho-icon):not(.conquista-icon) {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.tema-escuro .sonhos-page .sonhos-lead,
+.tema-sanji .sonhos-page .sonhos-lead,
+.tema-zoro .sonhos-page .sonhos-lead,
+.tema-escuro .sonhos-page .sonhos-info,
+.tema-sanji .sonhos-page .sonhos-info,
+.tema-zoro .sonhos-page .sonhos-info,
+.tema-escuro .sonhos-page .recompensa-box,
+.tema-sanji .sonhos-page .recompensa-box,
+.tema-zoro .sonhos-page .recompensa-box,
+.tema-escuro .sonhos-page .sonho-card,
+.tema-sanji .sonhos-page .sonho-card,
+.tema-zoro .sonhos-page .sonho-card,
+.tema-escuro .sonhos-page .conquista-card,
+.tema-sanji .sonhos-page .conquista-card,
+.tema-zoro .sonhos-page .conquista-card {
+  background:
+    radial-gradient(circle at top left, rgba(255,86,86,.07), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .sonhos-page .sonhos-lead,
+.tema-sanji .sonhos-page .sonhos-lead,
+.tema-zoro .sonhos-page .sonhos-lead,
+.tema-escuro .sonhos-page .sonhos-info,
+.tema-sanji .sonhos-page .sonhos-info,
+.tema-zoro .sonhos-page .sonhos-info,
+.tema-escuro .sonhos-page .sonho-row,
+.tema-sanji .sonhos-page .sonho-row,
+.tema-zoro .sonhos-page .sonho-row,
+.tema-escuro .sonhos-page .conquista-row,
+.tema-sanji .sonhos-page .conquista-row,
+.tema-zoro .sonhos-page .conquista-row,
+.tema-escuro .sonhos-page .recompensa-chip,
+.tema-sanji .sonhos-page .recompensa-chip,
+.tema-zoro .sonhos-page .recompensa-chip {
+  color: #f2f6ff;
+}
+
+.tema-escuro .sonhos-page .recompensa-chip,
+.tema-sanji .sonhos-page .recompensa-chip,
+.tema-zoro .sonhos-page .recompensa-chip {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+}
+
+.tema-escuro .sonhos-page .sonho-icon,
+.tema-sanji .sonhos-page .sonho-icon,
+.tema-zoro .sonhos-page .sonho-icon,
+.tema-escuro .sonhos-page .conquista-icon,
+.tema-sanji .sonhos-page .conquista-icon,
+.tema-zoro .sonhos-page .conquista-icon {
+  border-color: #252628;
+  background: #252628;
+}
+
+@media (max-width: 850px) {
+  .sonhos-page .sonho-list,
+  .sonhos-page .conquista-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .sonhos-page .sonho-card,
+  .sonhos-page .conquista-card {
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+
+  .sonhos-page .sonho-title,
+  .sonhos-page .conquista-title {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+}
