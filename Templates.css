@@ -10186,3 +10186,138 @@ align-self: center;
     order: -1;
   }
 }
+
+/* ============================================================
+   PÁGINA — COMPLICAÇÕES
+============================================================ */
+
+.complicacao-page .complicacao-lead {
+  margin: 0 0 14px;
+  padding: 13px 15px;
+  border-radius: 18px;
+  border: 1px solid rgba(122,15,15,.13);
+  border-left: 6px solid #9f2e24;
+  background:
+    radial-gradient(circle at top left, rgba(252,158,158,.15), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,246,246,.96));
+  color: #273143;
+  font: 700 13px/1.6 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-shadow: 0 8px 20px rgba(122,15,15,.08);
+  box-sizing: border-box;
+}
+
+.complicacao-page .complicacao-lead b,
+.complicacao-page .complicacao-lead strong {
+  color: #9f2e24;
+  font-weight: 900;
+}
+
+.complicacao-page .complicacao-alerta {
+  margin-top: 9px;
+  padding: 9px 11px;
+  border-radius: 14px;
+  border: 1px solid rgba(159,46,36,.18);
+  background: rgba(159,46,36,.08);
+  color: #7a1f18;
+  font: 900 12px/1.45 Inter, Calibri, Arial, sans-serif;
+}
+
+.complicacao-page .complicacao-section-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 18px 0 10px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #510303, #fc9e9e);
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 7px 16px rgba(122,15,15,.18);
+  box-sizing: border-box;
+}
+
+.complicacao-page .complicacao-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin: 0 0 18px;
+  box-sizing: border-box;
+}
+
+.complicacao-page .complicacao-list > br {
+  display: none !important;
+}
+
+.complicacao-page .complicacao-card {
+  --vant-a: #510303;
+  --vant-b: #fc9e9e;
+  --vant-soft: rgba(252,158,158,.16);
+  min-height: 104px;
+}
+
+.complicacao-page .complicacao-card.comp-severa {
+  --vant-a: #2a0505;
+  --vant-b: #d64040;
+  --vant-soft: rgba(214,64,64,.18);
+  border-left-width: 6px;
+}
+
+.complicacao-page .complicacao-card .vantagem-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  border-radius: 999px;
+}
+
+.complicacao-page .comp-xp {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.22);
+  color: #fff;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+}
+
+.complicacao-page .complicacao-card .vantagem-row {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.tema-escuro .complicacao-page .complicacao-lead,
+.tema-sanji .complicacao-page .complicacao-lead,
+.tema-zoro .complicacao-page .complicacao-lead {
+  background:
+    radial-gradient(circle at top left, rgba(252,158,158,.08), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  border-left-color: #d64040;
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .complicacao-page .complicacao-alerta,
+.tema-sanji .complicacao-page .complicacao-alerta,
+.tema-zoro .complicacao-page .complicacao-alerta {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  color: #ffdede;
+}
+
+@media (max-width: 850px) {
+  .complicacao-page .complicacao-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .complicacao-page .complicacao-card .vantagem-title {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+}
