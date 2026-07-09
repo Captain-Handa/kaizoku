@@ -11451,29 +11451,25 @@ align-self: center;
 }
 
 .akuma-page .ak-ability {
-  --ab-a: var(--type-a);
-  --ab-b: var(--type-b);
-  --ab-soft: var(--type-soft);
-  display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
-  gap: 10px;
-  align-items: start;
-  width: 100%;
-  min-height: 86px;
-  padding: 9px;
-  border-radius: 17px;
-  border: 1px solid rgba(69,24,79,.13);
-  border-left: 5px solid var(--ab-a);
-  background:
-    radial-gradient(circle at top left, var(--ab-soft), transparent 34%),
-    rgba(255,255,255,.86);
-  box-shadow: 0 5px 13px rgba(69,24,79,.07);
-  box-sizing: border-box;
+    --ab-a: var(--type-a);
+    --ab-b: var(--type-b);
+    --ab-soft: var(--type-soft);
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    width: 100%;
+    min-height: 86px;
+    padding: 9px;
+    border-radius: 17px;
+    border: 1px solid rgba(69, 24, 79, .13);
+    border-left: 5px solid var(--ab-a);
+    background: radial-gradient(circle at top left, var(--ab-soft), transparent 34%), rgba(255, 255, 255, .86);
+    box-shadow: 0 5px 13px rgba(69, 24, 79, .07);
+    box-sizing: border-box;
 }
 
 .akuma-page .ak-ability-img {
-  width: 72px;
-  height: 72px;
   object-fit: cover;
   object-position: center;
   border-radius: 16px;
@@ -11483,6 +11479,7 @@ align-self: center;
     0 5px 12px rgba(69,24,79,.14),
     3px 3px 0 var(--ab-a);
   box-sizing: border-box;
+    align-self: center;
 }
 
 .akuma-page .ak-ability-title {
@@ -11908,5 +11905,810 @@ align-self: center;
     align-items: flex-start;
     flex-direction: column;
     border-radius: 14px;
+  }
+}
+
+/* ============================================================
+   AKUMA NO MI — CARD DE ATIVAÇÃO / HABILIDADE
+   Igual ao componente global .habilidade-card
+============================================================ */
+
+.ak-ability {
+  --ak-hab-a: var(--corgeral);
+  --ak-hab-b: #5cb6d1;
+  --ak-hab-soft: rgba(92, 182, 209, .12);
+
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(15, 61, 122, .14);
+  border-left: 6px solid var(--ak-hab-a);
+  background:
+    radial-gradient(circle at top left, var(--ak-hab-soft), transparent 36%),
+    rgba(255, 255, 255, .86);
+  box-shadow: 0 7px 18px rgba(15, 61, 122, .09);
+  box-sizing: border-box;
+  clear: both;
+}
+
+/* Imagem */
+
+.ak-ability .ak-ability-img {
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+  border: 4px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 7px 15px rgba(15, 61, 122, .18),
+    4px 4px 0 var(--ak-hab-a);
+  box-sizing: border-box;
+  align-self: center;
+}
+
+/* Conteúdo interno */
+/* Funciona mesmo que o HTML esteja usando apenas <div> sem classe */
+
+.ak-ability > div:not(.ak-ability-img) {
+  min-width: 0;
+}
+
+/* Título */
+
+.ak-ability .ak-ability-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 7px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ak-hab-a), var(--ak-hab-b));
+  color: #fff;
+  font: 900 11px / 1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  box-sizing: border-box;
+}
+
+.ak-ability .ak-ability-title span {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .22);
+  color: #fff;
+  font: 900 9px / 1 Inter, Arial, sans-serif;
+}
+
+/* Linhas */
+
+.ak-ability .ak-row {
+  margin: 4px 0;
+  color: #273143;
+  font: 700 10.5px / 1.45 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.ak-ability .ak-row b {
+  color: var(--ak-hab-a);
+  font-weight: 900;
+}
+
+/* Lista de habilidades */
+
+.ak-ability-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Variação por tipo de fruta */
+
+.type-paramecia .ak-ability {
+  --ak-hab-a: #7e44f7;
+  --ak-hab-b: #b640d8;
+  --ak-hab-soft: rgba(126, 68, 247, .13);
+}
+
+.type-zoan .ak-ability {
+  --ak-hab-a: #2f6f4e;
+  --ak-hab-b: #8cbf3f;
+  --ak-hab-soft: rgba(47, 111, 78, .13);
+}
+
+.type-logia .ak-ability {
+  --ak-hab-a: #1f6f9f;
+  --ak-hab-b: #5cb6d1;
+  --ak-hab-soft: rgba(92, 182, 209, .13);
+}
+
+/* Protege emojis/imagens pequenas dentro dos cards */
+
+.ak-ability img:not(.ak-ability-img) {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Tema escuro */
+
+.tema-escuro .ak-ability,
+.tema-sanji .ak-ability,
+.tema-zoro .ak-ability {
+  background: rgba(255, 255, 255, .055);
+  border-color: rgba(255, 255, 255, .08);
+  border-left-color: var(--ak-hab-a);
+  color: #f2f6ff;
+}
+
+.tema-escuro .ak-ability .ak-row,
+.tema-sanji .ak-ability .ak-row,
+.tema-zoro .ak-ability .ak-row {
+  color: #f2f6ff;
+}
+
+.tema-escuro .ak-ability .ak-ability-img,
+.tema-sanji .ak-ability .ak-ability-img,
+.tema-zoro .ak-ability .ak-ability-img {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* Responsivo */
+
+@media (max-width: 600px) {
+  .ak-ability {
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 100px;
+  }
+
+  .ak-ability .ak-ability-img {
+    width: 80px;
+    height: 80px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 16px;
+  }
+
+  .ak-ability .ak-ability-title {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+}
+
+/* ============================================================
+   PÁGINA — ESPECIALIZAÇÕES
+   Usa templates de vantagem, talento e habilidade
+============================================================ */
+
+.esp-page {
+  --esp-a: #0a4f96;
+  --esp-b: #18d6fd;
+  --esp-soft: rgba(24,214,253,.13);
+  overflow: visible;
+}
+
+.esp-page .esp-lead,
+.esp-page .esp-aquisicao {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(10,79,150,.13);
+  border-left: 6px solid var(--esp-a);
+  background:
+    radial-gradient(circle at top left, var(--esp-soft), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,250,255,.96));
+  box-shadow: 0 8px 20px rgba(10,79,150,.08);
+  color: #273143;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+.esp-page .esp-lead b,
+.esp-page .esp-aquisicao b {
+  color: var(--esp-a);
+  font-weight: 900;
+}
+
+.esp-page .esp-section {
+  --esp-a: #0a4f96;
+  --esp-b: #18d6fd;
+  --esp-soft: rgba(24,214,253,.13);
+  position: relative;
+  margin: 20px 0 22px;
+  padding: 12px;
+  border-radius: 24px;
+  border: 1px solid rgba(10,79,150,.14);
+  background:
+    radial-gradient(circle at top right, var(--esp-soft), transparent 38%),
+    linear-gradient(180deg, rgba(255,255,255,.90), rgba(246,250,255,.97));
+  box-shadow: 0 12px 28px rgba(10,79,150,.10);
+  color: #273143;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.esp-page .esp-section::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  bottom: -42px;
+  width: 130px;
+  height: 130px;
+  border-radius: 999px;
+  background: var(--esp-soft);
+  pointer-events: none;
+}
+
+.esp-page .esp-peixe { --esp-a:#0a4f96; --esp-b:#18d6fd; --esp-soft:rgba(24,214,253,.14); }
+.esp-page .esp-mink { --esp-a:#4e3788; --esp-b:#d7b6ff; --esp-soft:rgba(215,182,255,.16); }
+.esp-page .esp-gigante { --esp-a:#6b3518; --esp-b:#e0a15c; --esp-soft:rgba(224,161,92,.16); }
+.esp-page .esp-roku { --esp-a:#263d66; --esp-b:#8fb8ff; --esp-soft:rgba(143,184,255,.15); }
+
+.esp-page .esp-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.esp-page .esp-img {
+  flex: 0 0 190px;
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 22px;
+  border: 5px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 9px 20px rgba(10,79,150,.18),
+    4px 4px 0 var(--esp-a);
+  box-sizing: border-box;
+}
+
+.esp-page .esp-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.esp-page .esp-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--esp-a), var(--esp-b));
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .75px;
+  box-shadow: 0 7px 16px rgba(10,79,150,.18);
+  box-sizing: border-box;
+}
+
+.esp-page .esp-text {
+  color: #273143;
+  font: 700 12.5px/1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.esp-page .esp-aquisicao {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 10px 12px;
+  border-left-color: var(--esp-a);
+  background:
+    radial-gradient(circle at top left, var(--esp-soft), transparent 34%),
+    rgba(255,255,255,.78);
+}
+
+.esp-page .esp-aquisicao b:first-child {
+  display: inline-flex;
+  margin-right: 6px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--esp-a), var(--esp-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+}
+
+/* ------------------------------
+   Vantagem desbloqueada
+------------------------------ */
+
+.esp-page .vantagem-card {
+  --vant-a: var(--esp-a);
+  --vant-b: var(--esp-b);
+  --vant-soft: var(--esp-soft);
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+  min-height: 78px;
+  margin: 12px 0 0;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.14);
+  border-left: 5px solid var(--vant-a);
+  background:
+    radial-gradient(circle at top left, var(--vant-soft), transparent 36%),
+    rgba(255,255,255,.82);
+  box-shadow: 0 6px 16px rgba(15,61,122,.08);
+  box-sizing: border-box;
+}
+
+.esp-page .vantagem-img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow: 0 5px 12px rgba(15,61,122,.17), 3px 3px 0 var(--vant-a);
+  box-sizing: border-box;
+}
+
+.esp-page .vantagem-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--vant-a), var(--vant-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+  box-sizing: border-box;
+}
+
+.esp-page .vantagem-row {
+  margin: 4px 0;
+  color: #273143;
+  font: 700 12.5px/1.4 Inter, Calibri, Arial, sans-serif;
+}
+
+.esp-page .vantagem-row b {
+  color: var(--vant-a);
+  font-weight: 900;
+}
+
+/* ------------------------------
+   Details
+------------------------------ */
+
+.esp-page .esp-details {
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+  border-radius: 17px;
+  border: 1px solid rgba(10,79,150,.13);
+  background: rgba(255,255,255,.50);
+  box-shadow: 0 7px 18px rgba(10,79,150,.07);
+  overflow: hidden;
+}
+
+.esp-page .esp-details summary {
+  padding: 9px 12px;
+  background: linear-gradient(90deg, var(--esp-a), var(--esp-b));
+  color: #fff;
+  font: 900 10.5px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .75px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.esp-page .esp-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.esp-page .esp-details summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 7px;
+  transition: transform .18s ease;
+}
+
+.esp-page .esp-details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.esp-page .esp-list,
+.esp-page .hab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.esp-page .esp-list > br,
+.esp-page .hab-list > br {
+  display: none !important;
+}
+
+.esp-page .esp-subtitle {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 2px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--esp-a), var(--esp-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+}
+
+/* ------------------------------
+   Template de Talento
+------------------------------ */
+
+.esp-page .talento-card {
+  --tal-a: var(--esp-a);
+  --tal-b: var(--esp-b);
+  --tal-soft: var(--esp-soft);
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+  min-height: 82px;
+  padding: 10px;
+  border-radius: 17px;
+  border: 1px solid rgba(10,79,150,.13);
+  border-left: 5px solid var(--tal-a);
+  background:
+    radial-gradient(circle at top left, var(--tal-soft), transparent 34%),
+    rgba(255,255,255,.86);
+  box-shadow: 0 5px 13px rgba(10,79,150,.07);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.esp-page .talento-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow: 0 5px 12px rgba(10,79,150,.14), 3px 3px 0 var(--tal-a);
+  box-sizing: border-box;
+}
+
+.esp-page .talento-content {
+  min-width: 0;
+}
+
+.esp-page .talento-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--tal-a), var(--tal-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+  box-sizing: border-box;
+}
+
+.esp-page .talento-title span {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.20);
+  color: #fff;
+  font: 900 8.5px/1 Inter, Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.esp-page .talento-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 4px 0;
+}
+
+.esp-page .talento-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 21px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(10,79,150,.10);
+  background: rgba(255,255,255,.82);
+  color: #273143;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+}
+
+.esp-page .talento-meta b,
+.esp-page .talento-row b {
+  color: var(--tal-a);
+  font-weight: 900;
+}
+
+.esp-page .talento-row {
+  margin: 4px 0;
+  color: #273143;
+  font: 700 12px/1.4 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+/* ------------------------------
+   Template de Habilidade
+------------------------------ */
+
+.esp-page .habilidade-card {
+  --hab-a: var(--esp-a);
+  --hab-b: var(--esp-b);
+  --hab-soft: var(--esp-soft);
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 11px;
+  align-items: start;
+  width: 100%;
+  min-height: 96px;
+  padding: 11px;
+  border-radius: 19px;
+  border: 1px solid rgba(10,79,150,.13);
+  border-left: 6px solid var(--hab-a);
+  background:
+    radial-gradient(circle at top right, var(--hab-soft), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,250,255,.96));
+  box-shadow: 0 7px 17px rgba(10,79,150,.08);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.esp-page .habilidade-card::after {
+  content: "SKILL";
+  position: absolute;
+  right: -4px;
+  bottom: -9px;
+  color: rgba(10,79,150,.045);
+  font: 900 38px/1 Inter, Arial, sans-serif;
+  letter-spacing: -2px;
+  pointer-events: none;
+}
+
+.esp-page .habilidade-img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 17px;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow: 0 6px 14px rgba(10,79,150,.16), 3px 3px 0 var(--hab-a);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.esp-page .habilidade-content {
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.esp-page .habilidade-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 6px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--hab-a), var(--hab-b));
+  color: #fff;
+  font: 900 10.5px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  box-sizing: border-box;
+}
+
+.esp-page .habilidade-title span {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.20);
+  color: #fff;
+  font: 900 8.5px/1 Inter, Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.esp-page .habilidade-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 5px 0;
+}
+
+.esp-page .habilidade-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(10,79,150,.10);
+  background: rgba(255,255,255,.84);
+  color: #273143;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+}
+
+.esp-page .habilidade-meta b,
+.esp-page .habilidade-row b {
+  color: var(--hab-a);
+  font-weight: 900;
+}
+
+.esp-page .habilidade-row {
+  margin: 5px 0 0;
+  color: #273143;
+  font: 700 12.2px/1.42 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.esp-page img:not(.intro-img):not(.esp-img):not(.vantagem-img):not(.talento-img):not(.habilidade-img) {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* ------------------------------
+   Tema escuro
+------------------------------ */
+
+.tema-escuro .esp-page .esp-lead,
+.tema-sanji .esp-page .esp-lead,
+.tema-zoro .esp-page .esp-lead,
+.tema-escuro .esp-page .esp-section,
+.tema-sanji .esp-page .esp-section,
+.tema-zoro .esp-page .esp-section,
+.tema-escuro .esp-page .esp-aquisicao,
+.tema-sanji .esp-page .esp-aquisicao,
+.tema-zoro .esp-page .esp-aquisicao,
+.tema-escuro .esp-page .esp-details,
+.tema-sanji .esp-page .esp-details,
+.tema-zoro .esp-page .esp-details,
+.tema-escuro .esp-page .vantagem-card,
+.tema-sanji .esp-page .vantagem-card,
+.tema-zoro .esp-page .vantagem-card,
+.tema-escuro .esp-page .talento-card,
+.tema-sanji .esp-page .talento-card,
+.tema-zoro .esp-page .talento-card,
+.tema-escuro .esp-page .habilidade-card,
+.tema-sanji .esp-page .habilidade-card,
+.tema-zoro .esp-page .habilidade-card {
+  background:
+    radial-gradient(circle at top left, rgba(24,214,253,.07), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .esp-page .esp-text,
+.tema-sanji .esp-page .esp-text,
+.tema-zoro .esp-page .esp-text,
+.tema-escuro .esp-page .vantagem-row,
+.tema-sanji .esp-page .vantagem-row,
+.tema-zoro .esp-page .vantagem-row,
+.tema-escuro .esp-page .talento-row,
+.tema-sanji .esp-page .talento-row,
+.tema-zoro .esp-page .talento-row,
+.tema-escuro .esp-page .habilidade-row,
+.tema-sanji .esp-page .habilidade-row,
+.tema-zoro .esp-page .habilidade-row,
+.tema-escuro .esp-page .talento-meta span,
+.tema-sanji .esp-page .talento-meta span,
+.tema-zoro .esp-page .talento-meta span,
+.tema-escuro .esp-page .habilidade-meta span,
+.tema-sanji .esp-page .habilidade-meta span,
+.tema-zoro .esp-page .habilidade-meta span {
+  color: #f2f6ff;
+}
+
+.tema-escuro .esp-page .talento-meta span,
+.tema-sanji .esp-page .talento-meta span,
+.tema-zoro .esp-page .talento-meta span,
+.tema-escuro .esp-page .habilidade-meta span,
+.tema-sanji .esp-page .habilidade-meta span,
+.tema-zoro .esp-page .habilidade-meta span {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+}
+
+.tema-escuro .esp-page .esp-img,
+.tema-sanji .esp-page .esp-img,
+.tema-zoro .esp-page .esp-img,
+.tema-escuro .esp-page .vantagem-img,
+.tema-sanji .esp-page .vantagem-img,
+.tema-zoro .esp-page .vantagem-img,
+.tema-escuro .esp-page .talento-img,
+.tema-sanji .esp-page .talento-img,
+.tema-zoro .esp-page .talento-img,
+.tema-escuro .esp-page .habilidade-img,
+.tema-sanji .esp-page .habilidade-img,
+.tema-zoro .esp-page .habilidade-img {
+  border-color: #252628;
+  background: #252628;
+}
+
+@media (max-width: 850px) {
+  .esp-page .esp-top {
+    flex-direction: column;
+  }
+
+  .esp-page .esp-img {
+    width: 190px;
+    height: 190px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .esp-page .talento-title,
+  .esp-page .habilidade-title {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+
+  .esp-page .talento-card,
+  .esp-page .habilidade-card {
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+
+  .esp-page .habilidade-img {
+    width: 60px;
+    height: 60px;
   }
 }
