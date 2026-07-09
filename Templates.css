@@ -10710,3 +10710,206 @@ align-self: center;
     border-radius: 14px;
   }
 }
+
+/* ============================================================
+   PÁGINA — LISTA DE TALENTOS
+   Usa o componente global .talento-card
+============================================================ */
+
+.talentos-page {
+  --talentos-a: #b64040;
+  --talentos-b: #7e44f7;
+  --talentos-soft: rgba(126,68,247,.13);
+}
+
+.talentos-page .talentos-lead,
+.talentos-page .talentos-regra,
+.talentos-page .talentos-resumo {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(77,43,122,.13);
+  border-left: 6px solid var(--talentos-a);
+  background:
+    radial-gradient(circle at top left, rgba(126,68,247,.13), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(248,246,255,.96));
+  box-shadow: 0 8px 20px rgba(77,43,122,.08);
+  color: #273143;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+.talentos-page .talentos-lead b,
+.talentos-page .talentos-regra b,
+.talentos-page .talentos-resumo b {
+  color: var(--talentos-a);
+  font-weight: 900;
+}
+
+.talentos-page .talentos-section-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 16px 0 10px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--talentos-a), var(--talentos-b));
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 7px 16px rgba(77,43,122,.18);
+  box-sizing: border-box;
+}
+
+.talentos-page .tab-container {
+  margin-bottom: 10px;
+}
+
+.talentos-page .tab-content {
+  box-sizing: border-box;
+}
+
+.talentos-page .tab-content > br,
+.talentos-page .talento-list > br {
+  display: none !important;
+}
+
+.talentos-page .tab-content#conteudo0 {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.talentos-page .talentos-resumo-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--talentos-a), var(--talentos-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+
+.talentos-page .talentos-resumo-text {
+  color: #273143;
+  font: 700 12.5px/1.5 Inter, Calibri, Arial, sans-serif;
+}
+
+.talentos-page .talentos-chipbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.talentos-page .talentos-chipbox span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(77,43,122,.10);
+  background: rgba(255,255,255,.84);
+  color: #273143;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+}
+
+.talentos-page .talento-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.talentos-page .talento-card {
+  min-height: 86px;
+}
+
+.talentos-page .tal-hobby {
+  --tal-a: #7a4b12;
+  --tal-b: #d99a2b;
+  --tal-soft: rgba(217,154,43,.14);
+}
+
+.talentos-page .tal-comum {
+  --tal-a: #4a2f68;
+  --tal-b: #a98ad6;
+  --tal-soft: rgba(169,138,214,.14);
+}
+
+.talentos-page .tal-tier-1 { border-left-color: #7a4b12; }
+.talentos-page .tal-tier-2 { border-left-color: #123b59; }
+.talentos-page .tal-tier-3 { border-left-color: #2f6f4e; }
+.talentos-page .tal-tier-4 { border-left-color: #751b1b; }
+.talentos-page .tal-tier-5 { border-left-color: #4a2f68; }
+
+.talentos-page .talento-title span {
+  white-space: nowrap;
+}
+
+.talentos-page img:not(.intro-img):not(.talento-img) {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.tema-escuro .talentos-page .talentos-lead,
+.tema-sanji .talentos-page .talentos-lead,
+.tema-zoro .talentos-page .talentos-lead,
+.tema-escuro .talentos-page .talentos-regra,
+.tema-sanji .talentos-page .talentos-regra,
+.tema-zoro .talentos-page .talentos-regra,
+.tema-escuro .talentos-page .talentos-resumo,
+.tema-sanji .talentos-page .talentos-resumo,
+.tema-zoro .talentos-page .talentos-resumo {
+  background:
+    radial-gradient(circle at top left, rgba(126,68,247,.08), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  border-left-color: var(--talentos-a);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .talentos-page .talentos-resumo-text,
+.tema-sanji .talentos-page .talentos-resumo-text,
+.tema-zoro .talentos-page .talentos-resumo-text,
+.tema-escuro .talentos-page .talentos-chipbox span,
+.tema-sanji .talentos-page .talentos-chipbox span,
+.tema-zoro .talentos-page .talentos-chipbox span {
+  color: #f2f6ff;
+}
+
+.tema-escuro .talentos-page .talentos-chipbox span,
+.tema-sanji .talentos-page .talentos-chipbox span,
+.tema-zoro .talentos-page .talentos-chipbox span {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+}
+
+@media (max-width: 600px) {
+  .talentos-page .talento-card {
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+
+  .talentos-page .talento-title {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+}
