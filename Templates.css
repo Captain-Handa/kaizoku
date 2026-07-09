@@ -11763,7 +11763,7 @@ align-self: center;
 }
 
 .akuma-page img:not(.intro-img):not(.vantagem-img):not(.ak-type-img):not(.ak-ability-img):not(.ak-mark-img):not(.talento-img) {
-  max-width: 18px;
+  max-width: 48px;
   width: auto;
   height: auto;
   object-fit: contain;
