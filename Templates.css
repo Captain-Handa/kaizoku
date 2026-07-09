@@ -11131,7 +11131,6 @@ align-self: center;
 }
 
 .tp .tm span {
-  display: inline-flex;
   align-items: center;
   min-height: 22px;
   padding: 4px 8px;
