@@ -783,7 +783,7 @@ details[open] > summary.tab-container {
 }
 
 details:has(> summary.tab-container) {
-  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  font: 400 12px/1.55 Inter, Calibri, Arial, sans-serif;
 }
 
 details[open]:has(> summary.tab-container) {
