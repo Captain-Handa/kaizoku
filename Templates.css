@@ -12624,58 +12624,58 @@ align-self: center;
     border-radius: 14px;
   }
 }
-
 /* ============================================================
-   AJUSTE FINAL — IMAGEM DO ESTILO NO TOPO DIREITO DO CARD
+   AJUSTE FINAL — IMAGEM DO ESTILO FLUTUANDO À DIREITA
+   IMPORTANTE: no HTML, a .especial-style-img deve vir antes da .especial-text
 ============================================================ */
 
 .especial-page .especial-card {
+  display: block;
   position: relative;
+  overflow: hidden;
 }
 
 .especial-page .especial-card .especial-style-img {
-  position: absolute;
-  top: 12px;
-  right: 12px;
+  float: right;
+  position: relative;
+  top: auto;
+  right: auto;
   z-index: 3;
-  flex: none;
   width: 300px;
   height: 120px;
   max-width: 300px;
   max-height: 120px;
-  margin: 0;
+  margin: 0 0 10px 14px;
+  flex: none;
 }
 
 .especial-page .especial-card .especial-text {
-  flex: 1 1 100%;
-  width: 100%;
-  min-height: 132px;
-  padding-right: 318px;
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: auto;
+  min-height: 0;
+  padding-right: 0;
   box-sizing: border-box;
 }
 
 .especial-page .especial-card .especial-full {
-  flex: 1 1 100%;
+  position: relative;
+  z-index: 2;
+  clear: both;
   width: 100%;
+  min-width: 0;
 }
 
 @media (max-width: 850px) {
   .especial-page .especial-card .especial-style-img {
-    position: relative;
-    top: auto;
-    right: auto;
-    order: -1;
-    align-self: center;
+    float: none;
+    display: block;
     width: 300px;
     height: 120px;
     max-width: 300px;
     max-height: 120px;
-    margin: 0 auto 2px;
-  }
-
-  .especial-page .especial-card .especial-text {
-    min-height: 0;
-    padding-right: 0;
+    margin: 0 auto 12px;
   }
 }
 
