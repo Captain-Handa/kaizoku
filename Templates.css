@@ -12212,7 +12212,7 @@ align-self: center;
   justify-content: space-between;
   gap: 8px;
   margin: 0 0 6px;
-  color: #1d2c43;
+  color: #fff;
   font: 900 11px/1.15 Inter, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: .45px;
@@ -12237,7 +12237,6 @@ align-self: center;
 }
 
 .especial-page .talento-meta span {
-  display: inline-flex;
   align-items: center;
   min-height: 20px;
   padding: 3px 7px;
@@ -12626,5 +12625,66 @@ align-self: center;
     align-items: flex-start;
     flex-direction: column;
     border-radius: 14px;
+  }
+}
+
+/* ============================================================
+   AJUSTE FINAL — IMAGEM DO ESTILO NO TOPO DIREITO DO CARD
+============================================================ */
+
+.especial-page .especial-card {
+  position: relative;
+}
+
+.especial-page .especial-card .especial-style-img {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  flex: none;
+  width: 300px;
+  height: 120px;
+  max-width: 300px;
+  max-height: 120px;
+  margin: 0;
+}
+
+.especial-page .especial-card .especial-text {
+  flex: 1 1 100%;
+  width: 100%;
+  min-height: 132px;
+  padding-right: 318px;
+  box-sizing: border-box;
+}
+
+.especial-page .especial-card .especial-full {
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+@media (max-width: 850px) {
+  .especial-page .especial-card .especial-style-img {
+    position: relative;
+    top: auto;
+    right: auto;
+    order: -1;
+    align-self: center;
+    width: 300px;
+    height: 120px;
+    max-width: 300px;
+    max-height: 120px;
+    margin: 0 auto 2px;
+  }
+
+  .especial-page .especial-card .especial-text {
+    min-height: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .especial-page .especial-card .especial-style-img {
+    width: 100%;
+    max-width: 300px;
   }
 }
