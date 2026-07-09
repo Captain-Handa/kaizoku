@@ -7556,8 +7556,8 @@ body.tema-zoro .sceditor-container textarea {
 .classe-page .classe-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-top: 14px;
+  gap: 2px;
+  margin-top: 1px;
 }
 
 /* ------------------------------
