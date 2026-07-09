@@ -5641,10 +5641,6 @@ body.tema-zoro .portrait-preview,
   margin: 9px 0 13px;
 }
 
-.carreira-pirata.pirata-page .pirata-info-grid > br {
-  display: none !important;
-}
-
 .carreira-pirata.pirata-page .pirata-info {
   padding: 8px 10px;
   border-radius: 14px;
@@ -5668,14 +5664,13 @@ body.tema-zoro .portrait-preview,
 }
 
 /* ------------------------------
-   Rumos iniciais — SEM GRID
+   Lista de carreiras — SEM GRID
 ------------------------------ */
 
 .carreira-pirata.pirata-page .rumos-pirata {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 12px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
   width: 100%;
   margin: 10px 0 14px;
   padding: 0;
@@ -5726,11 +5721,8 @@ body.tema-zoro .portrait-preview,
   flex: 0 0 200px;
   width: 200px;
   height: 200px;
-  max-width: 200px;
-  max-height: 200px;
   object-fit: cover;
   object-position: center;
-  margin: 0;
   border-radius: 22px;
   border: 5px solid #fff;
   background: #dcecff;
@@ -5801,85 +5793,42 @@ body.tema-zoro .portrait-preview,
   font: 900 9px/1 Inter, Arial, sans-serif;
 }
 
-.carreira-pirata.pirata-page .rumo-beneficio {
-  clear: both;
-  margin-top: 8px;
-  padding: 8px 9px;
-  border-radius: 13px;
-  border: 1px solid rgba(15,61,122,.10);
-  border-left: 5px solid var(--rumo-a);
-  background: rgba(255,255,255,.80);
-  box-shadow: 0 5px 12px rgba(15,61,122,.06);
-  color: #273143;
-  font: 700 11.5px/1.35 Inter, Calibri, Arial, sans-serif;
-}
-
-.carreira-pirata.pirata-page .rumo-beneficio b {
-  color: var(--rumo-a);
-  font-weight: 900;
-}
-
-/* Cores dos rumos */
-
-.carreira-pirata.pirata-page .rumo-lobo {
-  --rumo-a: #751b1b;
-  --rumo-b: #e06d48;
-  --rumo-soft: rgba(224,109,72,.16);
-}
-
-.carreira-pirata.pirata-page .rumo-mandriao,
-.carreira-pirata.pirata-page .rumo-capitao {
-  --rumo-a: #123b59;
-  --rumo-b: #2f8cc2;
-  --rumo-soft: rgba(47,140,194,.16);
-}
-
-.carreira-pirata.pirata-page .rumo-explorador {
-  --rumo-a: #7a4b12;
-  --rumo-b: #d99a2b;
-  --rumo-soft: rgba(217,154,43,.16);
-}
-
 /* ------------------------------
-   Tabs da trilha
+   Details / progresso
 ------------------------------ */
 
-.carreira-pirata.pirata-page .tab-container {
-  margin-bottom: 8px;
+.carreira-pirata.pirata-page .pirata-details {
+  margin-top: 8px;
+  border-radius: 16px;
+  border: 1px solid rgba(15,61,122,.12);
+  background: rgba(255,255,255,.48);
+  overflow: hidden;
 }
 
-.carreira-pirata.pirata-page .tab {
-  padding: 5px 9px;
-  font-size: 9px;
+.carreira-pirata.pirata-page .pirata-details summary {
+  padding: 8px 11px;
+  background: linear-gradient(90deg, var(--rumo-a), var(--rumo-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  cursor: pointer;
+  list-style: none;
 }
 
-.carreira-pirata.pirata-page .tab-content {
-  box-sizing: border-box;
+.carreira-pirata.pirata-page .pirata-details summary::-webkit-details-marker {
+  display: none;
 }
 
-.carreira-pirata.pirata-page .tab-content > br {
-  display: none !important;
+.carreira-pirata.pirata-page .pirata-details summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 7px;
+  transition: transform .18s ease;
 }
 
-.carreira-pirata.pirata-page .tab-content:not(#conteudo0),
-.carreira-pirata.pirata-page .tab-content#conteudo0 {
-  min-height: 0;
-  padding: 10px;
-  border-radius: 18px;
-}
-
-.carreira-pirata.pirata-page .tab-content#conteudo0 {
-  border: 1px solid rgba(15,61,122,.13);
-  background:
-    radial-gradient(circle at top left, rgba(217,154,43,.13), transparent 34%),
-    linear-gradient(180deg, rgba(255,255,255,.90), rgba(246,249,255,.96));
-  box-shadow: 0 10px 26px rgba(15,61,122,.10);
-}
-
-.carreira-pirata.pirata-page .pirata-tab-lead {
-  color: #273143;
-  font: 700 12px/1.42 Inter, Calibri, Arial, sans-serif;
-  text-align: justify;
+.carreira-pirata.pirata-page .pirata-details[open] summary::before {
+  transform: rotate(90deg);
 }
 
 /* ------------------------------
@@ -5887,9 +5836,9 @@ body.tema-zoro .portrait-preview,
 ------------------------------ */
 
 .carreira-pirata.pirata-page .pirata-talent-list {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 7px !important;
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
@@ -5900,9 +5849,9 @@ body.tema-zoro .portrait-preview,
 }
 
 .carreira-pirata.pirata-page .pirata-talent-card {
-  --tal-a: var(--rumo-a, var(--pirata-a));
-  --tal-b: var(--rumo-b, var(--pirata-b));
-  --tal-soft: var(--rumo-soft, var(--pirata-soft));
+  --tal-a: var(--rumo-a);
+  --tal-b: var(--rumo-b);
+  --tal-soft: var(--rumo-soft);
 
   display: flex;
   align-items: stretch;
@@ -5921,8 +5870,6 @@ body.tema-zoro .portrait-preview,
 
 .carreira-pirata.pirata-page .pirata-tier {
   flex: 0 0 54px;
-  min-width: 54px;
-  width: 54px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5951,8 +5898,6 @@ body.tema-zoro .portrait-preview,
   flex: 0 0 300px;
   width: 300px;
   height: 60px;
-  max-width: 300px;
-  max-height: 60px;
   align-self: center;
   object-fit: cover;
   object-position: center;
@@ -6007,141 +5952,21 @@ body.tema-zoro .portrait-preview,
   font-weight: 900;
 }
 
-.carreira-pirata.pirata-page .pirata-talent-note {
-  margin-top: 5px;
-  padding: 6px 7px;
-  border-radius: 11px;
-  border: 1px solid rgba(15,61,122,.10);
-  border-left: 5px solid var(--tal-a);
-  background: rgba(15,61,122,.055);
-  color: #273143;
-  font: 800 10.8px/1.32 Inter, Calibri, Arial, sans-serif;
-}
-
-/* Cores específicas dos talentos */
-
-.carreira-pirata.pirata-page .tal-abordagem {
-  --tal-a: #751b1b;
-  --tal-b: #e06d48;
-  --tal-soft: rgba(224,109,72,.15);
-}
-
-.carreira-pirata.pirata-page .tal-navio {
-  --tal-a: #123b59;
-  --tal-b: #2f8cc2;
-  --tal-soft: rgba(47,140,194,.15);
-}
-
-.carreira-pirata.pirata-page .tal-saque {
-  --tal-a: #7a4b12;
-  --tal-b: #d99a2b;
-  --tal-soft: rgba(217,154,43,.15);
-}
-
-.carreira-pirata.pirata-page .tal-lenda {
-  --tal-a: #4a2f68;
-  --tal-b: #a98ad6;
-  --tal-soft: rgba(169,138,214,.15);
-}
-
 /* ------------------------------
-   Modelo de ficha
+   Cores por carreira
 ------------------------------ */
 
-.carreira-pirata.pirata-page .pirata-modelo-box {
-  margin-top: 13px;
-  padding: 10px;
-  border-radius: 18px;
-  border: 1px solid rgba(15,61,122,.13);
-  background:
-    radial-gradient(circle at top left, rgba(217,154,43,.13), transparent 34%),
-    linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,249,255,.96));
-  box-shadow: 0 10px 26px rgba(15,61,122,.10);
-  box-sizing: border-box;
-}
+.carreira-pirata.pirata-page .career-combatente { --rumo-a:#510303; --rumo-b:#fc9e9e; --rumo-soft:rgba(252,158,158,.16); }
+.carreira-pirata.pirata-page .career-estrategista { --rumo-a:#031c51; --rumo-b:#9ecafc; --rumo-soft:rgba(158,202,252,.16); }
+.carreira-pirata.pirata-page .career-medico { --rumo-a:#3d7ca1; --rumo-b:#a2f4d8; --rumo-soft:rgba(162,244,216,.16); }
+.carreira-pirata.pirata-page .career-carpinteiro { --rumo-a:#56392c; --rumo-b:#d1aea3; --rumo-soft:rgba(209,174,163,.16); }
+.carreira-pirata.pirata-page .career-navegador { --rumo-a:#2f8cc2; --rumo-b:#ffa55b; --rumo-soft:rgba(255,165,91,.16); }
+.carreira-pirata.pirata-page .career-rastreador { --rumo-a:#245103; --rumo-b:#b9d65c; --rumo-soft:rgba(185,214,92,.16); }
+.carreira-pirata.pirata-page .career-charlatao { --rumo-a:#350351; --rumo-b:#9eabfc; --rumo-soft:rgba(158,171,252,.16); }
+.carreira-pirata.pirata-page .career-ladino { --rumo-a:#a1488e; --rumo-b:#ed5858; --rumo-soft:rgba(237,88,88,.16); }
+.carreira-pirata.pirata-page .career-vagabundo { --rumo-a:#eb7048; --rumo-b:#c0342d; --rumo-soft:rgba(235,112,72,.16); }
 
-.carreira-pirata.pirata-page .pirata-modelo-title {
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 0 8px;
-  padding: 6px 11px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--pirata-gold), var(--pirata-gold-2));
-  color: #2b1c11;
-  font: 900 10px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .7px;
-}
-
-.carreira-pirata.pirata-page .trilha-pirata-sheet {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.carreira-pirata.pirata-page .trilha-pirata-sheet > br {
-  display: none !important;
-}
-
-.carreira-pirata.pirata-page .pirata-sheet-card {
-  display: flex;
-  align-items: stretch;
-  gap: 7px;
-  border-radius: 15px;
-  border: 1px solid rgba(15,61,122,.13);
-  background: rgba(255,255,255,.84);
-  box-shadow: 0 6px 16px rgba(15,61,122,.07);
-  overflow: hidden;
-}
-
-.carreira-pirata.pirata-page .pirata-sheet-tier {
-  flex: 0 0 62px;
-  min-width: 62px;
-  width: 62px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(180deg, var(--pirata-a), #17151a);
-  color: #fff;
-  padding: 7px 4px;
-}
-
-.carreira-pirata.pirata-page .pirata-sheet-tier span {
-  font: 900 8px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-}
-
-.carreira-pirata.pirata-page .pirata-sheet-tier b {
-  color: var(--pirata-gold-2);
-  font: 900 18px/1 Inter, Arial, sans-serif;
-}
-
-.carreira-pirata.pirata-page .pirata-sheet-content {
-  flex: 1 1 auto;
-  min-width: 0;
-  padding: 7px 8px 7px 0;
-}
-
-.carreira-pirata.pirata-page .pirata-sheet-name {
-  margin-bottom: 4px;
-  color: #1d2c43;
-  font: 900 10px/1.2 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-}
-
-.carreira-pirata.pirata-page .pirata-sheet-text {
-  color: #273143;
-  font: 700 11.3px/1.35 Inter, Calibri, Arial, sans-serif;
-}
-
-.carreira-pirata.pirata-page .pirata-sheet-text b {
-  color: var(--pirata-a);
-}
-
-/* ------------------------------
-   Proteção de imagens pequenas / emojis
------------------------------- */
+/* Protege emojis/imagens pequenas */
 
 .carreira-pirata.pirata-page img:not(.intro-img):not(.pirata-career-img):not(.pirata-talent-img) {
   max-width: 18px;
@@ -6170,12 +5995,9 @@ body.tema-zoro .portrait-preview,
 .tema-escuro .carreira-pirata.pirata-page .rumo-card,
 .tema-sanji .carreira-pirata.pirata-page .rumo-card,
 .tema-zoro .carreira-pirata.pirata-page .rumo-card,
-.tema-escuro .carreira-pirata.pirata-page .tab-content#conteudo0,
-.tema-sanji .carreira-pirata.pirata-page .tab-content#conteudo0,
-.tema-zoro .carreira-pirata.pirata-page .tab-content#conteudo0,
-.tema-escuro .carreira-pirata.pirata-page .pirata-modelo-box,
-.tema-sanji .carreira-pirata.pirata-page .pirata-modelo-box,
-.tema-zoro .carreira-pirata.pirata-page .pirata-modelo-box {
+.tema-escuro .carreira-pirata.pirata-page .pirata-details,
+.tema-sanji .carreira-pirata.pirata-page .pirata-details,
+.tema-zoro .carreira-pirata.pirata-page .pirata-details {
   background:
     radial-gradient(circle at top left, rgba(217,154,43,.07), transparent 36%),
     linear-gradient(180deg, #1f2022, #121315);
@@ -6184,30 +6006,12 @@ body.tema-zoro .portrait-preview,
   box-shadow: 0 10px 26px rgba(0,0,0,.30);
 }
 
-.tema-escuro .carreira-pirata.pirata-page .pirata-regra,
-.tema-sanji .carreira-pirata.pirata-page .pirata-regra,
-.tema-zoro .carreira-pirata.pirata-page .pirata-regra,
-.tema-escuro .carreira-pirata.pirata-page .pirata-info,
-.tema-sanji .carreira-pirata.pirata-page .pirata-info,
-.tema-zoro .carreira-pirata.pirata-page .pirata-info,
 .tema-escuro .carreira-pirata.pirata-page .rumo-corpo,
 .tema-sanji .carreira-pirata.pirata-page .rumo-corpo,
 .tema-zoro .carreira-pirata.pirata-page .rumo-corpo,
-.tema-escuro .carreira-pirata.pirata-page .rumo-beneficio,
-.tema-sanji .carreira-pirata.pirata-page .rumo-beneficio,
-.tema-zoro .carreira-pirata.pirata-page .rumo-beneficio,
-.tema-escuro .carreira-pirata.pirata-page .pirata-tab-lead,
-.tema-sanji .carreira-pirata.pirata-page .pirata-tab-lead,
-.tema-zoro .carreira-pirata.pirata-page .pirata-tab-lead,
 .tema-escuro .carreira-pirata.pirata-page .pirata-talent-row,
 .tema-sanji .carreira-pirata.pirata-page .pirata-talent-row,
-.tema-zoro .carreira-pirata.pirata-page .pirata-talent-row,
-.tema-escuro .carreira-pirata.pirata-page .pirata-talent-note,
-.tema-sanji .carreira-pirata.pirata-page .pirata-talent-note,
-.tema-zoro .carreira-pirata.pirata-page .pirata-talent-note,
-.tema-escuro .carreira-pirata.pirata-page .pirata-sheet-text,
-.tema-sanji .carreira-pirata.pirata-page .pirata-sheet-text,
-.tema-zoro .carreira-pirata.pirata-page .pirata-sheet-text {
+.tema-zoro .carreira-pirata.pirata-page .pirata-talent-row {
   color: #f2f6ff;
 }
 
@@ -6217,18 +6021,9 @@ body.tema-zoro .portrait-preview,
 .tema-escuro .carreira-pirata.pirata-page .rumo-skills span,
 .tema-sanji .carreira-pirata.pirata-page .rumo-skills span,
 .tema-zoro .carreira-pirata.pirata-page .rumo-skills span,
-.tema-escuro .carreira-pirata.pirata-page .rumo-beneficio,
-.tema-sanji .carreira-pirata.pirata-page .rumo-beneficio,
-.tema-zoro .carreira-pirata.pirata-page .rumo-beneficio,
 .tema-escuro .carreira-pirata.pirata-page .pirata-talent-card,
 .tema-sanji .carreira-pirata.pirata-page .pirata-talent-card,
-.tema-zoro .carreira-pirata.pirata-page .pirata-talent-card,
-.tema-escuro .carreira-pirata.pirata-page .pirata-talent-note,
-.tema-sanji .carreira-pirata.pirata-page .pirata-talent-note,
-.tema-zoro .carreira-pirata.pirata-page .pirata-talent-note,
-.tema-escuro .carreira-pirata.pirata-page .pirata-sheet-card,
-.tema-sanji .carreira-pirata.pirata-page .pirata-sheet-card,
-.tema-zoro .carreira-pirata.pirata-page .pirata-sheet-card {
+.tema-zoro .carreira-pirata.pirata-page .pirata-talent-card {
   background: rgba(255,255,255,.055);
   border-color: rgba(255,255,255,.08);
   color: #f2f6ff;
@@ -6236,10 +6031,7 @@ body.tema-zoro .portrait-preview,
 
 .tema-escuro .carreira-pirata.pirata-page .pirata-talent-title,
 .tema-sanji .carreira-pirata.pirata-page .pirata-talent-title,
-.tema-zoro .carreira-pirata.pirata-page .pirata-talent-title,
-.tema-escuro .carreira-pirata.pirata-page .pirata-sheet-name,
-.tema-sanji .carreira-pirata.pirata-page .pirata-sheet-name,
-.tema-zoro .carreira-pirata.pirata-page .pirata-sheet-name {
+.tema-zoro .carreira-pirata.pirata-page .pirata-talent-title {
   color: #f2f6ff;
 }
 
@@ -6280,11 +6072,6 @@ body.tema-zoro .portrait-preview,
     height: 60px;
     margin: 7px auto 0;
   }
-
-  .carreira-pirata.pirata-page .pirata-talent-content {
-    flex: 1 1 100%;
-    padding: 8px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -6301,24 +6088,9 @@ body.tema-zoro .portrait-preview,
     flex-direction: column;
     gap: 5px;
   }
-
-  .carreira-pirata.pirata-page .pirata-sheet-card {
-    flex-direction: column;
-  }
-
-  .carreira-pirata.pirata-page .pirata-sheet-tier {
-    width: 100%;
-    min-width: 0;
-    flex: 0 0 auto;
-    flex-direction: row;
-    gap: 8px;
-    min-height: 48px;
-  }
-
-  .carreira-pirata.pirata-page .pirata-sheet-content {
-    padding: 8px;
-  }
 }
+
+
 /* ============================================================
    13. INTERAÇÕES, REPUTAÇÃO E AJUSTES DIVERSOS
    ============================================================ */
