@@ -5803,7 +5803,7 @@ body.tema-zoro .portrait-preview,
   border-radius: 16px;
   border: 1px solid rgba(15,61,122,.12);
   background: rgba(255,255,255,.48);
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
 }
 
@@ -5840,34 +5840,15 @@ body.tema-zoro .portrait-preview,
 .carreira-pirata.pirata-page .pirata-talent-list {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 12px;
   width: 100%;
-  padding: 8px;
+  padding: 18px 12px 10px 8px;
   box-sizing: border-box;
+  overflow: visible;
 }
 
 .carreira-pirata.pirata-page .pirata-talent-list > br {
   display: none !important;
-}
-
-.carreira-pirata.pirata-page .pirata-talent-card {
-  --tal-a: var(--rumo-a);
-  --tal-b: var(--rumo-b);
-  --tal-soft: var(--rumo-soft);
-
-  display: flex;
-  align-items: stretch;
-  gap: 8px;
-  width: 100%;
-  min-height: 72px;
-  border-radius: 15px;
-  border: 1px solid rgba(15,61,122,.13);
-  background:
-    radial-gradient(circle at top left, var(--tal-soft), transparent 34%),
-    rgba(255,255,255,.86);
-  box-shadow: 0 5px 13px rgba(15,61,122,.07);
-  box-sizing: border-box;
-  overflow: hidden;
 }
 
 .carreira-pirata.pirata-page .pirata-tier {
@@ -5898,29 +5879,55 @@ body.tema-zoro .portrait-preview,
   font: 900 19px/1 Inter, Arial, sans-serif;
 }
 
+.carreira-pirata.pirata-page .pirata-talent-card {
+  --tal-a: var(--rumo-a);
+  --tal-b: var(--rumo-b);
+  --tal-soft: var(--rumo-soft);
+
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  min-height: 72px;
+  border-radius: 15px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, var(--tal-soft), transparent 34%),
+    rgba(255,255,255,.86);
+  box-shadow: 0 5px 13px rgba(15,61,122,.07);
+  box-sizing: border-box;
+  overflow: visible;
+}
+
 .carreira-pirata.pirata-page .pirata-talent-img {
-  flex: 0 0 300px;
-  width: 300px;
+  position: absolute;
+  top: -11px;
+  right: -10px;
+  z-index: 4;
+
+  width: 200px;
+  max-width: 200px;
   height: 60px;
-  max-width: 300px;
   max-height: 60px;
-  align-self: center;
+
   object-fit: cover;
   object-position: center;
   border-radius: 13px;
   border: 3px solid #fff;
   background: #dcecff;
   box-shadow:
-    0 5px 12px rgba(15,61,122,.14),
+    0 7px 15px rgba(15,61,122,.18),
     3px 3px 0 var(--tal-a);
   box-sizing: border-box;
-  margin: 6px 0;
+  margin: 0;
+  pointer-events: none;
 }
 
 .carreira-pirata.pirata-page .pirata-talent-content {
   flex: 1 1 auto;
   min-width: 0;
-  padding: 8px 8px 8px 0;
+  padding: 8px 205px 8px 0;
   box-sizing: border-box;
 }
 
@@ -6073,16 +6080,20 @@ body.tema-zoro .portrait-preview,
   }
 
   .carreira-pirata.pirata-page .pirata-talent-card {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .carreira-pirata.pirata-page .pirata-talent-img {
-    order: -1;
-    flex: 1 1 100%;
-    width: 100%;
-    max-width: 300px;
-    height: 60px;
-    margin: 7px auto 0;
+    top: -10px;
+    right: -8px;
+    width: 180px;
+    max-width: 180px;
+    height: 56px;
+    max-height: 56px;
+  }
+
+  .carreira-pirata.pirata-page .pirata-talent-content {
+    padding-right: 185px;
   }
 }
 
@@ -6099,6 +6110,26 @@ body.tema-zoro .portrait-preview,
     align-items: flex-start;
     flex-direction: column;
     gap: 5px;
+  }
+
+  .carreira-pirata.pirata-page .pirata-talent-img {
+    position: relative;
+    top: auto;
+    right: auto;
+    order: -1;
+    width: 100%;
+    max-width: 200px;
+    height: 56px;
+    margin: 7px auto 0;
+  }
+
+  .carreira-pirata.pirata-page .pirata-talent-card {
+    flex-wrap: wrap;
+  }
+
+  .carreira-pirata.pirata-page .pirata-talent-content {
+    flex: 1 1 100%;
+    padding: 8px;
   }
 }
 
