@@ -10915,17 +10915,1000 @@ align-self: center;
 }
 
 /* LISTA DE TALENTOS — versão compacta */
-.tp{--ta:#b64040;--tb:#7e44f7;--ts:rgba(126,68,247,.13)}
-.tp .tl,.tp .trg,.tp .rz{margin:0 0 12px;padding:12px 14px;border-radius:18px;border:1px solid rgba(77,43,122,.13);border-left:6px solid var(--ta);background:radial-gradient(circle at top left,rgba(126,68,247,.13),transparent 34%),linear-gradient(180deg,rgba(255,255,255,.92),rgba(248,246,255,.96));box-shadow:0 8px 20px rgba(77,43,122,.08);color:#273143;font:700 13px/1.55 Inter,Calibri,Arial,sans-serif;text-align:justify;box-sizing:border-box}
-.tp .tl b,.tp .trg b,.tp .rz b{color:var(--ta);font-weight:900}
-.tp .st{width:fit-content;max-width:100%;margin:16px 0 10px;padding:8px 13px;border-radius:999px;background:linear-gradient(90deg,var(--ta),var(--tb));color:#fff;font:900 11px/1 Inter,Arial,sans-serif;text-transform:uppercase;letter-spacing:.8px;box-shadow:0 7px 16px rgba(77,43,122,.18);box-sizing:border-box}
-.tp .tab-container{margin-bottom:10px}.tp .tab-content{box-sizing:border-box}.tp .tab-content>br,.tp .ls>br{display:none!important}.tp #c0{min-height:0;padding:0;background:transparent;border:0;box-shadow:none}.tp .rt{width:fit-content;max-width:100%;margin:0 0 8px;padding:7px 11px;border-radius:999px;background:linear-gradient(90deg,var(--ta),var(--tb));color:#fff;font:900 10px/1 Inter,Arial,sans-serif;text-transform:uppercase;letter-spacing:.7px}.tp .rx{color:#273143;font:700 12.5px/1.5 Inter,Calibri,Arial,sans-serif}.tp .cb{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.tp .cb span{display:inline-flex;align-items:center;min-height:24px;padding:5px 9px;border-radius:999px;border:1px solid rgba(77,43,122,.10);background:rgba(255,255,255,.84);color:#273143;font:900 10px/1 Inter,Arial,sans-serif}
-.tp .ls{display:flex;flex-direction:column;gap:10px;width:100%;box-sizing:border-box}
-.tp .tc{--x:#4a2f68;--y:#a98ad6;--s:rgba(169,138,214,.14);display:grid;grid-template-columns:60px minmax(0,1fr);gap:10px;align-items:start;width:100%;min-height:86px;padding:10px;border-radius:18px;border:1px solid rgba(15,61,122,.14);border-left:5px solid var(--x);background:radial-gradient(circle at top left,var(--s),transparent 36%),rgba(255,255,255,.86);box-shadow:0 6px 16px rgba(15,61,122,.08);box-sizing:border-box;overflow:hidden}
-.tp .ti{width:60px;height:60px;max-width:60px;max-height:60px;object-fit:cover;object-position:center;border-radius:14px;border:3px solid #fff;background:#dcecff;box-shadow:0 5px 12px rgba(15,61,122,.17),3px 3px 0 var(--x);box-sizing:border-box}
-.tp .tx{min-width:0}.tp .tt{display:flex;align-items:center;justify-content:space-between;gap:8px;width:fit-content;max-width:100%;margin:0 0 6px;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--x),var(--y));color:#fff;font:900 10px/1 Inter,Arial,sans-serif;text-transform:uppercase;letter-spacing:.65px;box-sizing:border-box}.tp .tt span{white-space:nowrap;padding:4px 7px;border-radius:999px;background:rgba(0,0,0,.22);color:#fff;font:900 9px/1 Inter,Arial,sans-serif}.tp .tm{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 5px}.tp .tm span{display:inline-flex;align-items:center;padding:4px 7px;border-radius:999px;border:1px solid rgba(15,61,122,.10);background:rgba(255,255,255,.78);color:#273143;font:900 9.5px/1 Inter,Arial,sans-serif}.tp .tm b,.tp .td b{color:var(--x);font-weight:900}.tp .td{margin:4px 0;color:#273143;font:700 12px/1.42 Inter,Calibri,Arial,sans-serif;text-align:justify}.tp .hb{--x:#7a4b12;--y:#d99a2b;--s:rgba(217,154,43,.14)}.tp .cm{--x:#4a2f68;--y:#a98ad6;--s:rgba(169,138,214,.14)}.tp .t1{border-left-color:#7a4b12}.tp .t2{border-left-color:#123b59}.tp .t3{border-left-color:#2f6f4e}.tp .t4{border-left-color:#751b1b}.tp .t5{border-left-color:#4a2f68}
-.tp img:not(.intro-img):not(.ti){max-width:18px;max-height:18px;width:auto;height:auto;object-fit:contain;vertical-align:middle;margin:0 2px;border:0;border-radius:0;box-shadow:none;background:transparent}
-.tema-escuro .tp .tl,.tema-sanji .tp .tl,.tema-zoro .tp .tl,.tema-escuro .tp .trg,.tema-sanji .tp .trg,.tema-zoro .tp .trg,.tema-escuro .tp .rz,.tema-sanji .tp .rz,.tema-zoro .tp .rz,.tema-escuro .tp .tc,.tema-sanji .tp .tc,.tema-zoro .tp .tc{background:radial-gradient(circle at top left,rgba(126,68,247,.08),transparent 36%),linear-gradient(180deg,#1f2022,#121315);border-color:rgba(255,255,255,.08);color:#f2f6ff;box-shadow:0 10px 26px rgba(0,0,0,.30)}
-.tema-escuro .tp .rx,.tema-sanji .tp .rx,.tema-zoro .tp .rx,.tema-escuro .tp .td,.tema-sanji .tp .td,.tema-zoro .tp .td,.tema-escuro .tp .cb span,.tema-sanji .tp .cb span,.tema-zoro .tp .cb span,.tema-escuro .tp .tm span,.tema-sanji .tp .tm span,.tema-zoro .tp .tm span{color:#f2f6ff}.tema-escuro .tp .cb span,.tema-sanji .tp .cb span,.tema-zoro .tp .cb span,.tema-escuro .tp .tm span,.tema-sanji .tp .tm span,.tema-zoro .tp .tm span{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.08)}.tema-escuro .tp .ti,.tema-sanji .tp .ti,.tema-zoro .tp .ti{border-color:#252628;background:#252628}
-@media(max-width:600px){.tp .tc{grid-template-columns:60px minmax(0,1fr)}.tp .tt{align-items:flex-start;flex-direction:column;border-radius:14px}}
 
+.tp {
+  --ta: #b64040;
+  --tb: #7e44f7;
+  --ts: rgba(126, 68, 247, .13);
+}
+
+/* Blocos principais */
+
+.tp .tl,
+.tp .trg,
+.tp .rz {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(77, 43, 122, .13);
+  border-left: 6px solid var(--ta);
+  background:
+    radial-gradient(circle at top left, rgba(126, 68, 247, .13), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(248, 246, 255, .96));
+  box-shadow: 0 8px 20px rgba(77, 43, 122, .08);
+  color: #273143;
+  font: 700 13px / 1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+.tp .tl b,
+.tp .trg b,
+.tp .rz b {
+  color: var(--ta);
+  font-weight: 900;
+}
+
+/* Títulos de seção */
+
+.tp .st {
+  width: fit-content;
+  max-width: 100%;
+  margin: 16px 0 10px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ta), var(--tb));
+  color: #fff;
+  font: 900 11px / 1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 7px 16px rgba(77, 43, 122, .18);
+  box-sizing: border-box;
+}
+
+/* Tabs */
+
+.tp .tab-container {
+  margin-bottom: 10px;
+}
+
+.tp .tab-content {
+  box-sizing: border-box;
+}
+
+.tp .tab-content > br,
+.tp .ls > br {
+  display: none !important;
+}
+
+.tp #c0 {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+/* Resumo */
+
+.tp .rt {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ta), var(--tb));
+  color: #fff;
+  font: 900 10px / 1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+
+.tp .rx {
+  color: #273143;
+  font: 700 12.5px / 1.5 Inter, Calibri, Arial, sans-serif;
+}
+
+/* Chips */
+
+.tp .cb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.tp .cb span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(77, 43, 122, .10);
+  background: rgba(255, 255, 255, .84);
+  color: #273143;
+  font: 900 10px / 1 Inter, Arial, sans-serif;
+}
+
+/* Lista de talentos */
+
+.tp .ls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Card de talento */
+
+.tp .tc {
+  --x: #4a2f68;
+  --y: #a98ad6;
+  --s: rgba(169, 138, 214, .14);
+
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+  min-height: 82px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 61, 122, .14);
+  border-left: 5px solid var(--x);
+  background:
+    radial-gradient(circle at top left, var(--s), transparent 36%),
+    rgba(255, 255, 255, .84);
+  box-shadow: 0 6px 16px rgba(15, 61, 122, .08);
+  box-sizing: border-box;
+  clear: both;
+  overflow: hidden;
+}
+
+/* Imagem do talento */
+
+.tp .ti {
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 5px 12px rgba(15, 61, 122, .17),
+    3px 3px 0 var(--x);
+  box-sizing: border-box;
+  align-self: center;
+}
+
+/* Conteúdo */
+
+.tp .tx {
+  min-width: 0;
+}
+
+/* Título do talento */
+
+.tp .tt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--x), var(--y));
+  color: #fff;
+  font: 900 10px / 1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+  box-sizing: border-box;
+}
+
+.tp .tt span {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .22);
+  color: #fff;
+  font: 900 9px / 1 Inter, Arial, sans-serif;
+}
+
+/* Metadados */
+
+.tp .tm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 6px;
+}
+
+.tp .tm span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 61, 122, .11);
+  background: rgba(255, 255, 255, .82);
+  color: #273143;
+  font: 900 10px / 1 Inter, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.tp .tm b,
+.tp .td b {
+  color: var(--x);
+  font-weight: 900;
+}
+
+/* Descrição */
+
+.tp .td {
+  margin: 4px 0;
+  color: #273143;
+  font: 500 10px / 1.45 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+/* Variações de cor */
+
+.tp .hb {
+  --x: #7a4b12;
+  --y: #d99a2b;
+  --s: rgba(217, 154, 43, .14);
+}
+
+.tp .cm {
+  --x: #4a2f68;
+  --y: #a98ad6;
+  --s: rgba(169, 138, 214, .14);
+}
+
+.tp .t1 {
+  border-left-color: #7a4b12;
+}
+
+.tp .t2 {
+  border-left-color: #123b59;
+}
+
+.tp .t3 {
+  border-left-color: #2f6f4e;
+}
+
+.tp .t4 {
+  border-left-color: #751b1b;
+}
+
+.tp .t5 {
+  border-left-color: #4a2f68;
+}
+
+/* Imagens internas */
+
+.tp img:not(.intro-img):not(.ti) {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Tema escuro */
+
+.tema-escuro .tp .tl,
+.tema-sanji .tp .tl,
+.tema-zoro .tp .tl,
+.tema-escuro .tp .trg,
+.tema-sanji .tp .trg,
+.tema-zoro .tp .trg,
+.tema-escuro .tp .rz,
+.tema-sanji .tp .rz,
+.tema-zoro .tp .rz,
+.tema-escuro .tp .tc,
+.tema-sanji .tp .tc,
+.tema-zoro .tp .tc {
+  background:
+    radial-gradient(circle at top left, rgba(126, 68, 247, .08), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255, 255, 255, .08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .30);
+}
+
+.tema-escuro .tp .rx,
+.tema-sanji .tp .rx,
+.tema-zoro .tp .rx,
+.tema-escuro .tp .td,
+.tema-sanji .tp .td,
+.tema-zoro .tp .td,
+.tema-escuro .tp .cb span,
+.tema-sanji .tp .cb span,
+.tema-zoro .tp .cb span,
+.tema-escuro .tp .tm span,
+.tema-sanji .tp .tm span,
+.tema-zoro .tp .tm span {
+  color: #f2f6ff;
+}
+
+.tema-escuro .tp .cb span,
+.tema-sanji .tp .cb span,
+.tema-zoro .tp .cb span,
+.tema-escuro .tp .tm span,
+.tema-sanji .tp .tm span,
+.tema-zoro .tp .tm span {
+  background: rgba(255, 255, 255, .055);
+  border-color: rgba(255, 255, 255, .08);
+}
+
+.tema-escuro .tp .ti,
+.tema-sanji .tp .ti,
+.tema-zoro .tp .ti {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* Responsivo */
+
+@media (max-width: 600px) {
+  .tp .tc {
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+
+  .tp .tt {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+}
+
+/* ============================================================
+   PÁGINA — AKUMA NO MI / FRUTA DO DIABO
+   Usa componentes globais .vantagem-card e .talento-card
+============================================================ */
+
+.akuma-page {
+  --ak-a: #45184f;
+  --ak-b: #d29feb;
+  --ak-red: #510303;
+  --ak-soft: rgba(210,159,235,.14);
+  overflow: visible;
+}
+
+.akuma-page .ak-lead,
+.akuma-page .ak-rule,
+.akuma-page .ak-note {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(69,24,79,.13);
+  border-left: 6px solid var(--ak-a);
+  background:
+    radial-gradient(circle at top left, var(--ak-soft), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(250,246,255,.96));
+  box-shadow: 0 8px 20px rgba(69,24,79,.08);
+  color: #273143;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+.akuma-page .ak-lead b,
+.akuma-page .ak-rule b,
+.akuma-page .ak-note b {
+  color: var(--ak-a);
+  font-weight: 900;
+}
+
+.akuma-page .ak-section {
+  width: fit-content;
+  max-width: 100%;
+  margin: 16px 0 10px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ak-a), var(--ak-b));
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 7px 16px rgba(69,24,79,.18);
+  box-sizing: border-box;
+}
+
+.akuma-page .ak-grid-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0 14px;
+}
+
+.akuma-page .ak-vantagem {
+  --vant-a: #45184f;
+  --vant-b: #d29feb;
+  --vant-soft: rgba(210,159,235,.16);
+  margin-bottom: 14px;
+}
+
+/* ------------------------------
+   Tipos de fruta
+------------------------------ */
+
+.akuma-page .ak-type {
+  --type-a: var(--ak-a);
+  --type-b: var(--ak-b);
+  --type-soft: var(--ak-soft);
+  position: relative;
+  min-height: 210px;
+  margin: 12px 0 16px;
+  padding: 12px;
+  border-radius: 22px;
+  border: 1px solid rgba(69,24,79,.13);
+  border-left: 7px solid var(--type-a);
+  background:
+    radial-gradient(circle at top right, var(--type-soft), transparent 38%),
+    linear-gradient(180deg, rgba(255,255,255,.94), rgba(250,246,255,.98));
+  box-shadow: 0 9px 22px rgba(69,24,79,.10);
+  color: #273143;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.akuma-page .ak-type::after {
+  content: "";
+  position: absolute;
+  right: -34px;
+  bottom: -34px;
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  background: var(--type-soft);
+  pointer-events: none;
+}
+
+.akuma-page .ak-type-img {
+  float: right;
+  width: 210px;
+  height: 210px;
+  max-width: 36%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 0 10px 14px;
+  border-radius: 24px;
+  border: 5px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 10px 24px rgba(69,24,79,.18),
+    4px 4px 0 var(--type-a);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.akuma-page .ak-type-title {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--type-a), var(--type-b));
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .75px;
+  box-shadow: 0 6px 14px rgba(69,24,79,.16);
+}
+
+.akuma-page .ak-type-text {
+  position: relative;
+  z-index: 2;
+  color: #273143;
+  font: 700 12.4px/1.5 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.akuma-page .ak-activation-title {
+  clear: both;
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  max-width: 100%;
+  margin: 12px 0 8px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--type-a), var(--type-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+}
+
+/* ------------------------------
+   Cards de ativações
+------------------------------ */
+
+.akuma-page .ak-ability-list {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  position: relative;
+  z-index: 2;
+}
+
+.akuma-page .ak-ability {
+  --ab-a: var(--type-a);
+  --ab-b: var(--type-b);
+  --ab-soft: var(--type-soft);
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+  min-height: 86px;
+  padding: 9px;
+  border-radius: 17px;
+  border: 1px solid rgba(69,24,79,.13);
+  border-left: 5px solid var(--ab-a);
+  background:
+    radial-gradient(circle at top left, var(--ab-soft), transparent 34%),
+    rgba(255,255,255,.86);
+  box-shadow: 0 5px 13px rgba(69,24,79,.07);
+  box-sizing: border-box;
+}
+
+.akuma-page .ak-ability-img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 5px 12px rgba(69,24,79,.14),
+    3px 3px 0 var(--ab-a);
+  box-sizing: border-box;
+}
+
+.akuma-page .ak-ability-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ab-a), var(--ab-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+}
+
+.akuma-page .ak-ability-title span {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.22);
+  color: #fff;
+  font: 900 8px/1 Inter, Arial, sans-serif;
+}
+
+.akuma-page .ak-row {
+  margin: 4px 0;
+  color: #273143;
+  font: 700 11.8px/1.4 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.akuma-page .ak-row b {
+  color: var(--ab-a, var(--ak-a));
+  font-weight: 900;
+}
+
+.akuma-page .type-paramecia { --type-a:#510303; --type-b:#fc9e9e; --type-soft:rgba(252,158,158,.16); }
+.akuma-page .type-zoan { --type-a:#1f4a2b; --type-b:#9eb897; --type-soft:rgba(158,184,151,.18); }
+.akuma-page .type-logia { --type-a:#031e51; --type-b:#9ef1fc; --type-soft:rgba(158,241,252,.16); }
+
+/* ------------------------------
+   Marcas
+------------------------------ */
+
+.akuma-page .ak-mark-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin: 12px 0 16px;
+}
+
+.akuma-page .ak-mark-list > br {
+  display: none !important;
+}
+
+.akuma-page .ak-mark {
+  --mk-a: #7e44f7;
+  --mk-b: #f7444e;
+  --mk-soft: rgba(126,68,247,.13);
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+  min-height: 82px;
+  padding: 9px;
+  border-radius: 16px;
+  border: 1px solid rgba(69,24,79,.12);
+  border-left: 5px solid var(--mk-a);
+  background:
+    radial-gradient(circle at top left, var(--mk-soft), transparent 34%),
+    rgba(255,255,255,.86);
+  box-shadow: 0 5px 13px rgba(69,24,79,.07);
+  box-sizing: border-box;
+}
+
+.akuma-page .ak-mark-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 5px 12px rgba(69,24,79,.14),
+    3px 3px 0 var(--mk-a);
+  box-sizing: border-box;
+}
+
+.akuma-page .ak-mark-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 5px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--mk-a), var(--mk-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+}
+
+.akuma-page .ak-mark-text {
+  color: #273143;
+  font: 700 11.6px/1.36 Inter, Calibri, Arial, sans-serif;
+}
+
+.akuma-page .ak-mark-text b {
+  color: var(--mk-a);
+  font-weight: 900;
+}
+
+.akuma-page .mk-alcance { --mk-a:#cabd0c; --mk-b:#f1dc43; --mk-soft:rgba(241,220,67,.14); }
+.akuma-page .mk-poder { --mk-a:#c12d14; --mk-b:#ff7b62; --mk-soft:rgba(255,123,98,.14); }
+.akuma-page .mk-raio { --mk-a:#aa5c77; --mk-b:#f0a5bf; --mk-soft:rgba(240,165,191,.14); }
+.akuma-page .mk-defesa { --mk-a:#b43cc3; --mk-b:#e29beb; --mk-soft:rgba(226,155,235,.14); }
+.akuma-page .mk-velocidade { --mk-a:#ac6a3d; --mk-b:#e8b07e; --mk-soft:rgba(232,176,126,.14); }
+.akuma-page .mk-critico { --mk-a:#a98995; --mk-b:#e8c7d2; --mk-soft:rgba(232,199,210,.14); }
+.akuma-page .mk-custo { --mk-a:#4f70bd; --mk-b:#9eb8f5; --mk-soft:rgba(158,184,245,.14); }
+
+/* ------------------------------
+   Exemplo de fruta / slots
+------------------------------ */
+
+.akuma-page .akuma-box {
+  position: relative;
+  min-height: 168px;
+  margin: 13px 0 16px;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(69,24,79,.13);
+  border-left: 7px solid #45184f;
+  background:
+    radial-gradient(circle at top right, rgba(210,159,235,.20), transparent 38%),
+    linear-gradient(180deg, rgba(255,255,255,.94), rgba(250,246,255,.98));
+  box-shadow: 0 9px 22px rgba(69,24,79,.10);
+  color: #273143;
+  text-align: left;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.akuma-page .akuma-box-title {
+  width: fit-content;
+  max-width: calc(100% - 160px);
+  margin: 0 0 8px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #45184f, #d29feb);
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+}
+
+.akuma-page .akuma-box-text {
+  max-width: calc(100% - 160px);
+  color: #273143;
+  font: 700 12px/1.45 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.akuma-page .akuma-tag {
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+  padding: 6px 9px;
+  border-radius: 13px;
+  border: 1px solid rgba(69,24,79,.10);
+  border-left: 5px solid #510303;
+  background: rgba(255,255,255,.82);
+  color: #273143;
+  font: 800 11px/1.25 Inter, Calibri, Arial, sans-serif;
+}
+
+.akuma-page .losango4-wrap {
+  --b: 3px;
+  float: right;
+  margin: -18px -18px 6px 12px;
+  display: inline-block;
+  padding: var(--b);
+  filter: drop-shadow(1px 4px 6px #31313aa1);
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.akuma-page .losango4 {
+  position: relative;
+  width: 160px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.akuma-page .losango4 .slot-box {
+  position: absolute;
+  width: 33%;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #252628;
+  box-shadow: 0 4px 10px rgba(0,0,0,.18);
+}
+
+.akuma-page .losango4 .slot-top { left:25%; top:0; }
+.akuma-page .losango4 .slot-right { left:50%; top:25%; }
+.akuma-page .losango4 .slot-bottom { left:25%; top:50%; }
+.akuma-page .losango4 .slot-left { left:0; top:25%; }
+
+.akuma-page .losango4 .slot-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ------------------------------
+   Talentos da fruta
+------------------------------ */
+
+.akuma-page .tab-container {
+  margin-bottom: 10px;
+}
+
+.akuma-page .tab-content > br,
+.akuma-page .talento-list > br {
+  display: none !important;
+}
+
+.akuma-page .tab-content#ak0 {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.akuma-page .ak-talent-lead {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(69,24,79,.13);
+  border-left: 6px solid var(--ak-a);
+  background:
+    radial-gradient(circle at top left, var(--ak-soft), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(250,246,255,.96));
+  color: #273143;
+  font: 700 12.5px/1.5 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-shadow: 0 8px 20px rgba(69,24,79,.08);
+  box-sizing: border-box;
+}
+
+.akuma-page .talento-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.akuma-page .talento-card {
+  min-height: 86px;
+}
+
+.akuma-page .tal-passivo {
+  --tal-a: #031e51;
+  --tal-b: #9ef1fc;
+  --tal-soft: rgba(158,241,252,.14);
+}
+
+.akuma-page .tal-usuario {
+  --tal-a: #45184f;
+  --tal-b: #d29feb;
+  --tal-soft: rgba(210,159,235,.14);
+}
+
+.akuma-page img:not(.intro-img):not(.vantagem-img):not(.ak-type-img):not(.ak-ability-img):not(.ak-mark-img):not(.talento-img) {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* ------------------------------
+   Tema escuro
+------------------------------ */
+
+.tema-escuro .akuma-page .ak-lead,
+.tema-sanji .akuma-page .ak-lead,
+.tema-zoro .akuma-page .ak-lead,
+.tema-escuro .akuma-page .ak-rule,
+.tema-sanji .akuma-page .ak-rule,
+.tema-zoro .akuma-page .ak-rule,
+.tema-escuro .akuma-page .ak-note,
+.tema-sanji .akuma-page .ak-note,
+.tema-zoro .akuma-page .ak-note,
+.tema-escuro .akuma-page .ak-type,
+.tema-sanji .akuma-page .ak-type,
+.tema-zoro .akuma-page .ak-type,
+.tema-escuro .akuma-page .ak-ability,
+.tema-sanji .akuma-page .ak-ability,
+.tema-zoro .akuma-page .ak-ability,
+.tema-escuro .akuma-page .ak-mark,
+.tema-sanji .akuma-page .ak-mark,
+.tema-zoro .akuma-page .ak-mark,
+.tema-escuro .akuma-page .akuma-box,
+.tema-sanji .akuma-page .akuma-box,
+.tema-zoro .akuma-page .akuma-box,
+.tema-escuro .akuma-page .ak-talent-lead,
+.tema-sanji .akuma-page .ak-talent-lead,
+.tema-zoro .akuma-page .ak-talent-lead {
+  background:
+    radial-gradient(circle at top left, rgba(210,159,235,.07), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .akuma-page .ak-lead,
+.tema-sanji .akuma-page .ak-lead,
+.tema-zoro .akuma-page .ak-lead,
+.tema-escuro .akuma-page .ak-rule,
+.tema-sanji .akuma-page .ak-rule,
+.tema-zoro .akuma-page .ak-rule,
+.tema-escuro .akuma-page .ak-note,
+.tema-sanji .akuma-page .ak-note,
+.tema-zoro .akuma-page .ak-note,
+.tema-escuro .akuma-page .ak-type-text,
+.tema-sanji .akuma-page .ak-type-text,
+.tema-zoro .akuma-page .ak-type-text,
+.tema-escuro .akuma-page .ak-row,
+.tema-sanji .akuma-page .ak-row,
+.tema-zoro .akuma-page .ak-row,
+.tema-escuro .akuma-page .ak-mark-text,
+.tema-sanji .akuma-page .ak-mark-text,
+.tema-zoro .akuma-page .ak-mark-text,
+.tema-escuro .akuma-page .akuma-box-text,
+.tema-sanji .akuma-page .akuma-box-text,
+.tema-zoro .akuma-page .akuma-box-text,
+.tema-escuro .akuma-page .akuma-tag,
+.tema-sanji .akuma-page .akuma-tag,
+.tema-zoro .akuma-page .akuma-tag,
+.tema-escuro .akuma-page .ak-talent-lead,
+.tema-sanji .akuma-page .ak-talent-lead,
+.tema-zoro .akuma-page .ak-talent-lead {
+  color: #f2f6ff;
+}
+
+.tema-escuro .akuma-page .akuma-tag,
+.tema-sanji .akuma-page .akuma-tag,
+.tema-zoro .akuma-page .akuma-tag {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  border-left-color: #d29feb;
+}
+
+.tema-escuro .akuma-page .ak-type-img,
+.tema-sanji .akuma-page .ak-type-img,
+.tema-zoro .akuma-page .ak-type-img,
+.tema-escuro .akuma-page .ak-ability-img,
+.tema-sanji .akuma-page .ak-ability-img,
+.tema-zoro .akuma-page .ak-ability-img,
+.tema-escuro .akuma-page .ak-mark-img,
+.tema-sanji .akuma-page .ak-mark-img,
+.tema-zoro .akuma-page .ak-mark-img {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* ------------------------------
+   Responsivo
+------------------------------ */
+
+@media (max-width: 850px) {
+  .akuma-page .ak-mark-list {
+    grid-template-columns: 1fr;
+  }
+
+  .akuma-page .ak-type-img {
+    float: none;
+    display: block;
+    max-width: 100%;
+    width: 210px;
+    height: 210px;
+    margin: 0 auto 12px;
+  }
+
+  .akuma-page .akuma-box-title,
+  .akuma-page .akuma-box-text {
+    max-width: 100%;
+  }
+
+  .akuma-page .losango4-wrap {
+    float: none;
+    display: block;
+    width: fit-content;
+    margin: 0 auto 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .akuma-page .ak-ability,
+  .akuma-page .ak-mark {
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+
+  .akuma-page .ak-ability-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .akuma-page .ak-ability-title {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+}
