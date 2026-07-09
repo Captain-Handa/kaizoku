@@ -3956,13 +3956,17 @@ body.tema-zoro .npc-tag-2 strong,
   margin: 10px auto;
 }
 
+.mob-flex > br {
+  display: none !important;
+}
+
 .mob-card {
   --mob-a: #244688;
   --mob-b: #2892e0;
   --mob-soft: rgba(40,146,224,.12);
 
   position: relative;
-  width: 286px;
+  width: -webkit-fill-available;
   min-height: 96px;
   display: grid;
   grid-template-columns: 88px minmax(0, 1fr);
