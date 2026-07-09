@@ -11277,7 +11277,7 @@ align-self: center;
 
 /* ============================================================
    PÁGINA — AKUMA NO MI / FRUTA DO DIABO
-   Usa componentes globais .vantagem-card e .talento-card
+   Usa componentes globais .vantagem-card, .talento-card e .habilidade-card
 ============================================================ */
 
 .akuma-page {
@@ -11437,92 +11437,52 @@ align-self: center;
   letter-spacing: .65px;
 }
 
+.akuma-page .type-paramecia {
+  --type-a: #510303;
+  --type-b: #fc9e9e;
+  --type-soft: rgba(252,158,158,.16);
+}
+
+.akuma-page .type-zoan {
+  --type-a: #1f4a2b;
+  --type-b: #9eb897;
+  --type-soft: rgba(158,184,151,.18);
+}
+
+.akuma-page .type-logia {
+  --type-a: #031e51;
+  --type-b: #9ef1fc;
+  --type-soft: rgba(158,241,252,.16);
+}
+
 /* ------------------------------
    Cards de ativações
+   Usa o mesmo layout do .habilidade-card
 ------------------------------ */
 
 .akuma-page .ak-ability-list {
   clear: both;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 12px;
   position: relative;
   z-index: 2;
-}
-
-.akuma-page .ak-ability {
-    --ab-a: var(--type-a);
-    --ab-b: var(--type-b);
-    --ab-soft: var(--type-soft);
-    display: grid;
-    grid-template-columns: 112px minmax(0, 1fr);
-    gap: 10px;
-    align-items: start;
-    width: 100%;
-    min-height: 86px;
-    padding: 9px;
-    border-radius: 17px;
-    border: 1px solid rgba(69, 24, 79, .13);
-    border-left: 5px solid var(--ab-a);
-    background: radial-gradient(circle at top left, var(--ab-soft), transparent 34%), rgba(255, 255, 255, .86);
-    box-shadow: 0 5px 13px rgba(69, 24, 79, .07);
-    box-sizing: border-box;
-}
-
-.akuma-page .ak-ability-img {
-  object-fit: cover;
-  object-position: center;
-  border-radius: 16px;
-  border: 3px solid #fff;
-  background: #dcecff;
-  box-shadow:
-    0 5px 12px rgba(69,24,79,.14),
-    3px 3px 0 var(--ab-a);
+  width: 100%;
   box-sizing: border-box;
-    align-self: center;
 }
 
-.akuma-page .ak-ability-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 0 6px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--ab-a), var(--ab-b));
-  color: #fff;
-  font: 900 10px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .55px;
+.akuma-page .habilidade-card.ak-ability {
+  --hab-a: var(--type-a);
+  --hab-b: var(--type-b);
+  --hab-soft: var(--type-soft);
 }
 
-.akuma-page .ak-ability-title span {
-  flex: 0 0 auto;
-  padding: 4px 7px;
-  border-radius: 999px;
-  background: rgba(0,0,0,.22);
-  color: #fff;
-  font: 900 8px/1 Inter, Arial, sans-serif;
+.akuma-page .habilidade-card.ak-ability .habilidade-img {
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
 }
-
-.akuma-page .ak-row {
-  margin: 4px 0;
-  color: #273143;
-  font: 700 11.8px/1.4 Inter, Calibri, Arial, sans-serif;
-  text-align: justify;
-}
-
-.akuma-page .ak-row b {
-  color: var(--ab-a, var(--ak-a));
-  font-weight: 900;
-}
-
-.akuma-page .type-paramecia { --type-a:#510303; --type-b:#fc9e9e; --type-soft:rgba(252,158,158,.16); }
-.akuma-page .type-zoan { --type-a:#1f4a2b; --type-b:#9eb897; --type-soft:rgba(158,184,151,.18); }
-.akuma-page .type-logia { --type-a:#031e51; --type-b:#9ef1fc; --type-soft:rgba(158,241,252,.16); }
 
 /* ------------------------------
    Marcas
@@ -11596,13 +11556,47 @@ align-self: center;
   font-weight: 900;
 }
 
-.akuma-page .mk-alcance { --mk-a:#cabd0c; --mk-b:#f1dc43; --mk-soft:rgba(241,220,67,.14); }
-.akuma-page .mk-poder { --mk-a:#c12d14; --mk-b:#ff7b62; --mk-soft:rgba(255,123,98,.14); }
-.akuma-page .mk-raio { --mk-a:#aa5c77; --mk-b:#f0a5bf; --mk-soft:rgba(240,165,191,.14); }
-.akuma-page .mk-defesa { --mk-a:#b43cc3; --mk-b:#e29beb; --mk-soft:rgba(226,155,235,.14); }
-.akuma-page .mk-velocidade { --mk-a:#ac6a3d; --mk-b:#e8b07e; --mk-soft:rgba(232,176,126,.14); }
-.akuma-page .mk-critico { --mk-a:#a98995; --mk-b:#e8c7d2; --mk-soft:rgba(232,199,210,.14); }
-.akuma-page .mk-custo { --mk-a:#4f70bd; --mk-b:#9eb8f5; --mk-soft:rgba(158,184,245,.14); }
+.akuma-page .mk-alcance {
+  --mk-a: #cabd0c;
+  --mk-b: #f1dc43;
+  --mk-soft: rgba(241,220,67,.14);
+}
+
+.akuma-page .mk-poder {
+  --mk-a: #c12d14;
+  --mk-b: #ff7b62;
+  --mk-soft: rgba(255,123,98,.14);
+}
+
+.akuma-page .mk-raio {
+  --mk-a: #aa5c77;
+  --mk-b: #f0a5bf;
+  --mk-soft: rgba(240,165,191,.14);
+}
+
+.akuma-page .mk-defesa {
+  --mk-a: #b43cc3;
+  --mk-b: #e29beb;
+  --mk-soft: rgba(226,155,235,.14);
+}
+
+.akuma-page .mk-velocidade {
+  --mk-a: #ac6a3d;
+  --mk-b: #e8b07e;
+  --mk-soft: rgba(232,176,126,.14);
+}
+
+.akuma-page .mk-critico {
+  --mk-a: #a98995;
+  --mk-b: #e8c7d2;
+  --mk-soft: rgba(232,199,210,.14);
+}
+
+.akuma-page .mk-custo {
+  --mk-a: #4f70bd;
+  --mk-b: #9eb8f5;
+  --mk-soft: rgba(158,184,245,.14);
+}
 
 /* ------------------------------
    Exemplo de fruta / slots
@@ -11688,10 +11682,25 @@ align-self: center;
   box-shadow: 0 4px 10px rgba(0,0,0,.18);
 }
 
-.akuma-page .losango4 .slot-top { left:25%; top:0; }
-.akuma-page .losango4 .slot-right { left:50%; top:25%; }
-.akuma-page .losango4 .slot-bottom { left:25%; top:50%; }
-.akuma-page .losango4 .slot-left { left:0; top:25%; }
+.akuma-page .losango4 .slot-top {
+  left: 25%;
+  top: 0;
+}
+
+.akuma-page .losango4 .slot-right {
+  left: 50%;
+  top: 25%;
+}
+
+.akuma-page .losango4 .slot-bottom {
+  left: 25%;
+  top: 50%;
+}
+
+.akuma-page .losango4 .slot-left {
+  left: 0;
+  top: 25%;
+}
 
 .akuma-page .losango4 .slot-box img {
   width: 100%;
@@ -11747,19 +11756,13 @@ align-self: center;
   min-height: 86px;
 }
 
-.akuma-page .tal-passivo {
-  --tal-a: #031e51;
-  --tal-b: #9ef1fc;
-  --tal-soft: rgba(158,241,252,.14);
-}
-
 .akuma-page .tal-usuario {
   --tal-a: #45184f;
   --tal-b: #d29feb;
   --tal-soft: rgba(210,159,235,.14);
 }
 
-.akuma-page img:not(.intro-img):not(.vantagem-img):not(.ak-type-img):not(.ak-ability-img):not(.ak-mark-img):not(.talento-img) {
+.akuma-page img:not(.intro-img):not(.vantagem-img):not(.ak-type-img):not(.ak-mark-img):not(.talento-img):not(.habilidade-img) {
   max-width: 48px;
   width: auto;
   height: auto;
@@ -11788,9 +11791,6 @@ align-self: center;
 .tema-escuro .akuma-page .ak-type,
 .tema-sanji .akuma-page .ak-type,
 .tema-zoro .akuma-page .ak-type,
-.tema-escuro .akuma-page .ak-ability,
-.tema-sanji .akuma-page .ak-ability,
-.tema-zoro .akuma-page .ak-ability,
 .tema-escuro .akuma-page .ak-mark,
 .tema-sanji .akuma-page .ak-mark,
 .tema-zoro .akuma-page .ak-mark,
@@ -11820,9 +11820,6 @@ align-self: center;
 .tema-escuro .akuma-page .ak-type-text,
 .tema-sanji .akuma-page .ak-type-text,
 .tema-zoro .akuma-page .ak-type-text,
-.tema-escuro .akuma-page .ak-row,
-.tema-sanji .akuma-page .ak-row,
-.tema-zoro .akuma-page .ak-row,
 .tema-escuro .akuma-page .ak-mark-text,
 .tema-sanji .akuma-page .ak-mark-text,
 .tema-zoro .akuma-page .ak-mark-text,
@@ -11849,9 +11846,6 @@ align-self: center;
 .tema-escuro .akuma-page .ak-type-img,
 .tema-sanji .akuma-page .ak-type-img,
 .tema-zoro .akuma-page .ak-type-img,
-.tema-escuro .akuma-page .ak-ability-img,
-.tema-sanji .akuma-page .ak-ability-img,
-.tema-zoro .akuma-page .ak-ability-img,
 .tema-escuro .akuma-page .ak-mark-img,
 .tema-sanji .akuma-page .ak-mark-img,
 .tema-zoro .akuma-page .ak-mark-img {
@@ -11891,295 +11885,109 @@ align-self: center;
 }
 
 @media (max-width: 600px) {
-  .akuma-page .ak-ability,
   .akuma-page .ak-mark {
     grid-template-columns: 60px minmax(0, 1fr);
   }
 
-  .akuma-page .ak-ability-img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .akuma-page .ak-ability-title {
-    align-items: flex-start;
-    flex-direction: column;
-    border-radius: 14px;
-  }
-}
-
-/* ============================================================
-   AKUMA NO MI — CARD DE ATIVAÇÃO / HABILIDADE
-   Igual ao componente global .habilidade-card
-============================================================ */
-
-.ak-ability {
-  --ak-hab-a: var(--corgeral);
-  --ak-hab-b: #5cb6d1;
-  --ak-hab-soft: rgba(92, 182, 209, .12);
-
-  display: grid;
-  grid-template-columns: 100px minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-  width: 100%;
-  min-height: 120px;
-  padding: 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(15, 61, 122, .14);
-  border-left: 6px solid var(--ak-hab-a);
-  background:
-    radial-gradient(circle at top left, var(--ak-hab-soft), transparent 36%),
-    rgba(255, 255, 255, .86);
-  box-shadow: 0 7px 18px rgba(15, 61, 122, .09);
-  box-sizing: border-box;
-  clear: both;
-}
-
-/* Imagem */
-
-.ak-ability .ak-ability-img {
-  width: 100px;
-  height: 100px;
-  max-width: 100px;
-  max-height: 100px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 18px;
-  border: 4px solid #fff;
-  background: #dcecff;
-  box-shadow:
-    0 7px 15px rgba(15, 61, 122, .18),
-    4px 4px 0 var(--ak-hab-a);
-  box-sizing: border-box;
-  align-self: center;
-}
-
-/* Conteúdo interno */
-/* Funciona mesmo que o HTML esteja usando apenas <div> sem classe */
-
-.ak-ability > div:not(.ak-ability-img) {
-  min-width: 0;
-}
-
-/* Título */
-
-.ak-ability .ak-ability-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  width: 100%;
-  margin: 0 0 7px;
-  padding: 7px 11px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--ak-hab-a), var(--ak-hab-b));
-  color: #fff;
-  font: 900 11px / 1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .7px;
-  box-sizing: border-box;
-}
-
-.ak-ability .ak-ability-title span {
-  flex: 0 0 auto;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, .22);
-  color: #fff;
-  font: 900 9px / 1 Inter, Arial, sans-serif;
-}
-
-/* Linhas */
-
-.ak-ability .ak-row {
-  margin: 4px 0;
-  color: #273143;
-  font: 700 10.5px / 1.45 Inter, Calibri, Arial, sans-serif;
-  text-align: justify;
-}
-
-.ak-ability .ak-row b {
-  color: var(--ak-hab-a);
-  font-weight: 900;
-}
-
-/* Lista de habilidades */
-
-.ak-ability-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Variação por tipo de fruta */
-
-.type-paramecia .ak-ability {
-  --ak-hab-a: #7e44f7;
-  --ak-hab-b: #b640d8;
-  --ak-hab-soft: rgba(126, 68, 247, .13);
-}
-
-.type-zoan .ak-ability {
-  --ak-hab-a: #2f6f4e;
-  --ak-hab-b: #8cbf3f;
-  --ak-hab-soft: rgba(47, 111, 78, .13);
-}
-
-.type-logia .ak-ability {
-  --ak-hab-a: #1f6f9f;
-  --ak-hab-b: #5cb6d1;
-  --ak-hab-soft: rgba(92, 182, 209, .13);
-}
-
-/* Protege emojis/imagens pequenas dentro dos cards */
-
-.ak-ability img:not(.ak-ability-img) {
-  max-width: 18px;
-  max-height: 18px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  vertical-align: middle;
-  margin: 0 2px;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: transparent;
-}
-
-/* Tema escuro */
-
-.tema-escuro .ak-ability,
-.tema-sanji .ak-ability,
-.tema-zoro .ak-ability {
-  background: rgba(255, 255, 255, .055);
-  border-color: rgba(255, 255, 255, .08);
-  border-left-color: var(--ak-hab-a);
-  color: #f2f6ff;
-}
-
-.tema-escuro .ak-ability .ak-row,
-.tema-sanji .ak-ability .ak-row,
-.tema-zoro .ak-ability .ak-row {
-  color: #f2f6ff;
-}
-
-.tema-escuro .ak-ability .ak-ability-img,
-.tema-sanji .ak-ability .ak-ability-img,
-.tema-zoro .ak-ability .ak-ability-img {
-  border-color: #252628;
-  background: #252628;
-}
-
-/* Responsivo */
-
-@media (max-width: 600px) {
-  .ak-ability {
+  .akuma-page .habilidade-card.ak-ability {
     grid-template-columns: 80px minmax(0, 1fr);
     gap: 12px;
     min-height: 100px;
   }
 
-  .ak-ability .ak-ability-img {
+  .akuma-page .habilidade-card.ak-ability .habilidade-img {
     width: 80px;
     height: 80px;
     max-width: 80px;
     max-height: 80px;
-    border-radius: 16px;
   }
 
-  .ak-ability .ak-ability-title {
+  .akuma-page .habilidade-card.ak-ability .habilidade-title {
     align-items: flex-start;
     flex-direction: column;
     border-radius: 14px;
   }
 }
 
+
 /* ============================================================
-   PÁGINA — ESPECIALIZAÇÕES
-   Usa templates de vantagem, talento e habilidade
+   PÁGINA — ESPECIALIZAÇÕES / HABILIDADES ESPECIAIS
 ============================================================ */
 
-.esp-page {
+.especial-page {
   --esp-a: #0a4f96;
   --esp-b: #18d6fd;
   --esp-soft: rgba(24,214,253,.13);
   overflow: visible;
 }
 
-.esp-page .esp-lead,
-.esp-page .esp-aquisicao {
-  margin: 0 0 12px;
-  padding: 12px 14px;
+.especial-page .especial-lead {
+  margin: 0 0 14px;
+  padding: 13px 15px;
   border-radius: 18px;
-  border: 1px solid rgba(10,79,150,.13);
+  border: 1px solid rgba(10,79,150,.14);
   border-left: 6px solid var(--esp-a);
   background:
-    radial-gradient(circle at top left, var(--esp-soft), transparent 34%),
-    linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,250,255,.96));
+    radial-gradient(circle at top left, rgba(24,214,253,.14), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.94), rgba(245,251,255,.98));
   box-shadow: 0 8px 20px rgba(10,79,150,.08);
   color: #273143;
-  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  font: 700 13px/1.6 Inter, Calibri, Arial, sans-serif;
   text-align: justify;
   box-sizing: border-box;
 }
 
-.esp-page .esp-lead b,
-.esp-page .esp-aquisicao b {
-  color: var(--esp-a);
-  font-weight: 900;
-}
-
-.esp-page .esp-section {
-  --esp-a: #0a4f96;
-  --esp-b: #18d6fd;
-  --esp-soft: rgba(24,214,253,.13);
+.especial-page .especial-card {
+  --card-a: var(--esp-a);
+  --card-b: var(--esp-b);
+  --card-soft: var(--esp-soft);
   position: relative;
-  margin: 20px 0 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  margin: 0 0 18px;
   padding: 12px;
-  border-radius: 24px;
+  border-radius: 22px;
   border: 1px solid rgba(10,79,150,.14);
+  border-left: 7px solid var(--card-a);
   background:
-    radial-gradient(circle at top right, var(--esp-soft), transparent 38%),
-    linear-gradient(180deg, rgba(255,255,255,.90), rgba(246,250,255,.97));
-  box-shadow: 0 12px 28px rgba(10,79,150,.10);
+    radial-gradient(circle at top right, var(--card-soft), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,.95), rgba(245,251,255,.98));
+  box-shadow: 0 10px 24px rgba(10,79,150,.10);
   color: #273143;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-.esp-page .esp-section::after {
+.especial-page .especial-card::after {
   content: "";
   position: absolute;
-  right: -42px;
-  bottom: -42px;
-  width: 130px;
-  height: 130px;
+  right: -36px;
+  bottom: -36px;
+  width: 120px;
+  height: 120px;
   border-radius: 999px;
-  background: var(--esp-soft);
+  background: var(--card-soft);
   pointer-events: none;
 }
 
-.esp-page .esp-peixe { --esp-a:#0a4f96; --esp-b:#18d6fd; --esp-soft:rgba(24,214,253,.14); }
-.esp-page .esp-mink { --esp-a:#4e3788; --esp-b:#d7b6ff; --esp-soft:rgba(215,182,255,.16); }
-.esp-page .esp-gigante { --esp-a:#6b3518; --esp-b:#e0a15c; --esp-soft:rgba(224,161,92,.16); }
-.esp-page .esp-roku { --esp-a:#263d66; --esp-b:#8fb8ff; --esp-soft:rgba(143,184,255,.15); }
-
-.esp-page .esp-top {
+.especial-page .especial-text {
   position: relative;
   z-index: 2;
-  display: flex;
-  gap: 13px;
-  align-items: flex-start;
+  flex: 1 1 360px;
+  min-width: 0;
 }
 
-.esp-page .esp-img {
-  flex: 0 0 190px;
-  width: 190px;
-  height: 190px;
+.especial-page .especial-style-img {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 300px;
+  width: 300px;
+  height: 120px;
+  max-width: 300px;
+  max-height: 120px;
   object-fit: cover;
   object-position: center;
   border-radius: 22px;
@@ -12187,139 +11995,135 @@ align-self: center;
   background: #dcecff;
   box-shadow:
     0 9px 20px rgba(10,79,150,.18),
-    4px 4px 0 var(--esp-a);
+    4px 4px 0 var(--card-a);
   box-sizing: border-box;
+  margin: 0;
 }
 
-.esp-page .esp-body {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.esp-page .esp-title {
+.especial-page .especial-title {
   width: fit-content;
   max-width: 100%;
   margin: 0 0 8px;
-  padding: 8px 13px;
+  padding: 8px 12px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--esp-a), var(--esp-b));
+  background: linear-gradient(90deg, var(--card-a), var(--card-b));
   color: #fff;
   font: 900 11px/1 Inter, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: .75px;
-  box-shadow: 0 7px 16px rgba(10,79,150,.18);
+  box-shadow: 0 6px 14px rgba(10,79,150,.16);
   box-sizing: border-box;
 }
 
-.esp-page .esp-text {
+.especial-page .especial-desc {
   color: #273143;
   font: 700 12.5px/1.55 Inter, Calibri, Arial, sans-serif;
   text-align: justify;
 }
 
-.esp-page .esp-aquisicao {
-  margin-top: 10px;
-  margin-bottom: 0;
-  padding: 10px 12px;
-  border-left-color: var(--esp-a);
-  background:
-    radial-gradient(circle at top left, var(--esp-soft), transparent 34%),
-    rgba(255,255,255,.78);
+.especial-page .aquisicao-box {
+  margin: 10px 0 0;
+  padding: 9px 11px;
+  border-radius: 15px;
+  border: 1px solid rgba(10,79,150,.13);
+  border-left: 5px solid var(--card-a);
+  background: rgba(255,255,255,.76);
+  box-shadow: 0 5px 14px rgba(10,79,150,.06);
+  color: #273143;
+  font: 700 12px/1.45 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-sizing: border-box;
 }
 
-.esp-page .esp-aquisicao b:first-child {
+.especial-page .aquisicao-box b {
   display: inline-flex;
   margin-right: 6px;
-  padding: 5px 9px;
+  padding: 4px 8px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--esp-a), var(--esp-b));
+  background: linear-gradient(90deg, var(--card-a), var(--card-b));
   color: #fff;
-  font: 900 10px/1 Inter, Arial, sans-serif;
+  font: 900 9px/1 Inter, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: .55px;
 }
 
-/* ------------------------------
-   Vantagem desbloqueada
------------------------------- */
+.especial-page .especial-full {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 100%;
+  min-width: 0;
+}
 
-.esp-page .vantagem-card {
-  --vant-a: var(--esp-a);
-  --vant-b: var(--esp-b);
-  --vant-soft: var(--esp-soft);
+.especial-page .vantagem-card {
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
+  grid-template-columns: 72px minmax(0, 1fr);
   gap: 10px;
-  align-items: start;
-  width: 100%;
-  min-height: 78px;
-  margin: 12px 0 0;
-  padding: 10px;
+  align-items: center;
+  margin: 0 0 10px;
+  padding: 9px;
   border-radius: 18px;
-  border: 1px solid rgba(15,61,122,.14);
-  border-left: 5px solid var(--vant-a);
-  background:
-    radial-gradient(circle at top left, var(--vant-soft), transparent 36%),
-    rgba(255,255,255,.82);
-  box-shadow: 0 6px 16px rgba(15,61,122,.08);
+  border: 1px solid rgba(10,79,150,.13);
+  border-left: 5px solid var(--card-a);
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 6px 15px rgba(10,79,150,.07);
   box-sizing: border-box;
 }
 
-.esp-page .vantagem-img {
-  width: 58px;
-  height: 58px;
+.especial-page .vantagem-img {
+  width: 72px;
+  height: 72px;
   object-fit: cover;
   object-position: center;
-  border-radius: 14px;
-  border: 3px solid #fff;
+  border-radius: 17px;
+  border: 4px solid #fff;
   background: #dcecff;
-  box-shadow: 0 5px 12px rgba(15,61,122,.17), 3px 3px 0 var(--vant-a);
+  box-shadow:
+    0 6px 14px rgba(10,79,150,.14),
+    3px 3px 0 var(--card-a);
   box-sizing: border-box;
 }
 
-.esp-page .vantagem-title {
+.especial-page .vantagem-title {
   width: fit-content;
   max-width: 100%;
   margin: 0 0 6px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--vant-a), var(--vant-b));
+  background: linear-gradient(90deg, var(--card-a), var(--card-b));
   color: #fff;
   font: 900 10px/1 Inter, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: .65px;
-  box-sizing: border-box;
 }
 
-.esp-page .vantagem-row {
+.especial-page .vantagem-row,
+.especial-page .talento-row,
+.especial-page .habilidade-row {
   margin: 4px 0;
   color: #273143;
-  font: 700 12.5px/1.4 Inter, Calibri, Arial, sans-serif;
+  font: 700 12px/1.42 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
 }
 
-.esp-page .vantagem-row b {
-  color: var(--vant-a);
+.especial-page .vantagem-row b,
+.especial-page .talento-row b,
+.especial-page .habilidade-row b {
+  color: var(--card-a);
   font-weight: 900;
 }
 
-/* ------------------------------
-   Details
------------------------------- */
-
-.esp-page .esp-details {
-  position: relative;
-  z-index: 2;
-  margin-top: 12px;
+.especial-page .especial-details {
+  margin: 9px 0 0;
   border-radius: 17px;
   border: 1px solid rgba(10,79,150,.13);
-  background: rgba(255,255,255,.50);
-  box-shadow: 0 7px 18px rgba(10,79,150,.07);
+  background: rgba(255,255,255,.52);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
-.esp-page .esp-details summary {
+.especial-page .especial-details summary {
   padding: 9px 12px;
-  background: linear-gradient(90deg, var(--esp-a), var(--esp-b));
+  background: linear-gradient(90deg, var(--card-a), var(--card-b));
   color: #fff;
   font: 900 10.5px/1 Inter, Arial, sans-serif;
   text-transform: uppercase;
@@ -12328,64 +12132,47 @@ align-self: center;
   list-style: none;
 }
 
-.esp-page .esp-details summary::-webkit-details-marker {
+.especial-page .especial-details summary::-webkit-details-marker {
   display: none;
 }
 
-.esp-page .esp-details summary::before {
+.especial-page .especial-details summary::before {
   content: "▸";
   display: inline-block;
   margin-right: 7px;
   transition: transform .18s ease;
 }
 
-.esp-page .esp-details[open] summary::before {
+.especial-page .especial-details[open] summary::before {
   transform: rotate(90deg);
 }
 
-.esp-page .esp-list,
-.esp-page .hab-list {
+.especial-page .talento-list,
+.especial-page .habilidade-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 10px;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
   box-sizing: border-box;
 }
 
-.esp-page .esp-list > br,
-.esp-page .hab-list > br {
+.especial-page .talento-list > br,
+.especial-page .habilidade-list > br {
   display: none !important;
 }
 
-.esp-page .esp-subtitle {
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 0 2px;
-  padding: 7px 11px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--esp-a), var(--esp-b));
-  color: #fff;
-  font: 900 10px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .65px;
-}
-
-/* ------------------------------
-   Template de Talento
------------------------------- */
-
-.esp-page .talento-card {
-  --tal-a: var(--esp-a);
-  --tal-b: var(--esp-b);
-  --tal-soft: var(--esp-soft);
-  display: grid;
-  grid-template-columns: 60px minmax(0, 1fr);
+.especial-page .talento-card,
+.especial-page .habilidade-card {
+  --tal-a: var(--card-a);
+  --tal-b: var(--card-b);
+  --tal-soft: var(--card-soft);
+  display: flex;
+  align-items: stretch;
   gap: 10px;
-  align-items: start;
   width: 100%;
   min-height: 82px;
-  padding: 10px;
-  border-radius: 17px;
+  border-radius: 16px;
   border: 1px solid rgba(10,79,150,.13);
   border-left: 5px solid var(--tal-a);
   background:
@@ -12396,61 +12183,73 @@ align-self: center;
   overflow: hidden;
 }
 
-.esp-page .talento-img {
-  width: 60px;
+.especial-page .talento-img,
+.especial-page .habilidade-img {
+  flex: 0 0 300px;
+  width: 300px;
   height: 60px;
+  max-width: 300px;
+  max-height: 60px;
+  align-self: center;
   object-fit: cover;
   object-position: center;
-  border-radius: 14px;
+  border-radius: 13px;
   border: 3px solid #fff;
   background: #dcecff;
-  box-shadow: 0 5px 12px rgba(10,79,150,.14), 3px 3px 0 var(--tal-a);
+  box-shadow:
+    0 5px 12px rgba(10,79,150,.14),
+    3px 3px 0 var(--tal-a);
+  box-sizing: border-box;
+  margin: 8px 0 8px 8px;
+}
+
+.especial-page .talento-content,
+.especial-page .habilidade-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 9px 10px 9px 0;
   box-sizing: border-box;
 }
 
-.esp-page .talento-content {
-  min-width: 0;
-}
-
-.esp-page .talento-title {
+.especial-page .talento-title,
+.especial-page .habilidade-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  width: 100%;
   margin: 0 0 6px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--tal-a), var(--tal-b));
-  color: #fff;
-  font: 900 10px/1 Inter, Arial, sans-serif;
+  color: #1d2c43;
+  font: 900 11px/1.15 Inter, Arial, sans-serif;
   text-transform: uppercase;
-  letter-spacing: .55px;
-  box-sizing: border-box;
+  letter-spacing: .45px;
 }
 
-.esp-page .talento-title span {
+.especial-page .talento-title span,
+.especial-page .habilidade-title span {
   flex: 0 0 auto;
   padding: 4px 7px;
   border-radius: 999px;
-  background: rgba(0,0,0,.20);
+  background: linear-gradient(90deg, var(--tal-a), var(--tal-b));
   color: #fff;
-  font: 900 8.5px/1 Inter, Arial, sans-serif;
+  font: 900 8px/1 Inter, Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(10,79,150,.10);
   white-space: nowrap;
 }
 
-.esp-page .talento-meta {
+.especial-page .talento-meta,
+.especial-page .habilidade-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin: 4px 0;
+  margin: 0 0 5px;
 }
 
-.esp-page .talento-meta span {
+.especial-page .talento-meta span,
+.especial-page .habilidade-meta span {
   display: inline-flex;
   align-items: center;
-  min-height: 21px;
-  padding: 4px 7px;
+  min-height: 20px;
+  padding: 3px 7px;
   border-radius: 999px;
   border: 1px solid rgba(10,79,150,.10);
   background: rgba(255,255,255,.82);
@@ -12458,137 +12257,16 @@ align-self: center;
   font: 900 9px/1 Inter, Arial, sans-serif;
 }
 
-.esp-page .talento-meta b,
-.esp-page .talento-row b {
-  color: var(--tal-a);
-  font-weight: 900;
+.especial-page .habilidade-card {
+  --tal-soft: rgba(24,214,253,.11);
 }
 
-.esp-page .talento-row {
-  margin: 4px 0;
-  color: #273143;
-  font: 700 12px/1.4 Inter, Calibri, Arial, sans-serif;
-  text-align: justify;
-}
+.especial-page .esp-fishman { --card-a:#0a4f96; --card-b:#18d6fd; --card-soft:rgba(24,214,253,.14); }
+.especial-page .esp-electro { --card-a:#554b05; --card-b:#ffe45e; --card-soft:rgba(255,228,94,.16); }
+.especial-page .esp-terra { --card-a:#56341c; --card-b:#c99b5d; --card-soft:rgba(201,155,93,.15); }
+.especial-page .esp-roku { --card-a:#28394f; --card-b:#aab7c8; --card-soft:rgba(170,183,200,.15); }
 
-/* ------------------------------
-   Template de Habilidade
------------------------------- */
-
-.esp-page .habilidade-card {
-  --hab-a: var(--esp-a);
-  --hab-b: var(--esp-b);
-  --hab-soft: var(--esp-soft);
-  position: relative;
-  display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
-  gap: 11px;
-  align-items: start;
-  width: 100%;
-  min-height: 96px;
-  padding: 11px;
-  border-radius: 19px;
-  border: 1px solid rgba(10,79,150,.13);
-  border-left: 6px solid var(--hab-a);
-  background:
-    radial-gradient(circle at top right, var(--hab-soft), transparent 36%),
-    linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,250,255,.96));
-  box-shadow: 0 7px 17px rgba(10,79,150,.08);
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.esp-page .habilidade-card::after {
-  content: "SKILL";
-  position: absolute;
-  right: -4px;
-  bottom: -9px;
-  color: rgba(10,79,150,.045);
-  font: 900 38px/1 Inter, Arial, sans-serif;
-  letter-spacing: -2px;
-  pointer-events: none;
-}
-
-.esp-page .habilidade-img {
-  width: 72px;
-  height: 72px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 17px;
-  border: 3px solid #fff;
-  background: #dcecff;
-  box-shadow: 0 6px 14px rgba(10,79,150,.16), 3px 3px 0 var(--hab-a);
-  box-sizing: border-box;
-  position: relative;
-  z-index: 2;
-}
-
-.esp-page .habilidade-content {
-  min-width: 0;
-  position: relative;
-  z-index: 2;
-}
-
-.esp-page .habilidade-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  width: 100%;
-  margin: 0 0 6px;
-  padding: 7px 11px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--hab-a), var(--hab-b));
-  color: #fff;
-  font: 900 10.5px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .6px;
-  box-sizing: border-box;
-}
-
-.esp-page .habilidade-title span {
-  flex: 0 0 auto;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: rgba(0,0,0,.20);
-  color: #fff;
-  font: 900 8.5px/1 Inter, Arial, sans-serif;
-  white-space: nowrap;
-}
-
-.esp-page .habilidade-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin: 5px 0;
-}
-
-.esp-page .habilidade-meta span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 22px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(10,79,150,.10);
-  background: rgba(255,255,255,.84);
-  color: #273143;
-  font: 900 9px/1 Inter, Arial, sans-serif;
-}
-
-.esp-page .habilidade-meta b,
-.esp-page .habilidade-row b {
-  color: var(--hab-a);
-  font-weight: 900;
-}
-
-.esp-page .habilidade-row {
-  margin: 5px 0 0;
-  color: #273143;
-  font: 700 12.2px/1.42 Inter, Calibri, Arial, sans-serif;
-  text-align: justify;
-}
-
-.esp-page img:not(.intro-img):not(.esp-img):not(.vantagem-img):not(.talento-img):not(.habilidade-img) {
+.especial-page img:not(.intro-img):not(.especial-style-img):not(.vantagem-img):not(.talento-img):not(.habilidade-img) {
   max-width: 18px;
   max-height: 18px;
   width: auto;
@@ -12602,31 +12280,27 @@ align-self: center;
   background: transparent;
 }
 
-/* ------------------------------
-   Tema escuro
------------------------------- */
-
-.tema-escuro .esp-page .esp-lead,
-.tema-sanji .esp-page .esp-lead,
-.tema-zoro .esp-page .esp-lead,
-.tema-escuro .esp-page .esp-section,
-.tema-sanji .esp-page .esp-section,
-.tema-zoro .esp-page .esp-section,
-.tema-escuro .esp-page .esp-aquisicao,
-.tema-sanji .esp-page .esp-aquisicao,
-.tema-zoro .esp-page .esp-aquisicao,
-.tema-escuro .esp-page .esp-details,
-.tema-sanji .esp-page .esp-details,
-.tema-zoro .esp-page .esp-details,
-.tema-escuro .esp-page .vantagem-card,
-.tema-sanji .esp-page .vantagem-card,
-.tema-zoro .esp-page .vantagem-card,
-.tema-escuro .esp-page .talento-card,
-.tema-sanji .esp-page .talento-card,
-.tema-zoro .esp-page .talento-card,
-.tema-escuro .esp-page .habilidade-card,
-.tema-sanji .esp-page .habilidade-card,
-.tema-zoro .esp-page .habilidade-card {
+.tema-escuro .especial-page .especial-lead,
+.tema-sanji .especial-page .especial-lead,
+.tema-zoro .especial-page .especial-lead,
+.tema-escuro .especial-page .especial-card,
+.tema-sanji .especial-page .especial-card,
+.tema-zoro .especial-page .especial-card,
+.tema-escuro .especial-page .aquisicao-box,
+.tema-sanji .especial-page .aquisicao-box,
+.tema-zoro .especial-page .aquisicao-box,
+.tema-escuro .especial-page .vantagem-card,
+.tema-sanji .especial-page .vantagem-card,
+.tema-zoro .especial-page .vantagem-card,
+.tema-escuro .especial-page .especial-details,
+.tema-sanji .especial-page .especial-details,
+.tema-zoro .especial-page .especial-details,
+.tema-escuro .especial-page .talento-card,
+.tema-sanji .especial-page .talento-card,
+.tema-zoro .especial-page .talento-card,
+.tema-escuro .especial-page .habilidade-card,
+.tema-sanji .especial-page .habilidade-card,
+.tema-zoro .especial-page .habilidade-card {
   background:
     radial-gradient(circle at top left, rgba(24,214,253,.07), transparent 36%),
     linear-gradient(180deg, #1f2022, #121315);
@@ -12635,80 +12309,114 @@ align-self: center;
   box-shadow: 0 10px 26px rgba(0,0,0,.30);
 }
 
-.tema-escuro .esp-page .esp-text,
-.tema-sanji .esp-page .esp-text,
-.tema-zoro .esp-page .esp-text,
-.tema-escuro .esp-page .vantagem-row,
-.tema-sanji .esp-page .vantagem-row,
-.tema-zoro .esp-page .vantagem-row,
-.tema-escuro .esp-page .talento-row,
-.tema-sanji .esp-page .talento-row,
-.tema-zoro .esp-page .talento-row,
-.tema-escuro .esp-page .habilidade-row,
-.tema-sanji .esp-page .habilidade-row,
-.tema-zoro .esp-page .habilidade-row,
-.tema-escuro .esp-page .talento-meta span,
-.tema-sanji .esp-page .talento-meta span,
-.tema-zoro .esp-page .talento-meta span,
-.tema-escuro .esp-page .habilidade-meta span,
-.tema-sanji .esp-page .habilidade-meta span,
-.tema-zoro .esp-page .habilidade-meta span {
+.tema-escuro .especial-page .especial-desc,
+.tema-sanji .especial-page .especial-desc,
+.tema-zoro .especial-page .especial-desc,
+.tema-escuro .especial-page .aquisicao-box,
+.tema-sanji .especial-page .aquisicao-box,
+.tema-zoro .especial-page .aquisicao-box,
+.tema-escuro .especial-page .vantagem-row,
+.tema-sanji .especial-page .vantagem-row,
+.tema-zoro .especial-page .vantagem-row,
+.tema-escuro .especial-page .talento-row,
+.tema-sanji .especial-page .talento-row,
+.tema-zoro .especial-page .talento-row,
+.tema-escuro .especial-page .habilidade-row,
+.tema-sanji .especial-page .habilidade-row,
+.tema-zoro .especial-page .habilidade-row,
+.tema-escuro .especial-page .talento-title,
+.tema-sanji .especial-page .talento-title,
+.tema-zoro .especial-page .talento-title,
+.tema-escuro .especial-page .habilidade-title,
+.tema-sanji .especial-page .habilidade-title,
+.tema-zoro .especial-page .habilidade-title,
+.tema-escuro .especial-page .talento-meta span,
+.tema-sanji .especial-page .talento-meta span,
+.tema-zoro .especial-page .talento-meta span,
+.tema-escuro .especial-page .habilidade-meta span,
+.tema-sanji .especial-page .habilidade-meta span,
+.tema-zoro .especial-page .habilidade-meta span {
   color: #f2f6ff;
 }
 
-.tema-escuro .esp-page .talento-meta span,
-.tema-sanji .esp-page .talento-meta span,
-.tema-zoro .esp-page .talento-meta span,
-.tema-escuro .esp-page .habilidade-meta span,
-.tema-sanji .esp-page .habilidade-meta span,
-.tema-zoro .esp-page .habilidade-meta span {
+.tema-escuro .especial-page .talento-meta span,
+.tema-sanji .especial-page .talento-meta span,
+.tema-zoro .especial-page .talento-meta span,
+.tema-escuro .especial-page .habilidade-meta span,
+.tema-sanji .especial-page .habilidade-meta span,
+.tema-zoro .especial-page .habilidade-meta span {
   background: rgba(255,255,255,.055);
   border-color: rgba(255,255,255,.08);
 }
 
-.tema-escuro .esp-page .esp-img,
-.tema-sanji .esp-page .esp-img,
-.tema-zoro .esp-page .esp-img,
-.tema-escuro .esp-page .vantagem-img,
-.tema-sanji .esp-page .vantagem-img,
-.tema-zoro .esp-page .vantagem-img,
-.tema-escuro .esp-page .talento-img,
-.tema-sanji .esp-page .talento-img,
-.tema-zoro .esp-page .talento-img,
-.tema-escuro .esp-page .habilidade-img,
-.tema-sanji .esp-page .habilidade-img,
-.tema-zoro .esp-page .habilidade-img {
+.tema-escuro .especial-page .especial-style-img,
+.tema-sanji .especial-page .especial-style-img,
+.tema-zoro .especial-page .especial-style-img,
+.tema-escuro .especial-page .vantagem-img,
+.tema-sanji .especial-page .vantagem-img,
+.tema-zoro .especial-page .vantagem-img,
+.tema-escuro .especial-page .talento-img,
+.tema-sanji .especial-page .talento-img,
+.tema-zoro .especial-page .talento-img,
+.tema-escuro .especial-page .habilidade-img,
+.tema-sanji .especial-page .habilidade-img,
+.tema-zoro .especial-page .habilidade-img {
   border-color: #252628;
   background: #252628;
 }
 
 @media (max-width: 850px) {
-  .esp-page .esp-top {
+  .especial-page .especial-card {
     flex-direction: column;
   }
 
-  .esp-page .esp-img {
-    width: 190px;
-    height: 190px;
+  .especial-page .especial-style-img {
+    width: 300px;
+    height: 120px;
     align-self: center;
+  }
+
+  .especial-page .talento-card,
+  .especial-page .habilidade-card {
+    flex-wrap: wrap;
+  }
+
+  .especial-page .talento-img,
+  .especial-page .habilidade-img {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 300px;
+    height: 60px;
+    margin: 8px auto 0;
+  }
+
+  .especial-page .talento-content,
+  .especial-page .habilidade-content {
+    flex: 1 1 100%;
+    padding: 8px 10px 10px;
   }
 }
 
 @media (max-width: 600px) {
-  .esp-page .talento-title,
-  .esp-page .habilidade-title {
+  .especial-page .especial-style-img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .especial-page .vantagem-card {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .especial-page .vantagem-img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .especial-page .talento-title,
+  .especial-page .habilidade-title {
     align-items: flex-start;
     flex-direction: column;
-    border-radius: 14px;
-  }
-
-  .esp-page .talento-card,
-  .esp-page .habilidade-card {
-    grid-template-columns: 60px minmax(0, 1fr);
-  }
-
-  .esp-page .habilidade-img {
-    width: 60px;
-    height: 60px;
+    gap: 5px;
   }
 }
+
