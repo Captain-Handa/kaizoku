@@ -11665,7 +11665,7 @@ align-self: center;
 .akuma-page .losango4-wrap {
   --b: 3px;
   float: right;
-  margin: -18px -18px 6px 12px;
+  margin: -2px -30px 6px 12px;
   display: inline-block;
   padding: var(--b);
   filter: drop-shadow(1px 4px 6px #31313aa1);
@@ -11764,7 +11764,6 @@ align-self: center;
 
 .akuma-page img:not(.intro-img):not(.vantagem-img):not(.ak-type-img):not(.ak-ability-img):not(.ak-mark-img):not(.talento-img) {
   max-width: 18px;
-  max-height: 18px;
   width: auto;
   height: auto;
   object-fit: contain;
