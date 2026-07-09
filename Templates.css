@@ -5816,6 +5816,7 @@ body.tema-zoro .portrait-preview,
   letter-spacing: .7px;
   cursor: pointer;
   list-style: none;
+    border-radius: 20px;
 }
 
 .carreira-pirata.pirata-page .pirata-details summary::-webkit-details-marker {
@@ -5865,6 +5866,7 @@ body.tema-zoro .portrait-preview,
   color: #fff;
   text-align: center;
   box-sizing: border-box;
+    border-radius: 20px;
 }
 
 .carreira-pirata.pirata-page .pirata-tier span {
