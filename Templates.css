@@ -1151,6 +1151,7 @@ border-radius: 50%;
   font-weight: 900;
 }
 
+
 /* ============================================================
    05. HAKI
    ============================================================ */
@@ -1753,9 +1754,187 @@ border-radius: 50%;
   max-height: none;
 }
 
-/* ------------------------------
-   Tema escuro legado
-   ------------------------------ */
+/* ============================================================
+   AJUSTE — HABILIDADES DE HAKI NO CARD GLOBAL
+   Mantém o layout do Haki e converte apenas as habilidades.
+============================================================ */
+
+.haki-section .habilidade-card {
+  --hab-a: var(--haki-main);
+  --hab-b: var(--haki-sec);
+  --hab-soft: color-mix(in srgb, var(--haki-sec) 18%, transparent);
+  position: relative;
+  z-index: 1;
+  margin: 8px 0 10px;
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(15,61,122,.14);
+  border-left: 6px solid var(--hab-a);
+  background:
+    radial-gradient(circle at top left, var(--hab-soft), transparent 36%),
+    rgba(255,255,255,.86);
+  box-shadow: 0 7px 18px rgba(15,61,122,.09);
+  box-sizing: border-box;
+  clear: both;
+  overflow: hidden;
+}
+
+.haki-section .habilidade-card .habilidade-img {
+  width: 108px !important;
+  height: 108px !important;
+  max-width: 108px !important;
+  max-height: 108px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 18px !important;
+  border: 4px solid #fff !important;
+  background: #dcecff !important;
+  box-shadow:
+    0 7px 15px rgba(15,61,122,.18),
+    4px 4px 0 var(--hab-a) !important;
+  box-sizing: border-box !important;
+  align-self: center;
+  margin: 0 !important;
+}
+
+.haki-section .habilidade-card .habilidade-content {
+  min-width: 0;
+}
+
+.haki-section .habilidade-card .habilidade-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 7px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--hab-a), var(--hab-b));
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  box-sizing: border-box;
+}
+
+.haki-section .habilidade-card .habilidade-title span {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.22);
+  color: #fff;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.haki-section .habilidade-card .habilidade-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 7px;
+}
+
+.haki-section .habilidade-card .habilidade-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 23px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(15,61,122,.11);
+  background: rgba(255,255,255,.82);
+  color: #273143;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.haki-section .habilidade-card .habilidade-meta b,
+.haki-section .habilidade-card .habilidade-row b {
+  color: var(--hab-a);
+  font-weight: 900;
+}
+
+.haki-section .habilidade-card .habilidade-row {
+  margin: 4px 0;
+  color: #273143;
+  font: 700 10.5px/1.45 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.haki-section .habilidade-card img:not(.habilidade-img) {
+  max-width: 18px !important;
+  max-height: 18px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  vertical-align: middle;
+  margin: 0 2px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.tema-escuro .haki-section .habilidade-card,
+.tema-sanji .haki-section .habilidade-card,
+.tema-zoro .haki-section .habilidade-card {
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.06), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .haki-section .habilidade-card .habilidade-row,
+.tema-sanji .haki-section .habilidade-card .habilidade-row,
+.tema-zoro .haki-section .habilidade-card .habilidade-row,
+.tema-escuro .haki-section .habilidade-card .habilidade-meta span,
+.tema-sanji .haki-section .habilidade-card .habilidade-meta span,
+.tema-zoro .haki-section .habilidade-card .habilidade-meta span {
+  color: #f2f6ff;
+}
+
+.tema-escuro .haki-section .habilidade-card .habilidade-meta span,
+.tema-sanji .haki-section .habilidade-card .habilidade-meta span,
+.tema-zoro .haki-section .habilidade-card .habilidade-meta span {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+}
+
+.tema-escuro .haki-section .habilidade-card .habilidade-img,
+.tema-sanji .haki-section .habilidade-card .habilidade-img,
+.tema-zoro .haki-section .habilidade-card .habilidade-img {
+  border-color: #252628 !important;
+  background: #252628 !important;
+}
+
+@media (max-width: 600px) {
+  .haki-section .habilidade-card {
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .haki-section .habilidade-card .habilidade-img {
+    width: 80px !important;
+    height: 80px !important;
+    max-width: 80px !important;
+    max-height: 80px !important;
+  }
+
+  .haki-section .habilidade-card .habilidade-title {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+}
+
 /* ============================================================
    06. ITENS, ARMAS E NAVIOS
    ============================================================ */
@@ -1964,7 +2143,7 @@ border-radius: 50%;
 
 .item-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(73px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(69px, 1fr));
   gap: 2px;
   width: 100%;
 }
@@ -2016,7 +2195,7 @@ border-radius: 50%;
   padding: 5px 4px;
   box-sizing: border-box;
   color: #172033;
-  font: 900 11px/1.15 Inter, Roboto, Arial, sans-serif;
+  font: 600 9px/1.15 Inter, Roboto, Arial, sans-serif;
   background: #eefaff;
   display: flex;
   align-items: center;
