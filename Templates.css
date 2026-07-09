@@ -6824,7 +6824,7 @@ body.tema-zoro .sceditor-container textarea {
   --vant-soft: rgba(92,182,209,.12);
 
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
+  grid-template-columns: 64px minmax(0, 1fr);
   gap: 10px;
   align-items: start;
   width: 100%;
@@ -6841,8 +6841,8 @@ body.tema-zoro .sceditor-container textarea {
 }
 
 .vantagem-card .vantagem-img {
-  width: 58px;
-  height: 58px;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   object-position: center;
   border-radius: 14px;
