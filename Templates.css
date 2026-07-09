@@ -9608,7 +9608,7 @@ body.tema-zoro .sceditor-container textarea {
 
 /* Dá espaço para o título sair para fora sem ser cortado */
 .classe-page .classe-list {
-  gap: 26px !important;
+  gap: 2px !important;
   padding-top: 8px;
 }
 
@@ -9688,7 +9688,7 @@ body.tema-zoro .sceditor-container textarea {
 
 /* Dá espaço entre os cards, já que o título sai para fora */
 .origem-page .origem-list {
-  gap: 28px !important;
+  gap: 8px !important;
   padding-top: 8px;
 }
 
@@ -11531,7 +11531,7 @@ align-self: center;
   --type-soft: var(--ak-soft);
   position: relative;
   min-height: 210px;
-  margin: 12px 0 16px;
+  margin: 1px 0 1px;
   padding: 12px;
   border-radius: 22px;
   border: 1px solid rgba(69,24,79,.13);
