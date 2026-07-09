@@ -6089,6 +6089,158 @@ body.tema-zoro .portrait-preview,
   }
 }
 
+/* ============================================================
+   PATCH — CARREIRA BUCANEIRA COM IMAGENS ANTIGAS
+   Sem grid em .rumos-pirata e .pirata-talent-list
+============================================================ */
+
+/* Rumos sem grid */
+.carreira-pirata.pirata-page .rumos-pirata {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin: 12px 0 18px !important;
+  box-sizing: border-box !important;
+}
+
+.carreira-pirata.pirata-page .rumos-pirata > br {
+  display: none !important;
+}
+
+/* Card do rumo em formato horizontal */
+.carreira-pirata.pirata-page .rumo-card {
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 12px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 11px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.carreira-pirata.pirata-page .rumo-content {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Imagem principal do rumo/carreira — 200x200 */
+.carreira-pirata.pirata-page .pirata-career-img {
+  flex: 0 0 200px !important;
+  width: 200px !important;
+  height: 200px !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  margin: 0 !important;
+  border-radius: 20px !important;
+  border: 5px solid #fff !important;
+  background: #dcecff !important;
+  box-shadow:
+    0 10px 24px rgba(15,61,122,.20),
+    4px 4px 0 var(--rumo-a) !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Lista de talentos sem grid */
+.carreira-pirata.pirata-page .pirata-talent-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.carreira-pirata.pirata-page .pirata-talent-list > br {
+  display: none !important;
+}
+
+/* Talent card horizontal com banner */
+.carreira-pirata.pirata-page .pirata-talent-card {
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 8px !important;
+  width: 100% !important;
+  min-height: 78px !important;
+  border-radius: 16px !important;
+  box-sizing: border-box !important;
+}
+
+/* Banner do talento — 300x60 */
+.carreira-pirata.pirata-page .pirata-talent-img {
+  flex: 0 0 300px !important;
+  width: 300px !important;
+  height: 60px !important;
+  max-width: 300px !important;
+  max-height: 60px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  align-self: center !important;
+  margin: 0 !important;
+  border-radius: 14px !important;
+  border: 3px solid #fff !important;
+  background: #dcecff !important;
+  box-shadow:
+    0 6px 14px rgba(15,61,122,.14),
+    3px 3px 0 var(--tal-a) !important;
+  box-sizing: border-box !important;
+}
+
+.carreira-pirata.pirata-page .pirata-tier {
+  flex: 0 0 56px !important;
+  min-width: 56px !important;
+  width: 56px !important;
+}
+
+.carreira-pirata.pirata-page .pirata-talent-content {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  padding: 8px 9px 8px 0 !important;
+}
+
+/* Impede a regra global de emoji pequeno de destruir as imagens novas */
+.carreira-pirata.pirata-page img.pirata-career-img,
+.carreira-pirata.pirata-page img.pirata-talent-img {
+  width: auto;
+}
+
+/* Responsivo */
+@media (max-width: 760px) {
+  .carreira-pirata.pirata-page .rumo-card {
+    flex-direction: column !important;
+  }
+
+  .carreira-pirata.pirata-page .pirata-career-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 190px !important;
+    flex-basis: auto !important;
+  }
+
+  .carreira-pirata.pirata-page .pirata-talent-card {
+    flex-wrap: wrap !important;
+  }
+
+  .carreira-pirata.pirata-page .pirata-talent-img {
+    order: 2 !important;
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+
+  .carreira-pirata.pirata-page .pirata-talent-content {
+    order: 3 !important;
+    flex: 1 1 100% !important;
+    padding: 8px !important;
+  }
+}
 
 /* ============================================================
    13. INTERAÇÕES, REPUTAÇÃO E AJUSTES DIVERSOS
