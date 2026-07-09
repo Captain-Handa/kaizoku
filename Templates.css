@@ -11380,8 +11380,7 @@ align-self: center;
 
 .akuma-page .ak-type-img {
   float: right;
-  width: 210px;
-  height: 210px;
+  width: 150px;
   max-width: 36%;
   object-fit: cover;
   object-position: center;
@@ -11909,7 +11908,6 @@ align-self: center;
   }
 }
 
-
 /* ============================================================
    PÁGINA — ESPECIALIZAÇÕES / HABILIDADES ESPECIAIS
 ============================================================ */
@@ -12147,6 +12145,7 @@ align-self: center;
   transform: rotate(90deg);
 }
 
+/* Listas internas */
 .especial-page .talento-list,
 .especial-page .habilidade-list {
   display: flex;
@@ -12162,56 +12161,140 @@ align-self: center;
   display: none !important;
 }
 
-.especial-page .talento-card,
-.especial-page .habilidade-card {
+/* Talentos: usa o template geral de talento, com ícone 60x60 */
+.especial-page .talento-card {
   --tal-a: var(--card-a);
   --tal-b: var(--card-b);
   --tal-soft: var(--card-soft);
-  display: flex;
-  align-items: stretch;
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
   gap: 10px;
+  align-items: start;
   width: 100%;
-  min-height: 82px;
-  border-radius: 16px;
+  min-height: 86px;
+  padding: 10px;
+  border-radius: 18px;
   border: 1px solid rgba(10,79,150,.13);
   border-left: 5px solid var(--tal-a);
   background:
     radial-gradient(circle at top left, var(--tal-soft), transparent 34%),
     rgba(255,255,255,.86);
-  box-shadow: 0 5px 13px rgba(10,79,150,.07);
+  box-shadow: 0 6px 16px rgba(10,79,150,.07);
   box-sizing: border-box;
   overflow: hidden;
 }
 
-.especial-page .talento-img,
-.especial-page .habilidade-img {
-  flex: 0 0 300px;
-  width: 300px;
+.especial-page .talento-img {
+  width: 60px;
   height: 60px;
-  max-width: 300px;
+  max-width: 60px;
   max-height: 60px;
-  align-self: center;
   object-fit: cover;
   object-position: center;
-  border-radius: 13px;
+  border-radius: 14px;
   border: 3px solid #fff;
   background: #dcecff;
   box-shadow:
     0 5px 12px rgba(10,79,150,.14),
     3px 3px 0 var(--tal-a);
   box-sizing: border-box;
-  margin: 8px 0 8px 8px;
+  margin: 0;
 }
 
-.especial-page .talento-content,
-.especial-page .habilidade-content {
-  flex: 1 1 auto;
+.especial-page .talento-content {
   min-width: 0;
-  padding: 9px 10px 9px 0;
   box-sizing: border-box;
 }
 
-.especial-page .talento-title,
+.especial-page .talento-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 6px;
+  color: #1d2c43;
+  font: 900 11px/1.15 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .45px;
+}
+
+.especial-page .talento-title span {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--tal-a), var(--tal-b));
+  color: #fff;
+  font: 900 8px/1 Inter, Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(10,79,150,.10);
+  white-space: nowrap;
+}
+
+.especial-page .talento-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 5px;
+}
+
+.especial-page .talento-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(10,79,150,.10);
+  background: rgba(255,255,255,.82);
+  color: #273143;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+}
+
+/* Habilidades: mesmo tamanho de ícone do template geral, com bloco próprio */
+.especial-page .habilidade-card {
+  --tal-a: var(--card-a);
+  --tal-b: var(--card-b);
+  --tal-soft: rgba(24,214,253,.11);
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+  min-height: 86px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(10,79,150,.13);
+  border-left: 5px solid var(--tal-a);
+  background:
+    radial-gradient(circle at top left, var(--tal-soft), transparent 34%),
+    rgba(255,255,255,.86);
+  box-shadow: 0 6px 16px rgba(10,79,150,.07);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.especial-page .habilidade-img {
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 5px 12px rgba(10,79,150,.14),
+    3px 3px 0 var(--tal-a);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.especial-page .habilidade-content {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
 .especial-page .habilidade-title {
   display: flex;
   align-items: center;
@@ -12224,7 +12307,6 @@ align-self: center;
   letter-spacing: .45px;
 }
 
-.especial-page .talento-title span,
 .especial-page .habilidade-title span {
   flex: 0 0 auto;
   padding: 4px 7px;
@@ -12236,7 +12318,6 @@ align-self: center;
   white-space: nowrap;
 }
 
-.especial-page .talento-meta,
 .especial-page .habilidade-meta {
   display: flex;
   flex-wrap: wrap;
@@ -12244,7 +12325,6 @@ align-self: center;
   margin: 0 0 5px;
 }
 
-.especial-page .talento-meta span,
 .especial-page .habilidade-meta span {
   display: inline-flex;
   align-items: center;
@@ -12255,10 +12335,6 @@ align-self: center;
   background: rgba(255,255,255,.82);
   color: #273143;
   font: 900 9px/1 Inter, Arial, sans-serif;
-}
-
-.especial-page .habilidade-card {
-  --tal-soft: rgba(24,214,253,.11);
 }
 
 .especial-page .esp-fishman { --card-a:#0a4f96; --card-b:#18d6fd; --card-soft:rgba(24,214,253,.14); }
@@ -12378,22 +12454,7 @@ align-self: center;
 
   .especial-page .talento-card,
   .especial-page .habilidade-card {
-    flex-wrap: wrap;
-  }
-
-  .especial-page .talento-img,
-  .especial-page .habilidade-img {
-    flex: 1 1 100%;
-    width: 100%;
-    max-width: 300px;
-    height: 60px;
-    margin: 8px auto 0;
-  }
-
-  .especial-page .talento-content,
-  .especial-page .habilidade-content {
-    flex: 1 1 100%;
-    padding: 8px 10px 10px;
+    grid-template-columns: 60px minmax(0, 1fr);
   }
 }
 
@@ -12419,4 +12480,8 @@ align-self: center;
     gap: 5px;
   }
 }
+
+/* Ajuste: habilidades usam o template geral com linhas Ativação / Detalhes / Descrição */
+.especial-page .habilidade-content .habilidade-row { margin: 4px 0; }
+
 
