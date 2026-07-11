@@ -874,113 +874,364 @@ details[open]:has(> summary.tab-container) {
     font-size: 10px;
   }
 }
+
 /* ============================================================
-   03. TALENTOS, AKUMA E SLOTS
-   ============================================================ */
+   TALENTOS — COMPONENTES GLOBAIS
+   Sem .tp e sem .talentos-page.
+   Todos os blocos funcionam em qualquer área do fórum.
+============================================================ */
 
-/* ------------------------------
-   Tema normal / regras base
-   ------------------------------ */
+/* ============================================================
+   CAIXAS DE TEXTO DA PÁGINA
+============================================================ */
 
-.talento {
-  /* outline: 2px solid #cccccc; */
-  margin-top: -2px;
-  box-shadow: -3px 0px 0px 0px #3e4c5d;
-  margin-right: 7px;
-    border-radius: 9px;
-    margin-bottom: 1px;
+.talento-introducao-box,
+.talento-regra-box,
+.talento-resumo-box {
+  --talento-destaque-a: #b64040;
+  --talento-destaque-b: #7e44f7;
+  --talento-destaque-soft: rgba(126,68,247,.13);
+
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(77,43,122,.13);
+  border-left: 6px solid var(--talento-destaque-a);
+  background:
+    radial-gradient(circle at top left, var(--talento-destaque-soft), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(248,246,255,.96));
+  box-shadow: 0 8px 20px rgba(77,43,122,.08);
+  color: #273143;
+  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+  box-sizing: border-box;
 }
 
-.talento-g {
-  /* outline: 2px solid #906666; */
-  margin-top: -2px;
-  box-shadow: -3px 0px 0px 0px #654747;
-  margin-right: 7px;
-    border-radius: 9px;
-    margin-bottom: 1px;
+.talento-introducao-box b,
+.talento-regra-box b,
+.talento-resumo-box b {
+  color: var(--talento-destaque-a);
+  font-weight: 900;
 }
 
-.talento-l {
-  /* outline: 2px solid #446350; */
-  margin-top: -2px;
-  box-shadow: -3px 0px 0px 0px #3c5942;
-  margin-right: 7px;
-    border-radius: 9px;
-    margin-bottom: 1px;
-}
+/* Título que antecede a lista */
+.talento-secao-titulo {
+  --talento-destaque-a: #b64040;
+  --talento-destaque-b: #7e44f7;
 
-.talento-a {
-  /* outline: 2px solid #204c65; */
-  margin-top: -2px;
-  box-shadow: -3px 0px 0px 0px #383f60;
-  margin-right: 7px;
-    border-radius: 9px;
-    margin-bottom: 1px;
-}
-
-.talento-tag {
-  background-image: linear-gradient(to right, #244688, #2892e0);
-  text-align: left;
-  width: 400px;
-  text-transform: uppercase;
-  font-weight: 700;
+  width: fit-content;
+  max-width: 100%;
+  margin: 16px 0 10px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--talento-destaque-a),
+    var(--talento-destaque-b)
+  );
   color: #fff;
-  padding: 2px 4px 2px 2px;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  box-shadow: 0 7px 16px rgba(77,43,122,.18);
+  box-sizing: border-box;
 }
 
-.talento-tag.combatente {
-  background-image: linear-gradient(to right, #510303, #fc9e9e00);
+/* Aba de resumo: não recebe o painel padrão das outras abas */
+.tab-content.talento-resumo-aba {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
-.talento-tag.estrategista {
-  background-image: linear-gradient(to right, #0b255a, #fc9e9e00);
+/* Conteúdo interno do resumo */
+.talento-resumo-titulo {
+  --talento-destaque-a: #b64040;
+  --talento-destaque-b: #7e44f7;
+
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--talento-destaque-a),
+    var(--talento-destaque-b)
+  );
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
 }
 
-.talento-tag.medico {
-  background-image: linear-gradient(to right, #417890, #fc9e9e00);
+.talento-resumo-texto {
+  color: #273143;
+  font: 700 12.5px/1.5 Inter, Calibri, Arial, sans-serif;
 }
 
-.talento-tag.carpinteiro {
-  background-image: linear-gradient(to right, #563425, #fc9e9e00);
+.talento-resumo-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
 }
 
-.talento-tag.navegador {
-  background-image: linear-gradient(to right, #796743, #fc9e9e00);
+.talento-resumo-chips > br {
+  display: none !important;
 }
 
-.talento-tag.rastreador {
-  background-image: linear-gradient(to right, #2d580a, #fc9e9e00);
+.talento-resumo-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(77,43,122,.10);
+  background: rgba(255,255,255,.84);
+  color: #273143;
+  font: 900 10px/1 Inter, Arial, sans-serif;
 }
 
-.talento-tag.charlatao {
-  background-image: linear-gradient(to right, #300351, #fc9e9e00);
+/* ============================================================
+   LISTA GLOBAL DE TALENTOS
+============================================================ */
+
+.talento-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
-.talento-tag.ladino {
-  background-image: linear-gradient(to right, #a43499, #fc9e9e00);
+.talento-list > br,
+.talento-card > br,
+.talento-card .talento-content > br,
+.talento-card .talento-meta > br {
+  display: none !important;
 }
 
-.talento-box {
-  background: #ffffff5c;
-  width: auto;
+/* ============================================================
+   COMPONENTE GLOBAL — CARD DE TALENTO
+============================================================ */
+
+.talento-card {
+  --tal-a: var(--corgeral, #244688);
+  --tal-b: #5cb6d1;
+  --tal-soft: rgba(92,182,209,.12);
+
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+  min-height: 82px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.14);
+  border-left: 5px solid var(--tal-a);
+  background:
+    radial-gradient(circle at top left, var(--tal-soft), transparent 36%),
+    rgba(255,255,255,.84);
+  box-shadow: 0 6px 16px rgba(15,61,122,.08);
+  box-sizing: border-box;
+  clear: both;
+}
+
+.talento-card .talento-img {
+  width: 60px;
   height: 60px;
-  text-align: left;
-  -webkit-box-shadow: -3px 3px 0px 0px #313131;
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 15px;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 5px 12px rgba(15,61,122,.17),
+    3px 3px 0 var(--tal-a);
+  box-sizing: border-box;
+  align-self: center;
+  margin: 0;
 }
 
-.talento-right {
-  float: right;
-  width: 300px;
-  height: inherit;
-  border-radius: 15px;
+.talento-card .talento-content {
+  min-width: 0;
 }
 
-.talento-text {
-  padding: 2px;
-  line-height: 15px;
-  margin-top: -2px;
+.talento-card .talento-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--tal-a), var(--tal-b));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+  box-sizing: border-box;
 }
+
+.talento-card .talento-title span {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.22);
+  color: #fff;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+}
+
+.talento-card .talento-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 6px;
+}
+
+.talento-card .talento-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(15,61,122,.11);
+  background: rgba(255,255,255,.82);
+  color: #273143;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.talento-card .talento-meta b,
+.talento-card .talento-row b {
+  color: var(--tal-a);
+  font-weight: 900;
+}
+
+.talento-card .talento-row {
+  margin: 4px 0;
+  color: #273143;
+  font: 500 10px/1.45 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+/* Protege emojis e imagens pequenas dentro do texto */
+.talento-card img:not(.talento-img) {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* ============================================================
+   TEMA ESCURO
+============================================================ */
+
+.tema-escuro .talento-introducao-box,
+body.tema-sanji .talento-introducao-box,
+body.tema-zoro .talento-introducao-box,
+.tema-escuro .talento-regra-box,
+body.tema-sanji .talento-regra-box,
+body.tema-zoro .talento-regra-box,
+.tema-escuro .talento-resumo-box,
+body.tema-sanji .talento-resumo-box,
+body.tema-zoro .talento-resumo-box {
+  background:
+    radial-gradient(circle at top left, rgba(126,68,247,.08), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  border-left-color: var(--talento-destaque-a);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .talento-resumo-texto,
+body.tema-sanji .talento-resumo-texto,
+body.tema-zoro .talento-resumo-texto,
+.tema-escuro .talento-resumo-chip,
+body.tema-sanji .talento-resumo-chip,
+body.tema-zoro .talento-resumo-chip {
+  color: #f2f6ff;
+}
+
+.tema-escuro .talento-resumo-chip,
+body.tema-sanji .talento-resumo-chip,
+body.tema-zoro .talento-resumo-chip {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+}
+
+.tema-escuro .talento-card,
+body.tema-sanji .talento-card,
+body.tema-zoro .talento-card {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  border-left-color: var(--tal-a);
+  color: #f2f6ff;
+}
+
+.tema-escuro .talento-card .talento-row,
+body.tema-sanji .talento-card .talento-row,
+body.tema-zoro .talento-card .talento-row,
+.tema-escuro .talento-card .talento-meta span,
+body.tema-sanji .talento-card .talento-meta span,
+body.tema-zoro .talento-card .talento-meta span {
+  color: #f2f6ff;
+}
+
+.tema-escuro .talento-card .talento-meta span,
+body.tema-sanji .talento-card .talento-meta span,
+body.tema-zoro .talento-card .talento-meta span {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+}
+
+.tema-escuro .talento-card .talento-img,
+body.tema-sanji .talento-card .talento-img,
+body.tema-zoro .talento-card .talento-img {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 600px) {
+  .talento-card {
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .talento-card .talento-title {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+}
+
+/* ============================================================
+   PÁGINA — TRECHO DAS AKUMA
+   Usa o componente global .talento-card
+============================================================ */
 
 .akuma-box {
     width: auto;
@@ -9781,108 +10032,6 @@ body.tema-zoro .sceditor-container textarea {
     0 0 0 1px rgba(255,255,255,.08);
 }
 
-/* ============================================================
-   COMPONENTE GLOBAL — CARD DE TALENTO
-   Usado em Estilos de Luta e futuras páginas
-============================================================ */
-
-.talento-card {
-  --tal-a: var(--corgeral);
-  --tal-b: #5cb6d1;
-  --tal-soft: rgba(92,182,209,.12);
-
-  display: grid;
-  grid-template-columns: 60px minmax(0, 1fr);
-  gap: 16px;
-  align-items: start;
-  width: 100%;
-  min-height: 82px;
-  padding: 10px;
-  border-radius: 18px;
-  border: 1px solid rgba(15,61,122,.14);
-  border-left: 5px solid var(--tal-a);
-  background:
-    radial-gradient(circle at top left, var(--tal-soft), transparent 36%),
-    rgba(255,255,255,.84);
-  box-shadow: 0 6px 16px rgba(15,61,122,.08);
-  box-sizing: border-box;
-  clear: both;
-}
-
-.talento-card .talento-img {
-  object-fit: cover;
-  object-position: center;
-  border-radius: 15px;
-  border: 3px solid #fff;
-  background: #dcecff;
-  box-shadow:
-    0 5px 12px rgba(15,61,122,.17),
-    3px 3px 0 var(--tal-a);
-  box-sizing: border-box;
-align-self: center;
-}
-
-.talento-card .talento-content {
-  min-width: 0;
-}
-
-.talento-card .talento-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-  margin: 0 0 6px;
-  padding: 2px 7px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--tal-a), var(--tal-b));
-  color: #fff;
-  font: 900 10px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .65px;
-  box-sizing: border-box;
-}
-
-.talento-card .talento-title span {
-  flex: 0 0 auto;
-  padding: 4px 7px;
-  border-radius: 999px;
-  background: rgba(0,0,0,.22);
-  color: #fff;
-  font: 900 9px/1 Inter, Arial, sans-serif;
-}
-
-.talento-card .talento-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin: 0 0 6px;
-}
-
-.talento-card .talento-meta span {
-  align-items: center;
-  min-height: 22px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(15,61,122,.11);
-  background: rgba(255,255,255,.82);
-  color: #273143;
-  font: 900 10px/1 Inter, Arial, sans-serif;
-  box-sizing: border-box;
-}
-
-.talento-card .talento-meta b,
-.talento-card .talento-row b {
-  color: var(--tal-a);
-  font-weight: 900;
-}
-
-.talento-card .talento-row {
-  margin: 4px 0;
-  color: #273143;
-  font: 500 10px/1.45 Inter, Calibri, Arial, sans-serif;
-  text-align: justify;
-}
 
 /* ============================================================
    COMPONENTE GLOBAL — CARD DE HABILIDADE
@@ -9987,106 +10136,7 @@ align-self: center;
   text-align: justify;
 }
 
-/* Protege emojis/imagens pequenas dentro dos cards */
 
-.talento-card img:not(.talento-img),
-.habilidade-card img:not(.habilidade-img) {
-  max-width: 18px;
-  max-height: 18px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  vertical-align: middle;
-  margin: 0 2px;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: transparent;
-}
-
-/* Tema escuro */
-
-.tema-escuro .talento-card,
-.tema-sanji .talento-card,
-.tema-zoro .talento-card,
-.tema-escuro .habilidade-card,
-.tema-sanji .habilidade-card,
-.tema-zoro .habilidade-card {
-  background: rgba(255,255,255,.055);
-  border-color: rgba(255,255,255,.08);
-  color: #f2f6ff;
-}
-
-.tema-escuro .talento-card,
-.tema-sanji .talento-card,
-.tema-zoro .talento-card {
-  border-left-color: var(--tal-a);
-}
-
-.tema-escuro .habilidade-card,
-.tema-sanji .habilidade-card,
-.tema-zoro .habilidade-card {
-  border-left-color: var(--hab-a);
-}
-
-.tema-escuro .talento-card .talento-row,
-.tema-sanji .talento-card .talento-row,
-.tema-zoro .talento-card .talento-row,
-.tema-escuro .habilidade-card .habilidade-row,
-.tema-sanji .habilidade-card .habilidade-row,
-.tema-zoro .habilidade-card .habilidade-row,
-.tema-escuro .talento-card .talento-meta span,
-.tema-sanji .talento-card .talento-meta span,
-.tema-zoro .talento-card .talento-meta span,
-.tema-escuro .habilidade-card .habilidade-meta span,
-.tema-sanji .habilidade-card .habilidade-meta span,
-.tema-zoro .habilidade-card .habilidade-meta span {
-  color: #f2f6ff;
-}
-
-.tema-escuro .talento-card .talento-meta span,
-.tema-sanji .talento-card .talento-meta span,
-.tema-zoro .talento-card .talento-meta span,
-.tema-escuro .habilidade-card .habilidade-meta span,
-.tema-sanji .habilidade-card .habilidade-meta span,
-.tema-zoro .habilidade-card .habilidade-meta span {
-  background: rgba(255,255,255,.055);
-  border-color: rgba(255,255,255,.08);
-}
-
-.tema-escuro .talento-card .talento-img,
-.tema-sanji .talento-card .talento-img,
-.tema-zoro .talento-card .talento-img,
-.tema-escuro .habilidade-card .habilidade-img,
-.tema-sanji .habilidade-card .habilidade-img,
-.tema-zoro .habilidade-card .habilidade-img {
-  border-color: #252628;
-  background: #252628;
-}
-
-/* Responsivo */
-
-@media (max-width: 600px) {
-  .talento-card {
-    grid-template-columns: 60px minmax(0, 1fr);
-  }
-
-  .habilidade-card {
-    grid-template-columns: 1fr;
-  }
-
-  .habilidade-card .habilidade-img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .talento-card .talento-title,
-  .habilidade-card .habilidade-title {
-    align-items: flex-start;
-    flex-direction: column;
-    border-radius: 14px;
-  }
-}
 
 /* ============================================================
    PÁGINA — ESTILO DE LUTA
@@ -10942,569 +10992,6 @@ align-self: center;
   }
 }
 
-/* ============================================================
-   PÁGINA — LISTA DE TALENTOS
-   Usa o componente global .talento-card
-============================================================ */
-
-.talentos-page {
-  --talentos-a: #b64040;
-  --talentos-b: #7e44f7;
-  --talentos-soft: rgba(126,68,247,.13);
-}
-
-.talentos-page .talentos-lead,
-.talentos-page .talentos-regra,
-.talentos-page .talentos-resumo {
-  margin: 0 0 12px;
-  padding: 12px 14px;
-  border-radius: 18px;
-  border: 1px solid rgba(77,43,122,.13);
-  border-left: 6px solid var(--talentos-a);
-  background:
-    radial-gradient(circle at top left, rgba(126,68,247,.13), transparent 34%),
-    linear-gradient(180deg, rgba(255,255,255,.92), rgba(248,246,255,.96));
-  box-shadow: 0 8px 20px rgba(77,43,122,.08);
-  color: #273143;
-  font: 700 13px/1.55 Inter, Calibri, Arial, sans-serif;
-  text-align: justify;
-  box-sizing: border-box;
-}
-
-.talentos-page .talentos-lead b,
-.talentos-page .talentos-regra b,
-.talentos-page .talentos-resumo b {
-  color: var(--talentos-a);
-  font-weight: 900;
-}
-
-.talentos-page .talentos-section-title {
-  width: fit-content;
-  max-width: 100%;
-  margin: 16px 0 10px;
-  padding: 8px 13px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--talentos-a), var(--talentos-b));
-  color: #fff;
-  font: 900 11px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  box-shadow: 0 7px 16px rgba(77,43,122,.18);
-  box-sizing: border-box;
-}
-
-.talentos-page .tab-container {
-  margin-bottom: 10px;
-}
-
-.talentos-page .tab-content {
-  box-sizing: border-box;
-}
-
-.talentos-page .tab-content > br,
-.talentos-page .talento-list > br {
-  display: none !important;
-}
-
-.talentos-page .tab-content#conteudo0 {
-  min-height: 0;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-.talentos-page .talentos-resumo-title {
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 0 8px;
-  padding: 7px 11px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--talentos-a), var(--talentos-b));
-  color: #fff;
-  font: 900 10px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .7px;
-}
-
-.talentos-page .talentos-resumo-text {
-  color: #273143;
-  font: 700 12.5px/1.5 Inter, Calibri, Arial, sans-serif;
-}
-
-.talentos-page .talentos-chipbox {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.talentos-page .talentos-chipbox span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 24px;
-  padding: 5px 9px;
-  border-radius: 999px;
-  border: 1px solid rgba(77,43,122,.10);
-  background: rgba(255,255,255,.84);
-  color: #273143;
-  font: 900 10px/1 Inter, Arial, sans-serif;
-}
-
-.talentos-page .talento-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.talentos-page .talento-card {
-  min-height: 86px;
-}
-
-.talentos-page .tal-hobby {
-  --tal-a: #7a4b12;
-  --tal-b: #d99a2b;
-  --tal-soft: rgba(217,154,43,.14);
-}
-
-.talentos-page .tal-comum {
-  --tal-a: #4a2f68;
-  --tal-b: #a98ad6;
-  --tal-soft: rgba(169,138,214,.14);
-}
-
-.talentos-page .tal-tier-1 { border-left-color: #7a4b12; }
-.talentos-page .tal-tier-2 { border-left-color: #123b59; }
-.talentos-page .tal-tier-3 { border-left-color: #2f6f4e; }
-.talentos-page .tal-tier-4 { border-left-color: #751b1b; }
-.talentos-page .tal-tier-5 { border-left-color: #4a2f68; }
-
-.talentos-page .talento-title span {
-  white-space: nowrap;
-}
-
-.talentos-page img:not(.intro-img):not(.talento-img) {
-  max-width: 18px;
-  max-height: 18px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  vertical-align: middle;
-  margin: 0 2px;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: transparent;
-}
-
-.tema-escuro .talentos-page .talentos-lead,
-.tema-sanji .talentos-page .talentos-lead,
-.tema-zoro .talentos-page .talentos-lead,
-.tema-escuro .talentos-page .talentos-regra,
-.tema-sanji .talentos-page .talentos-regra,
-.tema-zoro .talentos-page .talentos-regra,
-.tema-escuro .talentos-page .talentos-resumo,
-.tema-sanji .talentos-page .talentos-resumo,
-.tema-zoro .talentos-page .talentos-resumo {
-  background:
-    radial-gradient(circle at top left, rgba(126,68,247,.08), transparent 36%),
-    linear-gradient(180deg, #1f2022, #121315);
-  border-color: rgba(255,255,255,.08);
-  border-left-color: var(--talentos-a);
-  color: #f2f6ff;
-  box-shadow: 0 10px 26px rgba(0,0,0,.30);
-}
-
-.tema-escuro .talentos-page .talentos-resumo-text,
-.tema-sanji .talentos-page .talentos-resumo-text,
-.tema-zoro .talentos-page .talentos-resumo-text,
-.tema-escuro .talentos-page .talentos-chipbox span,
-.tema-sanji .talentos-page .talentos-chipbox span,
-.tema-zoro .talentos-page .talentos-chipbox span {
-  color: #f2f6ff;
-}
-
-.tema-escuro .talentos-page .talentos-chipbox span,
-.tema-sanji .talentos-page .talentos-chipbox span,
-.tema-zoro .talentos-page .talentos-chipbox span {
-  background: rgba(255,255,255,.055);
-  border-color: rgba(255,255,255,.08);
-}
-
-@media (max-width: 600px) {
-  .talentos-page .talento-card {
-    grid-template-columns: 60px minmax(0, 1fr);
-  }
-
-  .talentos-page .talento-title {
-    align-items: flex-start;
-    flex-direction: column;
-    border-radius: 14px;
-  }
-}
-
-/* LISTA DE TALENTOS — versão compacta */
-
-.tp {
-  --ta: #b64040;
-  --tb: #7e44f7;
-  --ts: rgba(126, 68, 247, .13);
-}
-
-/* Blocos principais */
-
-.tp .tl,
-.tp .trg,
-.tp .rz {
-  margin: 0 0 12px;
-  padding: 12px 14px;
-  border-radius: 18px;
-  border: 1px solid rgba(77, 43, 122, .13);
-  border-left: 6px solid var(--ta);
-  background:
-    radial-gradient(circle at top left, rgba(126, 68, 247, .13), transparent 34%),
-    linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(248, 246, 255, .96));
-  box-shadow: 0 8px 20px rgba(77, 43, 122, .08);
-  color: #273143;
-  font: 700 13px / 1.55 Inter, Calibri, Arial, sans-serif;
-  text-align: justify;
-  box-sizing: border-box;
-}
-
-.tp .tl b,
-.tp .trg b,
-.tp .rz b {
-  color: var(--ta);
-  font-weight: 900;
-}
-
-/* Títulos de seção */
-
-.tp .st {
-  width: fit-content;
-  max-width: 100%;
-  margin: 16px 0 10px;
-  padding: 8px 13px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--ta), var(--tb));
-  color: #fff;
-  font: 900 11px / 1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  box-shadow: 0 7px 16px rgba(77, 43, 122, .18);
-  box-sizing: border-box;
-}
-
-/* Tabs */
-
-.tp .tab-container {
-  margin-bottom: 10px;
-}
-
-.tp .tab-content {
-  box-sizing: border-box;
-}
-
-.tp .tab-content > br,
-.tp .ls > br {
-  display: none !important;
-}
-
-.tp #c0 {
-  min-height: 0;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-/* Resumo */
-
-.tp .rt {
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 0 8px;
-  padding: 7px 11px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--ta), var(--tb));
-  color: #fff;
-  font: 900 10px / 1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .7px;
-}
-
-.tp .rx {
-  color: #273143;
-  font: 700 12.5px / 1.5 Inter, Calibri, Arial, sans-serif;
-}
-
-/* Chips */
-
-.tp .cb {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.tp .cb span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 24px;
-  padding: 5px 9px;
-  border-radius: 999px;
-  border: 1px solid rgba(77, 43, 122, .10);
-  background: rgba(255, 255, 255, .84);
-  color: #273143;
-  font: 900 10px / 1 Inter, Arial, sans-serif;
-}
-
-/* Lista de talentos */
-
-.tp .ls {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Card de talento */
-
-.tp .tc {
-  --x: #4a2f68;
-  --y: #a98ad6;
-  --s: rgba(169, 138, 214, .14);
-
-  display: grid;
-  grid-template-columns: 60px minmax(0, 1fr);
-  gap: 10px;
-  align-items: start;
-  width: 100%;
-  min-height: 82px;
-  padding: 10px;
-  border-radius: 18px;
-  border: 1px solid rgba(15, 61, 122, .14);
-  border-left: 5px solid var(--x);
-  background:
-    radial-gradient(circle at top left, var(--s), transparent 36%),
-    rgba(255, 255, 255, .84);
-  box-shadow: 0 6px 16px rgba(15, 61, 122, .08);
-  box-sizing: border-box;
-  clear: both;
-  overflow: hidden;
-}
-
-/* Imagem do talento */
-
-.tp .ti {
-  width: 60px;
-  height: 60px;
-  max-width: 60px;
-  max-height: 60px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 15px;
-  border: 3px solid #fff;
-  background: #dcecff;
-  box-shadow:
-    0 5px 12px rgba(15, 61, 122, .17),
-    3px 3px 0 var(--x);
-  box-sizing: border-box;
-  align-self: center;
-}
-
-/* Conteúdo */
-
-.tp .tx {
-  min-width: 0;
-}
-
-/* Título do talento */
-
-.tp .tt {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 0 6px;
-  padding: 2px 7px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--x), var(--y));
-  color: #fff;
-  font: 900 10px / 1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .65px;
-  box-sizing: border-box;
-}
-
-.tp .tt span {
-  flex: 0 0 auto;
-  white-space: nowrap;
-  padding: 4px 7px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, .22);
-  color: #fff;
-  font: 900 9px / 1 Inter, Arial, sans-serif;
-}
-
-/* Metadados */
-
-.tp .tm {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin: 0 0 6px;
-}
-
-.tp .tm span {
-  align-items: center;
-  min-height: 22px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(15, 61, 122, .11);
-  background: rgba(255, 255, 255, .82);
-  color: #273143;
-  font: 900 10px / 1 Inter, Arial, sans-serif;
-  box-sizing: border-box;
-}
-
-.tp .tm b,
-.tp .td b {
-  color: var(--x);
-  font-weight: 900;
-}
-
-/* Descrição */
-
-.tp .td {
-  margin: 4px 0;
-  color: #273143;
-  font: 500 10px / 1.45 Inter, Calibri, Arial, sans-serif;
-  text-align: justify;
-}
-
-/* Variações de cor */
-
-.tp .hb {
-  --x: #7a4b12;
-  --y: #d99a2b;
-  --s: rgba(217, 154, 43, .14);
-}
-
-.tp .cm {
-  --x: #4a2f68;
-  --y: #a98ad6;
-  --s: rgba(169, 138, 214, .14);
-}
-
-.tp .t1 {
-  border-left-color: #7a4b12;
-}
-
-.tp .t2 {
-  border-left-color: #123b59;
-}
-
-.tp .t3 {
-  border-left-color: #2f6f4e;
-}
-
-.tp .t4 {
-  border-left-color: #751b1b;
-}
-
-.tp .t5 {
-  border-left-color: #4a2f68;
-}
-
-/* Imagens internas */
-
-.tp img:not(.intro-img):not(.ti) {
-  max-width: 18px;
-  max-height: 18px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  vertical-align: middle;
-  margin: 0 2px;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: transparent;
-}
-
-/* Tema escuro */
-
-.tema-escuro .tp .tl,
-.tema-sanji .tp .tl,
-.tema-zoro .tp .tl,
-.tema-escuro .tp .trg,
-.tema-sanji .tp .trg,
-.tema-zoro .tp .trg,
-.tema-escuro .tp .rz,
-.tema-sanji .tp .rz,
-.tema-zoro .tp .rz,
-.tema-escuro .tp .tc,
-.tema-sanji .tp .tc,
-.tema-zoro .tp .tc {
-  background:
-    radial-gradient(circle at top left, rgba(126, 68, 247, .08), transparent 36%),
-    linear-gradient(180deg, #1f2022, #121315);
-  border-color: rgba(255, 255, 255, .08);
-  color: #f2f6ff;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, .30);
-}
-
-.tema-escuro .tp .rx,
-.tema-sanji .tp .rx,
-.tema-zoro .tp .rx,
-.tema-escuro .tp .td,
-.tema-sanji .tp .td,
-.tema-zoro .tp .td,
-.tema-escuro .tp .cb span,
-.tema-sanji .tp .cb span,
-.tema-zoro .tp .cb span,
-.tema-escuro .tp .tm span,
-.tema-sanji .tp .tm span,
-.tema-zoro .tp .tm span {
-  color: #f2f6ff;
-}
-
-.tema-escuro .tp .cb span,
-.tema-sanji .tp .cb span,
-.tema-zoro .tp .cb span,
-.tema-escuro .tp .tm span,
-.tema-sanji .tp .tm span,
-.tema-zoro .tp .tm span {
-  background: rgba(255, 255, 255, .055);
-  border-color: rgba(255, 255, 255, .08);
-}
-
-.tema-escuro .tp .ti,
-.tema-sanji .tp .ti,
-.tema-zoro .tp .ti {
-  border-color: #252628;
-  background: #252628;
-}
-
-/* Responsivo */
-
-@media (max-width: 600px) {
-  .tp .tc {
-    grid-template-columns: 60px minmax(0, 1fr);
-  }
-
-  .tp .tt {
-    align-items: flex-start;
-    flex-direction: column;
-    border-radius: 14px;
-  }
-}
 
 /* ============================================================
    PÁGINA — AKUMA NO MI / FRUTA DO DIABO
