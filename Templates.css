@@ -10520,6 +10520,39 @@ align-self: center;
   }
 }
 
+.complicacao-card.vantagem-card,
+.complicacao-card .vantagem-card {
+  --vant-a: #510303;
+  --vant-b: #fc9e9e;
+  --vant-soft: rgba(252,158,158,.16);
+}
+
+.complicacao-card.comp-severa.vantagem-card,
+.complicacao-card.comp-severa .vantagem-card {
+  --vant-a: #2a0505;
+  --vant-b: #d64040;
+  --vant-soft: rgba(214,64,64,.18);
+}
+
+.complicacao-card .comp-xp,
+.vantagem-card.complicacao-card .comp-xp {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.22);
+  color: #fff;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+}
+
+.vantagem-card.complicacao-card .vantagem-title,
+.complicacao-card .vantagem-card .vantagem-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+}
+
 /* ============================================================
    PÁGINA — SONHOS E CONQUISTAS
 ============================================================ */
@@ -13745,4 +13778,16 @@ align-self: center;
     max-width: none !important;
     max-height: 150px !important;
   }
+}
+
+
+/* ============================================================
+   000. TRALHAS EXTRAS
+============================================================ */
+.hazel-hr {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    margin: 2px 0;
+    background: linear-gradient(90deg, transparent, rgba(15, 61, 122, .24), transparent);
 }
