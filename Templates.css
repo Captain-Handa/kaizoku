@@ -12964,3 +12964,616 @@ align-self: center;
     max-width: 300px;
   }
 }
+
+/* ============================================================
+   LUFFYLAND — PATCH DE COMPATIBILIDADE GLOBAL DE TEMPLATES
+   Objetivo:
+   - Fazer componentes de carreira e ações funcionarem fora das páginas originais.
+   - Remover dependência obrigatória de wrappers como .carreira-pirata.pirata-page e .classe-page.
+   - Manter compatibilidade com Ficha, posts, narrações e páginas normais.
+   Instalação:
+   - Cole este bloco DEPOIS do CSS principal.
+============================================================ */
+
+/* ============================================================
+   01. SEGURANÇA GERAL PARA FORUMEIROS
+============================================================ */
+
+.rumos-pirata > br,
+.pirata-talent-list > br,
+.classe-body > br,
+.classe-action-box > br,
+.rumo-card > br,
+.pirata-talent-card > br {
+  display: none !important;
+}
+
+/* Evita que componentes reutilizáveis sejam cortados dentro da ficha */
+.p-ficha-box .rumos-pirata,
+.p-ficha-box .rumo-card,
+.p-ficha-box .pirata-details,
+.p-ficha-box .pirata-talent-list,
+.p-ficha-box .pirata-talent-card,
+.p-ficha-box .classe-body,
+.p-ficha-box .classe-action-box {
+  overflow: visible;
+}
+
+/* ============================================================
+   02. COMPONENTE GLOBAL — CARREIRA / PROGRESSÃO
+   Funciona com ou sem:
+   .carreira-pirata.pirata-page
+============================================================ */
+
+/* Lista de rumos/carreiras */
+.rumos-pirata {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin: 10px 0 14px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Card de carreira */
+.rumo-card {
+  --rumo-a: var(--corgeral, #123b59);
+  --rumo-b: #2f8cc2;
+  --rumo-soft: rgba(47,140,194,.14);
+  --pirata-gold: #d99a2b;
+  --pirata-gold-2: #ffe29a;
+
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(15,61,122,.13);
+  border-left: 7px solid var(--rumo-a);
+  background:
+    radial-gradient(circle at top right, var(--rumo-soft), transparent 38%),
+    linear-gradient(180deg, rgba(255,255,255,.94), rgba(246,249,255,.98));
+  box-shadow: 0 9px 22px rgba(15,61,122,.10);
+  color: #273143;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.rumo-card::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  bottom: -32px;
+  width: 100px;
+  height: 100px;
+  border-radius: 999px;
+  background: var(--rumo-soft);
+  pointer-events: none;
+}
+
+/* Imagem principal da carreira */
+.pirata-career-img {
+  flex: 0 0 200px;
+  width: 200px;
+  height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+  border-radius: 22px;
+  border: 5px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 9px 20px rgba(15,61,122,.18),
+    4px 4px 0 var(--rumo-a);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.rumo-content {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.rumo-topo {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 7px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--rumo-a), var(--rumo-b));
+  color: #fff;
+  font: 900 11px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+  box-shadow: 0 6px 14px rgba(15,61,122,.16);
+  box-sizing: border-box;
+}
+
+.rumo-corpo {
+  color: #273143;
+  font: 700 12px/1.42 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.rumo-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 8px 0;
+  padding: 7px;
+  border-radius: 14px;
+  border: 1px solid rgba(15,61,122,.10);
+  background: rgba(15,61,122,.045);
+  box-sizing: border-box;
+}
+
+.rumo-skills b {
+  width: 100%;
+  margin-bottom: 2px;
+  color: var(--rumo-a);
+  font: 900 9px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+}
+
+.rumo-skills span {
+  display: inline-flex;
+  min-height: 20px;
+  align-items: center;
+  padding: 3px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(15,61,122,.10);
+  background: rgba(255,255,255,.82);
+  color: #273143;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+}
+
+.pirata-info {
+  padding: 8px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(15,61,122,.13);
+  background: rgba(255,255,255,.84);
+  box-shadow: 0 5px 14px rgba(15,61,122,.07);
+  color: #273143;
+  font: 700 11.8px/1.38 Inter, Calibri, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.pirata-info b {
+  display: inline-flex;
+  margin-right: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--rumo-a), var(--rumo-b));
+  color: #fff;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .55px;
+}
+
+/* Details da progressão */
+.pirata-details {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 16px;
+  border: 1px solid rgba(15,61,122,.12);
+  background: rgba(255,255,255,.48);
+  overflow: visible;
+  box-sizing: border-box;
+  clear: both;
+}
+
+.pirata-details summary {
+  padding: 8px 11px;
+  background: linear-gradient(90deg, var(--rumo-a, var(--corgeral, #123b59)), var(--rumo-b, #2f8cc2));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.pirata-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.pirata-details summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 7px;
+  transition: transform .18s ease;
+}
+
+.pirata-details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* Lista de talentos da progressão */
+.pirata-talent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 12px 10px 8px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* Card de talento da carreira */
+.pirata-talent-card {
+  --tal-a: var(--rumo-a, var(--corgeral, #123b59));
+  --tal-b: var(--rumo-b, #2f8cc2);
+  --tal-soft: var(--rumo-soft, rgba(47,140,194,.14));
+  --pirata-gold: #d99a2b;
+  --pirata-gold-2: #ffe29a;
+
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  min-height: 72px;
+  border-radius: 15px;
+  border: 1px solid rgba(15,61,122,.13);
+  background:
+    radial-gradient(circle at top left, var(--tal-soft), transparent 34%),
+    rgba(255,255,255,.86);
+  box-shadow: 0 5px 13px rgba(15,61,122,.07);
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.pirata-tier {
+  flex: 0 0 54px;
+  min-width: 54px;
+  width: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 7px 4px;
+  background: linear-gradient(180deg, var(--tal-a), #17151a);
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.pirata-tier span {
+  color: rgba(255,255,255,.86);
+  font: 900 8px/1.05 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .45px;
+}
+
+.pirata-tier b {
+  color: var(--pirata-gold-2);
+  font: 900 19px/1 Inter, Arial, sans-serif;
+}
+
+.pirata-talent-img {
+  position: absolute;
+  top: -11px;
+  right: -10px;
+  z-index: 4;
+  width: 200px;
+  max-width: 200px;
+  height: 60px;
+  max-height: 60px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 13px;
+  border: 3px solid #fff;
+  background: #dcecff;
+  box-shadow:
+    0 7px 15px rgba(15,61,122,.18),
+    3px 3px 0 var(--tal-a);
+  box-sizing: border-box;
+  margin: 0;
+  pointer-events: none;
+}
+
+.pirata-talent-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 8px 205px 8px 0;
+  box-sizing: border-box;
+}
+
+.pirata-talent-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 5px;
+  color: #1d2c43;
+  font: 900 10.8px/1.15 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+
+.pirata-cost {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pirata-gold, #d99a2b), var(--pirata-gold-2, #ffe29a));
+  color: #2b1c11;
+  font: 900 8px/1 Inter, Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(15,61,122,.10);
+  white-space: nowrap;
+}
+
+.pirata-talent-row {
+  margin: 3px 0;
+  color: #273143;
+  font: 700 11.5px/1.35 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
+}
+
+.pirata-talent-row b {
+  color: var(--tal-a);
+  font-weight: 900;
+}
+
+/* Cores por carreira — funcionam fora da página também */
+.career-combatente { --rumo-a:#510303; --rumo-b:#fc9e9e; --rumo-soft:rgba(252,158,158,.16); }
+.career-estrategista { --rumo-a:#031c51; --rumo-b:#9ecafc; --rumo-soft:rgba(158,202,252,.16); }
+.career-medico { --rumo-a:#3d7ca1; --rumo-b:#a2f4d8; --rumo-soft:rgba(162,244,216,.16); }
+.career-carpinteiro { --rumo-a:#56392c; --rumo-b:#d1aea3; --rumo-soft:rgba(209,174,163,.16); }
+.career-navegador { --rumo-a:#2f8cc2; --rumo-b:#ffa55b; --rumo-soft:rgba(255,165,91,.16); }
+.career-rastreador { --rumo-a:#245103; --rumo-b:#b9d65c; --rumo-soft:rgba(185,214,92,.16); }
+.career-charlatao { --rumo-a:#350351; --rumo-b:#9eabfc; --rumo-soft:rgba(158,171,252,.16); }
+.career-ladino { --rumo-a:#a1488e; --rumo-b:#ed5858; --rumo-soft:rgba(237,88,88,.16); }
+.career-vagabundo { --rumo-a:#eb7048; --rumo-b:#c0342d; --rumo-soft:rgba(235,112,72,.16); }
+
+/* Proteção de emojis dentro da carreira */
+.rumo-card img:not(.pirata-career-img):not(.pirata-talent-img),
+.pirata-talent-card img:not(.pirata-talent-img) {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* ============================================================
+   03. COMPONENTE GLOBAL — AÇÃO DE CLASSE
+   Funciona com ou sem:
+   .classe-page
+============================================================ */
+
+.classe-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.classe-action-box {
+  --classe-a-local: var(--classe-a, var(--corgeral, #21364a));
+  --classe-b-local: var(--classe-b, #5a7ce3);
+  --classe-soft-local: var(--classe-soft, rgba(90,124,227,.15));
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 98px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,61,122,.14);
+  border-left: 5px solid var(--classe-a-local);
+  background:
+    radial-gradient(circle at top left, var(--classe-soft-local), transparent 36%),
+    rgba(255,255,255,.82);
+  box-shadow: 0 6px 16px rgba(15,61,122,.08);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.classe-action-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 9px;
+  background: linear-gradient(90deg, var(--classe-a-local), var(--classe-b-local));
+  color: #fff;
+  font: 900 10px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .65px;
+  box-sizing: border-box;
+}
+
+.classe-action-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.classe-action-cost {
+  min-width: 34px;
+  height: 28px;
+  padding: 0 7px;
+  border-radius: 11px;
+  background: rgba(0,0,0,.22);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: 900 16px/1 Inter, Arial, sans-serif;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.16);
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.classe-action-desc {
+  flex: 1;
+  padding: 9px 10px;
+  color: #273143;
+  font: 900 12px/1.4 Inter, Calibri, Arial, sans-serif;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+/* Cores por classe — funcionam fora da página */
+.class-heavy { --classe-a:#510303; --classe-b:#fc9e9e; --classe-soft:rgba(252,158,158,.16); }
+.class-fast { --classe-a:#21364a; --classe-b:#5a7ce3; --classe-soft:rgba(90,124,227,.15); }
+.class-lethal { --classe-a:#2f2d33; --classe-b:#7d8b85; --classe-soft:rgba(125,139,133,.16); }
+
+/* ============================================================
+   04. TEMA ESCURO GLOBAL PARA OS COMPONENTES ACIMA
+============================================================ */
+
+.tema-escuro .rumo-card,
+.tema-sanji .rumo-card,
+.tema-zoro .rumo-card,
+.tema-escuro .pirata-info,
+.tema-sanji .pirata-info,
+.tema-zoro .pirata-info,
+.tema-escuro .pirata-details,
+.tema-sanji .pirata-details,
+.tema-zoro .pirata-details,
+.tema-escuro .classe-action-box,
+.tema-sanji .classe-action-box,
+.tema-zoro .classe-action-box {
+  background:
+    radial-gradient(circle at top left, rgba(217,154,43,.07), transparent 36%),
+    linear-gradient(180deg, #1f2022, #121315);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+}
+
+.tema-escuro .rumo-corpo,
+.tema-sanji .rumo-corpo,
+.tema-zoro .rumo-corpo,
+.tema-escuro .pirata-talent-row,
+.tema-sanji .pirata-talent-row,
+.tema-zoro .pirata-talent-row,
+.tema-escuro .classe-action-desc,
+.tema-sanji .classe-action-desc,
+.tema-zoro .classe-action-desc {
+  color: #f2f6ff;
+}
+
+.tema-escuro .rumo-skills,
+.tema-sanji .rumo-skills,
+.tema-zoro .rumo-skills,
+.tema-escuro .rumo-skills span,
+.tema-sanji .rumo-skills span,
+.tema-zoro .rumo-skills span,
+.tema-escuro .pirata-talent-card,
+.tema-sanji .pirata-talent-card,
+.tema-zoro .pirata-talent-card {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+  color: #f2f6ff;
+}
+
+.tema-escuro .pirata-talent-title,
+.tema-sanji .pirata-talent-title,
+.tema-zoro .pirata-talent-title {
+  color: #f2f6ff;
+}
+
+.tema-escuro .pirata-career-img,
+.tema-sanji .pirata-career-img,
+.tema-zoro .pirata-career-img,
+.tema-escuro .pirata-talent-img,
+.tema-sanji .pirata-talent-img,
+.tema-zoro .pirata-talent-img {
+  border-color: #252628;
+  background: #252628;
+}
+
+/* ============================================================
+   05. RESPONSIVO
+============================================================ */
+
+@media (max-width: 850px) {
+  .rumo-card {
+    flex-direction: column;
+  }
+
+  .pirata-career-img {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+  }
+
+  .pirata-details {
+    flex: 1 1 auto;
+  }
+
+  .pirata-talent-card {
+    flex-wrap: nowrap;
+  }
+
+  .pirata-talent-img {
+    top: -10px;
+    right: -8px;
+    width: 180px;
+    max-width: 180px;
+    height: 56px;
+    max-height: 56px;
+  }
+
+  .pirata-talent-content {
+    padding-right: 185px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pirata-talent-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .pirata-talent-img {
+    position: relative;
+    top: auto;
+    right: auto;
+    order: -1;
+    width: 100%;
+    max-width: 200px;
+    height: 56px;
+    margin: 7px auto 0;
+  }
+
+  .pirata-talent-card {
+    flex-wrap: wrap;
+  }
+
+  .pirata-talent-content {
+    flex: 1 1 100%;
+    padding: 8px;
+  }
+}
