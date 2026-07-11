@@ -1101,7 +1101,6 @@ details[open]:has(> summary.tab-container) {
 }
 
 .talento-card .talento-meta span {
-  display: inline-flex;
   align-items: center;
   min-height: 22px;
   padding: 4px 8px;
