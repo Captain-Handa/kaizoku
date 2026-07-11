@@ -13675,10 +13675,6 @@ align-self: center;
 
 .acoes-combate-page .classe-action-img {
   display: block;
-  width: 96px !important;
-  height: 96px !important;
-  max-width: 96px !important;
-  max-height: 96px !important;
   margin: 0 !important;
   object-fit: cover !important;
   object-position: center !important;
