@@ -13273,3 +13273,18 @@ body.tema-zoro .sceditor-container textarea {
     margin: 2px 0;
     background: linear-gradient(90deg, transparent, rgba(15, 61, 122, .24), transparent);
 }
+
+.h-section {
+    width: fit-content;
+    max-width: 100%;
+    margin: 1px 0 1px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #4f1818, #eb9fc0);
+    color: #fff;
+    font: 900 11px / 1 Inter, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    box-shadow: 0 7px 16px rgba(69, 24, 79, .18);
+    box-sizing: border-box;
+}
