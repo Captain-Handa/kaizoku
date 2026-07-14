@@ -13278,13 +13278,16 @@ body.tema-zoro .sceditor-container textarea {
     width: fit-content;
     max-width: 100%;
     margin: 1px 0 1px;
-    padding: 8px 13px;
+    padding: 4px 7px;
     border-radius: 999px;
-    background: linear-gradient(90deg, #4f1818, #eb9fc0);
+    background: linear-gradient(90deg, #38c8ff61, #9fb4eb);
     color: #fff;
-    font: 900 11px / 1 Inter, Arial, sans-serif;
+    font: 900 8px / 1 Inter, Arial, sans-serif;
     text-transform: uppercase;
     letter-spacing: .8px;
     box-shadow: 0 7px 16px rgba(69, 24, 79, .18);
     box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    float: right;
 }
