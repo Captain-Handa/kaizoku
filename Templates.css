@@ -2972,7 +2972,6 @@ body.tema-zoro .item-card details,
   border: 5px solid #fff !important;
   box-shadow: 0 12px 28px rgba(15,61,122,.24) !important;
   object-fit: cover !important;
-  transform: rotate(1deg);
 }
 
 .p-ficha-box .p-ficha .p-icone {
