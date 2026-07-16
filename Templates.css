@@ -4796,7 +4796,7 @@ body.tema-zoro .player-icon {
     max-width: 200px;
     max-height: 200px;
     margin: 0 0 16px 20px;
-    object-fit: cover;
+    object-fit: none;
     object-position: center;
     border: 5px solid #fff;
     border-radius: 20px;
