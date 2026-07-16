@@ -13323,7 +13323,7 @@ body.tema-zoro .sceditor-container textarea {
 
 .frutas-page .frutas-table {
   width: 100%;
-  min-width: 760px;
+  min-width: 500px;
   border-collapse: collapse;
   table-layout: fixed;
   color: #273143;
@@ -13366,7 +13366,7 @@ body.tema-zoro .sceditor-container textarea {
 }
 
 .frutas-page .frutas-table th:nth-child(1),
-.frutas-page .frutas-table td:nth-child(1) { width: 29%; }
+.frutas-page .frutas-table td:nth-child(1) { width: 38%; }
 
 .frutas-page .frutas-table th:nth-child(2),
 .frutas-page .frutas-table td:nth-child(2) {
@@ -13375,17 +13375,17 @@ body.tema-zoro .sceditor-container textarea {
 }
 
 .frutas-page .frutas-table th:nth-child(3),
-.frutas-page .frutas-table td:nth-child(3) { width: 24%; }
+.frutas-page .frutas-table td:nth-child(3) { width: 21%; }
 
 .frutas-page .frutas-table th:nth-child(4),
 .frutas-page .frutas-table td:nth-child(4) {
-  width: 17%;
+  width: 16%;
   text-align: center;
 }
 
 .frutas-page .frutas-table th:nth-child(5),
 .frutas-page .frutas-table td:nth-child(5) {
-  width: 18%;
+  width: 15%;
   text-align: center;
 }
 
