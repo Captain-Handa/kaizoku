@@ -4869,7 +4869,7 @@ body.tema-zoro .player-icon {
     border-radius: 999px;
     background: linear-gradient(
         90deg,
-        var(--narrador-color),
+        var(--corgeral),
         transparent
     );
 }
@@ -4890,7 +4890,7 @@ body.tema-zoro .narrador-post {
         linear-gradient(180deg, #1f2022, #121315);
     color: #f2f6ff;
     box-shadow:
-        0 8px 0 var(--narrador-color),
+        0 8px 0 var(--corgeral),
         0 16px 32px rgba(0,0,0,.34);
 }
 
