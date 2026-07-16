@@ -4459,7 +4459,7 @@ body.tema-zoro .mob-stack-badge,
 /* Imagem ou ícone superior direito */
 
 .player-icon {
-    position: absolute;
+    position: fixed;
     top: 5px;
     right: 18px;
     z-index: 3;
