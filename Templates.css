@@ -13266,14 +13266,35 @@ body.tema-zoro .sceditor-container textarea {
 }
 
 /* ============================================================
-   FRUTAS DO DIABO — TABELAS DE SORTEIO
+   FRUTAS DO DIABO — TABELAS COM ABAS
 ============================================================ */
+
+.frutas-page .tab-container {
+  margin: 0 0 12px;
+}
+
+.frutas-page .tab-content {
+  box-sizing: border-box;
+}
+
+/* O Forumeiros pode inserir BRs ao interpretar as quebras do HTML.
+   Dentro das tabelas eles são anulados para não quebrar o layout. */
+.frutas-page .frutas-table-section > br,
+.frutas-page .frutas-table-wrap > br,
+.frutas-page .frutas-table > br,
+.frutas-page .frutas-table thead > br,
+.frutas-page .frutas-table tbody > br,
+.frutas-page .frutas-table tr > br,
+.frutas-page .frutas-table br {
+  display: none !important;
+}
 
 .frutas-page .frutas-table-section {
   --grupo-a: #3f2b73;
   --grupo-b: #8b63df;
   --grupo-soft: rgba(139,99,223,.12);
-  margin: 18px 0 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .frutas-page .frutas-table-section.grupo-2 {
@@ -13366,262 +13387,8 @@ body.tema-zoro .sceditor-container textarea {
 }
 
 .frutas-page .frutas-table th:nth-child(1),
-.frutas-page .frutas-table td:nth-child(1) { width: 30%; }
-
-.frutas-page .frutas-table th:nth-child(2),
-.frutas-page .frutas-table td:nth-child(2) {
-  width: 70px;
-  text-align: center;
-}
-
-.frutas-page .frutas-table th:nth-child(3),
-.frutas-page .frutas-table td:nth-child(3) { width: 21%; }
-
-.frutas-page .frutas-table th:nth-child(4),
-.frutas-page .frutas-table td:nth-child(4) {
-  width: 16%;
-  text-align: center;
-}
-
-.frutas-page .frutas-table th:nth-child(5),
-.frutas-page .frutas-table td:nth-child(5) {
-  width: 15%;
-  text-align: center;
-}
-
-.frutas-page .fruta-roll {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 24px;
-  height: 24px;
-  margin-right: 7px;
-  padding: 0 5px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--grupo-a), var(--grupo-b));
-  color: #fff;
-  font: 900 9px/1 Inter, Arial, sans-serif;
-  box-sizing: border-box;
-}
-
-.frutas-page .fruta-original {
-  font-weight: 900;
-  color: var(--grupo-a);
-}
-
-.frutas-page .fruta-img {
-  display: block;
-  width: 50px;
-  height: 50px;
-  max-width: 50px;
-  max-height: 50px;
-  margin: 0 auto;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 12px;
-  border: 3px solid #fff;
-  background: #dcecff;
-  box-shadow:
-    0 4px 10px rgba(15,61,122,.16),
-    3px 3px 0 var(--grupo-a);
-  box-sizing: border-box;
-}
-
-.frutas-page .fruta-traduzida {
-  font-weight: 800;
-}
-
-.frutas-page .fruta-tipo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 24px;
-  padding: 5px 8px;
-  border-radius: 999px;
-  background: var(--grupo-soft);
-  color: var(--grupo-a);
-  font: 900 9px/1 Inter, Arial, sans-serif;
-}
-
-.frutas-page .fruta-usuario-disponivel {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 24px;
-  padding: 5px 8px;
-  border-radius: 999px;
-  background: rgba(54,151,91,.13);
-  color: #21643b;
-  font: 900 9px/1 Inter, Arial, sans-serif;
-}
-
-.tema-escuro .frutas-page .frutas-table-wrap,
-body.tema-sanji .frutas-page .frutas-table-wrap,
-body.tema-zoro .frutas-page .frutas-table-wrap {
-  background:
-    radial-gradient(circle at top left, var(--grupo-soft), transparent 30%),
-    linear-gradient(180deg, #1f2022, #121315);
-  border-color: rgba(255,255,255,.08);
-  box-shadow: 0 10px 26px rgba(0,0,0,.30);
-}
-
-.tema-escuro .frutas-page .frutas-table,
-body.tema-sanji .frutas-page .frutas-table,
-body.tema-zoro .frutas-page .frutas-table {
-  color: #f2f6ff;
-}
-
-.tema-escuro .frutas-page .frutas-table th,
-.tema-escuro .frutas-page .frutas-table td,
-body.tema-sanji .frutas-page .frutas-table th,
-body.tema-sanji .frutas-page .frutas-table td,
-body.tema-zoro .frutas-page .frutas-table th,
-body.tema-zoro .frutas-page .frutas-table td {
-  border-color: rgba(255,255,255,.07);
-}
-
-.tema-escuro .frutas-page .frutas-table tbody tr:nth-child(even),
-body.tema-sanji .frutas-page .frutas-table tbody tr:nth-child(even),
-body.tema-zoro .frutas-page .frutas-table tbody tr:nth-child(even) {
-  background: rgba(255,255,255,.025);
-}
-
-.tema-escuro .frutas-page .fruta-img,
-body.tema-sanji .frutas-page .fruta-img,
-body.tema-zoro .frutas-page .fruta-img {
-  border-color: #252628;
-  background: #252628;
-}
-
-@media (max-width: 700px) {
-  .frutas-page .frutas-table-wrap { border-radius: 14px; }
-  .frutas-page .frutas-table { min-width: 720px; }
-}
-
-/* ============================================================
-   FRUTAS DO DIABO — TABELAS COM ABAS
-============================================================ */
-
-.frutas-page .tab-container {
-  margin: 0 0 12px;
-}
-
-.frutas-page .tab-content {
-  box-sizing: border-box;
-}
-
-/* O Forumeiros pode inserir BRs ao interpretar as quebras do HTML.
-   Dentro das tabelas eles são anulados para não quebrar o layout. */
-.frutas-page .frutas-table-section > br,
-.frutas-page .frutas-table-wrap > br,
-.frutas-page .frutas-table > br,
-.frutas-page .frutas-table thead > br,
-.frutas-page .frutas-table tbody > br,
-.frutas-page .frutas-table tr > br,
-.frutas-page .frutas-table br {
-  display: none !important;
-}
-
-.frutas-page .frutas-table-section {
-  --grupo-a: #3f2b73;
-  --grupo-b: #8b63df;
-  --grupo-soft: rgba(139,99,223,.12);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.frutas-page .frutas-table-section.grupo-2 {
-  --grupo-a: #174f7d;
-  --grupo-b: #54a8dd;
-  --grupo-soft: rgba(84,168,221,.12);
-}
-
-.frutas-page .frutas-table-section.grupo-3 {
-  --grupo-a: #2c6846;
-  --grupo-b: #6db88b;
-  --grupo-soft: rgba(109,184,139,.12);
-}
-
-.frutas-page .frutas-table-section.grupo-4 {
-  --grupo-a: #7a3030;
-  --grupo-b: #d46b6b;
-  --grupo-soft: rgba(212,107,107,.12);
-}
-
-.frutas-page .frutas-table-title {
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 0 9px;
-  padding: 8px 13px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--grupo-a), var(--grupo-b));
-  color: #fff;
-  font: 900 11px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .75px;
-  box-shadow: 0 7px 16px rgba(15,61,122,.16);
-  box-sizing: border-box;
-}
-
-.frutas-page .frutas-table-wrap {
-  width: 100%;
-  overflow-x: auto;
-  border-radius: 18px;
-  border: 1px solid rgba(15,61,122,.12);
-  background:
-    radial-gradient(circle at top left, var(--grupo-soft), transparent 28%),
-    rgba(255,255,255,.86);
-  box-shadow: 0 8px 20px rgba(15,61,122,.08);
-  box-sizing: border-box;
-}
-
-.frutas-page .frutas-table {
-  width: 100%;
-  min-width: 760px;
-  border-collapse: collapse;
-  table-layout: fixed;
-  color: #273143;
-  font: 600 10px/1.35 Inter, Calibri, Arial, sans-serif;
-}
-
-.frutas-page .frutas-table th,
-.frutas-page .frutas-table td {
-  padding: 8px 9px;
-  border-bottom: 1px solid rgba(15,61,122,.10);
-  border-right: 1px solid rgba(15,61,122,.08);
-  vertical-align: middle;
-  box-sizing: border-box;
-}
-
-.frutas-page .frutas-table th:last-child,
-.frutas-page .frutas-table td:last-child {
-  border-right: 0;
-}
-
-.frutas-page .frutas-table tbody tr:last-child td {
-  border-bottom: 0;
-}
-
-.frutas-page .frutas-table thead th {
-  background: linear-gradient(90deg, var(--grupo-a), var(--grupo-b));
-  color: #fff;
-  font: 900 9px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .55px;
-  text-align: center;
-}
-
-.frutas-page .frutas-table tbody tr:nth-child(even) {
-  background: rgba(255,255,255,.46);
-}
-
-.frutas-page .frutas-table tbody tr:hover {
-  background: var(--grupo-soft);
-}
-
-.frutas-page .frutas-table th:nth-child(1),
 .frutas-page .frutas-table td:nth-child(1) {
-  width: 29%;
+  width: 30%;
 }
 
 .frutas-page .frutas-table th:nth-child(2),
@@ -13632,18 +13399,18 @@ body.tema-zoro .frutas-page .fruta-img {
 
 .frutas-page .frutas-table th:nth-child(3),
 .frutas-page .frutas-table td:nth-child(3) {
-  width: 24%;
+  width: 21%;
 }
 
 .frutas-page .frutas-table th:nth-child(4),
 .frutas-page .frutas-table td:nth-child(4) {
-  width: 17%;
+  width: 16%;
   text-align: center;
 }
 
 .frutas-page .frutas-table th:nth-child(5),
 .frutas-page .frutas-table td:nth-child(5) {
-  width: 18%;
+  width: 15%;
   text-align: center;
 }
 
