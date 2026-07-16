@@ -4602,7 +4602,7 @@ body.tema-zoro .player-icon {
 /* Conteúdo do texto fica acima da imagem */
 
 .player-content {
-    position: relative;
+    position: fixed;
     z-index: 2;
     padding-right: 180px;
 }
