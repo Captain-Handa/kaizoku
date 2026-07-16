@@ -435,6 +435,7 @@ body.tema-zoro .island strong,
     padding: 18px;
   }
 
+   
   .island .intro-title {
     max-width: 100%;
     font-size: 24px !important;
@@ -4392,16 +4393,187 @@ body.tema-zoro .mob-stack-badge,
    ------------------------------ */
 
 .player {
+    --player-color: var(--usercolor, #244688);
+    --player-soft: color-mix(in srgb, var(--player-color) 12%, transparent);
+
     width: 70%;
     min-height: 250px;
-    background-color: #fff;
-    box-shadow: 0px 6px 0px 0px var(--usercolor);
-    margin: auto;
-    border-radius: 15px;
-    padding: 20px;
+    margin: 24px auto;
+    padding: 22px;
+    padding-top: 72px;
+    border: 1px solid color-mix(in srgb, var(--player-color) 22%, transparent);
+    border-radius: 18px;
+    background:
+        radial-gradient(
+            circle at top right,
+            var(--player-soft),
+            transparent 34%
+        ),
+        rgba(255,255,255,.96);
+    box-shadow:
+        0 7px 0 var(--player-color),
+        0 12px 28px rgba(15,61,122,.10);
     box-sizing: border-box;
     position: relative;
+    clear: both;
+    color: #273143;
+    font: 500 12px/1.6 Inter, Calibri, Arial, sans-serif;
     text-align: justify;
+}
+
+/* Faixa superior */
+
+.player::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    border-radius: 17px 17px 0 0;
+    background: linear-gradient(
+        90deg,
+        var(--player-color),
+        color-mix(in srgb, var(--player-color) 60%, #ffffff)
+    );
+}
+
+/* Título */
+
+.player-title {
+    position: absolute;
+    top: 18px;
+    left: 22px;
+    right: 88px;
+    z-index: 2;
+    min-width: 0;
+    overflow: hidden;
+    color: #fff;
+    font: 900 13px/1.2 Inter, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Imagem ou ícone superior direito */
+
+.player-icon {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    z-index: 3;
+    width: 58px;
+    height: 58px;
+    max-width: 58px;
+    max-height: 58px;
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid #fff;
+    border-radius: 16px;
+    background: #dcecff;
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.18),
+        3px 3px 0 var(--player-color);
+    box-sizing: border-box;
+}
+
+/* Texto opcional abaixo do título */
+
+.player-subtitle {
+    position: absolute;
+    top: 36px;
+    left: 22px;
+    right: 90px;
+    z-index: 2;
+    overflow: hidden;
+    color: rgba(255,255,255,.82);
+    font: 700 9px/1 Inter, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .55px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Conteúdo */
+
+.player-content {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+}
+
+.player-content > br:first-child,
+.player-content > br:last-child {
+    display: none;
+}
+
+.player-content b {
+    color: var(--player-color);
+    font-weight: 900;
+}
+
+.player-content img:not(.player-icon) {
+    max-width: 18px;
+    max-height: 18px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    vertical-align: middle;
+    margin: 0 2px;
+}
+
+/* Tema escuro */
+
+.tema-escuro .player,
+body.tema-sanji .player,
+body.tema-zoro .player {
+    border-color: rgba(255,255,255,.08);
+    background:
+        radial-gradient(
+            circle at top right,
+            var(--player-soft),
+            transparent 34%
+        ),
+        linear-gradient(180deg, #1f2022, #121315);
+    color: #f2f6ff;
+    box-shadow:
+        0 7px 0 var(--player-color),
+        0 14px 30px rgba(0,0,0,.32);
+}
+
+.tema-escuro .player-icon,
+body.tema-sanji .player-icon,
+body.tema-zoro .player-icon {
+    border-color: #252628;
+    background: #252628;
+}
+
+/* Responsivo */
+
+@media (max-width: 700px) {
+    .player {
+        width: 94%;
+        padding: 18px;
+        padding-top: 76px;
+    }
+
+    .player-title {
+        left: 18px;
+        right: 82px;
+        font-size: 11px;
+    }
+
+    .player-subtitle {
+        left: 18px;
+        right: 82px;
+    }
+
+    .player-icon {
+        right: 14px;
+        width: 54px;
+        height: 54px;
+    }
 }
 
 .admin-post {
@@ -4411,12 +4583,6 @@ body.tema-zoro .mob-stack-badge,
     margin: 0;
     border-radius: 0;
     padding: 0;
-}
-
-.player img {
-    max-width: 100%;
-    height: auto;
-  border-radius: 15px;
 }
 
 .player blockquote {
