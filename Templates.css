@@ -4866,22 +4866,6 @@ body.tema-zoro .player-icon {
     font-weight: 900;
 }
 
-/* Evita que imagens de emojis sejam afetadas */
-
-.narrador-conteudo img:not(.narrador-imagem) {
-    max-width: 18px;
-    max-height: 18px;
-    width: auto;
-    height: auto;
-    margin: 0 2px;
-    object-fit: contain;
-    vertical-align: middle;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    background: transparent;
-}
-
 /* Divisor opcional */
 
 .narrador-divisor {
@@ -4903,13 +4887,7 @@ body.tema-sanji .narrador-post,
 body.tema-zoro .narrador-post {
     border-color: rgba(255,255,255,.08);
     border-left-color: var(--narrador-color);
-    background:
-        radial-gradient(
-            circle at top right,
-            var(--narrador-soft),
-            transparent 32%
-        ),
-        linear-gradient(180deg, #1f2022, #121315);
+    background: radial-gradient(circle at top left, rgba(92,182,209,.18), transparent 32%), radial-gradient(circle at bottom right, rgba(15,61,122,.14), transparent 38%), linear-gradient(180deg, #ffffff, #f3f7ff);
     color: #f2f6ff;
     box-shadow:
         0 8px 0 var(--narrador-color),
