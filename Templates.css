@@ -13480,6 +13480,18 @@ body.tema-zoro .sceditor-container textarea {
   font: 900 9px/1 Inter, Arial, sans-serif;
 }
 
+.frutas-page .fruta-usuario-indisponivel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(190,55,55,.14);
+  color: #9b2525;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+}
+
 .tema-escuro .frutas-page .frutas-table-wrap,
 body.tema-sanji .frutas-page .frutas-table-wrap,
 body.tema-zoro .frutas-page .frutas-table-wrap {
