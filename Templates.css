@@ -4757,20 +4757,14 @@ body.tema-zoro .player-icon {
     padding: 22px;
     border: 1px solid color-mix(
         in srgb,
-        var(--narrador-color) 22%,
+        var(--corgeral) 22%,
         transparent
     );
-    border-left: 6px solid var(--narrador-color);
+    border-left: 6px solid var(--corgeral);
     border-radius: 20px;
-    background:
-        radial-gradient(
-            circle at top right,
-            var(--narrador-soft),
-            transparent 32%
-        ),
-        rgba(255,255,255,.96);
+    background: radial-gradient(circle at top left, rgba(92,182,209,.18), transparent 32%), radial-gradient(circle at bottom right, rgba(15,61,122,.14), transparent 38%), linear-gradient(180deg, #ffffff, #f3f7ff);
     box-shadow:
-        0 8px 0 var(--narrador-color),
+        0 8px 0 var(--corgeral),
         0 14px 30px rgba(15,61,122,.10);
     box-sizing: border-box;
     position: relative;
@@ -4803,7 +4797,7 @@ body.tema-zoro .player-icon {
     background: #dcecff;
     box-shadow:
         0 8px 18px rgba(15,61,122,.18),
-        5px 5px 0 var(--narrador-color);
+        5px 5px 0 var(--corgeral);
     box-sizing: border-box;
 }
 
@@ -4824,10 +4818,10 @@ body.tema-zoro .player-icon {
     border-radius: 999px;
     background: linear-gradient(
         90deg,
-        var(--narrador-color),
+        var(--corgeral),
         color-mix(
             in srgb,
-            var(--narrador-color) 58%,
+            var(--corgeral) 58%,
             #ffffff
         )
     );
@@ -4845,10 +4839,10 @@ body.tema-zoro .player-icon {
     width: fit-content;
     max-width: 100%;
     padding: 5px 10px;
-    border-left: 4px solid var(--narrador-color);
+    border-left: 4px solid var(--corgeral);
     border-radius: 0 10px 10px 0;
-    background: var(--narrador-soft);
-    color: var(--narrador-color);
+    background: var(--corgeral);
+    color: var(--corgeral);
     font: 800 10px/1.3 Inter, Arial, sans-serif;
     text-transform: uppercase;
     letter-spacing: .55px;
@@ -4862,7 +4856,7 @@ body.tema-zoro .player-icon {
 }
 
 .narrador-conteudo b {
-    color: var(--narrador-color);
+    color: var(--corgeral);
     font-weight: 900;
 }
 
@@ -4886,8 +4880,14 @@ body.tema-zoro .player-icon {
 body.tema-sanji .narrador-post,
 body.tema-zoro .narrador-post {
     border-color: rgba(255,255,255,.08);
-    border-left-color: var(--narrador-color);
-    background: radial-gradient(circle at top left, rgba(92,182,209,.18), transparent 32%), radial-gradient(circle at bottom right, rgba(15,61,122,.14), transparent 38%), linear-gradient(180deg, #ffffff, #f3f7ff);
+    border-left-color: var(--corgeral);
+    background:
+        radial-gradient(
+            circle at top right,
+            var(--narrador-soft),
+            transparent 32%
+        ),
+        linear-gradient(180deg, #1f2022, #121315);
     color: #f2f6ff;
     box-shadow:
         0 8px 0 var(--narrador-color),
