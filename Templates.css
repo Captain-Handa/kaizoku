@@ -4604,7 +4604,7 @@ body.tema-zoro .player-icon {
     width: auto;
     min-width: 0;
     min-height: 0;
-    padding-right: 180px;
+    padding-right: 0px;
     box-sizing: border-box;
 }
 
