@@ -4385,6 +4385,445 @@ body.tema-zoro .mob-stack-badge,
 }
 
 /* ============================================================
+   MOB / BESTIÁRIO — COMPONENTE PRÓPRIO
+============================================================ */
+
+.mob-card {
+    --mob-a: #2f4b9f;
+    --mob-b: #5cb6d1;
+    --mob-soft: rgba(92,182,209,.12);
+
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 16px;
+
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 16px;
+    padding: 12px;
+
+    border: 1px solid rgba(47,75,159,.16);
+    border-left: 6px solid var(--mob-a);
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            var(--mob-soft),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.96),
+            rgba(247,250,255,.96)
+        );
+
+    box-shadow: 0 8px 20px rgba(15,61,122,.09);
+    color: #1d2638;
+    box-sizing: border-box;
+    overflow: hidden;
+    clear: both;
+}
+
+/* Raridades */
+
+.mob-card.mob-comum {
+    --mob-a: #2f4b9f;
+    --mob-b: #5cb6d1;
+    --mob-soft: rgba(92,182,209,.12);
+}
+
+.mob-card.mob-raro {
+    --mob-a: #5e328f;
+    --mob-b: #a45cd1;
+    --mob-soft: rgba(164,92,209,.13);
+}
+
+.mob-card.mob-lendario {
+    --mob-a: #9a6900;
+    --mob-b: #f3c815;
+    --mob-soft: rgba(243,200,21,.14);
+}
+
+/* ============================================================
+   BR AUTOMÁTICO DO FORUMEIROS
+============================================================ */
+
+.mob-card > br,
+.mob-main > br,
+.mob-head > br,
+.mob-meta > br,
+.mob-admin > br,
+.mob-stat-grid > br,
+.mob-stat-box > br,
+.mob-action-list > br {
+    display: none !important;
+}
+
+/* ============================================================
+   IMAGEM
+============================================================ */
+
+.mob-image {
+    display: block;
+    width: 150px;
+    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: 0;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 4px solid #fff;
+    border-radius: 18px;
+    background: #dcecff;
+
+    box-shadow:
+        0 7px 16px rgba(15,61,122,.18),
+        4px 4px 0 var(--mob-a);
+
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   CONTEÚDO PRINCIPAL
+============================================================ */
+
+.mob-main {
+    min-width: 0;
+}
+
+.mob-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    min-width: 0;
+    margin: 0 0 8px;
+    padding: 8px 12px;
+
+    border-radius: 14px;
+    background: linear-gradient(
+        90deg,
+        var(--mob-a),
+        var(--mob-b)
+    );
+
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(15,61,122,.15);
+    box-sizing: border-box;
+}
+
+.mob-name {
+    min-width: 0;
+    overflow: hidden;
+
+    color: #fff;
+    font: 900 12px/1.15 Inter, Roboto, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mob-rarity {
+    flex: 0 0 auto;
+    padding: 4px 8px;
+
+    border-radius: 999px;
+    background: rgba(0,0,0,.20);
+
+    color: #fff;
+    font: 900 9px/1 Inter, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .45px;
+}
+
+.mob-description {
+    margin: 0 0 9px;
+
+    color: #1d2638;
+    font: 500 12.5px/1.5 Inter, Calibri, Arial, sans-serif;
+    text-align: justify;
+}
+
+/* ============================================================
+   GRUPO E CLASSIFICAÇÃO
+============================================================ */
+
+.mob-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+}
+
+.mob-meta-item {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 25px;
+    padding: 5px 9px;
+
+    border: 1px solid rgba(47,75,159,.11);
+    border-radius: 999px;
+    background: rgba(255,255,255,.82);
+
+    color: #273143;
+    font: 800 10px/1.15 Inter, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.mob-meta-item b,
+.mob-meta-item strong {
+    margin-right: 4px;
+    color: var(--mob-a);
+    font-weight: 900;
+}
+
+/* ============================================================
+   ÁREA ADMINISTRATIVA
+============================================================ */
+
+.mob-admin {
+    width: 100%;
+    min-width: 0;
+    margin: 12px 0 0;
+    padding: 11px;
+
+    border: 1px dashed color-mix(
+        in srgb,
+        var(--mob-a) 42%,
+        transparent
+    );
+
+    border-radius: 16px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            var(--mob-soft),
+            transparent 38%
+        ),
+        rgba(255,255,255,.72);
+
+    box-sizing: border-box;
+}
+
+.mob-admin-title {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 8px;
+    padding: 6px 10px;
+
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        var(--mob-a),
+        var(--mob-b)
+    );
+
+    color: #fff;
+    font: 900 9px/1 Inter, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .55px;
+}
+
+.mob-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    margin: 0 0 8px;
+}
+
+.mob-stat-box {
+    min-width: 0;
+    padding: 8px 9px;
+
+    border: 1px solid rgba(47,75,159,.11);
+    border-radius: 13px;
+    background: rgba(255,255,255,.84);
+
+    color: #273143;
+    font: 700 10.5px/1.45 Inter, Calibri, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.mob-stat-title {
+    display: block;
+    margin: 0 0 5px;
+
+    color: var(--mob-a);
+    font: 900 9px/1 Inter, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .45px;
+}
+
+/* ============================================================
+   ATAQUES, HABILIDADES E ITENS
+============================================================ */
+
+.mob-action-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mob-action {
+    padding: 8px 9px;
+
+    border: 1px solid rgba(47,75,159,.11);
+    border-left: 4px solid var(--mob-a);
+    border-radius: 13px;
+
+    background: rgba(255,255,255,.84);
+    color: #273143;
+
+    font: 600 10.5px/1.45 Inter, Calibri, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.mob-action b,
+.mob-action strong {
+    color: var(--mob-a);
+    font-weight: 900;
+}
+
+/* Proteção de emojis */
+
+.mob-card img:not(.mob-image) {
+    max-width: 18px;
+    max-height: 18px;
+    width: auto;
+    height: auto;
+    margin: 0 2px;
+
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+/* ============================================================
+   TEMA ESCURO
+============================================================ */
+
+.tema-escuro .mob-card,
+body.tema-sanji .mob-card,
+body.tema-zoro .mob-card {
+    border-color: rgba(255,255,255,.08);
+    border-left-color: var(--mob-a);
+
+    background:
+        radial-gradient(
+            circle at top right,
+            var(--mob-soft),
+            transparent 34%
+        ),
+        linear-gradient(180deg, #1f2022, #121315);
+
+    color: #f2f6ff;
+    box-shadow: 0 10px 24px rgba(0,0,0,.30);
+}
+
+.tema-escuro .mob-description,
+body.tema-sanji .mob-description,
+body.tema-zoro .mob-description,
+.tema-escuro .mob-meta-item,
+body.tema-sanji .mob-meta-item,
+body.tema-zoro .mob-meta-item,
+.tema-escuro .mob-stat-box,
+body.tema-sanji .mob-stat-box,
+body.tema-zoro .mob-stat-box,
+.tema-escuro .mob-action,
+body.tema-sanji .mob-action,
+body.tema-zoro .mob-action {
+    color: #f2f6ff;
+}
+
+.tema-escuro .mob-meta-item,
+body.tema-sanji .mob-meta-item,
+body.tema-zoro .mob-meta-item,
+.tema-escuro .mob-stat-box,
+body.tema-sanji .mob-stat-box,
+body.tema-zoro .mob-stat-box,
+.tema-escuro .mob-action,
+body.tema-sanji .mob-action,
+body.tema-zoro .mob-action {
+    background: rgba(255,255,255,.055);
+    border-color: rgba(255,255,255,.08);
+}
+
+.tema-escuro .mob-admin,
+body.tema-sanji .mob-admin,
+body.tema-zoro .mob-admin {
+    background: rgba(255,255,255,.035);
+    border-color: rgba(255,255,255,.10);
+}
+
+.tema-escuro .mob-image,
+body.tema-sanji .mob-image,
+body.tema-zoro .mob-image {
+    border-color: #252628;
+    background: #252628;
+}
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 650px) {
+    .mob-card {
+        grid-template-columns: 105px minmax(0, 1fr);
+        gap: 11px;
+        padding: 10px;
+        border-radius: 17px;
+    }
+
+    .mob-image {
+        width: 105px;
+        height: 105px;
+        max-width: 105px;
+        max-height: 105px;
+        border-radius: 15px;
+    }
+
+    .mob-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .mob-name {
+        width: 100%;
+        white-space: normal;
+    }
+
+    .mob-stat-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 430px) {
+    .mob-card {
+        grid-template-columns: 1fr;
+    }
+
+    .mob-image {
+        width: 100%;
+        height: 180px;
+        max-width: 100%;
+        max-height: 180px;
+    }
+}
+
+/* ============================================================
    09. POSTS, NARRAÇÃO E DIÁLOGO
    ============================================================ */
 
