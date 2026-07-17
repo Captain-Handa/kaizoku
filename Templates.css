@@ -4495,12 +4495,6 @@ body.tema-zoro .mob-stack-badge,
 
 /* Conteúdo */
 
-.player-content {
-    position: fixed;
-    z-index: 1;
-    min-width: 0;
-}
-
 .player-content > br:first-child,
 .player-content > br:last-child {
     display: none;
@@ -4601,10 +4595,17 @@ body.tema-zoro .player-icon {
 
 /* Conteúdo do texto fica acima da imagem */
 
+/* Conteúdo do post */
+
 .player-content {
-    position: fixed;
+    position: relative;
     z-index: 2;
+    display: block;
+    width: auto;
+    min-width: 0;
+    min-height: 0;
     padding-right: 180px;
+    box-sizing: border-box;
 }
 
 /* Imagem lateral decorativa */
