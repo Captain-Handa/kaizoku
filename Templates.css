@@ -4489,65 +4489,300 @@ body.tema-zoro .mob-stack-badge,
 /* ============================================================
    RETRATO
 ============================================================ */
+/* ============================================================
+   GALERIA DE VARIAÇÕES DA CRIATURA
+============================================================ */
 
 .bestiario-retrato {
-  position: relative;
-  float: left;
-  width: 96px;
-  height: 96px;
-  margin: 0 11px 7px 0;
+    position: relative;
+    float: left;
+
+    width: 96px;
+    height: 96px;
+
+    margin: 0 11px 7px 0;
+
+    overflow: visible;
 }
+
+/* Esconde os BR criados pelo Forumeiros */
+
+.bestiario-retrato > br,
+.bestiario-galeria > br {
+    display: none !important;
+}
+
+/* Janela onde as imagens aparecem */
+
+.bestiario-galeria {
+    position: relative;
+
+    width: 96px;
+    height: 96px;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    background: #dcecff;
+
+    box-shadow:
+        0 5px 12px rgba(15,61,122,.17),
+        3px 3px 0 var(--best-a);
+}
+
+/* Imagens da galeria */
 
 .bestiario-imagem {
-  display: block;
-  width: 96px;
-  height: 96px;
-  max-width: 96px;
-  max-height: 96px;
-  margin: 0;
-  object-fit: cover;
-  object-position: center;
-  border: 3px solid #fff;
-  border-radius: 15px;
-  background: #dcecff;
-  box-shadow:
-    0 5px 12px rgba(15,61,122,.17),
-    3px 3px 0 var(--best-a);
-  box-sizing: border-box;
+    position: absolute;
+    inset: 0;
+
+    display: block;
+
+    width: 96px;
+    height: 96px;
+    max-width: 96px;
+    max-height: 96px;
+
+    margin: 0;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 3px solid #fff;
+    border-radius: 15px;
+
+    background: #dcecff;
+    box-shadow: none;
+
+    box-sizing: border-box;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translate(20px, 20px)
+        scale(.92);
+
+    transition:
+        opacity .32s ease,
+        visibility .32s ease,
+        transform .32s cubic-bezier(.2,.8,.2,1);
+
+    pointer-events: none;
 }
 
-/* Selo automático da raridade */
+/* Imagem visível */
 
-.bestiario-retrato::after {
-  position: absolute;
-  right: -4px;
-  bottom: -4px;
-  min-width: 25px;
-  height: 25px;
-  padding: 0 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #fff;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--best-a), var(--best-b));
-  color: #fff;
-  font: 900 9px/1 Inter, Arial, sans-serif;
-  text-transform: uppercase;
-  box-shadow: 0 4px 9px rgba(0,0,0,.20);
-  box-sizing: border-box;
+.bestiario-imagem.is-active {
+    z-index: 2;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translate(0, 0)
+        scale(1);
 }
 
-.bestiario-comum .bestiario-retrato::after {
-  content: "C";
+/* Imagem nova entrando de baixo para a direita */
+
+.bestiario-imagem.is-entering {
+    z-index: 2;
+
+    opacity: 0;
+    visibility: visible;
+
+    transform:
+        translate(24px, 24px)
+        rotate(4deg)
+        scale(.90);
 }
 
-.bestiario-raro .bestiario-retrato::after {
-  content: "R";
+/* Imagem antiga saindo para cima e esquerda */
+
+.bestiario-imagem.is-leaving {
+    z-index: 3;
+
+    opacity: 0;
+    visibility: visible;
+
+    transform:
+        translate(-40px, -40px)
+        rotate(-8deg)
+        scale(.84);
 }
 
-.bestiario-lendario .bestiario-retrato::after {
-  content: "L";
+/* ============================================================
+   BOTÃO DE TROCA
+============================================================ */
+
+.bestiario-trocar {
+    position: absolute;
+
+    right: -6px;
+    bottom: -6px;
+
+    z-index: 10;
+
+    width: 29px;
+    height: 29px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 2px solid #fff;
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--best-a),
+            var(--best-b)
+        );
+
+    color: #fff;
+
+    font: 900 14px/1 Arial, sans-serif;
+
+    box-shadow:
+        0 5px 11px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(255,255,255,.24);
+
+    cursor: pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        filter .18s ease;
+}
+
+.bestiario-trocar:hover {
+    transform: rotate(25deg) scale(1.08);
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 7px 14px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.28);
+}
+
+.bestiario-trocar:active {
+    transform: rotate(80deg) scale(.94);
+}
+
+.bestiario-trocar[hidden] {
+    display: none !important;
+}
+
+/* ============================================================
+   CONTADOR DE IMAGENS
+============================================================ */
+
+.bestiario-contador {
+    position: absolute;
+
+    top: 5px;
+    left: 5px;
+
+    z-index: 8;
+
+    min-width: 28px;
+    min-height: 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3px 6px;
+
+    border: 1px solid rgba(255,255,255,.65);
+    border-radius: 999px;
+
+    background: rgba(0,0,0,.58);
+    color: #fff;
+
+    font: 900 8px/1 Inter, Arial, sans-serif;
+
+    box-shadow: 0 3px 7px rgba(0,0,0,.18);
+    box-sizing: border-box;
+
+    pointer-events: none;
+}
+
+/* ============================================================
+   TEMA ESCURO
+============================================================ */
+
+.tema-escuro .bestiario-galeria,
+body.tema-sanji .bestiario-galeria,
+body.tema-zoro .bestiario-galeria {
+    background: #25282d;
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.34),
+        3px 3px 0 var(--best-a);
+}
+
+.tema-escuro .bestiario-imagem,
+body.tema-sanji .bestiario-imagem,
+body.tema-zoro .bestiario-imagem {
+    border-color: #25282d;
+    background: #25282d;
+}
+
+.tema-escuro .bestiario-trocar,
+body.tema-sanji .bestiario-trocar,
+body.tema-zoro .bestiario-trocar {
+    border-color: #25282d;
+}
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 560px) {
+    .bestiario-retrato,
+    .bestiario-galeria {
+        width: 82px;
+        height: 82px;
+    }
+
+    .bestiario-imagem {
+        width: 82px;
+        height: 82px;
+        max-width: 82px;
+        max-height: 82px;
+    }
+}
+
+@media (max-width: 390px) {
+    .bestiario-retrato {
+        float: none;
+
+        width: 100%;
+        height: 130px;
+
+        margin: 0 0 8px;
+    }
+
+    .bestiario-galeria {
+        width: 100%;
+        height: 130px;
+    }
+
+    .bestiario-imagem {
+        width: 100%;
+        height: 130px;
+        max-width: 100%;
+        max-height: 130px;
+    }
+
+    .bestiario-trocar {
+        right: 7px;
+        bottom: 7px;
+    }
 }
 
 /* ============================================================
@@ -4814,11 +5049,6 @@ body.tema-zoro .bestiario-imagem {
   background: #25282d;
 }
 
-.tema-escuro .bestiario-retrato::after,
-body.tema-sanji .bestiario-retrato::after,
-body.tema-zoro .bestiario-retrato::after {
-  border-color: #25282d;
-}
 
 /* ============================================================
    RESPONSIVO
