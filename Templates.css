@@ -4711,6 +4711,68 @@ body.tema-zoro .mob-stack-badge,
     pointer-events: none;
 }
 
+/* Link para abrir a imagem atualmente exibida */
+
+.bestiario-contador {
+    gap: 2px;
+    white-space: nowrap;
+}
+
+.bestiario-ver-imagem {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 15px;
+    height: 14px;
+
+    margin-left: 2px;
+    padding-left: 4px;
+
+    border-left: 1px solid rgba(255,255,255,.45);
+
+    color: #fff !important;
+    text-decoration: none !important;
+
+    font: 900 10px/1 Arial, sans-serif;
+
+    cursor: pointer;
+
+    transition:
+        transform .16s ease,
+        opacity .16s ease,
+        filter .16s ease;
+}
+
+.bestiario-ver-imagem:hover {
+    color: #fff !important;
+    opacity: 1;
+    filter: brightness(1.25);
+    transform: scale(1.18);
+}
+
+.bestiario-ver-imagem:active {
+    transform: scale(.92);
+}
+
+/* Caso :eye: seja transformado em imagem pelo fórum */
+
+.bestiario-ver-imagem img {
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+    max-width: 12px !important;
+    max-height: 12px !important;
+
+    margin: 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
 /* ============================================================
    TEMA ESCURO
 ============================================================ */
