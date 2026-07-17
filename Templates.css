@@ -4384,15 +4384,19 @@ body.tema-zoro .mob-stack-badge,
   }
 }
 
-
 /* ============================================================
-   MOB / BESTIÁRIO — COMPONENTE COMPLETO
+   BESTIÁRIO — REGISTRO DE CRIATURA
+   Namespace exclusivo: .bestiario-*
 ============================================================ */
 
-.mob-card {
-    --mob-a: #2f4b9f;
-    --mob-b: #5cb6d1;
-    --mob-soft: rgba(92,182,209,.12);
+/* ============================================================
+   REGISTRO PRINCIPAL
+============================================================ */
+
+.bestiario-registro {
+    --bestiario-a: #2f4b9f;
+    --bestiario-b: #5cb6d1;
+    --bestiario-soft: rgba(92,182,209,.12);
 
     width: 100%;
     min-width: 0;
@@ -4400,14 +4404,14 @@ body.tema-zoro .mob-stack-badge,
     padding: 12px;
 
     border: 1px solid rgba(47,75,159,.16);
-    border-left: 6px solid var(--mob-a);
+    border-left: 6px solid var(--bestiario-a);
     border-radius: 22px;
 
     background:
         radial-gradient(
             circle at top right,
-            var(--mob-soft),
-            transparent 32%
+            var(--bestiario-soft),
+            transparent 34%
         ),
         linear-gradient(
             180deg,
@@ -4416,8 +4420,8 @@ body.tema-zoro .mob-stack-badge,
         );
 
     box-shadow: 0 9px 22px rgba(15,61,122,.10);
-    color: #1d2638;
 
+    color: #1d2638;
     box-sizing: border-box;
     overflow: hidden;
     clear: both;
@@ -4427,36 +4431,36 @@ body.tema-zoro .mob-stack-badge,
    RARIDADES
 ============================================================ */
 
-.mob-card.mob-comum {
-    --mob-a: #2f4b9f;
-    --mob-b: #5cb6d1;
-    --mob-soft: rgba(92,182,209,.12);
+.bestiario-registro.bestiario-comum {
+    --bestiario-a: #2f4b9f;
+    --bestiario-b: #5cb6d1;
+    --bestiario-soft: rgba(92,182,209,.12);
 }
 
-.mob-card.mob-raro {
-    --mob-a: #5e328f;
-    --mob-b: #a45cd1;
-    --mob-soft: rgba(164,92,209,.13);
+.bestiario-registro.bestiario-raro {
+    --bestiario-a: #5e328f;
+    --bestiario-b: #a45cd1;
+    --bestiario-soft: rgba(164,92,209,.13);
 }
 
-.mob-card.mob-lendario {
-    --mob-a: #9a6900;
-    --mob-b: #f3c815;
-    --mob-soft: rgba(243,200,21,.14);
+.bestiario-registro.bestiario-lendario {
+    --bestiario-a: #9a6900;
+    --bestiario-b: #f3c815;
+    --bestiario-soft: rgba(243,200,21,.14);
 }
 
 /* ============================================================
-   BR AUTOMÁTICO DO FORUMEIROS
+   PROTEÇÃO CONTRA BR AUTOMÁTICO DO FORUMEIROS
 ============================================================ */
 
-.mob-card > br,
-.mob-public > br,
-.mob-head > br,
-.mob-meta > br,
-.mob-admin > br,
-.mob-stat-grid > br,
-.mob-stat-box > br,
-.mob-action-list > br {
+.bestiario-registro > br,
+.bestiario-publico > br,
+.bestiario-cabecalho > br,
+.bestiario-meta > br,
+.bestiario-admin > br,
+.bestiario-status-grid > br,
+.bestiario-status-caixa > br,
+.bestiario-acoes > br {
     display: none !important;
 }
 
@@ -4464,8 +4468,9 @@ body.tema-zoro .mob-stack-badge,
    QUADRO PÚBLICO
 ============================================================ */
 
-.mob-public {
+.bestiario-publico {
     display: flow-root;
+
     width: 100%;
     min-width: 0;
     padding: 11px;
@@ -4476,10 +4481,10 @@ body.tema-zoro .mob-stack-badge,
     background:
         radial-gradient(
             circle at top right,
-            var(--mob-soft),
+            var(--bestiario-soft),
             transparent 38%
         ),
-        rgba(255,255,255,.70);
+        rgba(255,255,255,.72);
 
     box-sizing: border-box;
 }
@@ -4488,8 +4493,9 @@ body.tema-zoro .mob-stack-badge,
    IMAGEM
 ============================================================ */
 
-.mob-image {
+.bestiario-imagem {
     float: left;
+    display: block;
 
     width: 150px;
     height: 150px;
@@ -4507,7 +4513,7 @@ body.tema-zoro .mob-stack-badge,
 
     box-shadow:
         0 7px 16px rgba(15,61,122,.18),
-        4px 4px 0 var(--mob-a);
+        4px 4px 0 var(--bestiario-a);
 
     box-sizing: border-box;
 }
@@ -4516,7 +4522,7 @@ body.tema-zoro .mob-stack-badge,
    CABEÇALHO
 ============================================================ */
 
-.mob-head {
+.bestiario-cabecalho {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -4530,16 +4536,17 @@ body.tema-zoro .mob-stack-badge,
 
     background: linear-gradient(
         90deg,
-        var(--mob-a),
-        var(--mob-b)
+        var(--bestiario-a),
+        var(--bestiario-b)
     );
 
     color: #fff;
+
     box-shadow: 0 6px 14px rgba(15,61,122,.15);
     box-sizing: border-box;
 }
 
-.mob-name {
+.bestiario-nome {
     min-width: 0;
     overflow: hidden;
 
@@ -4553,7 +4560,7 @@ body.tema-zoro .mob-stack-badge,
     white-space: nowrap;
 }
 
-.mob-rarity {
+.bestiario-raridade {
     flex: 0 0 auto;
 
     padding: 4px 8px;
@@ -4571,17 +4578,18 @@ body.tema-zoro .mob-stack-badge,
    DESCRIÇÃO
 ============================================================ */
 
-.mob-description {
+.bestiario-descricao {
     margin: 0 0 10px;
 
     color: #1d2638;
+
     font: 500 12.5px/1.5 Inter, Calibri, Arial, sans-serif;
     text-align: justify;
 }
 
-.mob-description b,
-.mob-description strong {
-    color: var(--mob-a);
+.bestiario-descricao b,
+.bestiario-descricao strong {
+    color: var(--bestiario-a);
     font-weight: 900;
 }
 
@@ -4589,7 +4597,7 @@ body.tema-zoro .mob-stack-badge,
    GRUPO E CLASSIFICAÇÃO
 ============================================================ */
 
-.mob-meta {
+.bestiario-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
@@ -4597,7 +4605,7 @@ body.tema-zoro .mob-stack-badge,
     margin: 0;
 }
 
-.mob-meta-item {
+.bestiario-meta-item {
     display: inline-flex;
     align-items: center;
 
@@ -4607,17 +4615,18 @@ body.tema-zoro .mob-stack-badge,
     border: 1px solid rgba(47,75,159,.11);
     border-radius: 999px;
 
-    background: rgba(255,255,255,.84);
+    background: rgba(255,255,255,.86);
     color: #273143;
 
     font: 800 10px/1.15 Inter, Arial, sans-serif;
     box-sizing: border-box;
 }
 
-.mob-meta-item b,
-.mob-meta-item strong {
+.bestiario-meta-item b,
+.bestiario-meta-item strong {
     margin-right: 4px;
-    color: var(--mob-a);
+
+    color: var(--bestiario-a);
     font-weight: 900;
 }
 
@@ -4625,7 +4634,7 @@ body.tema-zoro .mob-stack-badge,
    QUADRO ADMINISTRATIVO
 ============================================================ */
 
-.mob-admin {
+.bestiario-admin {
     width: 100%;
     min-width: 0;
 
@@ -4634,7 +4643,7 @@ body.tema-zoro .mob-stack-badge,
 
     border: 1px dashed color-mix(
         in srgb,
-        var(--mob-a) 46%,
+        var(--bestiario-a) 46%,
         transparent
     );
 
@@ -4643,16 +4652,16 @@ body.tema-zoro .mob-stack-badge,
     background:
         radial-gradient(
             circle at top left,
-            var(--mob-soft),
+            var(--bestiario-soft),
             transparent 40%
         ),
-        rgba(255,255,255,.74);
+        rgba(255,255,255,.76);
 
     box-sizing: border-box;
     clear: both;
 }
 
-.mob-admin-title {
+.bestiario-admin-titulo {
     width: fit-content;
     max-width: 100%;
 
@@ -4663,8 +4672,8 @@ body.tema-zoro .mob-stack-badge,
 
     background: linear-gradient(
         90deg,
-        var(--mob-a),
-        var(--mob-b)
+        var(--bestiario-a),
+        var(--bestiario-b)
     );
 
     color: #fff;
@@ -4678,34 +4687,36 @@ body.tema-zoro .mob-stack-badge,
    ATRIBUTOS E STATUS
 ============================================================ */
 
-.mob-stat-grid {
+.bestiario-status-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 7px;
 
+    width: 100%;
     margin: 0 0 8px;
 }
 
-.mob-stat-box {
+.bestiario-status-caixa {
     min-width: 0;
     padding: 9px;
 
     border: 1px solid rgba(47,75,159,.11);
     border-radius: 13px;
 
-    background: rgba(255,255,255,.86);
+    background: rgba(255,255,255,.88);
     color: #273143;
 
     font: 700 10.5px/1.5 Inter, Calibri, Arial, sans-serif;
+
     box-sizing: border-box;
 }
 
-.mob-stat-title {
+.bestiario-status-titulo {
     display: block;
 
     margin: 0 0 6px;
 
-    color: var(--mob-a);
+    color: var(--bestiario-a);
 
     font: 900 9px/1 Inter, Arial, sans-serif;
     text-transform: uppercase;
@@ -4716,37 +4727,37 @@ body.tema-zoro .mob-stack-badge,
    ATAQUES, HABILIDADES E ITENS
 ============================================================ */
 
-.mob-action-list {
+.bestiario-acoes {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.mob-action {
+.bestiario-acao {
     padding: 8px 9px;
 
     border: 1px solid rgba(47,75,159,.11);
-    border-left: 4px solid var(--mob-a);
+    border-left: 4px solid var(--bestiario-a);
     border-radius: 13px;
 
-    background: rgba(255,255,255,.86);
+    background: rgba(255,255,255,.88);
     color: #273143;
 
     font: 600 10.5px/1.45 Inter, Calibri, Arial, sans-serif;
     box-sizing: border-box;
 }
 
-.mob-action b,
-.mob-action strong {
-    color: var(--mob-a);
+.bestiario-acao b,
+.bestiario-acao strong {
+    color: var(--bestiario-a);
     font-weight: 900;
 }
 
 /* ============================================================
-   PROTEÇÃO DE EMOJIS
+   PROTEÇÃO DOS EMOJIS
 ============================================================ */
 
-.mob-card img:not(.mob-image) {
+.bestiario-registro img:not(.bestiario-imagem) {
     max-width: 18px;
     max-height: 18px;
 
@@ -4768,16 +4779,16 @@ body.tema-zoro .mob-stack-badge,
    TEMA ESCURO
 ============================================================ */
 
-.tema-escuro .mob-card,
-body.tema-sanji .mob-card,
-body.tema-zoro .mob-card {
+.tema-escuro .bestiario-registro,
+body.tema-sanji .bestiario-registro,
+body.tema-zoro .bestiario-registro {
     border-color: rgba(255,255,255,.08);
-    border-left-color: var(--mob-a);
+    border-left-color: var(--bestiario-a);
 
     background:
         radial-gradient(
             circle at top right,
-            var(--mob-soft),
+            var(--bestiario-soft),
             transparent 34%
         ),
         linear-gradient(180deg, #1f2022, #121315);
@@ -4787,47 +4798,47 @@ body.tema-zoro .mob-card {
     box-shadow: 0 10px 24px rgba(0,0,0,.30);
 }
 
-.tema-escuro .mob-public,
-body.tema-sanji .mob-public,
-body.tema-zoro .mob-public,
-.tema-escuro .mob-admin,
-body.tema-sanji .mob-admin,
-body.tema-zoro .mob-admin {
+.tema-escuro .bestiario-publico,
+body.tema-sanji .bestiario-publico,
+body.tema-zoro .bestiario-publico,
+.tema-escuro .bestiario-admin,
+body.tema-sanji .bestiario-admin,
+body.tema-zoro .bestiario-admin {
     background: rgba(255,255,255,.035);
     border-color: rgba(255,255,255,.09);
 }
 
-.tema-escuro .mob-description,
-body.tema-sanji .mob-description,
-body.tema-zoro .mob-description,
-.tema-escuro .mob-meta-item,
-body.tema-sanji .mob-meta-item,
-body.tema-zoro .mob-meta-item,
-.tema-escuro .mob-stat-box,
-body.tema-sanji .mob-stat-box,
-body.tema-zoro .mob-stat-box,
-.tema-escuro .mob-action,
-body.tema-sanji .mob-action,
-body.tema-zoro .mob-action {
+.tema-escuro .bestiario-descricao,
+body.tema-sanji .bestiario-descricao,
+body.tema-zoro .bestiario-descricao,
+.tema-escuro .bestiario-meta-item,
+body.tema-sanji .bestiario-meta-item,
+body.tema-zoro .bestiario-meta-item,
+.tema-escuro .bestiario-status-caixa,
+body.tema-sanji .bestiario-status-caixa,
+body.tema-zoro .bestiario-status-caixa,
+.tema-escuro .bestiario-acao,
+body.tema-sanji .bestiario-acao,
+body.tema-zoro .bestiario-acao {
     color: #f2f6ff;
 }
 
-.tema-escuro .mob-meta-item,
-body.tema-sanji .mob-meta-item,
-body.tema-zoro .mob-meta-item,
-.tema-escuro .mob-stat-box,
-body.tema-sanji .mob-stat-box,
-body.tema-zoro .mob-stat-box,
-.tema-escuro .mob-action,
-body.tema-sanji .mob-action,
-body.tema-zoro .mob-action {
+.tema-escuro .bestiario-meta-item,
+body.tema-sanji .bestiario-meta-item,
+body.tema-zoro .bestiario-meta-item,
+.tema-escuro .bestiario-status-caixa,
+body.tema-sanji .bestiario-status-caixa,
+body.tema-zoro .bestiario-status-caixa,
+.tema-escuro .bestiario-acao,
+body.tema-sanji .bestiario-acao,
+body.tema-zoro .bestiario-acao {
     background: rgba(255,255,255,.055);
     border-color: rgba(255,255,255,.08);
 }
 
-.tema-escuro .mob-image,
-body.tema-sanji .mob-image,
-body.tema-zoro .mob-image {
+.tema-escuro .bestiario-imagem,
+body.tema-sanji .bestiario-imagem,
+body.tema-zoro .bestiario-imagem {
     border-color: #252628;
     background: #252628;
 }
@@ -4837,7 +4848,7 @@ body.tema-zoro .mob-image {
 ============================================================ */
 
 @media (max-width: 600px) {
-    .mob-image {
+    .bestiario-imagem {
         width: 110px;
         height: 110px;
         max-width: 110px;
@@ -4846,24 +4857,24 @@ body.tema-zoro .mob-image {
         margin-right: 12px;
     }
 
-    .mob-head {
+    .bestiario-cabecalho {
         align-items: flex-start;
         flex-direction: column;
         gap: 5px;
     }
 
-    .mob-name {
+    .bestiario-nome {
         width: 100%;
         white-space: normal;
     }
 
-    .mob-stat-grid {
+    .bestiario-status-grid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 430px) {
-    .mob-image {
+    .bestiario-imagem {
         float: none;
         display: block;
 
