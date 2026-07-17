@@ -4497,8 +4497,8 @@ body.tema-zoro .mob-stack-badge,
     position: relative;
     float: left;
 
-    width: 96px;
-    height: 96px;
+    width: 126px;
+    height: 126px;
 
     margin: 0 11px 7px 0;
 
@@ -4517,8 +4517,8 @@ body.tema-zoro .mob-stack-badge,
 .bestiario-galeria {
     position: relative;
 
-    width: 96px;
-    height: 96px;
+    width: 126px;
+    height: 126px;
 
     border-radius: 15px;
     overflow: hidden;
@@ -4538,10 +4538,10 @@ body.tema-zoro .mob-stack-badge,
 
     display: block;
 
-    width: 96px;
-    height: 96px;
-    max-width: 96px;
-    max-height: 96px;
+    width: 126px;
+    height: 126px;
+    max-width: 126px;
+    max-height: 126px;
 
     margin: 0;
 
