@@ -4385,8 +4385,8 @@ body.tema-zoro .mob-stack-badge,
 }
 
 /* ============================================================
-   BESTIÁRIO — REGISTRO DE CRIATURA
-   Namespace exclusivo: .bestiario-*
+   BESTIÁRIO — SLOT GAMIFICADO
+   Substitui completamente o bloco anterior de .bestiario-*
 ============================================================ */
 
 /* ============================================================
@@ -4394,37 +4394,42 @@ body.tema-zoro .mob-stack-badge,
 ============================================================ */
 
 .bestiario-registro {
-    --bestiario-a: #2f4b9f;
-    --bestiario-b: #5cb6d1;
-    --bestiario-soft: rgba(92,182,209,.12);
+  --best-a: #244688;
+  --best-b: #5cb6d1;
+  --best-soft: rgba(92,182,209,.13);
+  --best-glow: rgba(36,70,136,.18);
 
-    width: 100%;
-    min-width: 0;
-    margin: 0 0 18px;
-    padding: 12px;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 10px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid rgba(15,61,122,.14);
+  border-left: 5px solid var(--best-a);
+  border-radius: 17px;
+  background:
+    radial-gradient(circle at top right, var(--best-soft), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.97), rgba(242,247,255,.97));
+  box-shadow:
+    0 6px 14px rgba(15,61,122,.09),
+    inset 0 0 0 1px rgba(255,255,255,.58);
+  color: #243047;
+  overflow: hidden;
+  clear: both;
+}
 
-    border: 1px solid rgba(47,75,159,.16);
-    border-left: 6px solid var(--bestiario-a);
-    border-radius: 22px;
+/* Marca decorativa de interface */
 
-    background:
-        radial-gradient(
-            circle at top right,
-            var(--bestiario-soft),
-            transparent 34%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.97),
-            rgba(247,250,255,.97)
-        );
-
-    box-shadow: 0 9px 22px rgba(15,61,122,.10);
-
-    color: #1d2638;
-    box-sizing: border-box;
-    overflow: hidden;
-    clear: both;
+.bestiario-registro::before {
+  content: "CREATURE";
+  position: absolute;
+  right: 8px;
+  bottom: 3px;
+  color: rgba(15,61,122,.055);
+  font: 900 24px/1 Inter, Arial, sans-serif;
+  letter-spacing: -1px;
+  pointer-events: none;
 }
 
 /* ============================================================
@@ -4432,146 +4437,192 @@ body.tema-zoro .mob-stack-badge,
 ============================================================ */
 
 .bestiario-registro.bestiario-comum {
-    --bestiario-a: #2f4b9f;
-    --bestiario-b: #5cb6d1;
-    --bestiario-soft: rgba(92,182,209,.12);
+  --best-a: #244688;
+  --best-b: #2892e0;
+  --best-soft: rgba(40,146,224,.13);
+  --best-glow: rgba(36,70,136,.18);
 }
 
 .bestiario-registro.bestiario-raro {
-    --bestiario-a: #5e328f;
-    --bestiario-b: #a45cd1;
-    --bestiario-soft: rgba(164,92,209,.13);
+  --best-a: #5c2d91;
+  --best-b: #b06ee2;
+  --best-soft: rgba(176,110,226,.14);
+  --best-glow: rgba(92,45,145,.20);
 }
 
 .bestiario-registro.bestiario-lendario {
-    --bestiario-a: #9a6900;
-    --bestiario-b: #f3c815;
-    --bestiario-soft: rgba(243,200,21,.14);
+  --best-a: #8b6200;
+  --best-b: #f1c52c;
+  --best-soft: rgba(241,197,44,.16);
+  --best-glow: rgba(139,98,0,.22);
 }
 
 /* ============================================================
-   PROTEÇÃO CONTRA BR AUTOMÁTICO DO FORUMEIROS
+   BR AUTOMÁTICO DO FORUMEIROS
 ============================================================ */
 
 .bestiario-registro > br,
-.bestiario-publico > br,
-.bestiario-cabecalho > br,
-.bestiario-meta > br,
-.bestiario-admin > br,
-.bestiario-status-grid > br,
-.bestiario-status-caixa > br,
+.bestiario-ficha > br,
+.bestiario-conteudo > br,
+.bestiario-topo > br,
+.bestiario-tags > br,
+.bestiario-combate > br,
+.bestiario-combate-grid > br,
+.bestiario-combate-caixa > br,
 .bestiario-acoes > br {
-    display: none !important;
+  display: none !important;
 }
 
 /* ============================================================
-   QUADRO PÚBLICO
+   BLOCO PÚBLICO
 ============================================================ */
 
-.bestiario-publico {
-    display: flow-root;
-
-    width: 100%;
-    min-width: 0;
-    padding: 11px;
-
-    border: 1px solid rgba(47,75,159,.12);
-    border-radius: 17px;
-
-    background:
-        radial-gradient(
-            circle at top right,
-            var(--bestiario-soft),
-            transparent 38%
-        ),
-        rgba(255,255,255,.72);
-
-    box-sizing: border-box;
+.bestiario-ficha {
+  display: flow-root;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* ============================================================
-   IMAGEM
+   RETRATO
 ============================================================ */
+
+.bestiario-retrato {
+  position: relative;
+  float: left;
+  width: 96px;
+  height: 96px;
+  margin: 0 11px 7px 0;
+}
 
 .bestiario-imagem {
-    float: left;
-    display: block;
+  display: block;
+  width: 96px;
+  height: 96px;
+  max-width: 96px;
+  max-height: 96px;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  background: #dcecff;
+  box-shadow:
+    0 5px 12px rgba(15,61,122,.17),
+    3px 3px 0 var(--best-a);
+  box-sizing: border-box;
+}
 
-    width: 150px;
-    height: 150px;
-    max-width: 150px;
-    max-height: 150px;
+/* Selo automático da raridade */
 
-    margin: 0 16px 10px 0;
+.bestiario-retrato::after {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  min-width: 25px;
+  height: 25px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--best-a), var(--best-b));
+  color: #fff;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  box-shadow: 0 4px 9px rgba(0,0,0,.20);
+  box-sizing: border-box;
+}
 
-    object-fit: cover;
-    object-position: center;
+.bestiario-comum .bestiario-retrato::after {
+  content: "C";
+}
 
-    border: 4px solid #fff;
-    border-radius: 18px;
-    background: #dcecff;
+.bestiario-raro .bestiario-retrato::after {
+  content: "R";
+}
 
-    box-shadow:
-        0 7px 16px rgba(15,61,122,.18),
-        4px 4px 0 var(--bestiario-a);
-
-    box-sizing: border-box;
+.bestiario-lendario .bestiario-retrato::after {
+  content: "L";
 }
 
 /* ============================================================
-   CABEÇALHO
+   CONTEÚDO
 ============================================================ */
 
-.bestiario-cabecalho {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+.bestiario-conteudo {
+  min-width: 0;
+}
 
-    min-width: 0;
-    margin: 0 0 8px;
-    padding: 8px 12px;
-
-    border-radius: 14px;
-
-    background: linear-gradient(
-        90deg,
-        var(--bestiario-a),
-        var(--bestiario-b)
-    );
-
-    color: #fff;
-
-    box-shadow: 0 6px 14px rgba(15,61,122,.15);
-    box-sizing: border-box;
+.bestiario-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  min-width: 0;
+  margin: 0 0 5px;
+  padding: 6px 9px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--best-a), var(--best-b));
+  box-shadow: 0 4px 10px var(--best-glow);
+  box-sizing: border-box;
 }
 
 .bestiario-nome {
-    min-width: 0;
-    overflow: hidden;
-
-    color: #fff;
-
-    font: 900 12px/1.15 Inter, Roboto, Arial, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: .6px;
-
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  color: #fff;
+  font: 900 11px/1.1 Inter, Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .45px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .bestiario-raridade {
-    flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.22);
+  color: #fff;
+  font: 900 8px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
 
-    padding: 4px 8px;
-    border-radius: 999px;
+/* ============================================================
+   TAGS
+============================================================ */
 
-    background: rgba(0,0,0,.20);
-    color: #fff;
+.bestiario-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 0 6px;
+}
 
-    font: 900 9px/1 Inter, Arial, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: .45px;
+.bestiario-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 21px;
+  padding: 4px 7px;
+  border: 1px solid rgba(15,61,122,.11);
+  border-radius: 999px;
+  background: rgba(255,255,255,.84);
+  color: #39485f;
+  font: 900 9px/1 Inter, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.bestiario-tag b,
+.bestiario-tag strong {
+  margin-right: 3px;
+  color: var(--best-a);
+  font-weight: 900;
 }
 
 /* ============================================================
@@ -4579,200 +4630,121 @@ body.tema-zoro .mob-stack-badge,
 ============================================================ */
 
 .bestiario-descricao {
-    margin: 0 0 10px;
-
-    color: #1d2638;
-
-    font: 500 12.5px/1.5 Inter, Calibri, Arial, sans-serif;
-    text-align: justify;
+  margin: 0;
+  color: #243047;
+  font: 500 10.5px/1.42 Inter, Calibri, Arial, sans-serif;
+  text-align: justify;
 }
 
 .bestiario-descricao b,
 .bestiario-descricao strong {
-    color: var(--bestiario-a);
-    font-weight: 900;
+  color: var(--best-a);
+  font-weight: 900;
 }
 
 /* ============================================================
-   GRUPO E CLASSIFICAÇÃO
+   PAINEL ADMINISTRATIVO
 ============================================================ */
 
-.bestiario-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-
-    margin: 0;
+.bestiario-combate {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-width: 0;
+  margin: 8px 0 0;
+  padding: 7px;
+  box-sizing: border-box;
+  border: 1px solid color-mix(in srgb, var(--best-a) 32%, transparent);
+  border-radius: 13px;
+  background:
+    linear-gradient(90deg, var(--best-soft), rgba(255,255,255,.72));
 }
 
-.bestiario-meta-item {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 25px;
-    padding: 5px 9px;
-
-    border: 1px solid rgba(47,75,159,.11);
-    border-radius: 999px;
-
-    background: rgba(255,255,255,.86);
-    color: #273143;
-
-    font: 800 10px/1.15 Inter, Arial, sans-serif;
-    box-sizing: border-box;
+.bestiario-combate-titulo {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--best-a), var(--best-b));
+  color: #fff;
+  font: 900 8px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .55px;
 }
 
-.bestiario-meta-item b,
-.bestiario-meta-item strong {
-    margin-right: 4px;
-
-    color: var(--bestiario-a);
-    font-weight: 900;
+.bestiario-combate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  margin: 0 0 5px;
 }
 
-/* ============================================================
-   QUADRO ADMINISTRATIVO
-============================================================ */
-
-.bestiario-admin {
-    width: 100%;
-    min-width: 0;
-
-    margin: 12px 0 0;
-    padding: 11px;
-
-    border: 1px dashed color-mix(
-        in srgb,
-        var(--bestiario-a) 46%,
-        transparent
-    );
-
-    border-radius: 17px;
-
-    background:
-        radial-gradient(
-            circle at top left,
-            var(--bestiario-soft),
-            transparent 40%
-        ),
-        rgba(255,255,255,.76);
-
-    box-sizing: border-box;
-    clear: both;
+.bestiario-combate-caixa {
+  min-width: 0;
+  padding: 6px 7px;
+  border: 1px solid rgba(15,61,122,.10);
+  border-radius: 10px;
+  background: rgba(255,255,255,.84);
+  color: #2c3950;
+  font: 700 9.5px/1.4 Inter, Calibri, Arial, sans-serif;
+  box-sizing: border-box;
 }
 
-.bestiario-admin-titulo {
-    width: fit-content;
-    max-width: 100%;
-
-    margin: 0 0 9px;
-    padding: 6px 10px;
-
-    border-radius: 999px;
-
-    background: linear-gradient(
-        90deg,
-        var(--bestiario-a),
-        var(--bestiario-b)
-    );
-
-    color: #fff;
-
-    font: 900 9px/1 Inter, Arial, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: .55px;
+.bestiario-combate-label {
+  display: block;
+  margin: 0 0 3px;
+  color: var(--best-a);
+  font: 900 8px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .35px;
 }
 
 /* ============================================================
-   ATRIBUTOS E STATUS
-============================================================ */
-
-.bestiario-status-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 7px;
-
-    width: 100%;
-    margin: 0 0 8px;
-}
-
-.bestiario-status-caixa {
-    min-width: 0;
-    padding: 9px;
-
-    border: 1px solid rgba(47,75,159,.11);
-    border-radius: 13px;
-
-    background: rgba(255,255,255,.88);
-    color: #273143;
-
-    font: 700 10.5px/1.5 Inter, Calibri, Arial, sans-serif;
-
-    box-sizing: border-box;
-}
-
-.bestiario-status-titulo {
-    display: block;
-
-    margin: 0 0 6px;
-
-    color: var(--bestiario-a);
-
-    font: 900 9px/1 Inter, Arial, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: .45px;
-}
-
-/* ============================================================
-   ATAQUES, HABILIDADES E ITENS
+   AÇÕES
 ============================================================ */
 
 .bestiario-acoes {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .bestiario-acao {
-    padding: 8px 9px;
-
-    border: 1px solid rgba(47,75,159,.11);
-    border-left: 4px solid var(--bestiario-a);
-    border-radius: 13px;
-
-    background: rgba(255,255,255,.88);
-    color: #273143;
-
-    font: 600 10.5px/1.45 Inter, Calibri, Arial, sans-serif;
-    box-sizing: border-box;
+  padding: 6px 7px;
+  border: 1px solid rgba(15,61,122,.10);
+  border-left: 3px solid var(--best-a);
+  border-radius: 10px;
+  background: rgba(255,255,255,.84);
+  color: #2c3950;
+  font: 600 9.5px/1.4 Inter, Calibri, Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 .bestiario-acao b,
 .bestiario-acao strong {
-    color: var(--bestiario-a);
-    font-weight: 900;
+  color: var(--best-a);
+  font-weight: 900;
 }
 
 /* ============================================================
-   PROTEÇÃO DOS EMOJIS
+   EMOJIS
 ============================================================ */
 
 .bestiario-registro img:not(.bestiario-imagem) {
-    max-width: 18px;
-    max-height: 18px;
-
-    width: auto;
-    height: auto;
-
-    margin: 0 2px;
-
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    background: transparent;
-
-    object-fit: contain;
-    vertical-align: middle;
+  max-width: 17px;
+  max-height: 17px;
+  width: auto;
+  height: auto;
+  margin: 0 2px;
+  object-fit: contain;
+  vertical-align: middle;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
 }
 
 /* ============================================================
@@ -4782,109 +4754,119 @@ body.tema-zoro .mob-stack-badge,
 .tema-escuro .bestiario-registro,
 body.tema-sanji .bestiario-registro,
 body.tema-zoro .bestiario-registro {
-    border-color: rgba(255,255,255,.08);
-    border-left-color: var(--bestiario-a);
-
-    background:
-        radial-gradient(
-            circle at top right,
-            var(--bestiario-soft),
-            transparent 34%
-        ),
-        linear-gradient(180deg, #1f2022, #121315);
-
-    color: #f2f6ff;
-
-    box-shadow: 0 10px 24px rgba(0,0,0,.30);
+  border-color: rgba(255,255,255,.08);
+  border-left-color: var(--best-a);
+  background:
+    radial-gradient(circle at top right, var(--best-soft), transparent 34%),
+    linear-gradient(180deg, #1d2025, #111318);
+  color: #f2f6ff;
+  box-shadow:
+    0 7px 16px rgba(0,0,0,.28),
+    inset 0 0 0 1px rgba(255,255,255,.025);
 }
 
-.tema-escuro .bestiario-publico,
-body.tema-sanji .bestiario-publico,
-body.tema-zoro .bestiario-publico,
-.tema-escuro .bestiario-admin,
-body.tema-sanji .bestiario-admin,
-body.tema-zoro .bestiario-admin {
-    background: rgba(255,255,255,.035);
-    border-color: rgba(255,255,255,.09);
+.tema-escuro .bestiario-registro::before,
+body.tema-sanji .bestiario-registro::before,
+body.tema-zoro .bestiario-registro::before {
+  color: rgba(255,255,255,.035);
 }
 
 .tema-escuro .bestiario-descricao,
 body.tema-sanji .bestiario-descricao,
 body.tema-zoro .bestiario-descricao,
-.tema-escuro .bestiario-meta-item,
-body.tema-sanji .bestiario-meta-item,
-body.tema-zoro .bestiario-meta-item,
-.tema-escuro .bestiario-status-caixa,
-body.tema-sanji .bestiario-status-caixa,
-body.tema-zoro .bestiario-status-caixa,
+.tema-escuro .bestiario-tag,
+body.tema-sanji .bestiario-tag,
+body.tema-zoro .bestiario-tag,
+.tema-escuro .bestiario-combate-caixa,
+body.tema-sanji .bestiario-combate-caixa,
+body.tema-zoro .bestiario-combate-caixa,
 .tema-escuro .bestiario-acao,
 body.tema-sanji .bestiario-acao,
 body.tema-zoro .bestiario-acao {
-    color: #f2f6ff;
+  color: #f2f6ff;
 }
 
-.tema-escuro .bestiario-meta-item,
-body.tema-sanji .bestiario-meta-item,
-body.tema-zoro .bestiario-meta-item,
-.tema-escuro .bestiario-status-caixa,
-body.tema-sanji .bestiario-status-caixa,
-body.tema-zoro .bestiario-status-caixa,
+.tema-escuro .bestiario-tag,
+body.tema-sanji .bestiario-tag,
+body.tema-zoro .bestiario-tag,
+.tema-escuro .bestiario-combate-caixa,
+body.tema-sanji .bestiario-combate-caixa,
+body.tema-zoro .bestiario-combate-caixa,
 .tema-escuro .bestiario-acao,
 body.tema-sanji .bestiario-acao,
 body.tema-zoro .bestiario-acao {
-    background: rgba(255,255,255,.055);
-    border-color: rgba(255,255,255,.08);
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.08);
+}
+
+.tema-escuro .bestiario-combate,
+body.tema-sanji .bestiario-combate,
+body.tema-zoro .bestiario-combate {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--best-a) 14%, transparent), rgba(255,255,255,.025));
+  border-color: rgba(255,255,255,.08);
 }
 
 .tema-escuro .bestiario-imagem,
 body.tema-sanji .bestiario-imagem,
 body.tema-zoro .bestiario-imagem {
-    border-color: #252628;
-    background: #252628;
+  border-color: #25282d;
+  background: #25282d;
+}
+
+.tema-escuro .bestiario-retrato::after,
+body.tema-sanji .bestiario-retrato::after,
+body.tema-zoro .bestiario-retrato::after {
+  border-color: #25282d;
 }
 
 /* ============================================================
    RESPONSIVO
 ============================================================ */
 
-@media (max-width: 600px) {
-    .bestiario-imagem {
-        width: 110px;
-        height: 110px;
-        max-width: 110px;
-        max-height: 110px;
+@media (max-width: 560px) {
+  .bestiario-retrato {
+    width: 82px;
+    height: 82px;
+  }
 
-        margin-right: 12px;
-    }
+  .bestiario-imagem {
+    width: 82px;
+    height: 82px;
+    max-width: 82px;
+    max-height: 82px;
+  }
 
-    .bestiario-cabecalho {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 5px;
-    }
+  .bestiario-topo {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
 
-    .bestiario-nome {
-        width: 100%;
-        white-space: normal;
-    }
+  .bestiario-nome {
+    width: 100%;
+    white-space: normal;
+  }
 
-    .bestiario-status-grid {
-        grid-template-columns: 1fr;
-    }
+  .bestiario-combate-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 430px) {
-    .bestiario-imagem {
-        float: none;
-        display: block;
+@media (max-width: 390px) {
+  .bestiario-retrato {
+    float: none;
+    width: 100%;
+    height: 130px;
+    margin: 0 0 8px;
+  }
 
-        width: 100%;
-        height: 180px;
-        max-width: 100%;
-        max-height: 180px;
-
-        margin: 0 0 13px;
-    }
+  .bestiario-imagem {
+    width: 100%;
+    height: 130px;
+    max-width: 100%;
+    max-height: 130px;
+  }
 }
 
 /* ============================================================
