@@ -6089,13 +6089,6 @@ body.tema-zoro .dialog-card,
 body.tema-sanji .dialog-card-2,
 body.tema-zoro .dialog-card-2,
 .tema-escuro .dialog-card-2 {
-  background:
-    radial-gradient(circle at top left, rgba(92,182,209,.08), transparent 36%),
-    linear-gradient(180deg, #1f2022, #121315);
-  border-color: rgba(255,255,255,.08);
-  box-shadow:
-    0 8px 20px rgba(0,0,0,.32),
-    inset 0 0 0 1px rgba(255,255,255,.03);
 }
 
 body.tema-sanji .portrait,
