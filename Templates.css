@@ -5979,21 +5979,22 @@ body.tema-zoro .narrador-subtitulo {
 ------------------------------ */
 
 .dialog-name {
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 0 6px;
-  padding: 6px 11px;
-  box-sizing: border-box;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #244688, #2892e0);
-  color: #fff;
-  font: 900 11px/1 Inter, Roboto, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .7px;
-  box-shadow: 0 5px 12px rgba(15,61,122,.18);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    width: auto;
+    max-width: 100%;
+    margin: 0 0 2px;
+    padding: 4px 10px;
+    box-sizing: border-box;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #244688, #2892e0);
+    color: #fff;
+    font: 900 11px / 1 Inter, Roboto, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    box-shadow: 0 5px 12px rgba(15, 61, 122, .18);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: end;
 }
 
 /* ------------------------------
