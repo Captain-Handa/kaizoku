@@ -5371,7 +5371,6 @@ body.tema-zoro .bestiario-combate {
     z-index: 3;
     width: 160px;
     height: 65px;
-    object-fit: cover;
     object-position: center;
     border: 4px solid #fff;
     border-radius: 16px;
