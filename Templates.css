@@ -5709,9 +5709,9 @@ body.tema-zoro .player-icon {
 }
 
 
-.narrador positivo,
-.narrador negativo,
-.narrador neutro {
+.narrador-post positivo,
+.narrador-post negativo,
+.narrador-post neutro {
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -5725,21 +5725,21 @@ body.tema-zoro .player-icon {
     overflow: hidden;
 }
 
-.narrador positivo {
+.narrador-post positivo {
     background: linear-gradient(135deg, #eef2ff, #dfe6ff);
     color: #2e3f9e;
     border: 1px solid #9eb0ff;
     border-left: 5px solid #5865f2;
 }
 
-.narrador negativo {
+.narrador-post negativo {
     background: linear-gradient(135deg, #fff0f0, #ffdede);
     color: #a12d2d;
     border: 1px solid #ffaaaa;
     border-left: 5px solid #f25858;
 }
 
-.narrador neutro {
+.narrador-post neutro {
     background: linear-gradient(135deg, #ffffff, #f2f4f7);
     color: #2e3440;
     border: 1px solid #c8d0dc;
@@ -5747,20 +5747,20 @@ body.tema-zoro .player-icon {
 }
 
 
-body.tema-sanji .narrador negativo,
-body.tema-zoro .narrador negativo {
+body.tema-sanji .narrador-post negativo,
+body.tema-zoro .narrador-post negativo {
   background: linear-gradient(135deg, #383838c7, #5914147a) !important;
   color: #dd7272 !important;
 }
 
-body.tema-sanji .narrador positivo,
-body.tema-zoro .narrador positivo {
+body.tema-sanji .narrador-post positivo,
+body.tema-zoro .narrador-post positivo {
   background: linear-gradient(135deg, #383838c7, #11215c) !important;
   color: #8496ff !important;
 }
 
-body.tema-sanji .narrador neutro,
-body.tema-zoro .narrador neutro {
+body.tema-sanji .narrador-post neutro,
+body.tema-zoro .narrador-post neutro {
   background: linear-gradient(135deg, #ffffff00, #f2f4f703) !important;
   color: #edf3ff !important;
 }
