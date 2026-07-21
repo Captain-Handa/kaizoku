@@ -5553,7 +5553,7 @@ body.tema-zoro .player-icon {
 .narra negativo,
 .narra neutro {
     display: block;
-    width: 100%;
+    width: auto;
     box-sizing: border-box;
     margin: 6px 0;
     padding: 3px 6px;
@@ -5561,7 +5561,6 @@ body.tema-zoro .player-icon {
     font: 700 12px/1.35 Roboto, Arial, sans-serif;
     letter-spacing: .2px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
-    position: relative;
     overflow: hidden;
 }
 
@@ -5713,7 +5712,7 @@ body.tema-zoro .player-icon {
 .narrador-post negativo,
 .narrador-post neutro {
     display: block;
-    width: 100%;
+    width: auto;
     box-sizing: border-box;
     margin: 6px 0;
     padding: 3px 6px;
@@ -5721,7 +5720,6 @@ body.tema-zoro .player-icon {
     font: 700 12px/1.35 Roboto, Arial, sans-serif;
     letter-spacing: .2px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
-    position: relative;
     overflow: hidden;
 }
 
