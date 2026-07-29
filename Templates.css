@@ -5526,14 +5526,8 @@ body.tema-zoro .player-icon {
 .narra {
     width: 70%;
     min-height: 250px;
-    background-color: #fff;
-    box-shadow: 0px 6px 0px 0px var(--usercolor);
     margin: auto;
-    border-radius: 15px;
-    box-sizing: border-box;
-    width: 78%;
     min-height: 260px;
-    margin: 26px auto;
     border: 1px solid color-mix(in srgb, var(--corgeral) 22%, transparent);
     border-left: 6px solid var(--corgeral);
     border-radius: 20px;
@@ -5558,6 +5552,113 @@ body.tema-zoro .player-icon {
     text-transform: uppercase;
     letter-spacing: .55px;
     box-sizing: border-box;
+}
+
+/* ============================================================
+   NARRAÇÃO — TEMA ESCURO
+============================================================ */
+
+.tema-escuro .narra,
+body.tema-sanji .narra,
+body.tema-zoro .narra {
+    border-color: color-mix(
+        in srgb,
+        var(--corgeral) 34%,
+        rgba(255,255,255,.08)
+    );
+
+    border-left-color: var(--corgeral);
+
+    background:
+        radial-gradient(
+            circle at top left,
+            color-mix(
+                in srgb,
+                var(--corgeral) 20%,
+                transparent
+            ),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(92,182,209,.09),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #20242b,
+            #111318
+        );
+
+    box-shadow:
+        0 8px 0 var(--corgeral),
+        0 14px 30px rgba(0,0,0,.34),
+        inset 0 0 0 1px rgba(255,255,255,.025);
+
+    color: #eef3fc;
+}
+
+/* ============================================================
+   SUBTÍTULO — TEMA ESCURO
+============================================================ */
+
+.tema-escuro .narra .narrador-subtitulo,
+body.tema-sanji .narra .narrador-subtitulo,
+body.tema-zoro .narra .narrador-subtitulo {
+    border-left-color: var(--corgeral);
+
+    background:
+        linear-gradient(
+            90deg,
+            color-mix(
+                in srgb,
+                var(--corgeral) 22%,
+                transparent
+            ),
+            rgba(255,255,255,.025)
+        );
+
+    color: color-mix(
+        in srgb,
+        var(--corgeral) 68%,
+        #ffffff
+    );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+/* ============================================================
+   TEXTOS E DESTAQUES INTERNOS
+============================================================ */
+
+.tema-escuro .narra b,
+.tema-escuro .narra strong,
+body.tema-sanji .narra b,
+body.tema-sanji .narra strong,
+body.tema-zoro .narra b,
+body.tema-zoro .narra strong {
+    color: color-mix(
+        in srgb,
+        var(--corgeral) 62%,
+        #ffffff
+    );
+}
+
+.tema-escuro .narra a,
+body.tema-sanji .narra a,
+body.tema-zoro .narra a {
+    color: color-mix(
+        in srgb,
+        var(--corgeral) 58%,
+        #ffffff
+    );
+}
+
+.tema-escuro .narra hr,
+body.tema-sanji .narra hr,
+body.tema-zoro .narra hr {
+    border-color: rgba(255,255,255,.09);
 }
 
 .narra positivo,
