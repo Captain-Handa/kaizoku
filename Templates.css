@@ -15558,7 +15558,9 @@ body.tema-zoro .frutas-page .fruta-img {
 .navio-pocket-corpo > br,
 .navio-pocket-info > br,
 .navio-pocket-status > br,
-.navio-pocket-stat > br {
+.navio-pocket-stat > br,
+.navio-pocket-rodape > br,
+.navio-pocket-rodape-detalhes > br {
   display: none !important;
 }
 
@@ -15764,6 +15766,9 @@ body.tema-zoro .frutas-page .fruta-img {
 .navio-pocket-corpo {
   display: grid;
   grid-template-columns: 176px minmax(0, 1fr);
+  grid-template-areas:
+    "imagem informacoes"
+    "rodape rodape";
   align-items: stretch;
   gap: 8px;
 
@@ -15777,6 +15782,9 @@ body.tema-zoro .frutas-page .fruta-img {
 ============================================================ */
 
 .navio-pocket-imagem {
+   
+  grid-area: imagem;
+   
   position: relative;
 
   display: block;
@@ -15814,7 +15822,6 @@ body.tema-zoro .frutas-page .fruta-img {
 
   margin: 0 !important;
 
-  object-fit: cover;
   object-position: center;
 
   border: 0 !important;
@@ -15962,9 +15969,10 @@ body.tema-zoro .frutas-page .fruta-img {
 ============================================================ */
 
 .navio-pocket-info {
+  grid-area: informacoes;
+
   display: flex;
   flex-direction: column;
-  gap: 6px;
 
   min-width: 0;
 }
@@ -16110,62 +16118,162 @@ body.tema-zoro .frutas-page .fruta-img {
 }
 
 /* ============================================================
-   RODAPÉ INTERNO
+   RODAPÉ INDEPENDENTE
 ============================================================ */
 
 .navio-pocket-rodape {
+  grid-area: rodape;
+
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 7px;
+  gap: 10px;
 
-  min-height: 23px;
+  width: 100%;
+  min-width: 0;
+  min-height: 31px;
 
-  padding: 4px 7px;
+  padding: 6px 9px;
 
-  border: 1px solid rgba(0,116,161,.09);
-  border-radius: 9px;
+  border: 1px solid rgba(0,116,161,.10);
+  border-radius: 10px;
 
   background:
+    radial-gradient(
+      circle at left center,
+      rgba(142,234,255,.18),
+      transparent 34%
+    ),
     linear-gradient(
       90deg,
-      rgba(0,116,161,.055),
-      rgba(142,234,255,.12)
+      rgba(0,116,161,.065),
+      rgba(255,255,255,.70)
     );
 
   color: var(--np-muted);
 
   font: 800 7.5px/1 Inter, Arial, sans-serif;
   text-transform: uppercase;
-  letter-spacing: .32px;
+  letter-spacing: .35px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.70),
+    0 3px 8px rgba(0,91,128,.045);
+
+  overflow: hidden;
 }
 
-.navio-pocket-rodape > span {
+/* Brilho atravessando o rodapé */
+
+.navio-pocket-rodape::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -80px;
+
+  width: 65px;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.42),
+      transparent
+    );
+
+  transform: skewX(-24deg);
+
+  pointer-events: none;
+
+  transition: left .55s ease;
+}
+
+.navio-pocket:hover .navio-pocket-rodape::before {
+  left: calc(100% + 80px);
+}
+
+/* Situação do navio */
+
+.navio-pocket-situacao {
+  position: relative;
+  z-index: 1;
+
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+
+  min-width: 0;
+
+  color: var(--np-a);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.navio-pocket-rodape > span i {
+.navio-pocket-situacao i {
+  flex: 0 0 auto;
+
   color: var(--np-b);
-  font-size: 12px;
+  font-size: 13px;
 
-  transition: transform .4s ease;
+  transition: transform .42s ease;
 }
 
-.navio-pocket:hover .navio-pocket-rodape > span i {
+.navio-pocket:hover .navio-pocket-situacao i {
   transform: rotate(90deg);
 }
 
-.navio-pocket-rodape > i {
+/* Informações à direita */
+
+.navio-pocket-rodape-detalhes {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+
+  min-width: 0;
+
+  color: var(--np-muted);
+}
+
+.navio-pocket-rodape-detalhes > span {
+  white-space: nowrap;
+}
+
+.navio-pocket-rodape-divisor {
+  display: block;
+
+  width: 3px;
+  height: 3px;
+  flex: 0 0 3px;
+
+  border-radius: 999px;
+
+  background: var(--np-b);
+}
+
+.navio-pocket-rodape-detalhes > i {
+  flex: 0 0 auto;
+
+  margin-left: 2px;
+
   color: var(--np-a);
-  font-size: 15px;
+
+  font-size: 16px;
 
   transition: transform .22s ease;
 }
 
-.navio-pocket:hover .navio-pocket-rodape > i {
-  transform: translateX(3px);
+.navio-pocket:hover .navio-pocket-rodape-detalhes > i {
+  transform: translateX(4px);
 }
 
 /* ============================================================
@@ -16241,11 +16349,32 @@ body.tema-zoro .navio-pocket-rodape {
   border-color: rgba(255,255,255,.065);
 
   background:
+    radial-gradient(
+      circle at left center,
+      rgba(0,169,209,.10),
+      transparent 34%
+    ),
     linear-gradient(
       90deg,
-      rgba(0,169,209,.07),
+      rgba(0,169,209,.075),
       rgba(255,255,255,.025)
     );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.035),
+    0 3px 8px rgba(0,0,0,.18);
+}
+
+.tema-escuro .navio-pocket-situacao,
+body.tema-sanji .navio-pocket-situacao,
+body.tema-zoro .navio-pocket-situacao {
+  color: #bcefff;
+}
+
+.tema-escuro .navio-pocket-rodape-detalhes,
+body.tema-sanji .navio-pocket-rodape-detalhes,
+body.tema-zoro .navio-pocket-rodape-detalhes {
+  color: var(--np-muted);
 }
 
 /* ============================================================
@@ -16259,6 +16388,11 @@ body.tema-zoro .navio-pocket-rodape {
 
   .navio-pocket-corpo {
     grid-template-columns: 150px minmax(0, 1fr);
+    grid-template-areas:
+      "imagem informacoes"
+      "rodape rodape";
+
+    align-items: stretch;
   }
 
   .navio-pocket-imagem {
@@ -16271,28 +16405,45 @@ body.tema-zoro .navio-pocket-rodape {
   }
 
   .navio-pocket-rodape {
-    display: none;
+    display: flex;
+
+    min-height: 29px;
   }
 }
 
 @media (max-width: 390px) {
   .navio-pocket-corpo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "imagem"
+      "informacoes"
+      "rodape";
+
+    align-items: stretch;
   }
 
   .navio-pocket-imagem {
     width: 176px;
     height: 99px;
+
+    margin: 0 auto;
   }
 
-  .navio-pocket-info {
+  .navio-pocket-info,
+  .navio-pocket-rodape {
     width: 100%;
   }
 
   .navio-pocket-status {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .navio-pocket-rodape-detalhes > span {
+    display: none;
+  }
+
+  .navio-pocket-rodape-divisor {
+    display: none;
   }
 }
 
@@ -16300,8 +16451,19 @@ body.tema-zoro .navio-pocket-rodape {
   .navio-pocket-status {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
 
+  .navio-pocket-rodape {
+    gap: 6px;
+
+    padding: 5px 7px;
+
+    font-size: 7px;
+  }
+
+  .navio-pocket-situacao {
+    max-width: calc(100% - 24px);
+  }
+}
 /* ============================================================
    000. TRALHAS EXTRAS
 ============================================================ */
