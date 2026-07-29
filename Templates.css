@@ -15440,6 +15440,7 @@ body.tema-zoro .frutas-page .fruta-img {
 
 /* Remove quebras automáticas dentro das listas e cabeçalhos */
 
+.loot-card > br,
 .loot-card-list > br,
 .loot-card-head > br,
 .loot-card-info > br {
