@@ -15426,7 +15426,56 @@ body.tema-zoro .frutas-page .fruta-img {
 }
 
 
+/* =========================================================
+   CORREÇÃO DE QUEBRAS AUTOMÁTICAS DO FORUMEIROS
+========================================================= */
 
+/* Remove os <br> gerados entre os filhos das grids */
+
+.reward-rule-grid > br,
+.loot-flow > br,
+.loot-environment-grid > br {
+  display: none !important;
+}
+
+/* Remove quebras automáticas dentro das listas e cabeçalhos */
+
+.loot-card-list > br,
+.loot-card-head > br,
+.loot-card-info > br {
+  display: none !important;
+}
+
+/* Impede que alinhamentos herdados afetem as grids */
+
+.reward-rule-grid,
+.loot-flow,
+.loot-environment-grid,
+.loot-card-list,
+.loot-card-head {
+  text-align: left;
+}
+
+/* Garante que os elementos ocupem corretamente suas células */
+
+.reward-rule-grid > .reward-rule,
+.loot-flow > .loot-step,
+.loot-environment-grid > .loot-environment {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Correção adicional para elementos flex */
+
+.loot-card-head {
+  display: flex;
+}
+
+.loot-card-info {
+  min-width: 0;
+  text-align: left;
+}
 
 /* ============================================================
    000. TRALHAS EXTRAS
