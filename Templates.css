@@ -15503,6 +15503,806 @@ body.tema-zoro .frutas-page .fruta-img {
 }
 
 /* ============================================================
+   NAVIO POCKET — TEMPLATE DO NARRADOR
+============================================================ */
+
+.navio-pocket {
+  --np-a: #075e83;
+  --np-b: #00a9d1;
+  --np-c: #8eeaff;
+  --np-ouro: #e7bd3d;
+  --np-texto: #1e3043;
+  --np-muted: #61788c;
+  --np-borda: rgba(0,116,161,.17);
+
+  position: relative;
+
+  width: 490px;
+  max-width: 100%;
+
+  margin: 8px 0;
+
+  border: 1px solid var(--np-borda);
+  border-radius: 17px;
+
+  background:
+    radial-gradient(circle at top right, rgba(142,234,255,.24), transparent 34%),
+    linear-gradient(180deg, #fff, #f0faff);
+
+  color: var(--np-texto);
+
+  box-shadow:
+    0 9px 22px rgba(0,91,128,.13),
+    inset 0 0 0 1px rgba(255,255,255,.68);
+
+  box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.navio-pocket *,
+.navio-pocket *::before,
+.navio-pocket *::after {
+  box-sizing: border-box;
+}
+
+/* Proteção contra BRs inseridos pelo Forumeiros */
+
+.navio-pocket > br,
+.navio-pocket-topo > br,
+.navio-pocket-corpo > br,
+.navio-pocket-info > br,
+.navio-pocket-status > br,
+.navio-pocket-stat > br {
+  display: none !important;
+}
+
+.navio-pocket:hover {
+  z-index: 20;
+
+  border-color: rgba(0,169,209,.34);
+
+  box-shadow:
+    0 14px 29px rgba(0,91,128,.20),
+    0 0 0 3px rgba(142,234,255,.10),
+    inset 0 0 0 1px rgba(255,255,255,.75);
+
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   CABEÇALHO
+============================================================ */
+
+.navio-pocket-topo {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  min-height: 43px;
+
+  padding: 7px 9px 7px 11px;
+
+  background:
+    linear-gradient(
+      100deg,
+      var(--np-a),
+      var(--np-b) 68%,
+      #65d9ef
+    );
+
+  color: #fff;
+
+  overflow: hidden;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.22),
+    0 4px 11px rgba(0,91,128,.16);
+}
+
+/* Brilho atravessando o cabeçalho */
+
+.navio-pocket-topo::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -90px;
+
+  width: 78px;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.24),
+      transparent
+    );
+
+  transform: skewX(-22deg);
+
+  pointer-events: none;
+
+  transition: left .62s ease;
+}
+
+.navio-pocket:hover .navio-pocket-topo::before {
+  left: calc(100% + 90px);
+}
+
+/* Linha náutica inferior */
+
+.navio-pocket-topo::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.68),
+      var(--np-ouro),
+      rgba(255,255,255,.68),
+      transparent
+    );
+}
+
+.navio-pocket-titulo {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.navio-pocket-tipo {
+  color: rgba(255,255,255,.70);
+
+  font: 800 7px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .85px;
+}
+
+.navio-pocket-titulo strong {
+  color: #fff;
+
+  font: 900 11px/1.15 Inter, Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .45px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navio-pocket-titulo img {
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 16px !important;
+  max-height: 16px !important;
+
+  margin: 0 2px !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  vertical-align: middle;
+}
+
+.navio-pocket-selo {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
+
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0,0,0,.19),
+      rgba(255,255,255,.10)
+    );
+
+  color: #fff;
+
+  font-size: 16px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    0 3px 8px rgba(0,0,0,.12);
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.navio-pocket:hover .navio-pocket-selo {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(231,189,61,.30),
+      rgba(255,255,255,.13)
+    );
+
+  transform: rotate(-5deg) scale(1.06);
+}
+
+/* ============================================================
+   CORPO
+============================================================ */
+
+.navio-pocket-corpo {
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 8px;
+
+  min-width: 0;
+
+  padding: 8px;
+}
+
+/* ============================================================
+   IMAGEM 16:9 — 176 × 99
+============================================================ */
+
+.navio-pocket-imagem {
+  position: relative;
+
+  display: block;
+
+  width: 176px;
+  max-width: 100%;
+  height: 99px;
+  max-height: 100px;
+
+  border: 3px solid #fff;
+  border-radius: 13px;
+
+  background:
+    linear-gradient(180deg, #a9e5f5, #def7ff);
+
+  box-shadow:
+    0 6px 13px rgba(0,91,128,.17),
+    3px 3px 0 rgba(0,116,161,.15);
+
+  text-decoration: none !important;
+
+  overflow: hidden;
+
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+}
+
+.navio-pocket-imagem > img {
+  display: block;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: 0 !important;
+  border-radius: 10px;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  transition:
+    transform .42s ease,
+    filter .25s ease;
+}
+
+.navio-pocket:hover .navio-pocket-imagem {
+  border-color: #fff;
+
+  box-shadow:
+    0 9px 18px rgba(0,91,128,.24),
+    3px 3px 0 var(--np-b);
+
+  transform: translateY(-1px);
+}
+
+.navio-pocket:hover .navio-pocket-imagem > img {
+  filter:
+    brightness(1.06)
+    saturate(1.07);
+
+  transform: scale(1.045);
+}
+
+/* Reflexo atravessando a imagem */
+
+.navio-pocket-imagem-brilho {
+  position: absolute;
+  top: -20%;
+  left: -55%;
+
+  width: 40%;
+  height: 140%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.36),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  pointer-events: none;
+
+  transition: left .58s ease;
+}
+
+.navio-pocket:hover .navio-pocket-imagem-brilho {
+  left: 125%;
+}
+
+/* Linha de mar animada */
+
+.navio-pocket-mar {
+  position: absolute;
+  right: -12px;
+  bottom: -5px;
+  left: -12px;
+
+  height: 17px;
+
+  background:
+    repeating-radial-gradient(
+      ellipse at 50% 100%,
+      rgba(255,255,255,.80) 0 3px,
+      rgba(0,169,209,.55) 4px 7px,
+      transparent 8px 14px
+    );
+
+  opacity: .70;
+
+  pointer-events: none;
+
+  transform: translateX(0);
+
+  transition:
+    transform .6s ease,
+    opacity .25s ease;
+}
+
+.navio-pocket:hover .navio-pocket-mar {
+  opacity: .92;
+
+  transform: translateX(10px);
+}
+
+/* Botão visual de ampliação */
+
+.navio-pocket-ampliar {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  border: 1px solid rgba(255,255,255,.34);
+  border-radius: 8px;
+
+  background: rgba(4,35,51,.58);
+  color: #fff;
+
+  font-size: 13px;
+
+  opacity: 0;
+  transform:
+    translateY(-4px)
+    scale(.88);
+
+  backdrop-filter: blur(4px);
+
+  transition:
+    opacity .18s ease,
+    transform .18s ease,
+    background .18s ease;
+}
+
+.navio-pocket:hover .navio-pocket-ampliar {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.navio-pocket-ampliar:hover {
+  background: rgba(0,135,178,.84);
+}
+
+/* ============================================================
+   INFORMAÇÕES
+============================================================ */
+
+.navio-pocket-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.navio-pocket-status {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+
+  min-width: 0;
+}
+
+/* ============================================================
+   STATUS
+============================================================ */
+
+.navio-pocket-stat {
+  position: relative;
+
+  min-width: 0;
+
+  border: 1px solid rgba(0,116,161,.15);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.94),
+      rgba(231,249,255,.90)
+    );
+
+  text-align: center;
+
+  box-shadow:
+    0 3px 8px rgba(0,91,128,.055),
+    inset 0 1px 0 rgba(255,255,255,.70);
+
+  overflow: hidden;
+
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+.navio-pocket-stat::after {
+  content: "";
+
+  position: absolute;
+  right: 25%;
+  bottom: -5px;
+  left: 25%;
+
+  height: 6px;
+
+  border-radius: 999px;
+
+  background: var(--np-b);
+
+  opacity: 0;
+  filter: blur(5px);
+
+  transition:
+    opacity .18s ease,
+    left .18s ease,
+    right .18s ease;
+}
+
+.navio-pocket-stat:hover {
+  z-index: 2;
+
+  border-color: rgba(0,169,209,.34);
+
+  box-shadow:
+    0 6px 12px rgba(0,91,128,.11),
+    inset 0 1px 0 rgba(255,255,255,.78);
+
+  transform: translateY(-2px);
+}
+
+.navio-pocket-stat:hover::after {
+  right: 12%;
+  left: 12%;
+
+  opacity: .40;
+}
+
+.navio-pocket-stat > span {
+  display: block;
+
+  min-height: 20px;
+
+  padding: 4px 3px 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--np-a),
+      var(--np-b)
+    );
+
+  color: #fff;
+
+  font: 900 7px/1.1 Inter, Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .22px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navio-pocket-stat > strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 23px;
+
+  padding: 4px 3px;
+
+  color: var(--np-texto);
+
+  font: 900 10px/1 Inter, Roboto, Arial, sans-serif;
+}
+
+.navio-pocket-stat img {
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 14px !important;
+  max-height: 14px !important;
+
+  margin: 0 1px !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  vertical-align: middle;
+}
+
+/* ============================================================
+   RODAPÉ INTERNO
+============================================================ */
+
+.navio-pocket-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+
+  min-height: 23px;
+
+  padding: 4px 7px;
+
+  border: 1px solid rgba(0,116,161,.09);
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,116,161,.055),
+      rgba(142,234,255,.12)
+    );
+
+  color: var(--np-muted);
+
+  font: 800 7.5px/1 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .32px;
+}
+
+.navio-pocket-rodape > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navio-pocket-rodape > span i {
+  color: var(--np-b);
+  font-size: 12px;
+
+  transition: transform .4s ease;
+}
+
+.navio-pocket:hover .navio-pocket-rodape > span i {
+  transform: rotate(90deg);
+}
+
+.navio-pocket-rodape > i {
+  color: var(--np-a);
+  font-size: 15px;
+
+  transition: transform .22s ease;
+}
+
+.navio-pocket:hover .navio-pocket-rodape > i {
+  transform: translateX(3px);
+}
+
+/* ============================================================
+   TEMA ESCURO / SANJI / ZORO
+============================================================ */
+
+.tema-escuro .navio-pocket,
+body.tema-sanji .navio-pocket,
+body.tema-zoro .navio-pocket {
+  --np-texto: #edf5ff;
+  --np-muted: #aebdcc;
+
+  border-color: rgba(255,255,255,.08);
+
+  background:
+    radial-gradient(circle at top right, rgba(0,169,209,.10), transparent 36%),
+    linear-gradient(180deg, #202328, #121519);
+
+  box-shadow:
+    0 9px 22px rgba(0,0,0,.34),
+    inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.tema-escuro .navio-pocket:hover,
+body.tema-sanji .navio-pocket:hover,
+body.tema-zoro .navio-pocket:hover {
+  border-color: rgba(101,217,239,.18);
+
+  box-shadow:
+    0 14px 29px rgba(0,0,0,.45),
+    0 0 0 3px rgba(0,169,209,.055),
+    inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+.tema-escuro .navio-pocket-imagem,
+body.tema-sanji .navio-pocket-imagem,
+body.tema-zoro .navio-pocket-imagem {
+  border-color: #292d32;
+
+  background: #252a30;
+
+  box-shadow:
+    0 6px 13px rgba(0,0,0,.34),
+    3px 3px 0 rgba(0,169,209,.17);
+}
+
+.tema-escuro .navio-pocket-stat,
+body.tema-sanji .navio-pocket-stat,
+body.tema-zoro .navio-pocket-stat {
+  border-color: rgba(255,255,255,.075);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.065),
+      rgba(255,255,255,.035)
+    );
+
+  box-shadow:
+    0 3px 8px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+.tema-escuro .navio-pocket-stat > strong,
+body.tema-sanji .navio-pocket-stat > strong,
+body.tema-zoro .navio-pocket-stat > strong {
+  color: #eef6ff;
+}
+
+.tema-escuro .navio-pocket-rodape,
+body.tema-sanji .navio-pocket-rodape,
+body.tema-zoro .navio-pocket-rodape {
+  border-color: rgba(255,255,255,.065);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,169,209,.07),
+      rgba(255,255,255,.025)
+    );
+}
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 520px) {
+  .navio-pocket {
+    width: 100%;
+  }
+
+  .navio-pocket-corpo {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+
+  .navio-pocket-imagem {
+    width: 150px;
+    height: 84px;
+  }
+
+  .navio-pocket-status {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navio-pocket-rodape {
+    display: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .navio-pocket-corpo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navio-pocket-imagem {
+    width: 176px;
+    height: 99px;
+  }
+
+  .navio-pocket-info {
+    width: 100%;
+  }
+
+  .navio-pocket-status {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 330px) {
+  .navio-pocket-status {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ============================================================
    000. TRALHAS EXTRAS
 ============================================================ */
 .hazel-hr {
