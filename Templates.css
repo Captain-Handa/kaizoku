@@ -5714,13 +5714,13 @@ body.tema-zoro .narra hr {
 .narra negativo::before {
     content: "−";
     color: #f25858;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .narra neutro::before {
     content: "•";
     color: #7b8798;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .narra > img {
