@@ -15487,6 +15487,21 @@ body.tema-zoro .frutas-page .fruta-img {
   text-align: left;
 }
 
+/* Remove as quebras criadas pelo Forumeiros ao redor das tabelas */
+
+.recompensas-page .reward-table-scroll > br {
+  display: none !important;
+}
+
+/* Caso alguma quebra permaneça dentro da estrutura da tabela */
+
+.recompensas-page .reward-table > br,
+.recompensas-page .reward-table thead > br,
+.recompensas-page .reward-table tbody > br,
+.recompensas-page .reward-table tr > br {
+  display: none !important;
+}
+
 /* ============================================================
    000. TRALHAS EXTRAS
 ============================================================ */
