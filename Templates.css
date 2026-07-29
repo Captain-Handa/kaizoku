@@ -5670,7 +5670,8 @@ body.tema-zoro .narra hr {
     margin: 6px 0;
     padding: 3px 6px;
     border-radius: 12px;
-    font: 700 12px/1.35 Roboto, Arial, sans-serif;
+    font: 800 10px / 1.3 Inter, Arial, sans-serif;    
+    text-transform: uppercase;
     letter-spacing: .2px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
     overflow: hidden;
