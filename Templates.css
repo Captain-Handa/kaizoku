@@ -16467,55 +16467,33 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
 
 /* =========================================================
-   PADRÃO GENÉRICO PARA TÓPICOS DE SISTEMA
+   TÓPICOS DE SISTEMA — PADRÃO GENÉRICO PARA FORUMEIROS
    ========================================================= */
 
 .sistema-topico {
   --sistema-cor: #244688;
-  --sistema-cor-clara: #eaf0fb;
-  --sistema-texto: #292d33;
+  --sistema-cor-clara: #edf2fb;
   --sistema-fundo: #f7f8fa;
   --sistema-borda: #d8dde6;
+  --sistema-texto: #292d33;
 
   color: var(--sistema-texto);
-  line-height: 1.65;
+  line-height: 1.6;
+}
+
+/* Impede que os <br> automáticos do Forumeiros quebrem layouts */
+.sistema-topico .forum-safe > br {
+  display: none !important;
 }
 
 .sistema-topico * {
   box-sizing: border-box;
 }
 
-/* Apresentações iniciais */
+/* Texto comum */
 
-.sistema-resumo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin: 18px 0 24px;
-}
-
-.sistema-card {
-  position: relative;
-  overflow: hidden;
-  padding: 16px;
-  background: var(--sistema-fundo);
-  border: 1px solid var(--sistema-borda);
-  border-top: 4px solid var(--sistema-cor);
-  border-radius: 8px;
-}
-
-.sistema-card-titulo {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-bottom: 7px;
-  color: var(--sistema-cor);
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.sistema-card-texto {
-  color: var(--sistema-texto);
+.sistema-texto {
+  margin: 10px 0 16px;
 }
 
 /* Seções */
@@ -16528,88 +16506,132 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   margin-bottom: 12px;
 }
 
-/* Lista de regras */
+/* Grades responsivas */
 
-.sistema-regras {
+.sistema-grade {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 20px;
+}
+
+.sistema-card {
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: 14px;
+  background: var(--sistema-fundo);
+  border: 1px solid var(--sistema-borda);
+  border-top: 4px solid var(--sistema-cor);
+  border-radius: 7px;
+}
+
+.sistema-card-titulo {
+  margin-bottom: 6px;
+  color: var(--sistema-cor);
+  font-weight: 700;
+}
+
+.sistema-card-texto {
+  line-height: 1.55;
+}
+
+/* Lista vertical de regras */
+
+.sistema-lista {
   display: flex;
   flex-direction: column;
   gap: 9px;
   margin: 12px 0;
 }
 
-.sistema-regra {
-  position: relative;
-  padding: 12px 14px 12px 16px;
+.sistema-item {
+  padding: 12px 14px;
   background: var(--sistema-fundo);
   border: 1px solid var(--sistema-borda);
   border-left: 5px solid var(--sistema-cor);
   border-radius: 5px;
 }
 
-.sistema-regra-titulo {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+.sistema-item-titulo {
+  display: inline;
   margin-right: 4px;
   color: var(--sistema-cor);
   font-weight: 700;
 }
 
-/* Modificadores opcionais e reaproveitáveis */
+/* Variações genéricas */
 
-.sistema-regra--ofensiva {
+.sistema-item.ofensiva {
   border-left-color: #a63838;
 }
 
-.sistema-regra--ofensiva .sistema-regra-titulo {
+.sistema-item.ofensiva .sistema-item-titulo {
   color: #8f2929;
 }
 
-.sistema-regra--defensiva {
+.sistema-item.defensiva {
   border-left-color: #2774a6;
 }
 
-.sistema-regra--defensiva .sistema-regra-titulo {
+.sistema-item.defensiva .sistema-item-titulo {
   color: #215f88;
 }
 
-.sistema-regra--ativa {
-  border-left-color: #9a7222;
+.sistema-item.ativa {
+  border-left-color: #a17723;
 }
 
-.sistema-regra--ativa .sistema-regra-titulo {
-  color: #7e5c17;
+.sistema-item.ativa .sistema-item-titulo {
+  color: #805d18;
 }
 
-.sistema-regra--reativa {
-  border-left-color: #7a4e9d;
+.sistema-item.reativa {
+  border-left-color: #77509b;
 }
 
-.sistema-regra--reativa .sistema-regra-titulo {
-  color: #633b82;
+.sistema-item.reativa .sistema-item-titulo {
+  color: #603d80;
 }
 
-.sistema-regra--livre {
+.sistema-item.livre {
   border-left-color: #34855c;
 }
 
-.sistema-regra--livre .sistema-regra-titulo {
-  color: #276e4a;
+.sistema-item.livre .sistema-item-titulo {
+  color: #286e4b;
 }
 
-/* Roteiro em etapas */
+/* Caixa de observação */
 
-.sistema-fluxo {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.sistema-nota {
+  margin: 13px 0;
+  padding: 12px 14px;
+  background: var(--sistema-cor-clara);
+  border: 1px solid var(--sistema-borda);
+  border-left: 5px solid var(--sistema-cor);
+  border-radius: 5px;
+}
+
+.sistema-nota-titulo {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--sistema-cor);
+  font-weight: 700;
+}
+
+/* Fluxo de etapas */
+
+.sistema-passos {
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  margin: 15px 0;
+  margin: 12px 0;
 }
 
 .sistema-passo {
-  position: relative;
-  min-height: 92px;
-  padding: 14px 11px 11px;
+  flex: 1 1 145px;
+  min-width: 0;
+  padding: 12px 10px;
   text-align: center;
   background: #fff;
   border: 1px solid var(--sistema-borda);
@@ -16623,7 +16645,7 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   justify-content: center;
   width: 25px;
   height: 25px;
-  margin: 0 auto 7px;
+  margin: 0 auto 6px;
   color: #fff;
   font-size: 12px;
   font-weight: 700;
@@ -16644,52 +16666,21 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   opacity: 0.8;
 }
 
-/* Avisos e observações */
-
-.sistema-nota {
-  margin: 13px 0;
-  padding: 12px 14px;
-  background: var(--sistema-cor-clara);
-  border: 1px solid var(--sistema-borda);
-  border-left: 5px solid var(--sistema-cor);
-  border-radius: 5px;
-}
-
-.sistema-nota-titulo {
-  display: block;
-  margin-bottom: 3px;
-  color: var(--sistema-cor);
-  font-weight: 700;
-}
-
-/* Destaques pequenos */
-
-.sistema-termo {
-  color: var(--sistema-cor);
-  font-weight: 700;
-}
-
 /* Responsividade */
 
-@media (max-width: 700px) {
-  .sistema-resumo-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .sistema-card {
+    flex-basis: 100%;
   }
 
-  .sistema-fluxo {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .sistema-passo {
+    flex-basis: calc(50% - 4px);
   }
 }
 
-@media (max-width: 430px) {
-  .sistema-fluxo {
-    grid-template-columns: 1fr;
-  }
-
-  .sistema-card,
-  .sistema-regra,
-  .sistema-nota {
-    padding: 12px;
+@media (max-width: 400px) {
+  .sistema-passo {
+    flex-basis: 100%;
   }
 }
 
