@@ -16464,6 +16464,236 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     max-width: calc(100% - 24px);
   }
 }
+
+
+/* =========================================================
+   PADRÃO GENÉRICO PARA TÓPICOS DE SISTEMA
+   ========================================================= */
+
+.sistema-topico {
+  --sistema-cor: #244688;
+  --sistema-cor-clara: #eaf0fb;
+  --sistema-texto: #292d33;
+  --sistema-fundo: #f7f8fa;
+  --sistema-borda: #d8dde6;
+
+  color: var(--sistema-texto);
+  line-height: 1.65;
+}
+
+.sistema-topico * {
+  box-sizing: border-box;
+}
+
+/* Apresentações iniciais */
+
+.sistema-resumo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 24px;
+}
+
+.sistema-card {
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  background: var(--sistema-fundo);
+  border: 1px solid var(--sistema-borda);
+  border-top: 4px solid var(--sistema-cor);
+  border-radius: 8px;
+}
+
+.sistema-card-titulo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 7px;
+  color: var(--sistema-cor);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sistema-card-texto {
+  color: var(--sistema-texto);
+}
+
+/* Seções */
+
+.sistema-secao {
+  margin: 22px 0;
+}
+
+.sistema-secao > .intro-tag {
+  margin-bottom: 12px;
+}
+
+/* Lista de regras */
+
+.sistema-regras {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 12px 0;
+}
+
+.sistema-regra {
+  position: relative;
+  padding: 12px 14px 12px 16px;
+  background: var(--sistema-fundo);
+  border: 1px solid var(--sistema-borda);
+  border-left: 5px solid var(--sistema-cor);
+  border-radius: 5px;
+}
+
+.sistema-regra-titulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 4px;
+  color: var(--sistema-cor);
+  font-weight: 700;
+}
+
+/* Modificadores opcionais e reaproveitáveis */
+
+.sistema-regra--ofensiva {
+  border-left-color: #a63838;
+}
+
+.sistema-regra--ofensiva .sistema-regra-titulo {
+  color: #8f2929;
+}
+
+.sistema-regra--defensiva {
+  border-left-color: #2774a6;
+}
+
+.sistema-regra--defensiva .sistema-regra-titulo {
+  color: #215f88;
+}
+
+.sistema-regra--ativa {
+  border-left-color: #9a7222;
+}
+
+.sistema-regra--ativa .sistema-regra-titulo {
+  color: #7e5c17;
+}
+
+.sistema-regra--reativa {
+  border-left-color: #7a4e9d;
+}
+
+.sistema-regra--reativa .sistema-regra-titulo {
+  color: #633b82;
+}
+
+.sistema-regra--livre {
+  border-left-color: #34855c;
+}
+
+.sistema-regra--livre .sistema-regra-titulo {
+  color: #276e4a;
+}
+
+/* Roteiro em etapas */
+
+.sistema-fluxo {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.sistema-passo {
+  position: relative;
+  min-height: 92px;
+  padding: 14px 11px 11px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--sistema-borda);
+  border-top: 4px solid var(--sistema-cor);
+  border-radius: 6px;
+}
+
+.sistema-passo-numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin: 0 auto 7px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--sistema-cor);
+  border-radius: 50%;
+}
+
+.sistema-passo-titulo {
+  display: block;
+  font-weight: 700;
+}
+
+.sistema-passo-texto {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.35;
+  opacity: 0.8;
+}
+
+/* Avisos e observações */
+
+.sistema-nota {
+  margin: 13px 0;
+  padding: 12px 14px;
+  background: var(--sistema-cor-clara);
+  border: 1px solid var(--sistema-borda);
+  border-left: 5px solid var(--sistema-cor);
+  border-radius: 5px;
+}
+
+.sistema-nota-titulo {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--sistema-cor);
+  font-weight: 700;
+}
+
+/* Destaques pequenos */
+
+.sistema-termo {
+  color: var(--sistema-cor);
+  font-weight: 700;
+}
+
+/* Responsividade */
+
+@media (max-width: 700px) {
+  .sistema-resumo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sistema-fluxo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 430px) {
+  .sistema-fluxo {
+    grid-template-columns: 1fr;
+  }
+
+  .sistema-card,
+  .sistema-regra,
+  .sistema-nota {
+    padding: 12px;
+  }
+}
+
+
 /* ============================================================
    000. TRALHAS EXTRAS
 ============================================================ */
