@@ -16735,16 +16735,6 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
   display: block;
   flex: 0 0 100px;
-
-  width: 100px !important;
-  min-width: 100px;
-  max-width: 100px !important;
-
-  height: 60px !important;
-  min-height: 60px;
-  max-height: 60px !important;
-
-  padding: 5px;
   margin: 0 !important;
 
   object-fit: contain;
