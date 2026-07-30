@@ -17123,6 +17123,947 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   }
 }
 
+
+/* =========================================================
+   VIAGENS E NAVIOS — MÓDULO COMPLEXO PARA FORUMEIROS
+   Pode ser reutilizado em regras de exploração, veículos,
+   perseguições, viagens e encontros aleatórios.
+   ========================================================= */
+
+.sistema-naval {
+  --naval-marinho: #173653;
+  --naval-azul: #244688;
+  --naval-oceano: #247fa3;
+  --naval-ciano: #55b4c8;
+  --naval-verde: #3d8568;
+  --naval-ouro: #bd852b;
+  --naval-laranja: #b85b2a;
+  --naval-vermelho: #932f3b;
+  --naval-roxo: #76508f;
+  --naval-cinza: #68717d;
+  --naval-texto: #27313b;
+  --naval-fundo: #f6f8fb;
+  --naval-borda: #d7dee7;
+  --naval-claro: #edf4f8;
+  color: var(--naval-texto);
+  line-height: 1.62;
+}
+
+.sistema-naval *,
+.sistema-naval *::before,
+.sistema-naval *::after {
+  box-sizing: border-box;
+}
+
+.sistema-naval .forum-safe > br {
+  display: none !important;
+}
+
+.naval-texto {
+  margin: 10px 0 16px;
+}
+
+.naval-secao {
+  margin: 24px 0;
+}
+
+.naval-secao > .intro-tag {
+  margin-bottom: 12px;
+}
+
+/* Visão geral */
+
+.naval-resumo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 15px 0 22px;
+}
+
+.naval-resumo-card {
+  position: relative;
+  flex: 1 1 185px;
+  min-width: 0;
+  padding: 13px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fff 0%, var(--naval-claro) 100%);
+  border: 1px solid var(--naval-borda);
+  border-top: 4px solid var(--naval-azul);
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(20, 47, 72, .09);
+}
+
+.naval-resumo-card::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  bottom: -36px;
+  width: 100px;
+  height: 100px;
+  border: 14px solid rgba(36, 70, 136, .06);
+  border-radius: 50%;
+}
+
+.naval-resumo-card b {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-bottom: 4px;
+  color: var(--naval-marinho);
+  font-size: 13px;
+}
+
+.naval-resumo-card span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  font-size: 11px;
+  line-height: 1.42;
+}
+
+/* Regras em lista */
+
+.naval-regras {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 12px 0;
+}
+
+.naval-regra {
+  --regra-cor: var(--naval-azul);
+  --regra-fundo: #eef3fb;
+  position: relative;
+  padding: 11px 13px;
+  overflow: hidden;
+  background: linear-gradient(110deg, #fff 0%, #fff 66%, var(--regra-fundo) 100%);
+  border: 1px solid var(--naval-borda);
+  border-left: 5px solid var(--regra-cor);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(20, 47, 72, .06);
+}
+
+.naval-regra::after {
+  content: "";
+  position: absolute;
+  top: -35px;
+  right: -30px;
+  width: 125px;
+  height: 125px;
+  background: radial-gradient(circle, var(--regra-fundo) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.naval-regra-titulo,
+.naval-regra-texto {
+  position: relative;
+  z-index: 1;
+}
+
+.naval-regra-titulo {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--regra-cor);
+  font-weight: 800;
+}
+
+.naval-regra--ilustrada {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.naval-regra-conteudo {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.naval-miniatura {
+  position: relative;
+  z-index: 2;
+  display: block;
+  flex: 0 0 100px;
+  width: 100px !important;
+  min-width: 100px;
+  max-width: 100px !important;
+  height: 60px !important;
+  min-height: 60px;
+  max-height: 60px !important;
+  padding: 4px;
+  margin: 0 !important;
+  object-fit: contain;
+  background: radial-gradient(circle at 50% 40%, #fff 0%, #fff 28%, var(--regra-fundo) 100%);
+  border: 1px solid var(--regra-cor);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15), 0 0 0 3px rgba(255,255,255,.75);
+}
+
+.naval-regra--terra {
+  --regra-cor: #7a6842;
+  --regra-fundo: #f5f0e4;
+}
+
+.naval-regra--mar {
+  --regra-cor: var(--naval-oceano);
+  --regra-fundo: #e9f5f8;
+}
+
+.naval-regra--perigo {
+  --regra-cor: var(--naval-vermelho);
+  --regra-fundo: #faeaed;
+}
+
+.naval-regra--pirata {
+  --regra-cor: #8c276b;
+  --regra-fundo: #f8eaf4;
+}
+
+.naval-regra--marinha {
+  --regra-cor: var(--naval-marinho);
+  --regra-fundo: #e9f0f6;
+}
+
+.naval-regra--sorte {
+  --regra-cor: var(--naval-verde);
+  --regra-fundo: #e8f5ef;
+}
+
+.naval-regra--tesouro {
+  --regra-cor: var(--naval-ouro);
+  --regra-fundo: #fbf3e3;
+}
+
+.naval-regra--neutro {
+  --regra-cor: var(--naval-cinza);
+  --regra-fundo: #f0f2f4;
+}
+
+/* Notas e regra de ouro */
+
+.naval-nota {
+  --nota-cor: var(--naval-azul);
+  --nota-fundo: #edf3fb;
+  position: relative;
+  margin: 13px 0;
+  padding: 11px 13px 11px 46px;
+  background: var(--nota-fundo);
+  border: 1px solid var(--naval-borda);
+  border-left: 5px solid var(--nota-cor);
+  border-radius: 6px;
+}
+
+.naval-nota::before {
+  content: "!";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-weight: 900;
+  background: var(--nota-cor);
+  border-radius: 50%;
+}
+
+.naval-nota b {
+  color: var(--nota-cor);
+}
+
+.naval-nota--ouro {
+  --nota-cor: var(--naval-ouro);
+  --nota-fundo: #fcf5e8;
+}
+
+.naval-nota--perigo {
+  --nota-cor: var(--naval-vermelho);
+  --nota-fundo: #faecee;
+}
+
+.naval-nota--sorte {
+  --nota-cor: var(--naval-verde);
+  --nota-fundo: #eaf6f0;
+}
+
+.naval-regra-ouro {
+  position: relative;
+  margin: 16px 0;
+  padding: 15px 16px;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(120deg, var(--naval-marinho), var(--naval-oceano));
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(23,54,83,.24);
+}
+
+.naval-regra-ouro::after {
+  content: "1";
+  position: absolute;
+  right: 12px;
+  top: -28px;
+  color: rgba(255,255,255,.10);
+  font-size: 105px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.naval-regra-ouro b,
+.naval-regra-ouro span {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.naval-regra-ouro b {
+  margin-bottom: 3px;
+  font-size: 15px;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+
+/* Fluxos */
+
+.naval-fluxo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 13px 0;
+}
+
+.naval-passo {
+  --passo-cor: var(--naval-oceano);
+  position: relative;
+  flex: 1 1 125px;
+  min-width: 0;
+  min-height: 112px;
+  padding: 12px 10px 10px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--naval-borda);
+  border-top: 4px solid var(--passo-cor);
+  border-radius: 7px;
+}
+
+.naval-passo-numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin: 0 auto 6px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  background: var(--passo-cor);
+  border-radius: 50%;
+}
+
+.naval-passo b,
+.naval-passo span {
+  display: block;
+}
+
+.naval-passo b {
+  color: var(--passo-cor);
+  font-size: 12px;
+}
+
+.naval-passo > span:last-child {
+  margin-top: 4px;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.naval-passo--terra {
+  --passo-cor: #7a6842;
+}
+
+.naval-passo--mar {
+  --passo-cor: var(--naval-oceano);
+}
+
+.naval-passo--perigo {
+  --passo-cor: var(--naval-vermelho);
+}
+
+.naval-passo--sorte {
+  --passo-cor: var(--naval-verde);
+}
+
+.naval-passo--ouro {
+  --passo-cor: var(--naval-ouro);
+}
+
+/* Resultados de Navegação */
+
+.naval-resultados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 13px 0;
+}
+
+.naval-resultado {
+  --resultado-cor: var(--naval-cinza);
+  --resultado-fundo: #f1f3f5;
+  flex: 1 1 285px;
+  min-width: 0;
+  padding: 11px 12px;
+  background: linear-gradient(135deg, #fff 0%, var(--resultado-fundo) 100%);
+  border: 1px solid var(--naval-borda);
+  border-left: 5px solid var(--resultado-cor);
+  border-radius: 7px;
+}
+
+.naval-resultado-topo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 5px;
+  color: var(--resultado-cor);
+}
+
+.naval-resultado-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 76px;
+  padding: 2px 7px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  background: var(--resultado-cor);
+  border-radius: 20px;
+}
+
+.naval-resultado-texto {
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.naval-resultado--grave {
+  --resultado-cor: #7e1e2b;
+  --resultado-fundo: #f8e7ea;
+}
+
+.naval-resultado--falha {
+  --resultado-cor: var(--naval-laranja);
+  --resultado-fundo: #faeee7;
+}
+
+.naval-resultado--estavel {
+  --resultado-cor: var(--naval-oceano);
+  --resultado-fundo: #e9f5f8;
+}
+
+.naval-resultado--rapida {
+  --resultado-cor: var(--naval-verde);
+  --resultado-fundo: #e8f5ef;
+}
+
+.naval-resultado--perfeita {
+  --resultado-cor: var(--naval-ouro);
+  --resultado-fundo: #fbf3e3;
+}
+
+/* Tabelas sem <table>, seguras no Forumeiros */
+
+.naval-tabela {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 12px 0 18px;
+}
+
+.naval-tabela-linha {
+  --linha-cor: var(--naval-cinza);
+  --linha-fundo: #f3f5f7;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  background: linear-gradient(100deg, #fff 0%, var(--linha-fundo) 100%);
+  border: 1px solid var(--naval-borda);
+  border-left: 5px solid var(--linha-cor);
+  border-radius: 5px;
+}
+
+.naval-tabela-faixa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 82px;
+  min-width: 82px;
+  padding: 8px 7px;
+  color: #fff;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 900;
+  background: var(--linha-cor);
+}
+
+.naval-tabela-conteudo {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 8px 10px;
+}
+
+.naval-tabela-conteudo b,
+.naval-tabela-conteudo span {
+  display: block;
+}
+
+.naval-tabela-conteudo b {
+  margin-bottom: 2px;
+  color: var(--linha-cor);
+}
+
+.naval-tabela-conteudo span {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.naval-tabela-linha--lendario {
+  --linha-cor: #6d2d84;
+  --linha-fundo: #f2eaf6;
+}
+
+.naval-tabela-linha--pirata {
+  --linha-cor: #8c276b;
+  --linha-fundo: #f8eaf4;
+}
+
+.naval-tabela-linha--marinha {
+  --linha-cor: var(--naval-marinho);
+  --linha-fundo: #e9f0f6;
+}
+
+.naval-tabela-linha--perigo {
+  --linha-cor: var(--naval-vermelho);
+  --linha-fundo: #faeaed;
+}
+
+.naval-tabela-linha--neutro {
+  --linha-cor: var(--naval-cinza);
+  --linha-fundo: #f0f2f4;
+}
+
+.naval-tabela-linha--sorte {
+  --linha-cor: var(--naval-verde);
+  --linha-fundo: #e8f5ef;
+}
+
+.naval-tabela-linha--tesouro {
+  --linha-cor: var(--naval-ouro);
+  --linha-fundo: #fbf3e3;
+}
+
+.naval-tabela-linha--mar {
+  --linha-cor: var(--naval-oceano);
+  --linha-fundo: #e9f5f8;
+}
+
+/* Alternativas e atributos */
+
+.naval-opcoes,
+.naval-atributos,
+.naval-silhuetas,
+.naval-ventos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.naval-opcao {
+  --opcao-cor: var(--naval-oceano);
+  flex: 1 1 145px;
+  min-width: 0;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid var(--naval-borda);
+  border-top: 4px solid var(--opcao-cor);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.naval-opcao b,
+.naval-opcao span {
+  display: block;
+}
+
+.naval-opcao b {
+  color: var(--opcao-cor);
+  font-size: 12px;
+}
+
+.naval-opcao span {
+  margin-top: 4px;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.naval-opcao--perigo {
+  --opcao-cor: var(--naval-vermelho);
+}
+
+.naval-opcao--mar {
+  --opcao-cor: var(--naval-oceano);
+}
+
+.naval-opcao--sorte {
+  --opcao-cor: var(--naval-verde);
+}
+
+.naval-opcao--ouro {
+  --opcao-cor: var(--naval-ouro);
+}
+
+.naval-opcao--neutro {
+  --opcao-cor: var(--naval-cinza);
+}
+
+.naval-silhueta {
+  flex: 1 1 115px;
+  min-width: 0;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(145deg, #fff, #edf3f8);
+  border: 1px solid var(--naval-borda);
+  border-top: 4px solid var(--naval-marinho);
+  border-radius: 6px;
+}
+
+.naval-silhueta b,
+.naval-silhueta span {
+  display: block;
+}
+
+.naval-silhueta b {
+  color: var(--naval-marinho);
+}
+
+.naval-silhueta span {
+  margin-top: 3px;
+  font-size: 10px;
+}
+
+.naval-atributo {
+  --atributo-cor: var(--naval-oceano);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1 1 210px;
+  min-width: 0;
+  padding: 9px 10px;
+  background: #fff;
+  border: 1px solid var(--naval-borda);
+  border-left: 4px solid var(--atributo-cor);
+  border-radius: 6px;
+}
+
+.naval-atributo-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  font-weight: 900;
+  background: var(--naval-claro);
+  border: 1px solid var(--atributo-cor);
+  border-radius: 50%;
+}
+
+.naval-atributo b,
+.naval-atributo span {
+  display: block;
+}
+
+.naval-atributo b {
+  color: var(--atributo-cor);
+}
+
+.naval-atributo span {
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.naval-atributo--casco {
+  --atributo-cor: var(--naval-vermelho);
+}
+
+.naval-atributo--resistencia {
+  --atributo-cor: #6b6670;
+}
+
+.naval-atributo--defesa {
+  --atributo-cor: var(--naval-azul);
+}
+
+.naval-atributo--velocidade {
+  --atributo-cor: var(--naval-verde);
+}
+
+.naval-atributo--capacidade {
+  --atributo-cor: var(--naval-ouro);
+}
+
+.naval-atributo--estrutura {
+  --atributo-cor: var(--naval-roxo);
+}
+
+.naval-vento {
+  --vento-cor: var(--naval-oceano);
+  flex: 1 1 190px;
+  min-width: 0;
+  padding: 11px 12px;
+  background: linear-gradient(145deg, #fff, #edf5f8);
+  border: 1px solid var(--naval-borda);
+  border-top: 5px solid var(--vento-cor);
+  border-radius: 7px;
+}
+
+.naval-vento b,
+.naval-vento span {
+  display: block;
+}
+
+.naval-vento b {
+  color: var(--vento-cor);
+}
+
+.naval-vento span {
+  margin-top: 4px;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.naval-vento--favoravel {
+  --vento-cor: var(--naval-verde);
+}
+
+.naval-vento--desfavoravel {
+  --vento-cor: var(--naval-laranja);
+}
+
+.naval-vento--contrario {
+  --vento-cor: var(--naval-vermelho);
+}
+
+/* Botão do mapa */
+
+.naval-mapa {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 15px;
+  color: #fff !important;
+  text-align: center;
+  text-decoration: none !important;
+  font-weight: 900;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, var(--naval-marinho), var(--naval-oceano));
+  border: 1px solid #87d5e5;
+  border-radius: 7px;
+  box-shadow: 0 5px 12px rgba(23,54,83,.22);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.naval-mapa:hover {
+  color: #fff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px rgba(23,54,83,.28);
+}
+
+/* Ações navais */
+
+.naval-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 12px 0;
+}
+
+.naval-acao {
+  --acao-cor: var(--naval-oceano);
+  --acao-fundo: #e9f5f8;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 82px;
+  padding: 10px 12px;
+  overflow: hidden;
+  background: linear-gradient(110deg, #fff 0%, #fff 62%, var(--acao-fundo) 100%);
+  border: 1px solid var(--naval-borda);
+  border-left: 5px solid var(--acao-cor);
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(20,47,72,.08);
+}
+
+.naval-acao::after {
+  content: "";
+  position: absolute;
+  right: -45px;
+  top: -55px;
+  width: 170px;
+  height: 170px;
+  background: radial-gradient(circle, var(--acao-fundo) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.naval-acao-icone {
+  position: relative;
+  z-index: 2;
+  display: block;
+  flex: 0 0 100px;
+  width: 100px !important;
+  min-width: 100px;
+  max-width: 100px !important;
+  height: 60px !important;
+  min-height: 60px;
+  max-height: 60px !important;
+  padding: 4px;
+  margin: 0 !important;
+  object-fit: contain;
+  background: radial-gradient(circle at 50% 40%, #fff 0%, #fff 28%, var(--acao-fundo) 100%);
+  border: 1px solid var(--acao-cor);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15), 0 0 0 3px rgba(255,255,255,.75);
+}
+
+.naval-acao-conteudo {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.naval-acao-topo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.naval-acao-topo b {
+  color: var(--acao-cor);
+  font-size: 14px;
+}
+
+.naval-acao-tipo,
+.naval-acao-custo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 7px;
+  color: #fff;
+  font-size: 9px;
+  line-height: 1.4;
+  font-weight: 900;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  border-radius: 20px;
+}
+
+.naval-acao-tipo {
+  background: var(--acao-cor);
+}
+
+.naval-acao-custo {
+  color: var(--acao-cor);
+  background: #fff;
+  border: 1px solid var(--acao-cor);
+}
+
+.naval-acao-texto {
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.naval-acao--ofensiva {
+  --acao-cor: var(--naval-vermelho);
+  --acao-fundo: #faeaed;
+}
+
+.naval-acao--defensiva {
+  --acao-cor: var(--naval-azul);
+  --acao-fundo: #eaf0fa;
+}
+
+.naval-acao--ativa {
+  --acao-cor: var(--naval-verde);
+  --acao-fundo: #e8f5ef;
+}
+
+/* Responsividade */
+
+@media (max-width: 650px) {
+  .naval-resultado {
+    flex-basis: 100%;
+  }
+
+  .naval-tabela-faixa {
+    flex-basis: 68px;
+    min-width: 68px;
+  }
+
+  .naval-regra--ilustrada,
+  .naval-acao {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 470px) {
+  .naval-resumo-card,
+  .naval-passo,
+  .naval-opcao,
+  .naval-silhueta,
+  .naval-atributo,
+  .naval-vento {
+    flex-basis: 100%;
+  }
+
+  .naval-miniatura,
+  .naval-acao-icone {
+    flex-basis: 82px;
+    width: 82px !important;
+    min-width: 82px;
+    max-width: 82px !important;
+    height: 54px !important;
+    min-height: 54px;
+    max-height: 54px !important;
+  }
+
+  .naval-tabela-linha {
+    align-items: stretch;
+  }
+
+  .naval-tabela-faixa {
+    flex-basis: 58px;
+    min-width: 58px;
+    padding: 7px 4px;
+    font-size: 9px;
+  }
+
+  .naval-tabela-conteudo {
+    padding: 7px 8px;
+  }
+
+  .naval-nota {
+    padding-left: 40px;
+  }
+}
+
+
 /* ============================================================
    000. TRALHAS EXTRAS
 ============================================================ */
