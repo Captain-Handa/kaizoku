@@ -16685,53 +16685,167 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 }
 
 /* =========================================================
-   ITENS COM ÍCONE — COMPLEMENTO GENÉRICO PARA FORUMEIROS
+   ÍCONES DE CONDIÇÃO — 100x60
+   PADRÃO GENÉRICO E SEGURO PARA FORUMEIROS
    ========================================================= */
 
 .sistema-item-com-icone {
+  --icone-cor: #244688;
+  --icone-fundo: #edf3fc;
+
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+  overflow: hidden;
 }
 
+/* Remove quebras automáticas inseridas pelo Forumeiros */
 .sistema-item-com-icone > br {
   display: none !important;
 }
 
+/* Brilho decorativo na lateral do item */
+.sistema-item-com-icone::before {
+  content: "";
+  position: absolute;
+  top: -35px;
+  right: -25px;
+  width: 160px;
+  height: 140px;
+  background: radial-gradient(
+    circle,
+    var(--icone-fundo) 0%,
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
 .sistema-item-conteudo {
+  position: relative;
+  z-index: 2;
   flex: 1 1 auto;
   min-width: 0;
 }
 
+/* Ícone em formato de miniatura de inventário */
 .sistema-item-icone {
+  position: relative;
+  z-index: 2;
+
   display: block;
+  flex: 0 0 100px;
+
   width: 100px !important;
   min-width: 100px;
   max-width: 100px !important;
+
   height: 60px !important;
   min-height: 60px;
   max-height: 60px !important;
-  flex: 0 0 100px;
+
+  padding: 5px;
+  margin: 0 !important;
+
   object-fit: contain;
   object-position: center;
-  margin: 0 !important;
-  border: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      #ffffff 0%,
+      #ffffff 25%,
+      var(--icone-fundo) 100%
+    );
+
+  border: 1px solid var(--icone-cor);
+  border-radius: 10px;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.16),
+    0 0 0 3px rgba(255, 255, 255, 0.75),
+    inset 0 0 10px rgba(255, 255, 255, 0.9);
+
+  filter:
+    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.13));
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
 }
 
-@media (max-width: 430px) {
+/* Efeito discreto ao passar o mouse */
+.sistema-item-com-icone:hover .sistema-item-icone {
+  transform: translateY(-2px) scale(1.04);
+
+  box-shadow:
+    0 7px 16px rgba(0, 0, 0, 0.2),
+    0 0 0 3px rgba(255, 255, 255, 0.9),
+    inset 0 0 12px rgba(255, 255, 255, 1);
+
+  filter:
+    drop-shadow(0 3px 3px rgba(0, 0, 0, 0.17));
+}
+
+/* =========================================================
+   CORES AUTOMÁTICAS CONFORME O TIPO DO ITEM
+   ========================================================= */
+
+.sistema-item-com-icone.ofensiva {
+  --icone-cor: #a63838;
+  --icone-fundo: #f9e8e8;
+}
+
+.sistema-item-com-icone.defensiva {
+  --icone-cor: #2774a6;
+  --icone-fundo: #e8f3fa;
+}
+
+.sistema-item-com-icone.ativa {
+  --icone-cor: #a17723;
+  --icone-fundo: #faf2df;
+}
+
+.sistema-item-com-icone.reativa {
+  --icone-cor: #77509b;
+  --icone-fundo: #f1eafa;
+}
+
+.sistema-item-com-icone.livre {
+  --icone-cor: #34855c;
+  --icone-fundo: #e7f6ee;
+}
+
+/* =========================================================
+   AJUSTE PARA CELULAR
+   ========================================================= */
+
+@media (max-width: 500px) {
   .sistema-item-com-icone {
     align-items: flex-start;
-    gap: 8px;
+    gap: 10px;
   }
 
   .sistema-item-icone {
+    flex-basis: 100px;
+
     width: 100px !important;
     min-width: 100px;
     max-width: 100px !important;
+
     height: 60px !important;
     min-height: 60px;
     max-height: 60px !important;
-    flex-basis: 100px;
+
+    padding: 4px;
+  }
+
+  .sistema-item-com-icone::before {
+    top: -25px;
+    right: -35px;
+    width: 145px;
+    height: 120px;
   }
 }
 
