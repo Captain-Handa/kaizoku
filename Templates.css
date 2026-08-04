@@ -18065,6 +18065,803 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
 
 /* ============================================================
+   MAPA NAVAL — GRADE DE COMBATE
+============================================================ */
+
+.mapa-naval {
+    --mapa-cor: #287ca9;
+    --mapa-cor-2: #5cc6d9;
+    --mapa-fundo: #d9f1f5;
+    --mapa-linha: rgba(24,87,119,.25);
+    --mapa-texto: #17384b;
+    --mapa-celula: 46px;
+
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 12px auto;
+    padding: 8px;
+
+    border: 1px solid rgba(20,75,105,.18);
+    border-left: 5px solid var(--mapa-cor);
+    border-radius: 17px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(92,198,217,.18),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.98),
+            rgba(235,247,250,.98)
+        );
+
+    box-shadow:
+        0 8px 18px rgba(19,70,96,.13),
+        inset 0 0 0 1px rgba(255,255,255,.62);
+
+    color: var(--mapa-texto);
+
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* ============================================================
+   BR AUTOMÁTICO DO FORUMEIROS
+============================================================ */
+
+.mapa-naval > br,
+.mapa-naval-topo > br,
+.mapa-naval-scroll > br,
+.mapa-naval-estrutura > br,
+.mapa-naval-colunas > br,
+.mapa-naval-linhas > br,
+.mapa-naval-canvas > br,
+.mapa-naval-legenda > br {
+    display: none !important;
+}
+
+/* Definições ainda não processadas pelo JavaScript */
+
+.mapa-navio:not(.mapa-navio-ativo) {
+    display: none !important;
+}
+
+/* ============================================================
+   CABEÇALHO
+============================================================ */
+
+.mapa-naval-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    margin: 0 0 7px;
+    padding: 7px 10px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--mapa-cor),
+            var(--mapa-cor-2)
+        );
+
+    color: #fff;
+
+    box-shadow:
+        0 4px 10px rgba(24,87,119,.18);
+
+    box-sizing: border-box;
+}
+
+.mapa-naval-titulo {
+    min-width: 0;
+
+    font: 900 11px/1.2 Inter, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .65px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mapa-naval-medidas {
+    flex: 0 0 auto;
+
+    padding: 4px 7px;
+
+    border-radius: 999px;
+
+    background: rgba(0,0,0,.22);
+
+    font: 900 8px/1 Inter, Arial, sans-serif;
+    letter-spacing: .4px;
+}
+
+/* ============================================================
+   ÁREA ROLÁVEL
+============================================================ */
+
+.mapa-naval-scroll {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+    max-height: 650px;
+
+    border: 1px solid rgba(20,75,105,.15);
+    border-radius: 13px;
+
+    background: #b9dfe8;
+
+    overflow: auto;
+    box-sizing: border-box;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--mapa-cor) rgba(255,255,255,.34);
+}
+
+.mapa-naval-scroll::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+.mapa-naval-scroll::-webkit-scrollbar-track {
+    background: rgba(255,255,255,.34);
+}
+
+.mapa-naval-scroll::-webkit-scrollbar-thumb {
+    border: 2px solid rgba(255,255,255,.34);
+    border-radius: 999px;
+
+    background: var(--mapa-cor);
+}
+
+/* ============================================================
+   ESTRUTURA DA GRADE
+============================================================ */
+
+.mapa-naval-estrutura {
+    display: grid;
+
+    grid-template-columns: 36px max-content;
+    grid-template-rows: 29px max-content;
+
+    width: max-content;
+    min-width: 100%;
+
+    box-sizing: border-box;
+}
+
+/* Canto entre os dois eixos */
+
+.mapa-naval-canto {
+    position: sticky;
+
+    top: 0;
+    left: 0;
+    z-index: 30;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 29px;
+
+    border-right: 1px solid rgba(255,255,255,.28);
+    border-bottom: 1px solid rgba(255,255,255,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--mapa-cor),
+            var(--mapa-cor-2)
+        );
+
+    color: #fff;
+
+    font: 900 11px/1 Arial, sans-serif;
+
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   COORDENADAS SUPERIORES — A, B, C, AA...
+============================================================ */
+
+.mapa-naval-colunas {
+    position: sticky;
+
+    top: 0;
+    z-index: 20;
+
+    grid-column: 2;
+    grid-row: 1;
+
+    display: grid;
+
+    height: 29px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--mapa-cor),
+            color-mix(in srgb, var(--mapa-cor) 78%, #000)
+        );
+
+    color: #fff;
+}
+
+.mapa-naval-coluna {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: var(--mapa-celula);
+    height: 29px;
+
+    border-right: 1px solid rgba(255,255,255,.18);
+
+    font: 900 8px/1 Inter, Arial, sans-serif;
+    letter-spacing: .25px;
+
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   COORDENADAS LATERAIS — 1, 2, 3...
+============================================================ */
+
+.mapa-naval-linhas {
+    position: sticky;
+
+    left: 0;
+    z-index: 15;
+
+    grid-column: 1;
+    grid-row: 2;
+
+    display: grid;
+
+    width: 36px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--mapa-cor),
+            color-mix(in srgb, var(--mapa-cor) 78%, #000)
+        );
+
+    color: #fff;
+}
+
+.mapa-naval-linha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: var(--mapa-celula);
+
+    border-bottom: 1px solid rgba(255,255,255,.18);
+
+    font: 900 8px/1 Inter, Arial, sans-serif;
+
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   MAR
+============================================================ */
+
+.mapa-naval-canvas {
+    position: relative;
+
+    grid-column: 2;
+    grid-row: 2;
+
+    background-color: var(--mapa-fundo);
+
+    background-image:
+        linear-gradient(
+            to right,
+            var(--mapa-linha) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            var(--mapa-linha) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            ellipse at 20% 15%,
+            rgba(255,255,255,.50),
+            transparent 28%
+        ),
+        radial-gradient(
+            ellipse at 76% 73%,
+            rgba(50,159,190,.14),
+            transparent 34%
+        ),
+        linear-gradient(
+            145deg,
+            #dff5f7,
+            #aedce8
+        );
+
+    background-size:
+        var(--mapa-celula) var(--mapa-celula),
+        var(--mapa-celula) var(--mapa-celula),
+        auto,
+        auto,
+        auto;
+
+    box-shadow:
+        inset 0 0 35px rgba(17,95,128,.13);
+
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Textura suave de ondas */
+
+.mapa-naval-canvas::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background:
+        repeating-radial-gradient(
+            ellipse at 20% 0,
+            transparent 0 13px,
+            rgba(255,255,255,.09) 14px 15px,
+            transparent 16px 29px
+        );
+
+    background-size: 64px 36px;
+
+    opacity: .65;
+
+    pointer-events: none;
+}
+
+/* ============================================================
+   CÉLULA SOB O CURSOR
+============================================================ */
+
+.mapa-naval-hover {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    width: var(--mapa-celula);
+    height: var(--mapa-celula);
+
+    border: 2px solid rgba(255,255,255,.90);
+
+    background: rgba(255,255,255,.17);
+
+    box-shadow:
+        inset 0 0 0 2px var(--mapa-cor),
+        0 0 12px rgba(255,255,255,.55);
+
+    box-sizing: border-box;
+
+    pointer-events: none;
+}
+
+.mapa-naval-hover::after {
+    content: attr(data-coordenada);
+
+    position: absolute;
+
+    right: 3px;
+    bottom: 3px;
+
+    padding: 3px 5px;
+
+    border-radius: 999px;
+
+    background: rgba(0,0,0,.68);
+    color: #fff;
+
+    font: 900 7px/1 Inter, Arial, sans-serif;
+    letter-spacing: .25px;
+}
+
+.mapa-naval-hover[hidden] {
+    display: none !important;
+}
+
+/* ============================================================
+   NAVIO
+============================================================ */
+
+.mapa-navio-ativo {
+    position: absolute;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 29px;
+    height: 29px;
+
+    border: 2px solid rgba(255,255,255,.94);
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            color-mix(in srgb, var(--navio-cor) 78%, #fff),
+            var(--navio-cor)
+        );
+
+    color: #fff;
+
+    box-shadow:
+        0 4px 9px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.30);
+
+    box-sizing: border-box;
+
+    transform: translate(-50%, -50%);
+
+    cursor: help;
+}
+
+/* Realce ao passar o mouse */
+
+.mapa-navio-ativo:hover {
+    z-index: 50;
+
+    filter: brightness(1.12);
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,.36),
+        0 0 0 4px color-mix(
+            in srgb,
+            var(--navio-cor) 30%,
+            transparent
+        ),
+        inset 0 1px 0 rgba(255,255,255,.36);
+}
+
+/* ============================================================
+   SETA DE DIREÇÃO
+============================================================ */
+
+.mapa-navio-direcao {
+    position: absolute;
+
+    inset: -7px;
+
+    z-index: -1;
+
+    transform:
+        rotate(var(--navio-rotacao, 0deg));
+
+    pointer-events: none;
+}
+
+.mapa-navio-direcao::before {
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 50%;
+
+    width: 0;
+    height: 0;
+
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid var(--navio-cor);
+
+    filter:
+        drop-shadow(0 1px 0 #fff)
+        drop-shadow(0 2px 2px rgba(0,0,0,.30));
+
+    transform: translateX(-50%);
+}
+
+/* ============================================================
+   ÍCONE CSS DE BARCO
+============================================================ */
+
+.mapa-navio-icone {
+    position: relative;
+
+    display: block;
+
+    width: 19px;
+    height: 19px;
+
+    color: currentColor;
+
+    pointer-events: none;
+}
+
+/* Mastro */
+
+.mapa-navio-icone::before {
+    content: "";
+
+    position: absolute;
+
+    top: 1px;
+    left: 9px;
+
+    width: 2px;
+    height: 13px;
+
+    border-radius: 999px;
+
+    background: currentColor;
+}
+
+/* Casco */
+
+.mapa-navio-icone::after {
+    content: "";
+
+    position: absolute;
+
+    left: 1px;
+    bottom: 1px;
+
+    width: 17px;
+    height: 6px;
+
+    background: currentColor;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            79% 100%,
+            21% 100%
+        );
+}
+
+/* Vela */
+
+.mapa-navio-vela {
+    position: absolute;
+
+    top: 2px;
+    left: 10px;
+
+    width: 8px;
+    height: 10px;
+
+    background: currentColor;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 100%,
+            0 100%
+        );
+
+    opacity: .96;
+}
+
+/* ============================================================
+   LEGENDA
+============================================================ */
+
+.mapa-naval-legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    margin: 8px 0 0;
+}
+
+.mapa-naval-legenda-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    min-height: 25px;
+
+    padding: 5px 8px;
+
+    border: 1px solid rgba(20,75,105,.13);
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.82);
+    color: #283d4b;
+
+    font: 800 8px/1.1 Inter, Arial, sans-serif;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+.mapa-naval-legenda-item:hover {
+    background: #fff;
+
+    box-shadow:
+        0 4px 9px rgba(20,75,105,.12);
+
+    transform: translateY(-1px);
+}
+
+.mapa-naval-legenda-cor {
+    flex: 0 0 auto;
+
+    width: 10px;
+    height: 10px;
+
+    border: 2px solid #fff;
+    border-radius: 4px;
+
+    background: var(--navio-cor);
+
+    box-shadow:
+        0 0 0 1px rgba(0,0,0,.18);
+}
+
+.mapa-naval-legenda-posicao {
+    padding: 3px 5px;
+
+    border-radius: 999px;
+
+    background: rgba(0,0,0,.08);
+
+    font-size: 7px;
+}
+
+/* ============================================================
+   ERRO DE POSIÇÃO
+============================================================ */
+
+.mapa-navio-erro {
+    display: none !important;
+}
+
+/* ============================================================
+   TEMA ESCURO
+============================================================ */
+
+.tema-escuro .mapa-naval,
+body.tema-sanji .mapa-naval,
+body.tema-zoro .mapa-naval {
+    --mapa-fundo: #183240;
+    --mapa-linha: rgba(190,230,242,.18);
+    --mapa-texto: #eef8ff;
+
+    border-color: rgba(255,255,255,.08);
+    border-left-color: var(--mapa-cor);
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(92,198,217,.10),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            #20252b,
+            #111418
+        );
+
+    color: #eef8ff;
+
+    box-shadow:
+        0 9px 19px rgba(0,0,0,.32),
+        inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.tema-escuro .mapa-naval-scroll,
+body.tema-sanji .mapa-naval-scroll,
+body.tema-zoro .mapa-naval-scroll {
+    border-color: rgba(255,255,255,.08);
+
+    background: #132833;
+}
+
+.tema-escuro .mapa-naval-canvas,
+body.tema-sanji .mapa-naval-canvas,
+body.tema-zoro .mapa-naval-canvas {
+    background-color: #193945;
+
+    background-image:
+        linear-gradient(
+            to right,
+            var(--mapa-linha) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            var(--mapa-linha) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            ellipse at 20% 15%,
+            rgba(255,255,255,.06),
+            transparent 28%
+        ),
+        radial-gradient(
+            ellipse at 76% 73%,
+            rgba(15,111,145,.18),
+            transparent 34%
+        ),
+        linear-gradient(
+            145deg,
+            #214a57,
+            #102b36
+        );
+}
+
+.tema-escuro .mapa-naval-legenda-item,
+body.tema-sanji .mapa-naval-legenda-item,
+body.tema-zoro .mapa-naval-legenda-item {
+    border-color: rgba(255,255,255,.08);
+
+    background: rgba(255,255,255,.055);
+    color: #eef8ff;
+}
+
+.tema-escuro .mapa-naval-legenda-item:hover,
+body.tema-sanji .mapa-naval-legenda-item:hover,
+body.tema-zoro .mapa-naval-legenda-item:hover {
+    background: rgba(255,255,255,.10);
+}
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 560px) {
+    .mapa-naval {
+        padding: 6px;
+    }
+
+    .mapa-naval-topo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .mapa-naval-titulo {
+        width: 100%;
+
+        white-space: normal;
+    }
+
+    .mapa-naval-scroll {
+        max-height: 520px;
+    }
+}
+
+
+/* ============================================================
    000. TRALHAS EXTRAS
 ============================================================ */
 .hazel-hr {
