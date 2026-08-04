@@ -18064,9 +18064,9 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 }
 
 
-
 /* ============================================================
-   MAPA NAVAL — GRADE DE COMBATE
+   MAPA NAVAL RESPONSIVO
+   A grade sempre ocupa 100% do espaço disponível
 ============================================================ */
 
 .mapa-naval {
@@ -18074,15 +18074,22 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     --mapa-cor-2: #5cc6d9;
     --mapa-fundo: #d9f1f5;
     --mapa-linha: rgba(24,87,119,.25);
-    --mapa-texto: #17384b;
-    --mapa-celula: 46px;
+
+    --mapa-colunas: 12;
+    --mapa-linhas: 8;
+
+    --mapa-eixo: 36px;
+    --mapa-cabecalho: 29px;
+    --mapa-fonte-coord: 8px;
+    --mapa-navio-tamanho: 29px;
+    --mapa-seta-tamanho: 5px;
 
     position: relative;
 
     width: 100%;
     max-width: 100%;
 
-    margin: 12px auto;
+    margin: 12px 0;
     padding: 8px;
 
     border: 1px solid rgba(20,75,105,.18);
@@ -18105,10 +18112,10 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
         0 8px 18px rgba(19,70,96,.13),
         inset 0 0 0 1px rgba(255,255,255,.62);
 
-    color: var(--mapa-texto);
+    color: #17384b;
 
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* ============================================================
@@ -18122,11 +18129,12 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 .mapa-naval-colunas > br,
 .mapa-naval-linhas > br,
 .mapa-naval-canvas > br,
-.mapa-naval-legenda > br {
+.mapa-naval-legenda > br,
+.mapa-navio > br {
     display: none !important;
 }
 
-/* Definições ainda não processadas pelo JavaScript */
+/* Esconde definições antes de o JavaScript processá-las */
 
 .mapa-navio:not(.mapa-navio-ativo) {
     display: none !important;
@@ -18141,6 +18149,8 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+
+    width: 100%;
 
     margin: 0 0 7px;
     padding: 7px 10px;
@@ -18188,7 +18198,7 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 }
 
 /* ============================================================
-   ÁREA ROLÁVEL
+   CONTÊINER DA GRADE
 ============================================================ */
 
 .mapa-naval-scroll {
@@ -18196,61 +18206,40 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
     width: 100%;
     max-width: 100%;
-    max-height: 650px;
 
     border: 1px solid rgba(20,75,105,.15);
     border-radius: 13px;
 
     background: #b9dfe8;
 
-    overflow: auto;
     box-sizing: border-box;
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--mapa-cor) rgba(255,255,255,.34);
+    overflow: hidden;
 }
 
-.mapa-naval-scroll::-webkit-scrollbar {
-    width: 9px;
-    height: 9px;
-}
-
-.mapa-naval-scroll::-webkit-scrollbar-track {
-    background: rgba(255,255,255,.34);
-}
-
-.mapa-naval-scroll::-webkit-scrollbar-thumb {
-    border: 2px solid rgba(255,255,255,.34);
-    border-radius: 999px;
-
-    background: var(--mapa-cor);
-}
-
-/* ============================================================
-   ESTRUTURA DA GRADE
-============================================================ */
+/* A estrutura inteira ocupa a largura disponível */
 
 .mapa-naval-estrutura {
     display: grid;
 
-    grid-template-columns: 36px max-content;
-    grid-template-rows: 29px max-content;
+    grid-template-columns:
+        var(--mapa-eixo)
+        minmax(0, 1fr);
 
-    width: max-content;
-    min-width: 100%;
+    grid-template-rows:
+        var(--mapa-cabecalho)
+        auto;
+
+    width: 100%;
+    min-width: 0;
 
     box-sizing: border-box;
 }
 
-/* Canto entre os dois eixos */
+/* ============================================================
+   CANTO DOS EIXOS
+============================================================ */
 
 .mapa-naval-canto {
-    position: sticky;
-
-    top: 0;
-    left: 0;
-    z-index: 30;
-
     grid-column: 1;
     grid-row: 1;
 
@@ -18258,8 +18247,8 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     align-items: center;
     justify-content: center;
 
-    width: 36px;
-    height: 29px;
+    width: 100%;
+    height: 100%;
 
     border-right: 1px solid rgba(255,255,255,.28);
     border-bottom: 1px solid rgba(255,255,255,.28);
@@ -18279,30 +18268,33 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 }
 
 /* ============================================================
-   COORDENADAS SUPERIORES — A, B, C, AA...
+   COLUNAS — A, B, C... Z, AA, AB...
 ============================================================ */
 
 .mapa-naval-colunas {
-    position: sticky;
-
-    top: 0;
-    z-index: 20;
-
     grid-column: 2;
     grid-row: 1;
 
     display: grid;
 
-    height: 29px;
+    width: 100%;
+    min-width: 0;
+    height: var(--mapa-cabecalho);
 
     background:
         linear-gradient(
             180deg,
             var(--mapa-cor),
-            color-mix(in srgb, var(--mapa-cor) 78%, #000)
+            color-mix(
+                in srgb,
+                var(--mapa-cor) 78%,
+                #000
+            )
         );
 
     color: #fff;
+
+    overflow: hidden;
 }
 
 .mapa-naval-coluna {
@@ -18310,42 +18302,56 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     align-items: center;
     justify-content: center;
 
-    width: var(--mapa-celula);
-    height: 29px;
+    min-width: 0;
+    width: auto;
+    height: 100%;
+
+    padding: 0 1px;
 
     border-right: 1px solid rgba(255,255,255,.18);
 
-    font: 900 8px/1 Inter, Arial, sans-serif;
-    letter-spacing: .25px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: var(--mapa-fonte-coord);
+    font-weight: 900;
+    line-height: 1;
+
+    letter-spacing: 0;
+
+    white-space: nowrap;
+    text-align: center;
 
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 /* ============================================================
-   COORDENADAS LATERAIS — 1, 2, 3...
+   LINHAS — 1, 2, 3...
 ============================================================ */
 
 .mapa-naval-linhas {
-    position: sticky;
-
-    left: 0;
-    z-index: 15;
-
     grid-column: 1;
     grid-row: 2;
 
     display: grid;
 
-    width: 36px;
+    width: var(--mapa-eixo);
+    height: 100%;
+    min-height: 0;
 
     background:
         linear-gradient(
             90deg,
             var(--mapa-cor),
-            color-mix(in srgb, var(--mapa-cor) 78%, #000)
+            color-mix(
+                in srgb,
+                var(--mapa-cor) 78%,
+                #000
+            )
         );
 
     color: #fff;
+
+    overflow: hidden;
 }
 
 .mapa-naval-linha {
@@ -18353,14 +18359,19 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     align-items: center;
     justify-content: center;
 
-    width: 36px;
-    height: var(--mapa-celula);
+    width: 100%;
+    min-height: 0;
+    height: auto;
 
     border-bottom: 1px solid rgba(255,255,255,.18);
 
-    font: 900 8px/1 Inter, Arial, sans-serif;
+    font-family: Inter, Arial, sans-serif;
+    font-size: var(--mapa-fonte-coord);
+    font-weight: 900;
+    line-height: 1;
 
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 /* ============================================================
@@ -18372,6 +18383,18 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
     grid-column: 2;
     grid-row: 2;
+
+    width: 100%;
+    min-width: 0;
+
+    /*
+     * Mantém os blocos quadrados.
+     * Exemplo: 12 colunas e 8 linhas = proporção 12 / 8.
+     */
+
+    aspect-ratio:
+        var(--mapa-colunas) /
+        var(--mapa-linhas);
 
     background-color: var(--mapa-fundo);
 
@@ -18403,8 +18426,10 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
         );
 
     background-size:
-        var(--mapa-celula) var(--mapa-celula),
-        var(--mapa-celula) var(--mapa-celula),
+        calc(100% / var(--mapa-colunas))
+            calc(100% / var(--mapa-linhas)),
+        calc(100% / var(--mapa-colunas))
+            calc(100% / var(--mapa-linhas)),
         auto,
         auto,
         auto;
@@ -18447,20 +18472,21 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 .mapa-naval-hover {
     position: absolute;
 
-    top: 0;
-    left: 0;
     z-index: 5;
 
-    width: var(--mapa-celula);
-    height: var(--mapa-celula);
+    width:
+        calc(100% / var(--mapa-colunas));
 
-    border: 2px solid rgba(255,255,255,.90);
+    height:
+        calc(100% / var(--mapa-linhas));
+
+    border: 1px solid rgba(255,255,255,.95);
 
     background: rgba(255,255,255,.17);
 
     box-shadow:
-        inset 0 0 0 2px var(--mapa-cor),
-        0 0 12px rgba(255,255,255,.55);
+        inset 0 0 0 1px var(--mapa-cor),
+        0 0 10px rgba(255,255,255,.45);
 
     box-sizing: border-box;
 
@@ -18471,27 +18497,34 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     content: attr(data-coordenada);
 
     position: absolute;
+    right: 2px;
+    bottom: 2px;
 
-    right: 3px;
-    bottom: 3px;
-
-    padding: 3px 5px;
+    padding: 2px 4px;
 
     border-radius: 999px;
 
-    background: rgba(0,0,0,.68);
+    background: rgba(0,0,0,.70);
     color: #fff;
 
     font: 900 7px/1 Inter, Arial, sans-serif;
-    letter-spacing: .25px;
+
+    white-space: nowrap;
 }
 
 .mapa-naval-hover[hidden] {
     display: none !important;
 }
 
+/* Em células muito pequenas, esconde o texto flutuante */
+
+.mapa-naval[data-mapa-compacto="1"]
+.mapa-naval-hover::after {
+    display: none;
+}
+
 /* ============================================================
-   NAVIO
+   NAVIOS
 ============================================================ */
 
 .mapa-navio-ativo {
@@ -18502,23 +18535,28 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     align-items: center;
     justify-content: center;
 
-    width: 29px;
-    height: 29px;
+    width: var(--mapa-navio-tamanho);
+    height: var(--mapa-navio-tamanho);
 
-    border: 2px solid rgba(255,255,255,.94);
-    border-radius: 9px;
+    border: 1px solid rgba(255,255,255,.94);
+    border-radius:
+        calc(var(--mapa-navio-tamanho) * .28);
 
     background:
         linear-gradient(
             145deg,
-            color-mix(in srgb, var(--navio-cor) 78%, #fff),
+            color-mix(
+                in srgb,
+                var(--navio-cor) 78%,
+                #fff
+            ),
             var(--navio-cor)
         );
 
     color: #fff;
 
     box-shadow:
-        0 4px 9px rgba(0,0,0,.28),
+        0 3px 7px rgba(0,0,0,.28),
         inset 0 1px 0 rgba(255,255,255,.30);
 
     box-sizing: border-box;
@@ -18528,21 +18566,18 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     cursor: help;
 }
 
-/* Realce ao passar o mouse */
-
 .mapa-navio-ativo:hover {
     z-index: 50;
 
-    filter: brightness(1.12);
+    filter: brightness(1.14);
 
     box-shadow:
-        0 6px 15px rgba(0,0,0,.36),
-        0 0 0 4px color-mix(
+        0 5px 12px rgba(0,0,0,.36),
+        0 0 0 3px color-mix(
             in srgb,
             var(--navio-cor) 30%,
             transparent
-        ),
-        inset 0 1px 0 rgba(255,255,255,.36);
+        );
 }
 
 /* ============================================================
@@ -18552,7 +18587,8 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 .mapa-navio-direcao {
     position: absolute;
 
-    inset: -7px;
+    inset:
+        calc(var(--mapa-navio-tamanho) * -.24);
 
     z-index: -1;
 
@@ -18567,15 +18603,23 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
     position: absolute;
 
-    top: -1px;
+    top: 0;
     left: 50%;
 
     width: 0;
     height: 0;
 
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 8px solid var(--navio-cor);
+    border-left:
+        var(--mapa-seta-tamanho)
+        solid transparent;
+
+    border-right:
+        var(--mapa-seta-tamanho)
+        solid transparent;
+
+    border-bottom:
+        calc(var(--mapa-seta-tamanho) * 1.5)
+        solid var(--navio-cor);
 
     filter:
         drop-shadow(0 1px 0 #fff)
@@ -18585,7 +18629,7 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 }
 
 /* ============================================================
-   ÍCONE CSS DE BARCO
+   ÍCONE CSS DO BARCO
 ============================================================ */
 
 .mapa-navio-icone {
@@ -18593,8 +18637,8 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
     display: block;
 
-    width: 19px;
-    height: 19px;
+    width: 70%;
+    height: 70%;
 
     color: currentColor;
 
@@ -18608,11 +18652,11 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
     position: absolute;
 
-    top: 1px;
-    left: 9px;
+    top: 5%;
+    left: 48%;
 
-    width: 2px;
-    height: 13px;
+    width: 9%;
+    height: 68%;
 
     border-radius: 999px;
 
@@ -18626,11 +18670,11 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
     position: absolute;
 
-    left: 1px;
-    bottom: 1px;
+    left: 4%;
+    bottom: 3%;
 
-    width: 17px;
-    height: 6px;
+    width: 92%;
+    height: 31%;
 
     background: currentColor;
 
@@ -18648,11 +18692,11 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 .mapa-navio-vela {
     position: absolute;
 
-    top: 2px;
-    left: 10px;
+    top: 8%;
+    left: 51%;
 
-    width: 8px;
-    height: 10px;
+    width: 42%;
+    height: 52%;
 
     background: currentColor;
 
@@ -18662,8 +18706,13 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
             100% 100%,
             0 100%
         );
+}
 
-    opacity: .96;
+/* Simplificação em grades muito compactas */
+
+.mapa-naval[data-mapa-compacto="1"]
+.mapa-navio-vela {
+    display: none;
 }
 
 /* ============================================================
@@ -18674,6 +18723,8 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+
+    width: 100%;
 
     margin: 8px 0 0;
 }
@@ -18739,10 +18790,6 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     font-size: 7px;
 }
 
-/* ============================================================
-   ERRO DE POSIÇÃO
-============================================================ */
-
 .mapa-navio-erro {
     display: none !important;
 }
@@ -18756,7 +18803,6 @@ body.tema-sanji .mapa-naval,
 body.tema-zoro .mapa-naval {
     --mapa-fundo: #183240;
     --mapa-linha: rgba(190,230,242,.18);
-    --mapa-texto: #eef8ff;
 
     border-color: rgba(255,255,255,.08);
     border-left-color: var(--mapa-cor);
@@ -18819,6 +18865,15 @@ body.tema-zoro .mapa-naval-canvas {
             #214a57,
             #102b36
         );
+
+    background-size:
+        calc(100% / var(--mapa-colunas))
+            calc(100% / var(--mapa-linhas)),
+        calc(100% / var(--mapa-colunas))
+            calc(100% / var(--mapa-linhas)),
+        auto,
+        auto,
+        auto;
 }
 
 .tema-escuro .mapa-naval-legenda-item,
@@ -18842,6 +18897,9 @@ body.tema-zoro .mapa-naval-legenda-item:hover {
 
 @media (max-width: 560px) {
     .mapa-naval {
+        --mapa-eixo: 29px;
+        --mapa-cabecalho: 25px;
+
         padding: 6px;
     }
 
@@ -18855,12 +18913,7 @@ body.tema-zoro .mapa-naval-legenda-item:hover {
 
         white-space: normal;
     }
-
-    .mapa-naval-scroll {
-        max-height: 520px;
-    }
 }
-
 
 /* ============================================================
    000. TRALHAS EXTRAS
