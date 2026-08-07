@@ -17238,7 +17238,7 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
     );
 
   border: 1px solid var(--propriedade-cor);
-  border-radius: 11px;
+  border-radius: 50%;
 
   box-shadow:
     0 3px 7px rgba(0, 0, 0, 0.14),
