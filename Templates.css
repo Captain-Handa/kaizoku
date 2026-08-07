@@ -17125,14 +17125,14 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
 
 /* =========================================================
-   PROPRIEDADES DE ITENS — ÍCONES DO FÓRUM
+   PROPRIEDADES DE ITENS — COMPACTO
    ========================================================= */
 
 .propriedade-lista {
   display: flex;
   flex-direction: column;
-  gap: 9px;
-  margin: 13px 0 20px;
+  gap: 6px;
+  margin: 11px 0 18px;
 }
 
 .propriedade-lista > br,
@@ -17143,7 +17143,7 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   display: none !important;
 }
 
-/* CARD BASE */
+/* CARD */
 
 .propriedade-card {
   --propriedade-cor: #244688;
@@ -17153,63 +17153,62 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 
-  min-height: 76px;
-  padding: 10px 12px;
+  min-height: 58px;
+  padding: 7px 10px;
   overflow: hidden;
 
   background:
     linear-gradient(
       110deg,
       #ffffff 0%,
-      #ffffff 62%,
+      #ffffff 68%,
       var(--propriedade-fundo) 100%
     );
 
   border: 1px solid #d8dde6;
-  border-left: 5px solid var(--propriedade-cor);
-  border-radius: 8px;
+  border-left: 4px solid var(--propriedade-cor);
+  border-radius: 7px;
 
   box-shadow:
-    0 3px 8px rgba(0, 0, 0, 0.08),
+    0 2px 5px rgba(0, 0, 0, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
   transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease;
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
 }
 
 .propriedade-card::after {
   content: "";
   position: absolute;
-  top: -55px;
-  right: -45px;
+  top: -45px;
+  right: -40px;
 
-  width: 175px;
-  height: 175px;
+  width: 135px;
+  height: 135px;
 
   background:
     radial-gradient(
       circle,
       var(--propriedade-fundo) 0%,
-      transparent 68%
+      transparent 70%
     );
 
   pointer-events: none;
 }
 
 .propriedade-card:hover {
-  transform: translateY(-1px);
+  transform: translateX(2px);
 
   box-shadow:
-    0 6px 13px rgba(0, 0, 0, 0.12),
+    0 3px 8px rgba(0, 0, 0, 0.10),
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 /* =========================================================
-   SLOT DO ÍCONE
-   Agora usa :critico:, :ofensiva:, :re:, etc.
+   ÍCONE CIRCULAR
    ========================================================= */
 
 .propriedade-simbolo {
@@ -17220,37 +17219,39 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   align-items: center;
   justify-content: center;
 
-  flex: 0 0 48px;
+  flex: 0 0 42px;
 
-  width: 48px;
-  min-width: 48px;
-  height: 48px;
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
 
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
 
   background:
     radial-gradient(
-      circle at 50% 42%,
+      circle at 50% 38%,
       #ffffff 0%,
-      #ffffff 25%,
+      #ffffff 24%,
       var(--propriedade-fundo) 100%
     );
 
   border: 1px solid var(--propriedade-cor);
+
+  /* CÍRCULO */
   border-radius: 50%;
 
   box-shadow:
-    0 3px 7px rgba(0, 0, 0, 0.14),
-    0 0 0 3px rgba(255, 255, 255, 0.75),
-    inset 0 0 9px rgba(255, 255, 255, 0.9);
+    0 2px 5px rgba(0, 0, 0, 0.13),
+    0 0 0 2px rgba(255, 255, 255, 0.8),
+    inset 0 0 7px rgba(255, 255, 255, 0.9);
 
   transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease;
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
 }
 
-/* Caso o Forumeiros transforme o código :icone: em <img> */
+/* Emojis transformados pelo Forumeiros em imagem */
 
 .propriedade-simbolo img {
   display: block !important;
@@ -17258,19 +17259,19 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   width: auto !important;
   height: auto !important;
 
-  max-width: 30px !important;
-  max-height: 30px !important;
+  max-width: 25px !important;
+  max-height: 25px !important;
 
   margin: 0 !important;
 }
 
 .propriedade-card:hover .propriedade-simbolo {
-  transform: translateY(-1px) scale(1.05);
+  transform: scale(1.06);
 
   box-shadow:
-    0 5px 10px rgba(0, 0, 0, 0.18),
-    0 0 0 3px rgba(255, 255, 255, 0.9),
-    inset 0 0 10px rgba(255, 255, 255, 1);
+    0 3px 7px rgba(0, 0, 0, 0.17),
+    0 0 0 2px rgba(255, 255, 255, 0.95),
+    inset 0 0 8px rgba(255, 255, 255, 1);
 }
 
 /* =========================================================
@@ -17289,16 +17290,16 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px;
 
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .propriedade-nome {
   color: var(--propriedade-cor-escura);
 
-  font-size: 14px;
-  line-height: 1.3;
+  font-size: 13px;
+  line-height: 1.25;
   font-weight: 800;
 }
 
@@ -17307,63 +17308,34 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   align-items: center;
   justify-content: center;
 
-  padding: 2px 7px;
+  padding: 1px 6px;
 
   color: #fff;
 
-  font-size: 9px;
-  line-height: 1.4;
+  font-size: 8px;
+  line-height: 1.5;
   font-weight: 800;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
 
   background: var(--propriedade-cor);
 
-  border-radius: 20px;
-
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
 }
 
-.propriedade-efeito {
+.propriedade-descricao {
   position: relative;
   z-index: 2;
 
-  line-height: 1.48;
-}
-
-.propriedade-rotulo {
-  color: var(--propriedade-cor-escura);
-
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-}
-
-.propriedade-detalhe {
-  position: relative;
-  z-index: 2;
-
-  margin-top: 6px;
-  padding: 5px 7px;
-
-  color: #555;
+  color: #454b52;
 
   font-size: 11px;
-  line-height: 1.42;
-
-  background: rgba(255, 255, 255, 0.68);
-
-  border-left: 3px solid var(--propriedade-cor);
-  border-radius: 3px;
+  line-height: 1.4;
 }
 
 /* =========================================================
    TIPOS
    ========================================================= */
-
-/* Ativas */
 
 .propriedade-ativa {
   --propriedade-cor: #a2232d;
@@ -17371,15 +17343,11 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
   --propriedade-fundo: #fae9eb;
 }
 
-/* Passivas */
-
 .propriedade-passiva {
   --propriedade-cor: #345f9a;
   --propriedade-cor-escura: #24456f;
   --propriedade-fundo: #eaf1fa;
 }
-
-/* Estados negativos de equipamento */
 
 .propriedade-negativa {
   --propriedade-cor: #706367;
@@ -17393,35 +17361,32 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
 @media (max-width: 500px) {
   .propriedade-card {
-    align-items: flex-start;
-    gap: 9px;
-    padding: 9px 10px;
+    gap: 8px;
+    min-height: 54px;
+    padding: 6px 8px;
   }
 
   .propriedade-simbolo {
-    flex-basis: 42px;
+    flex-basis: 38px;
 
-    width: 42px;
-    min-width: 42px;
-    height: 42px;
-
-    border-radius: 9px;
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
   }
 
   .propriedade-simbolo img {
-    max-width: 26px !important;
-    max-height: 26px !important;
+    max-width: 23px !important;
+    max-height: 23px !important;
   }
 
   .propriedade-nome {
-    font-size: 13px;
+    font-size: 12px;
   }
 
-  .propriedade-detalhe {
+  .propriedade-descricao {
     font-size: 10px;
   }
 }
-
 
 
 /* =========================================================
