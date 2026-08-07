@@ -17125,6 +17125,306 @@ body.tema-zoro .navio-pocket-rodape-detalhes {
 
 
 /* =========================================================
+   PROPRIEDADES DE ITENS — ÍCONES DO FÓRUM
+   ========================================================= */
+
+.propriedade-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 13px 0 20px;
+}
+
+.propriedade-lista > br,
+.propriedade-card > br,
+.propriedade-conteudo > br,
+.propriedade-topo > br,
+.propriedade-simbolo > br {
+  display: none !important;
+}
+
+/* CARD BASE */
+
+.propriedade-card {
+  --propriedade-cor: #244688;
+  --propriedade-cor-escura: #19345f;
+  --propriedade-fundo: #edf2fa;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-height: 76px;
+  padding: 10px 12px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      110deg,
+      #ffffff 0%,
+      #ffffff 62%,
+      var(--propriedade-fundo) 100%
+    );
+
+  border: 1px solid #d8dde6;
+  border-left: 5px solid var(--propriedade-cor);
+  border-radius: 8px;
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.propriedade-card::after {
+  content: "";
+  position: absolute;
+  top: -55px;
+  right: -45px;
+
+  width: 175px;
+  height: 175px;
+
+  background:
+    radial-gradient(
+      circle,
+      var(--propriedade-fundo) 0%,
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+.propriedade-card:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 13px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* =========================================================
+   SLOT DO ÍCONE
+   Agora usa :critico:, :ofensiva:, :re:, etc.
+   ========================================================= */
+
+.propriedade-simbolo {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 48px;
+
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+
+  font-size: 20px;
+  line-height: 1;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      #ffffff 0%,
+      #ffffff 25%,
+      var(--propriedade-fundo) 100%
+    );
+
+  border: 1px solid var(--propriedade-cor);
+  border-radius: 11px;
+
+  box-shadow:
+    0 3px 7px rgba(0, 0, 0, 0.14),
+    0 0 0 3px rgba(255, 255, 255, 0.75),
+    inset 0 0 9px rgba(255, 255, 255, 0.9);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+/* Caso o Forumeiros transforme o código :icone: em <img> */
+
+.propriedade-simbolo img {
+  display: block !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 30px !important;
+  max-height: 30px !important;
+
+  margin: 0 !important;
+}
+
+.propriedade-card:hover .propriedade-simbolo {
+  transform: translateY(-1px) scale(1.05);
+
+  box-shadow:
+    0 5px 10px rgba(0, 0, 0, 0.18),
+    0 0 0 3px rgba(255, 255, 255, 0.9),
+    inset 0 0 10px rgba(255, 255, 255, 1);
+}
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.propriedade-conteudo {
+  position: relative;
+  z-index: 2;
+
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.propriedade-topo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin-bottom: 4px;
+}
+
+.propriedade-nome {
+  color: var(--propriedade-cor-escura);
+
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.propriedade-tipo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2px 7px;
+
+  color: #fff;
+
+  font-size: 9px;
+  line-height: 1.4;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+
+  background: var(--propriedade-cor);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.propriedade-efeito {
+  position: relative;
+  z-index: 2;
+
+  line-height: 1.48;
+}
+
+.propriedade-rotulo {
+  color: var(--propriedade-cor-escura);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.propriedade-detalhe {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 6px;
+  padding: 5px 7px;
+
+  color: #555;
+
+  font-size: 11px;
+  line-height: 1.42;
+
+  background: rgba(255, 255, 255, 0.68);
+
+  border-left: 3px solid var(--propriedade-cor);
+  border-radius: 3px;
+}
+
+/* =========================================================
+   TIPOS
+   ========================================================= */
+
+/* Ativas */
+
+.propriedade-ativa {
+  --propriedade-cor: #a2232d;
+  --propriedade-cor-escura: #71151d;
+  --propriedade-fundo: #fae9eb;
+}
+
+/* Passivas */
+
+.propriedade-passiva {
+  --propriedade-cor: #345f9a;
+  --propriedade-cor-escura: #24456f;
+  --propriedade-fundo: #eaf1fa;
+}
+
+/* Estados negativos de equipamento */
+
+.propriedade-negativa {
+  --propriedade-cor: #706367;
+  --propriedade-cor-escura: #4c4245;
+  --propriedade-fundo: #f0edef;
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 500px) {
+  .propriedade-card {
+    align-items: flex-start;
+    gap: 9px;
+    padding: 9px 10px;
+  }
+
+  .propriedade-simbolo {
+    flex-basis: 42px;
+
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+
+    border-radius: 9px;
+  }
+
+  .propriedade-simbolo img {
+    max-width: 26px !important;
+    max-height: 26px !important;
+  }
+
+  .propriedade-nome {
+    font-size: 13px;
+  }
+
+  .propriedade-detalhe {
+    font-size: 10px;
+  }
+}
+
+
+
+/* =========================================================
    VIAGENS E NAVIOS — MÓDULO COMPLEXO PARA FORUMEIROS
    Pode ser reutilizado em regras de exploração, veículos,
    perseguições, viagens e encontros aleatórios.
