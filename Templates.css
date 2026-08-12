@@ -4272,6 +4272,11 @@ body.tema-zoro .npc-tag-2 strong,
   gap: 4px;
 }
 
+.mob-card-stats dano {
+  color: #cc3333;
+  font-weight: 700;
+}
+
 .mob-card-stats span {
   display: inline-flex;
   align-items: center;
